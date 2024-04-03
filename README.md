@@ -2,6 +2,7 @@
   ### 油山山麓に分布する未発掘古墳について、現状の墳丘と石室の実測図を、現状調査報告書として記録したものです。
   
 ![油山山麓大谷古墳群](https://github.com/tateana1978/Research-report/assets/146042477/14604da1-1a53-4725-b209-fd476dfad5cc)
+![油山山麓大谷古墳群](https://github.com/tateana1978/Research-report/assets/146042477/dbcc84dc-6535-4ab5-82fc-1e8f24584329)
 
 ## 鳥越古墳群
   鳥越古墳群 立地と環境 <br>
