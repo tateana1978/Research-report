@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<meta name="description" content="倉瀬戸古墳群 現状調査報告書（改訂版・2023年／油山古墳研究室）デジタル版。福岡市・油山山麓の群集墳。10～16 号墳および B 支群（仮称）の現状調査記録。">
+<title>倉瀬戸古墳群 現状調査報告書｜油山古墳研究室</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Noto+Serif+JP:wght@400;600&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ffffff; --paper2:#f6f5f2; --card:#ffffff;
+  --ink:#1a1a1a; --ink2:#565656; --line:#d8d8d4; --line2:#ececea;
+  --clay:#7a2e2e; --clay2:#5e2222; --ochre:#8a6a2e; --sage:#3f4a3a;
+  --shadow:0 1px 2px rgba(0,0,0,.05),0 3px 12px rgba(0,0,0,.05);
+  --maxw:760px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Noto Serif JP",serif; font-weight:400; line-height:1.95;
+  font-size:16px; letter-spacing:.01em;
+  text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased;
+}
+/* faint paper grain */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;display:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--clay2);text-decoration:none}
+
+/* ---- Top bar ---- */
+.bar{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:.6rem;
+  padding:.55rem .9rem;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);}
+.bar .brand{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:.98rem;
+  letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .brand small{color:var(--ink2);font-weight:500;font-size:.72rem;margin-left:.4rem}
+.bar .spacer{flex:1}
+.toc-toggle{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.82rem;
+  color:var(--paper2);background:var(--clay);border:none;border-radius:999px;
+  padding:.42rem .95rem;cursor:pointer;letter-spacing:.08em;box-shadow:var(--shadow);transition:background .2s}
+.toc-toggle:hover{background:var(--clay2)}
+.toc-toggle::before{content:"☰ ";font-size:.9em}
+
+/* ---- Hero (title page, white) ---- */
+.hero{position:relative;z-index:1;background:#fff;border-bottom:1px solid var(--line)}
+.hero-inner{max-width:var(--maxw);margin:0 auto;padding:3rem 1.3rem 2.2rem;text-align:center}
+.hero .kicker{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:500;letter-spacing:.4em;
+  font-size:.72rem;color:var(--ink2);margin:0 0 1.4rem;text-indent:.4em}
+.hero h1{font-family:"Shippori Mincho B1",serif;font-weight:800;line-height:1.18;
+  font-size:clamp(2.3rem,8.5vw,3.4rem);letter-spacing:.16em;margin:0;color:var(--ink);text-indent:.16em}
+.hero .sub{font-family:"Shippori Mincho B1",serif;font-weight:500;font-size:clamp(1rem,4.4vw,1.3rem);
+  letter-spacing:.36em;margin:1.1rem 0 0;color:var(--ink);text-indent:.36em;
+  padding-top:1rem;position:relative;display:inline-block}
+.hero .sub::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:54px;height:2px;background:var(--clay)}
+.hero .byline{font-family:"Shippori Mincho B1",serif;font-size:1rem;letter-spacing:.18em;
+  color:var(--ink);margin:1.6rem 0 .3rem}
+.hero .meta{font-family:"Zen Kaku Gothic New",sans-serif;font-size:.78rem;letter-spacing:.08em;
+  color:var(--ink2);margin:.2rem 0 0}
+.cover-fig{margin:2.1rem auto 0;text-align:center}
+.cover-fig figcaption{font-family:"Zen Kaku Gothic New",sans-serif;font-size:.76rem;color:var(--ink2);
+  margin:.7rem auto 0;line-height:1.5}
+
+/* ---- Preface ---- */
+.preface{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:1.8rem 1.3rem .4rem}
+.preface p{font-size:.9rem;color:var(--ink2);line-height:1.85;margin:.2rem 0 .6rem;
+  border-left:3px solid var(--line);padding-left:.9rem}
+
+/* ---- Inline TOC ---- */
+.toc-inline{position:relative;z-index:1;max-width:var(--maxw);margin:1.4rem auto 0;padding:0 1.3rem}
+.toc-inline .tc{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  box-shadow:var(--shadow);padding:1.2rem 1.1rem 1rem}
+.toc-inline .tc h2{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:1.05rem;
+  letter-spacing:.22em;margin:0 0 .9rem;color:var(--clay2);text-align:center}
+.toc-inline .tc h2::before,.toc-inline .tc h2::after{content:"";display:inline-block;width:1.6rem;
+  height:1px;background:var(--line);vertical-align:middle;margin:0 .7rem}
+ol.toc{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:.1rem}
+ol.toc li a{display:flex;align-items:baseline;gap:.7rem;padding:.5rem .5rem;border-radius:8px;
+  color:var(--ink);transition:background .15s}
+ol.toc li a:hover{background:var(--paper)}
+.toc-no{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.72rem;
+  color:var(--clay);min-width:1.6rem;letter-spacing:.05em}
+.toc-t{font-family:"Shippori Mincho B1",serif;font-weight:500;font-size:.98rem;
+  border-bottom:1px dotted transparent}
+ol.toc li a:hover .toc-t{border-bottom-color:var(--line)}
+
+/* ---- Main ---- */
+main{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:1rem 1.3rem 4rem}
+.sec{scroll-margin-top:64px;padding:2.6rem 0 1.2rem;border-top:1px solid var(--line2)}
+.sec:first-of-type{border-top:none}
+.sec-head{display:flex;align-items:center;gap:.85rem;margin:0 0 1.4rem}
+.sec-no{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.78rem;
+  color:var(--paper2);background:var(--clay);border-radius:7px;padding:.28rem .55rem;letter-spacing:.06em;
+  box-shadow:var(--shadow)}
+.sec-head h2{font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:1.5rem;
+  letter-spacing:.12em;margin:0;color:var(--ink)}
+.sec-body p{margin:0 0 1.05rem;text-align:justify}
+
+/* 号墳 heading */
+h3.tomb{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:1.12rem;letter-spacing:.06em;
+  color:var(--clay2);margin:2.1rem 0 1rem;padding:.4rem 0 .5rem .9rem;
+  border-left:4px solid var(--clay);background:none;border-bottom:1px solid var(--line2)}
+h3.tomb::before{content:"";}
+.sec:first-of-type h3.tomb:first-child,.sec-body > h3.tomb:first-child{margin-top:.4rem}
+
+/* 墳丘/石室 labels */
+p.part{margin:1.4rem 0 .6rem;display:flex;align-items:center;gap:.6rem}
+p.part span{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.82rem;
+  letter-spacing:.22em;padding:.18rem .7rem;border-radius:4px}
+p.part::after{content:"";flex:1;height:1px;background:var(--line2)}
+.part-mound span{color:#5a4a2e;background:#f2f0ea;border:1px solid var(--line);border-left:3px solid #8a6a2e}
+.part-chamber span{color:#33402f;background:#eef0ec;border:1px solid var(--line);border-left:3px solid #3f4a3a}
+
+/* notes */
+p.note{font-size:.8rem;line-height:1.7;color:var(--ink2);margin:.5rem 0;padding:.55rem .8rem;
+  background:var(--paper2);border:1px dashed var(--line);border-radius:8px;text-align:justify}
+
+/* figures */
+figure.fig{margin:1.6rem 0 1.8rem;text-align:center}
+.fig-btn{display:inline-block;max-width:100%;padding:0;border:none;background:none;cursor:zoom-in;line-height:0}
+.fig-btn img{margin:0 auto;border:1px solid var(--line);background:#fff;border-radius:6px;
+  box-shadow:var(--shadow);padding:6px;max-height:74vh;width:auto;max-width:100%}
+figure.fig figcaption{font-family:"Zen Kaku Gothic New",sans-serif;font-size:.78rem;color:var(--ink2);
+  margin:.7rem auto 0;max-width:90%;line-height:1.55;letter-spacing:.02em}
+.cap-mark{display:inline-block;font-weight:700;color:var(--paper2);background:var(--sage);
+  border-radius:4px;font-size:.66rem;padding:.06rem .42rem;margin-right:.5rem;letter-spacing:.1em;vertical-align:.06em}
+.cap-hint{display:block;color:var(--ochre);font-size:.68rem;margin-top:.25rem;letter-spacing:.08em}
+.cap-hint::before{content:"⤢ "}
+/* wide data table figure */
+figure.fig-table{margin:1.4rem -1.3rem 1.8rem}
+.table-scroll{width:100%;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;
+  padding:.2rem 1.3rem;touch-action:pan-x pan-y}
+figure.fig-table .fig-btn{display:inline-block;width:auto;max-width:none;cursor:zoom-in;line-height:0}
+figure.fig-table .fig-btn img{max-height:none;width:900px;max-width:none;min-width:0}
+figure.fig-table figcaption{padding:0 1.3rem}
+
+/* ---- 図面と説明の対置（墳丘／石室） ---- */
+.pair{margin:1.6rem 0 1.8rem}
+.pair-label{margin:0 0 .7rem}
+.pair-label span{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.84rem;
+  letter-spacing:.22em;padding:.2rem .8rem;border-radius:4px;display:inline-block}
+.pair-mound .pair-label span{color:#5a4a2e;background:#f2f0ea;border:1px solid var(--line);border-left:3px solid #8a6a2e}
+.pair-chamber .pair-label span{color:#33402f;background:#eef0ec;border:1px solid var(--line);border-left:3px solid #3f4a3a}
+.pair-text p{margin:0 0 1rem;text-align:justify}
+.pair-text p:last-child{margin-bottom:0}
+.pair-figs figure.fig{margin:0 0 .8rem}
+.pair-figs figure.fig:last-child{margin-bottom:0}
+/* 狭い画面：図版を画面上部に固定し、説明文を読む間ずっと見えるように */
+.pair-figs{position:sticky;top:54px;z-index:5;background:#fff;
+  max-height:48vh;overflow:auto;-webkit-overflow-scrolling:touch;
+  padding:.35rem 0 .55rem;border-bottom:1px solid var(--line2)}
+.pair-figs .fig-btn img{max-height:42vh}
+.pair-figs figcaption .cap-hint{display:none}
+@media(min-width:740px){
+  /* 広い画面：図版を左、説明文を右に並べて対置（図版は追従） */
+  .pair-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;align-items:start}
+  .pair-figs{position:sticky;top:64px;max-height:none;overflow:visible;
+    background:transparent;border-bottom:none;padding:0}
+  .pair-figs .fig-btn img{max-height:80vh}
+  .pair-figs figcaption .cap-hint{display:block}
+}
+
+/* ---- Drawer (off-canvas TOC) ---- */
+.scrim{position:fixed;inset:0;z-index:50;background:rgba(28,20,12,.5);opacity:0;visibility:hidden;
+  transition:opacity .25s}
+.scrim.open{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;right:0;z-index:60;height:100%;width:min(85vw,340px);
+  background:var(--paper2);box-shadow:-8px 0 30px rgba(40,28,15,.25);
+  transform:translateX(100%);transition:transform .28s cubic-bezier(.2,.7,.2,1);
+  display:flex;flex-direction:column;border-left:3px solid var(--clay)}
+.drawer.open{transform:translateX(0)}
+.drawer .dh{display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 1.1rem;border-bottom:1px solid var(--line)}
+.drawer .dh b{font-family:"Shippori Mincho B1",serif;font-weight:700;letter-spacing:.2em;font-size:1rem;color:var(--clay2)}
+.drawer .x{border:none;background:none;font-size:1.5rem;line-height:1;color:var(--ink2);cursor:pointer;padding:.2rem .4rem}
+.drawer nav{overflow-y:auto;padding:.5rem .5rem 2rem}
+.drawer ol{list-style:none;margin:0;padding:0}
+.drawer ol li a{display:flex;align-items:baseline;gap:.7rem;padding:.7rem .8rem;border-radius:9px;color:var(--ink)}
+.drawer ol li a:active{background:var(--paper)}
+
+/* ---- Back to top ---- */
+.totop{position:fixed;right:1rem;bottom:1rem;z-index:35;width:46px;height:46px;border-radius:50%;
+  border:1px solid var(--line);background:var(--card);color:var(--clay2);font-size:1.2rem;
+  box-shadow:var(--shadow);cursor:pointer;opacity:0;visibility:hidden;transition:opacity .25s}
+.totop.show{opacity:1;visibility:visible}
+
+/* ---- Lightbox ---- */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(18,13,8,.94);display:none;
+  flex-direction:column;touch-action:none}
+.lb.open{display:flex}
+.lb-top{display:flex;justify-content:space-between;align-items:center;padding:.8rem 1rem;color:#eadfce;
+  font-family:"Zen Kaku Gothic New",sans-serif;font-size:.8rem;gap:1rem}
+.lb-top .lb-cap{flex:1;line-height:1.4}
+.lb-top button{border:1px solid rgba(234,223,206,.4);background:transparent;color:#eadfce;
+  border-radius:8px;padding:.35rem .7rem;cursor:pointer;font-size:.8rem}
+.lb-stage{flex:1;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.lb-stage img{max-width:100%;max-height:100%;touch-action:none;cursor:grab;
+  transform-origin:center center;transition:transform .05s linear;user-select:none;-webkit-user-drag:none}
+.lb-foot{text-align:center;color:#b9a98f;font-family:"Zen Kaku Gothic New",sans-serif;
+  font-size:.7rem;padding:.5rem 1rem .9rem;letter-spacing:.06em}
+
+/* ---- Footer ---- */
+footer{position:relative;z-index:1;border-top:3px double var(--clay);background:var(--paper2);
+  padding:2.2rem 1.3rem 3rem;text-align:center}
+footer .ft{max-width:var(--maxw);margin:0 auto;font-family:"Zen Kaku Gothic New",sans-serif;
+  font-size:.76rem;color:var(--ink2);line-height:1.9;letter-spacing:.03em}
+footer .ft b{font-family:"Shippori Mincho B1",serif;color:var(--clay2);font-size:.95rem;letter-spacing:.16em;display:block;margin-bottom:.5rem}
+
+@media(min-width:680px){
+  body{font-size:16.5px}
+  .fig-btn img{max-width:560px}
+  figure.fig-table .fig-btn img{width:1400px;max-width:none;min-width:0}
+  figure.fig-table{margin:1.4rem 0 1.8rem}
+  figure.fig-table .table-scroll,figure.fig-table figcaption{padding-left:0;padding-right:0}
+}
+/* maps, plates, charts, aerials, topo may show wider */
+.fig-btn[data-src*="p03"] img,.fig-btn[data-src*="p05_f1"] img,
+.fig-btn[data-src*="p18_f1"] img,.fig-btn[data-src*="p22_f1"] img,
+.fig-btn[data-src*="p23"] img,.fig-btn[data-src*="p10_f1"] img,
+.fig-btn[data-src*="p29"] img,.fig-btn[data-src*="p31_f1"] img,
+.fig-btn[data-src^="images/p34_f1"] img,.fig-btn[data-src*="p35"] img,
+.fig-btn[data-src*="p36"] img,.fig-btn[data-src*="p37"] img,
+.fig-btn[data-src*="p38"] img,.fig-btn[data-src*="p39"] img,
+.fig-btn[data-src*="p40"] img,.fig-btn[data-src*="p41"] img{max-width:100%}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="brand">倉瀬戸古墳群<small>現状調査報告書</small></div>
+  <div class="spacer"></div>
+  <button class="toc-toggle" id="tocOpen">目次</button>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">福岡市・油山山麓の群集墳</p>
+    <h1>倉瀬戸古墳群</h1>
+    <p class="sub">現状調査報告書</p>
+    <p class="byline">2023年　油山古墳研究室</p>
+    <p class="meta">全 18 基（1～16 号墳・B 支群 2 基）／横穴式石室を主体とする群集墳</p>
+    <figure class="cover-fig fig">
+      <button class="fig-btn" data-src="images/cover.jpg" data-cap="油山古墳群周辺 航空写真（倉瀬戸古墳群ほか）" aria-label="油山古墳群周辺 航空写真を拡大">
+        <img src="images/cover.jpg" alt="油山古墳群周辺 航空写真">
+      </button>
+      <figcaption><span class="cap-mark">図</span>油山古墳群周辺 航空写真（倉瀬戸古墳群ほか）<span class="cap-hint">拡大表示</span></figcaption>
+    </figure>
+  </div>
+</header>
+
+<div class="preface">
+  <p>本ページは、油山古墳研究室『倉瀬戸古墳群 現状調査報告書（改訂版）』（2023年）のデジタル版です。本文・数値・図版はすべて原報告書のとおりで、内容に改変は加えていません。</p>
+  <p>各古墳の記述、ならびに地形図・石室実測図等の作図は、原報告書の註記のとおり 福岡大学歴史研究部考古学班発行「七隈 20 号」（1983）・「七隈 21 号」（1984）、および 1971 年倉瀬戸古墳群調査団「倉瀬戸古墳群発掘調査報告書」から転用されたものです。なお、各図版は拡大して細部まで確認できます。</p>
+</div>
+
+<nav class="toc-inline" aria-label="目次">
+  <div class="tc">
+    <h2>目　次</h2>
+    <ol class="toc"><li><a href="#env" class="toc-link"><span class="toc-no">01</span><span class="toc-t">立地と環境</span></a></li><li><a href="#t10" class="toc-link"><span class="toc-no">02</span><span class="toc-t">10 号墳</span></a></li><li><a href="#t11" class="toc-link"><span class="toc-no">03</span><span class="toc-t">11 号墳</span></a></li><li><a href="#t12" class="toc-link"><span class="toc-no">04</span><span class="toc-t">12 号墳</span></a></li><li><a href="#t13" class="toc-link"><span class="toc-no">05</span><span class="toc-t">13 号墳</span></a></li><li><a href="#t14" class="toc-link"><span class="toc-no">06</span><span class="toc-t">14 号墳</span></a></li><li><a href="#t15" class="toc-link"><span class="toc-no">07</span><span class="toc-t">15 号墳</span></a></li><li><a href="#t16" class="toc-link"><span class="toc-no">08</span><span class="toc-t">16 号墳</span></a></li><li><a href="#B" class="toc-link"><span class="toc-no">09</span><span class="toc-t">B 支群（仮称）</span></a></li><li><a href="#plates" class="toc-link"><span class="toc-no">10</span><span class="toc-t">地形図と石室</span></a></li></ol>
+  </div>
+</nav>
+
+<main>
+<section id="env" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">01</span>
+    <h2>立地と環境</h2>
+  </header>
+  <div class="sec-body">
+<figure class="fig">
+  <button class="fig-btn" data-src="images/env_area.jpg" data-cap="倉瀬戸古墳群周辺分布図" aria-label="倉瀬戸古墳群周辺分布図を拡大"><img loading="lazy" src="images/env_area.jpg" alt="倉瀬戸古墳群周辺分布図"></button>
+  <figcaption><span class="cap-mark">図</span>倉瀬戸古墳群周辺分布図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/env_dist.png" data-cap="倉瀬戸古墳群分布図" aria-label="倉瀬戸古墳群分布図を拡大"><img loading="lazy" src="images/env_dist.png" alt="倉瀬戸古墳群分布図"></button>
+  <figcaption><span class="cap-mark">図</span>倉瀬戸古墳群分布図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>福岡市の西南部にそびえる背振山系の一支脈である油山（標高 592m）の山麓は、いくつもの舌状台地を派生させる。特に小笹、平尾周辺の台地は鴻ノ巣山を中心として発達しており、福岡平野と早良平野を二分し博多湾にいたっている。油山より北へ突き出した一丘陵の先端部近くに本古墳群が位置し、西に大谷古墳群、東に早苗田古墳群、鳥越古墳群が分布し、油山山麓の一大群集墳を形成している。</p>
+<p>本古墳群は一昨年 7 月に標高約 110～120m で、新たに 2 基（仮称倉瀬戸 B 群）を確認し、従来の倉瀬戸古墳群とあわせて 18 基で構成している。</p>
+<p>倉瀬戸古墳群（1～16 号）はすべて円墳であり、標高約 30～90m に 16 基が分布し、その立地状態から 1、2 号墳、3、4、9 号墳、5、6、7 号墳、8 号墳、10～16 号墳の 5 つのグループに分けることができると思われる。</p>
+<p>1～9 号墳はほぼ北に延びる 2 つの丘陵とその間につくられる平坦な谷間にかけての部分に位置し、標高約 30～85m に存在していたが、1971 年に倉瀬戸古墳群調査団によって発掘調査をうけ現存しない。1、2 号墳は北に延びる丘陵の屋根上に位置し、標高約 65～90m に存在し、主軸を等高線に平行させ、南西に開口する両袖単室の横穴式石室を埋葬施設にもつ。3、4、9 号墳は 1、2 号墳が存在する丘陵の標高約 30～35m に分布し、3、9 号墳は、西に開口する両袖複室であり、4 号墳は南に開口する両袖単室で、ともに横穴式石室を埋葬施設にもつ。5、6、7 号墳は 3、4、9 号墳が存在する丘陵の東側の谷間の小起伏部、標高約 38～45m に分布し、南東に開口する両袖複室の横穴式石室を埋葬施設にもつ。8 号墳は 1、2 号墳が存在する丘陵の東側の谷を挟んだ丘陵の屋根稜線上、標高 65m に位置し、南に開口する両袖単室の横穴式石室を埋葬施設にもつ。</p>
+<p>10～16 号墳は 8 号墳が存在する丘陵の両側の谷を挟んだ丘陵の東側斜面に位置し、標高 65～85m に存在する。11～13 号墳は谷に向かって東に開口し、10 号墳、14～16 号墳は同じく谷に向かって南東に開口する。10～16 号墳はすべて両袖単室の横穴式石室を埋葬施設にもつ。10～15 号墳の石室の残存状態は良好であったが、1981 年に 10～16 号墳の存在する丘陵の東側の谷に砂防ダムが建設されたことによって、13 号墳は発掘調査をうけないまま破壊され、また、15 墳は墳丘を削られている。B 群（仮称）は 8 号墳の存在する丘陵の東側の谷を挟んだ丘陵上に位置し、標高約 110～120m に存在する円墳である。1 号墳は尾根稜線上に位置し、2 号墳は尾根稜線に近い南側のかなり急な斜面に位置し、ともにほぼ南に開口する両袖単室の横穴式石室埋葬施設にもつ。</p>
+<p>（倉瀬戸古墳群 1～9 号墳）は宅地造成のため、発掘調査され、すでに消滅している。</p>
+<p class="note">＊報告内容は 1971 年倉瀬戸古墳群調査団発行の「倉瀬戸古墳群発掘調査報告書」参照</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/env_upper_topo.png" data-cap="倉瀬戸古墳群上部地形図" aria-label="倉瀬戸古墳群上部地形図を拡大"><img loading="lazy" src="images/env_upper_topo.png" alt="倉瀬戸古墳群上部地形図"></button>
+  <figcaption><span class="cap-mark">図</span>倉瀬戸古墳群上部地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+  </div>
+</section>
+<section id="t10" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">02</span>
+    <h2>10 号墳</h2>
+  </header>
+  <div class="sec-body">
+<p>本墳は油山より北に延びる丘陵のゆるやかな東側の針面上に立地し、標高 65～68m の間に存在する。本墳は現存する倉瀬戸古墳群中最下部に位置し、同一丘陵上の斜面に立地する 11 号墳より北へ約 14m の距離にあり、標高差 3m を測る。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>墳丘盛土は本古墳群中において、比較的残存状態が良好であるが、墳頂部付近は流出し、天井石の一部が露出している。また、北東付近の盛土も流出しており、墳裾はあまり明確ではないが、墳丘規模は現状において、主体部主軸方向に 9m、主軸と直交する方向に 8m を測り、円墳であることが確認できる。墳頂高は 68.075m である。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/T10_chamber.png" data-cap="倉瀬戸古墳群 10 号墳石室実測図" aria-label="倉瀬戸古墳群 10 号墳石室実測図を拡大"><img loading="lazy" src="images/T10_chamber.png" alt="倉瀬戸古墳群 10 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>倉瀬戸古墳群 10 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の埋葬施設は、開口主軸方向を S-40°-E にとる両袖単室の横穴式石室である。石室の残存状態は良好であるが、土砂の流入のため、床面や腰石の大きさについては不明瞭である。現状において、奥壁幅 169cm で、腰石は 2 枚で 150cm×95cm 程の三角形の石材とその後ろにはいり込むように、左側壁側に小さめの石材を使用している。その上に 60cm×40cm の石材を使用し、右側壁側の腰石と高さを合わせている。2 段目からは 60cm×30cm 程度の石材を 4 段に積み上げている。</p><p>右側壁は幅 235cm で腰石には、98cm×56cm の石材と 122cm×40cm の石材とを 2 枚使用している。2 段目から腰石よりもやや小さめの石材を 4 段に積み上げている。また、2 段目と 3 段目には奥壁にかかる力石の使用が認められる。</p><p>左側壁は幅 232cm で、98cm×74cm の石材と 82cm×79cm の石材を腰石として使用しており、腰石の上に 70cm×20cm 程度の石材を横位に 2 段、その奥壁側に 70cm×50cm 程度の石材を横位に 2 段積み上げている。右側壁に比べ栗石が多く用いられている。</p><p>前壁は 150cm×50cm の楣石の上に 20cm×10cm 程度の石材を一段積み上げている。前壁は持ち送りが見られないが、その他の周壁においては、全体的に持ち送りが認められる。奥壁の持ち送りは、特に顕著にみられ、玄室はやや不整形なドーム状を呈している。袖石は 50cm×70cm の石材を使用している。天井石は 1 枚である。</p><p>羨道は土砂の流入が激しいため、床面や腰石の詳細は不明である。現状において、羨道長は倉瀬戸古墳群の中で最も長く 260cm を測る。羨道右側壁は 60cm×30cm 程度の石材を 2 段から 3 段積んでいるのが確認できる。羨道左側壁は 40cm×15cm 程度の石材を 3～4 段に積み上げている。ここでも右側壁に比べ栗石の使用が多く見られる。石材は油山で多くみられる花崗岩を使用している。</p></div></div></div>
+  </div>
+</section>
+<section id="t11" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">03</span>
+    <h2>11 号墳</h2>
+  </header>
+  <div class="sec-body">
+<p>本墳は北に延びる丘陵の標高約 67～70.5m 間のゆるやかな東側斜面に位置し、同一の丘陵上の斜面に立地する 10 号墳より南に約 14m、標高差 25m、12 号墳より北に約 9.5m、標高差 1.5m の距離を測る。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>墳丘盛土は油山の古墳中において、比較的残存状態が良く、ほぼ原形を保っていると思われるが、北側と東側の墳裾あたりで若干土砂の流出が見られる。現状から見て墳丘径は、主体部主軸方向に 9m、主軸と直交する方向に 8.5m を測る円墳である。尚、墳頂高は 70.579m である。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/T11_chamber.png" data-cap="倉瀬戸古墳群 11 号墳石室実測図" aria-label="倉瀬戸古墳群 11 号墳石室実測図を拡大"><img loading="lazy" src="images/T11_chamber.png" alt="倉瀬戸古墳群 11 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>倉瀬戸古墳群 11 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の埋葬施設は、開口主軸方向を S-40°-E にとり、東の谷に向かって開口する両袖単室の横穴式石室である。石室の残存状態は比較的良好であるが、土砂流入のために腰石、床面が不明瞭である。現状において、奥壁幅約 175cm、右側壁幅約 170cm、左側壁幅約 160cm、前壁幅約 100cm を測る。</p><p>奥壁は 4 段で、腰石は 2 枚で右側壁側は 110cm×70cm の大ぶりの石材を横位にし、左側壁側は 60cm×80cm 程度の石材を縦位に 1 枚使用し、2 段目は 110cm×30cm 程度の石材を横位に 1 枚使用している。3 段目は 50cm×45cm 程度の石材を 2 枚並べて積み、その上に小ぶりの石材を雑に積んである。また、2 段目と 3 段目に数個の栗石の使用と左側壁へ架構する力石の使用が見られる。</p><p>右側壁は 5 段で、腰石は奥壁側に 90cm×50cm の石材と前壁側に 65cm×50cm の石材の 2 枚設置し、その間に 2 枚の腰石の高さをあわせるように 60cm×30cm の石材を 1 枚使用している。2 段目には 50cm×50cm 程度の石材を 3 枚、3 段目、4 段目の奥壁側には 70cm×40cm 程度の石材を横位に、前壁側には小ぶりの石材を数個使用している。5 段目は小ぶりの石材を使用している。また、2 段目と 3 段目に数個の栗石が使用されている。</p><p>左側壁は 5 段で、腰石は土砂の流入により、現状では 100cm×55cm 程度の石材が一枚確認できる。2 段目、3 段目には 50cm×40cm 程度の石材を 3 枚ずつ使用し、その上には 110cm×50cm 程度の大ぶりの石材を横位に 1 枚使用し、5 段目には小ぶりの石材を数個使用している。右側壁と同様に 2 段目と 3 段目に数個の栗石の使用が見られる。</p><p>前壁は 2 段で、楣石は 100cm×60m の大ぶりの石材を横位に使用し、その上に 60cm×20cm の石材を横位に使用している。天井石は 1 枚使用している。持ち送りは周壁すべてに見られ、特に奥壁の 2 段目より顕著にあらわれ、玄室はドーム状を呈している。右袖石は 40cm×40cm の石材を 2 段積み、左袖石は 50cm×35cm 程度の石材が、羨道部に突き出て設置してある。</p><p>羨道部は土砂の流入により詳細は不明であるが、道長は約 130cm で、左右とも 2 段目には、100cm 程度の石材を横位に一枚使用している。本墳の石材は、花崗岩である。</p></div></div></div>
+  </div>
+</section>
+<section id="t12" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">04</span>
+    <h2>12 号墳</h2>
+  </header>
+  <div class="sec-body">
+<p>本墳は北に延びる丘陵の標高 70.0～72.5m 間のゆるやかな東側斜面上に位置し、11 号墳より南に 9.5m、14 号墳より砂防ダムを隔てて、北に 25m の距離にある。尚、11 号墳との標高差は、1.5m、14 号墳とは 7m を測る。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>墳丘盛土は油山に点在する各古墳中において比較的残りが良いと言えるが、墳頂部は谷に向かって、かなり激しい流出が見られ、天井石の一部が露出している。墳頂高は 70.5m を測る。現状の墳丘径は、主体部主軸方向 8m、主軸と直交する方向に 7m を測る円墳である。尚、平板実測中、谷側墳裾から須恵器の坏身と蓋の破片を数個表採した。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/T12_chamber.png" data-cap="倉瀬戸古墳群 12 号墳石室実測図" aria-label="倉瀬戸古墳群 12 号墳石室実測図を拡大"><img loading="lazy" src="images/T12_chamber.png" alt="倉瀬戸古墳群 12 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>倉瀬戸古墳群 12 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の埋葬施設は、開口主軸方向を S-40°-E にとり、東の谷に向かって開口する両袖単室の横穴式石室である。石室の残存状態は右側壁と前壁接合上に石抜き、あるいは自然崩壊によると思われる 20cm 四方の穴があき、また、土砂が石室内に流入して、腰石、床面が不明瞭であるが比較的良好である。現状において、奥壁幅 194cm、右側壁幅 160cm、左側壁幅 180cm を測る。</p><p>奥壁は 5 段で、右側壁側に 120cm×80cm、左側壁側に 70cm×70cm の腰石を 2 枚設置し、2 段目に 70cm×50cm 程度の石材を 3 枚使用している。3 段目、4 段目には 40cm×30cm の石材を数個使用し、その上には、小ぶりの石材を雑に積んでいる。また、2 段目と 3 段目に数個の栗石の使用が見られる。</p><p>右側壁は 6 段で、腰石に 80cm×40cm 程度の石材を横位に 2 枚設置し、それより上段は 50cm×30cm 程度の石材を 3 枚、斜めに目路が通るように丁寧に積み上げている。2 段目と 3 段目には栗石の使用が見られ、また 2 段目には力石が認められる。</p><p>左側壁は 5 段で、腰石に 80cm×40cm 程度の石材を 1 枚、50cm×30cm 程度の石材を 2 枚横位に設置している。2 段目は 40cm×30cm 程度の石材を数個使用し、雑に積んでいる。3 段目、4 段目には、60cm×30cm 程度の石材を横位に 3 枚並べて積み上げている。5 段目には 60cm×30cm 程度の石材を 2 枚使用している。全体的に見て左側壁より右側壁の方が、形の整った大ぶりの石材を使用し、丁寧に積み上げている。また、周壁全体の持ち送りが顕著にほどこしており、周壁上部においてせり出しがみられる。</p><p>前壁は 5 段で、楣石は 100cm×40cm の大ぶりの石材を横位に使用し、それより上段は、40cm×20cm 程度の石材を使用している。右袖石は 50cm×30cm 程度の石材を、左袖石は 60cm×40cm 程度の石材を横位に設置している。</p><p>羨道は土砂の流入により詳細は不明であるが、現状では羨道長は約 50cm を測る。羨道左側壁は 40cm×20cm 程度の石材を 2～3 段、横位に積み上げているのが確認できる。また、栗石の使用も多く見られる。羨道右側壁は左側壁と比較すると大ぶりの石材を使用しており、横位に 2～3 段積み上げている。本墳の石材は花崗岩である。</p></div></div></div>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/T12_pottery.png" data-cap="倉瀬戸古墳群 12 号墳表採遺物（表採土器実測図）" aria-label="倉瀬戸古墳群 12 号墳表採遺物（表採土器実測図）を拡大"><img loading="lazy" src="images/T12_pottery.png" alt="倉瀬戸古墳群 12 号墳表採遺物（表採土器実測図）"></button>
+  <figcaption><span class="cap-mark">図</span>倉瀬戸古墳群 12 号墳表採遺物（表採土器実測図）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+  </div>
+</section>
+<section id="t13" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">05</span>
+    <h2>13 号墳</h2>
+  </header>
+  <div class="sec-body">
+<p>本古墳は 1981 年砂防ダム建設により、発掘調査されることなく破壊されており、現存しない。</p>
+  </div>
+</section>
+<section id="t14" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">06</span>
+    <h2>14 号墳</h2>
+  </header>
+  <div class="sec-body">
+<p>本墳は北へ延びる丘陵のゆるやかな東側の斜面に立地し、標高 75.5m～78m の間に位置する。砂防ダムより南へ 5.5m、15 号墳より北へ 6m、16 号墳より東へ 1.5m、12 号墳より砂防ダムを隔てて 25m の距離にあり、標高差は 16 号墳と 6m、12 号墳と 7m を測る。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>墳丘盛土は現存する東油山の各古墳に比べて良好であるが、墳丘頂部付近の盛土は、流出し天井石であろうと思われる石材が露出している。また、玄門付近の盛土も流出しており、墳裾は不明瞭であるが、現状より墳丘規模は、主体部主軸方向に 7m、主軸と直交する方向に 6m を測る円墳であろうと考えられる。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/T14_chamber.png" data-cap="倉瀬戸古墳群 14 号墳石室実測図" aria-label="倉瀬戸古墳群 14 号墳石室実測図を拡大"><img loading="lazy" src="images/T14_chamber.png" alt="倉瀬戸古墳群 14 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>倉瀬戸古墳群 14 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の埋葬施設は、開口主軸方向を S-78°-E にとる両袖単室の横穴式石室である。石室の残存状態は東油山地区の古墳の中におい比較的良好であるが、土砂の流入のため床面は明確でなく、現状において奥壁幅 184cm、右側壁幅 200cm、左側壁幅 200cm を測る。</p><p>奥壁は 4 段で、腰石は 180cm×100cm の石材と 50cm×30cm の石材の 2 枚を横位に使用している。2 段目以上は、60cm×50cm 程度の石材を 3 段に積み、その両脇に 30cm×20cm 程度の石材を数個積み上げている。</p><p>右側壁の腰石は 140cm×80cm 程度の石材と 70cm×80cm 程度の石材とを 2 枚使用し、腰石と高さをあわせるために 40cm×30cm 程度の石材を使用している。2 段目には 90cm×60cm 程度の石材を 60cm×40cm 程度の石材を横位に積んでいる。3 段目は 70cm×50cm 程度の石材と 60cm×20cm 程度の石材を使用し、さらにその上に 50cm×30cm 程度の石材を積み上げている。右側壁上部は石材が認められない。</p><p>左側壁の腰石は奥壁側に 110cm×75cm 程度の石材、前壁側に 60cm×30cm 程度の石材を設置し、前壁側の腰石の上には、奥壁側の腰石と高さをあわせるように 70cm×35cm 程度の石材を積み上げている。2 段目は 50cm×50cm 程度の石材と 60cm×30cm 程度の石材と 80cm×40cm 程度の石材を使用している。3 段目は 90cm×40cm 程度の石材と 60cm×40cm 程度の石材を使用し、4 段目には 30cm×30cm 程度の石材を数個使用しており、その上に 60cm×40cm 程度の石材を積み上げている。また、2 段目からは、奥壁にかかる力石の使用が認められる。</p><p>前壁は楣石に 100cm×60cm 程度の石材を使用しており、その上に 80cm×40cm 程度の石材を積み上げている。</p><p>羨道は玄室より土砂の流入が激しく詳細は不明であるが、現状では、羨道右側壁長は 200cm で、80cm×50cm 程度の石材と 40cm×30cm 程度の石材を横に並べ、その上に 100cm×30cm 程度の石材と 45cm×25cm 程度の石材を 2 枚横位に積んでいる。羨道左側壁長は 175cm で 80cm×60cm 程度の石材と 40cm×40cm 程度の石材を使用しており、その上に一段目よりやや小さめの石材を数個積み上げている。石材は油山で多く見られる花崗岩である。</p></div></div></div>
+  </div>
+</section>
+<section id="t15" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">07</span>
+    <h2>15 号墳</h2>
+  </header>
+  <div class="sec-body">
+<p>本墳は北に延びる丘陵の標高 77.5m の東側斜面に立地し、14 号墳より南の方向 6m の距離にある。16 号墳より南東の方向 18m の距離にあり、標高差約 6m を測る。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>墳丘盛土は砂防ダム建設のおりに天井石が見えるほど削りとられ、その後に人工的な盛土をほどこされた為にほとんど原形をとどめていない。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/T15_chamber.png" data-cap="倉瀬戸古墳群 15 号墳石室実測図" aria-label="倉瀬戸古墳群 15 号墳石室実測図を拡大"><img loading="lazy" src="images/T15_chamber.png" alt="倉瀬戸古墳群 15 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>倉瀬戸古墳群 15 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の埋葬施設は、開口主軸方向を S-26°-W にとり、北へ延びる丘陵の東側の谷に向って開口する両袖単室の横穴式石室である。石室の残存状態は比較的良好であるが、多量の土砂が流入しており、床面、腰石は判然としない。現状において、奥壁幅 162cm 右側壁輻 102cm、左側壁幅 108cm を測り、横長長方形プランを呈し、小石室の形態を示すと思われる。</p><p>奥壁は 6 段で、腰石は 130cm×40cm 程度の石材を横位に設置し、2 段目からは 50cm×20cm 程度の石材を積み上げている。2 段目と 3 段目には、栗石の使用が見られる。また、上部にはせり出しが見られ、特に右側壁側の石材のせり出しが激しい。</p><p>右側壁は 5 段で、腰石は土砂の流入によりわずかにしか表出しておらず、2 段目からは 40cm×40cm 程度の石材を使用している。また、2 段目、3 段目に奥壁に架構される力石の使用が見られる。</p><p>左側壁は 5 段で、腰石は 70cm×60cm 程度の石材を設置しており、それより上段になると、30cm×30cm 程度の石材を積み上げている。2 段目、3 段目には右側壁と同様に、力石の使用が見られる。</p><p>右側壁と左側壁を比べた場合、左側壁の石積みは比較的雑で石材の大きさはふぞろいであり、壁面もそろっていない。</p><p>前壁は 80cm×30cm 程度の石材を横位に用い 1 段である。左袖石は 50cm×40cm 程度の石材であり、右袖石は 20cm×20cm 程度の小ぶりの石材であるが、下部は土に埋もれているために大きさは判然としない。</p><p>羨道部もかなりの土砂の流入により、詳細は不明であるが、現状羨道長は 116cm を測り、羨道右側壁は 50cm×20cm 程度の石材を使用し、その上に 50cm×40cm 程度の石材を積み上げている。道左側壁は 50cm×40cm 程度の石材を使用しており、2 段目からは 20cm×20cm 程度の小ぶりの石材を積み上げている。</p><p>全体的に見て本墳は、倉瀬戸古墳群中では石室の規模、使用している石材の大きさはいずれも著しく小さく、石積みについても比較的雑である。尚、本墳の石材は花崗岩である。</p></div></div></div>
+  </div>
+</section>
+<section id="t16" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">08</span>
+    <h2>16 号墳</h2>
+  </header>
+  <div class="sec-body">
+<p>本墳は北に延びる丘陵の屋根稜線に近い東側斜面に位置し、標高約 82m～84m の間に存在する。本墳は同一丘陵上に位置する 10 号墳～15 号墳がゆるやかな斜面に立地するのに対して、比較的急な斜面に立地し、14 号墳より西に約 15m、標高差 6m、15 号墳より北西に 18m、標高差 6m の距離を測る。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>墳丘盛土は石室の石抜き、あるいは自然崩壊により、著しく流出し、同一丘陵上の古墳と比べて残存状態が悪く、ほとんど原形をとどめていない。しかし、西側に墳丘と思われる盛り上がりが認められる。現状から見て墳丘径は、主体部主軸方向に 6m、主軸と直交する方向に 6m を測る円墳である。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/T16_chamber.png" data-cap="倉瀬戸古墳群 16 号墳石室実測図" aria-label="倉瀬戸古墳群 16 号墳石室実測図を拡大"><img loading="lazy" src="images/T16_chamber.png" alt="倉瀬戸古墳群 16 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>倉瀬戸古墳群 16 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の埋葬施設は、ほぼ南東に開口する横穴式石室である。石室は石抜き、あるいは自然崩壊の為に天井石及び周壁上部の石材を失っており、また、多量の土砂の流入を受け、床面や腰石は不明瞭である。現状で奥壁幅約 180cm、右側壁幅約 160cm、左側壁幅約 240cm を測る。現状では奥壁は現床面より 3 段残っており、壁高は約 120cm である。</p><p>腰石は 90cm×60cm 程度の石材を 2 枚横位に使用し、2 段目は 40cm×40cm 程度の石材を 3 枚並べている。3 段目には 20cm×20cm 程度の小ぶりの石材を 3 枚並べて積み上げている。また、2 段目と 3 段目に数個の栗石の使用と 2 段目から左側壁へ架構する力石の使用が見られる。</p><p>右側壁は現床面より 3 段残っており、壁高は 80cm である。腰石には 50cm×20cm 程度の石材を 3 枚使用し、2 段目には 40cm×25cm 程度の石材を 3 枚使用している。3 段目には 40cm×30cm 程度の 3 枚並べて積み上げている。2 段目と 3 段目には栗石の使用が見られる。</p><p>左側壁は現床面より 3 段残っており、壁高は 80cm である。腰石は 70cm×40cm の石材を横位に設置しているが、土砂の流入によって若干埋没している。2 段目は 50cm×20cm 程度の石材を 3 枚使用している。3 段目には 40cm×30cm 程度の石材を 2 枚使用している。羨道と袖石は土砂の流入及び、崩壊により不明である。また、石抜き及び、自然崩壊の為に奥壁上部と左側壁においては、せり出しが激しく認められる。本墳の石材はすべて花崗岩である。</p></div></div></div>
+<p class="note">＊倉瀬戸古墳群 10～16 号墳の文面および作図は 1984 年福岡大学歴史研究部考古学班発行「七隈 21 号」より転用した。従って、古墳の分布状況、文面および作図は当時のものである。</p>
+  </div>
+</section>
+<section id="B" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">09</span>
+    <h2>B 支群（仮称）</h2>
+  </header>
+  <div class="sec-body">
+<h3 class="tomb">倉瀬戸古墳群 B 支群 1 号墳（仮称）</h3>
+<p>本墳は北東に延びる丘陵のほぼ尾根稜線上、先端部の標高 117m～119.5m の間に位置し、同一丘陵の斜面上に存在する 2 号墳より北東に 14m の所に存在する。本墳の立地する丘陵の南東側および北西側には谷が走っており、南東側斜面は急であるが、北西側は比較的ゆるやかな斜面となっている。また、本墳の存在する丘陵頂部は、標高 120～130m の間で比較的平坦な地形を保っており、本墳の存在する所より北側に丘陵が派生している。また、本墳の位置から早良平野を望むことができる。</p>
+<div class="pair pair-mound"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/B_topo.png" data-cap="倉瀬戸古墳群 B 支群（仮称）地形図" aria-label="倉瀬戸古墳群 B 支群（仮称）地形図を拡大"><img loading="lazy" src="images/B_topo.png" alt="倉瀬戸古墳群 B 支群（仮称）地形図"></button>
+  <figcaption><span class="cap-mark">図</span>倉瀬戸古墳群 B 支群（仮称）地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の墳丘盛山は、自然崩壊及び石抜きによってそのほとんどが流出しており、一見して墳丘と判断するのは困難である。現状では本墳の北東側および南東側にその盛り上がりを確認できる。現状での墳径および墳丘形は、南北に約 5m、東西に約 6m を測る不整形な積円形を呈している。また、本墳の南東側、羨道部付近には数個の石が点在している。</p></div></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>本墳の埋葬施設は、ほぼ南に開口する両袖単室の横穴式石室であると考えられるが、土砂流入や石材の流出、落ち込みなどによってその原形をとどめていない。現状では床面より奥壁 2 段、左側壁 2 段、右側壁 2 段の石積みを、前壁は左の袖石を確認できる。天井は現存せず、道部は土砂によって完全に埋まっている。</p><p>奥壁は現床面より 1 段目に大ぶりの石材を横位に置き、その右側に細長い石材を縦位にならべ、2 段目は中央に細長い石材を横位に 1 枚、その両隣りに小ぶりの石材を 1 枚ずつ並べている。</p><p>左側壁は前壁側が土砂によって埋まっているが、現床面より 1 段目は、奥壁側に大ぶりの石材を横位に置き、その羨道部側にほぼ方形の石材をならべて置いている。2 段目は細長い石材を横位に 3 枚並べて積んでいる。</p><p>右側壁も前壁側が土砂によって埋まっているが、現床面より 1 段目は、奥壁側に細長い石材を横位に置き、2 段目は細長い石材を横位に 2 枚その上に積んでいる。石積みも全体的にみると、不整な石材を雑に積んでおり、2 段目にせり出しがみられる。力石の使用はみられない。石材はすべて花崗岩を使用している。</p><p>プランについては、右側壁が土砂流入によって袖石が確認できず計測不可能であるが、奥壁幅 1.49m×左側壁幅 1.19m の横長長方形プランを呈していると思われる。</p></div></div>
+<p class="part part-chamber"><span>表採遺物</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/B1_pottery.png" data-cap="倉瀬戸古墳群 B 支群 1 号墳表採遺物（表採土器実測図）" aria-label="倉瀬戸古墳群 B 支群 1 号墳表採遺物（表採土器実測図）を拡大"><img loading="lazy" src="images/B1_pottery.png" alt="倉瀬戸古墳群 B 支群 1 号墳表採遺物（表採土器実測図）"></button>
+  <figcaption><span class="cap-mark">図</span>倉瀬戸古墳群 B 支群 1 号墳表採遺物（表採土器実測図）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>また、平板実測中に羨道理土上より須恵器片を表採した。その須恵器はほぼ 6 分の 1 残存し、坏蓋片と思われる。復元は径 18.0cm、器高 1.6cm を測る。全体に扁平な形状を呈し、天井部は平担をなすと思われ体部はやや外反している。口端部は丸みを帯びた断面三角に短く屈曲させる。内外面はナデ調整を行う。色調は青灰色を呈し、胎土は良質、焼成は良好である。</p>
+<h3 class="tomb">倉瀬戸古墳群 B 群 2 号墳（仮称）</h3>
+<p>本墳は北東に延びる丘陵の標高 113.5m～116.0m、尾根稜線に近い南側のかなり急な斜面に存在している。丘陵頂部に存在する 1 号墳より南西約 14m の距離にあり、標高差約 3.5m である。東側に落ち込みがあり、墳丘を一部削っている。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>本墳の墳丘盛土はかなり流出しており原形をとどめていないが、東側落ち込みにかかる部分を除いて、全体に墳丘と思われる盛り上がりがみられ、残存状態は東油山地区中では比較的良い方である。現状では、石室主軸方向で 8m、主軸と直交方向に 7m を測る不整円形を呈し、谷に向かって等高線に直交して開口している。墳丘南側には石材が数個露出している。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/B2_chamber.png" data-cap="倉瀬戸古墳群 B 支群（仮称）2 号墳石室実測図" aria-label="倉瀬戸古墳群 B 支群（仮称）2 号墳石室実測図を拡大"><img loading="lazy" src="images/B2_chamber.png" alt="倉瀬戸古墳群 B 支群（仮称）2 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>倉瀬戸古墳群 B 支群（仮称）2 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の埋葬施設は、主軸を S-80-E にとり、ほぼ南に開口する両袖単室の横穴式石室である。天井石はすでにない。石室内は土砂流入のため、かなり埋没しており、床面、前壁付近については明確ではない。</p><p>奥壁はかなり埋没しており、現床面より 1 段目に大小 2 個の石材を用いている。2 段目に縦 30cm、横 1m を越えない程度の石材を横位に積み、小ぶりの石材で幅を合わせながら 4 段積みあげ、現在 5 段の石積みを確認することができる。</p><p>右側壁は土砂流入が激しいために、奥壁側の四段の石積みしか確認することができない。100cm×30cm 程度の面を調整した長方形の石材を横位に 3 段積み上げ、隅角もていねいに構築されている。4 段目から奥壁 3 段目にかけて、縦 40cm、横 60cm 程の大きな石材を用いた力石の使用がみられる。</p><p>左側壁においては、右側壁に比べると石材の形や大きさなどが整っておらず、前壁側の 1 段目を除いてはほとんど加工のあとがみられない。奥壁との間に二段目から力石の使用がみられる。右側壁や奥壁のように、石材を横位に積む石積みがあまりみられず、せり出しも激しいために、石積みが非常に雑である。現状では、4 段ほどの石積みを確認することができるが、前壁側では状態が悪く 2 段程しか残っていない。</p><p>前壁は石抜き、土砂流入などによって楣石と左の袖石しか確認できない。楣石は縦 50cm×横 130cm の大きな石材を使用しているが、そのすぐ下まで土砂が流入しており玄門や羨道などの様子は不明である。袖石は土砂から 14cm 程露出している石の上に、高さ 8cm 程の小ぶりの石をのせて、その上に楣石を架構している。石室内には、石室の石材であろうと思われる数個の石材が落ち込んでおり、石室全体の様子を不明確にしている。</p><p>現状での石室の規模は、右側壁幅、前壁幅などは計測不可能であるが、奥壁幅 1.94m、左側壁幅 1.40m を測る横長長方形プランを呈する。石材は全て花崗岩を使用している。</p></div></div></div>
+<p class="note">＊倉瀬戸古墳群 B 支群の文面および作図は 1983 年福岡大学歴史研究部考古学班発行の「七隈 20 号」より転用した。従って、古墳の分布状況、文面および作図は当時のものである。</p>
+  </div>
+</section>
+<section id="plates" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">10</span>
+    <h2>地形図と石室</h2>
+  </header>
+  <div class="sec-body">
+<p>倉瀬戸古墳群の地形図と石室実測図を、群の下部・上部ごとに一括して掲げる。各図版は拡大して細部まで確認できる。</p>
+<h3 class="tomb">倉瀬戸古墳群（下部）</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/plate_lower.png" data-cap="倉瀬戸古墳群 地形図と石室（下部）" aria-label="倉瀬戸古墳群 地形図と石室（下部）を拡大"><img loading="lazy" src="images/plate_lower.png" alt="倉瀬戸古墳群 地形図と石室（下部）"></button>
+  <figcaption><span class="cap-mark">図</span>倉瀬戸古墳群 地形図と石室（下部）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">倉瀬戸古墳群（上部）</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/plate_upper.png" data-cap="倉瀬戸古墳群 地形図と石室（上部）" aria-label="倉瀬戸古墳群 地形図と石室（上部）を拡大"><img loading="lazy" src="images/plate_upper.png" alt="倉瀬戸古墳群 地形図と石室（上部）"></button>
+  <figcaption><span class="cap-mark">図</span>倉瀬戸古墳群 地形図と石室（上部）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="ft">
+    <b>倉瀬戸古墳群 現状調査報告書（改訂版）</b>
+    2023年　油山古墳研究室<br>
+    本文および作図の出典：福岡大学歴史研究部考古学班「七隈 20 号」（1983）・「七隈 21 号」（1984）／<br>
+    倉瀬戸古墳群調査団「倉瀬戸古墳群発掘調査報告書」（1971）ほか。<br>
+    デジタル版（原報告書より編集）
+  </div>
+</footer>
+
+<button class="totop" id="toTop" aria-label="ページ上部へ戻る">↑</button>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="目次">
+  <div class="dh"><b>目　次</b><button class="x" id="tocClose" aria-label="閉じる">×</button></div>
+  <nav><ol><li><a href="#env" class="toc-link"><span class="toc-no">01</span><span class="toc-t">立地と環境</span></a></li><li><a href="#t10" class="toc-link"><span class="toc-no">02</span><span class="toc-t">10 号墳</span></a></li><li><a href="#t11" class="toc-link"><span class="toc-no">03</span><span class="toc-t">11 号墳</span></a></li><li><a href="#t12" class="toc-link"><span class="toc-no">04</span><span class="toc-t">12 号墳</span></a></li><li><a href="#t13" class="toc-link"><span class="toc-no">05</span><span class="toc-t">13 号墳</span></a></li><li><a href="#t14" class="toc-link"><span class="toc-no">06</span><span class="toc-t">14 号墳</span></a></li><li><a href="#t15" class="toc-link"><span class="toc-no">07</span><span class="toc-t">15 号墳</span></a></li><li><a href="#t16" class="toc-link"><span class="toc-no">08</span><span class="toc-t">16 号墳</span></a></li><li><a href="#B" class="toc-link"><span class="toc-no">09</span><span class="toc-t">B 支群（仮称）</span></a></li><li><a href="#plates" class="toc-link"><span class="toc-no">10</span><span class="toc-t">地形図と石室</span></a></li></ol></nav>
+</aside>
+
+<div class="lb" id="lb" aria-hidden="true">
+  <div class="lb-top">
+    <div class="lb-cap" id="lbCap"></div>
+    <button id="lbZoom">拡大 +</button>
+    <button id="lbClose">閉じる ×</button>
+  </div>
+  <div class="lb-stage" id="lbStage"><img id="lbImg" alt=""></div>
+  <div class="lb-foot">拡大・縮小して細部まで確認できます</div>
+</div>
+
+<script>
+(function(){
+  var drawer=document.getElementById('drawer'),scrim=document.getElementById('scrim');
+  function openD(){drawer.classList.add('open');scrim.classList.add('open');}
+  function closeD(){drawer.classList.remove('open');scrim.classList.remove('open');}
+  document.getElementById('tocOpen').addEventListener('click',openD);
+  document.getElementById('tocClose').addEventListener('click',closeD);
+  scrim.addEventListener('click',closeD);
+  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeD);});
+
+  // back to top
+  var toTop=document.getElementById('toTop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>600) toTop.classList.add('show'); else toTop.classList.remove('show');
+  },{passive:true});
+  toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+
+  // smooth anchor scroll with header offset
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href').slice(1),el=document.getElementById(id);
+      if(el){e.preventDefault();var y=el.getBoundingClientRect().top+window.scrollY-56;
+        window.scrollTo({top:y,behavior:'smooth'});history.replaceState(null,'','#'+id);}
+    });
+  });
+
+  // Lightbox with zoom & pan
+  var lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),
+      lbCap=document.getElementById('lbCap'),lbStage=document.getElementById('lbStage');
+  var scale=1,tx=0,ty=0,start=null,pinch=null;
+  function apply(){lbImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function reset(){scale=1;tx=0;ty=0;apply();document.getElementById('lbZoom').textContent='拡大 +';}
+  function open(src,cap){lbImg.src=src;lbImg.alt=cap;lbCap.textContent=cap;reset();
+    lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+  function close(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';lbImg.src='';}
+  document.querySelectorAll('.fig-btn').forEach(function(b){
+    b.addEventListener('click',function(){open(b.getAttribute('data-src'),b.getAttribute('data-cap'));});
+  });
+  document.getElementById('lbClose').addEventListener('click',close);
+  document.getElementById('lbZoom').addEventListener('click',function(){
+    scale=(scale>1?1:2.4);if(scale===1){tx=0;ty=0;}apply();this.textContent=scale>1?'戻す −':'拡大 +';
+  });
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target===lbStage)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))close();});
+
+  // double tap to zoom
+  var lastTap=0;
+  lbStage.addEventListener('click',function(e){
+    var now=Date.now();
+    if(now-lastTap<300){scale=(scale>1?1:2.4);if(scale===1){tx=0;ty=0;}apply();
+      document.getElementById('lbZoom').textContent=scale>1?'戻す −':'拡大 +';}
+    lastTap=now;
+  });
+  // drag pan (mouse + 1 finger)
+  lbImg.addEventListener('mousedown',function(e){if(scale<=1)return;start={x:e.clientX-tx,y:e.clientY-ty};e.preventDefault();});
+  window.addEventListener('mousemove',function(e){if(start){tx=e.clientX-start.x;ty=e.clientY-start.y;apply();}});
+  window.addEventListener('mouseup',function(){start=null;});
+  lbImg.addEventListener('touchstart',function(e){
+    if(e.touches.length===1&&scale>1){start={x:e.touches[0].clientX-tx,y:e.touches[0].clientY-ty};}
+    else if(e.touches.length===2){var dx=e.touches[0].clientX-e.touches[1].clientX,dy=e.touches[0].clientY-e.touches[1].clientY;
+      pinch={d:Math.hypot(dx,dy),s:scale};}
+  },{passive:true});
+  lbImg.addEventListener('touchmove',function(e){
+    if(pinch&&e.touches.length===2){var dx=e.touches[0].clientX-e.touches[1].clientX,dy=e.touches[0].clientY-e.touches[1].clientY;
+      scale=Math.min(5,Math.max(1,pinch.s*Math.hypot(dx,dy)/pinch.d));if(scale===1){tx=0;ty=0;}apply();e.preventDefault();}
+    else if(start&&e.touches.length===1&&scale>1){tx=e.touches[0].clientX-start.x;ty=e.touches[0].clientY-start.y;apply();e.preventDefault();}
+  },{passive:false});
+  lbImg.addEventListener('touchend',function(e){if(e.touches.length===0){start=null;pinch=null;}});
+})();
+</script>
+</body>
+</html>
