@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<meta name="description" content="駄ヶ原古墳群 現状調査報告書（改訂版・2023年／油山古墳研究室）デジタル版。福岡市・油山山麓の一大群集墳。A〜I の 9 支群・65 基の現状調査記録。">
+<title>駄ヶ原古墳群 現状調査報告書｜油山古墳研究室</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Noto+Serif+JP:wght@400;600&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ffffff; --paper2:#f6f5f2; --card:#ffffff;
+  --ink:#1a1a1a; --ink2:#565656; --line:#d8d8d4; --line2:#ececea;
+  --clay:#7a2e2e; --clay2:#5e2222; --ochre:#8a6a2e; --sage:#3f4a3a;
+  --shadow:0 1px 2px rgba(0,0,0,.05),0 3px 12px rgba(0,0,0,.05);
+  --maxw:760px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Noto Serif JP",serif; font-weight:400; line-height:1.95;
+  font-size:16px; letter-spacing:.01em;
+  text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased;
+}
+/* faint paper grain */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;display:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--clay2);text-decoration:none}
+
+/* ---- Top bar ---- */
+.bar{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:.6rem;
+  padding:.55rem .9rem;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);}
+.bar .brand{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:.98rem;
+  letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .brand small{color:var(--ink2);font-weight:500;font-size:.72rem;margin-left:.4rem}
+.bar .spacer{flex:1}
+.toc-toggle{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.82rem;
+  color:var(--paper2);background:var(--clay);border:none;border-radius:999px;
+  padding:.42rem .95rem;cursor:pointer;letter-spacing:.08em;box-shadow:var(--shadow);transition:background .2s}
+.toc-toggle:hover{background:var(--clay2)}
+.toc-toggle::before{content:"☰ ";font-size:.9em}
+
+/* ---- Hero (title page, white) ---- */
+.hero{position:relative;z-index:1;background:#fff;border-bottom:1px solid var(--line)}
+.hero-inner{max-width:var(--maxw);margin:0 auto;padding:3rem 1.3rem 2.2rem;text-align:center}
+.hero .kicker{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:500;letter-spacing:.4em;
+  font-size:.72rem;color:var(--ink2);margin:0 0 1.4rem;text-indent:.4em}
+.hero h1{font-family:"Shippori Mincho B1",serif;font-weight:800;line-height:1.18;
+  font-size:clamp(2.3rem,8.5vw,3.4rem);letter-spacing:.16em;margin:0;color:var(--ink);text-indent:.16em}
+.hero .sub{font-family:"Shippori Mincho B1",serif;font-weight:500;font-size:clamp(1rem,4.4vw,1.3rem);
+  letter-spacing:.36em;margin:1.1rem 0 0;color:var(--ink);text-indent:.36em;
+  padding-top:1rem;position:relative;display:inline-block}
+.hero .sub::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:54px;height:2px;background:var(--clay)}
+.hero .byline{font-family:"Shippori Mincho B1",serif;font-size:1rem;letter-spacing:.18em;
+  color:var(--ink);margin:1.6rem 0 .3rem}
+.hero .meta{font-family:"Zen Kaku Gothic New",sans-serif;font-size:.78rem;letter-spacing:.08em;
+  color:var(--ink2);margin:.2rem 0 0}
+.cover-fig{margin:2.1rem auto 0;text-align:center}
+.cover-fig figcaption{font-family:"Zen Kaku Gothic New",sans-serif;font-size:.76rem;color:var(--ink2);
+  margin:.7rem auto 0;line-height:1.5}
+
+/* ---- Preface ---- */
+.preface{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:1.8rem 1.3rem .4rem}
+.preface p{font-size:.9rem;color:var(--ink2);line-height:1.85;margin:.2rem 0 .6rem;
+  border-left:3px solid var(--line);padding-left:.9rem}
+
+/* ---- Inline TOC ---- */
+.toc-inline{position:relative;z-index:1;max-width:var(--maxw);margin:1.4rem auto 0;padding:0 1.3rem}
+.toc-inline .tc{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  box-shadow:var(--shadow);padding:1.2rem 1.1rem 1rem}
+.toc-inline .tc h2{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:1.05rem;
+  letter-spacing:.22em;margin:0 0 .9rem;color:var(--clay2);text-align:center}
+.toc-inline .tc h2::before,.toc-inline .tc h2::after{content:"";display:inline-block;width:1.6rem;
+  height:1px;background:var(--line);vertical-align:middle;margin:0 .7rem}
+ol.toc{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:.1rem}
+ol.toc li a{display:flex;align-items:baseline;gap:.7rem;padding:.5rem .5rem;border-radius:8px;
+  color:var(--ink);transition:background .15s}
+ol.toc li a:hover{background:var(--paper)}
+.toc-no{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.72rem;
+  color:var(--clay);min-width:1.6rem;letter-spacing:.05em}
+.toc-t{font-family:"Shippori Mincho B1",serif;font-weight:500;font-size:.98rem;
+  border-bottom:1px dotted transparent}
+ol.toc li a:hover .toc-t{border-bottom-color:var(--line)}
+
+/* ---- Main ---- */
+main{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:1rem 1.3rem 4rem}
+.sec{scroll-margin-top:64px;padding:2.6rem 0 1.2rem;border-top:1px solid var(--line2)}
+.sec:first-of-type{border-top:none}
+.sec-head{display:flex;align-items:center;gap:.85rem;margin:0 0 1.4rem}
+.sec-no{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.78rem;
+  color:var(--paper2);background:var(--clay);border-radius:7px;padding:.28rem .55rem;letter-spacing:.06em;
+  box-shadow:var(--shadow)}
+.sec-head h2{font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:1.5rem;
+  letter-spacing:.12em;margin:0;color:var(--ink)}
+.sec-body p{margin:0 0 1.05rem;text-align:justify}
+
+/* 号墳 heading */
+h3.tomb{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:1.12rem;letter-spacing:.06em;
+  color:var(--clay2);margin:2.1rem 0 1rem;padding:.4rem 0 .5rem .9rem;
+  border-left:4px solid var(--clay);background:none;border-bottom:1px solid var(--line2)}
+h3.tomb::before{content:"";}
+.sec:first-of-type h3.tomb:first-child,.sec-body > h3.tomb:first-child{margin-top:.4rem}
+
+/* 墳丘/石室 labels */
+p.part{margin:1.4rem 0 .6rem;display:flex;align-items:center;gap:.6rem}
+p.part span{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.82rem;
+  letter-spacing:.22em;padding:.18rem .7rem;border-radius:4px}
+p.part::after{content:"";flex:1;height:1px;background:var(--line2)}
+.part-mound span{color:#5a4a2e;background:#f2f0ea;border:1px solid var(--line);border-left:3px solid #8a6a2e}
+.part-chamber span{color:#33402f;background:#eef0ec;border:1px solid var(--line);border-left:3px solid #3f4a3a}
+
+/* notes */
+p.note{font-size:.8rem;line-height:1.7;color:var(--ink2);margin:.5rem 0;padding:.55rem .8rem;
+  background:var(--paper2);border:1px dashed var(--line);border-radius:8px;text-align:justify}
+
+/* figures */
+figure.fig{margin:1.6rem 0 1.8rem;text-align:center}
+.fig-btn{display:inline-block;max-width:100%;padding:0;border:none;background:none;cursor:zoom-in;line-height:0}
+.fig-btn img{margin:0 auto;border:1px solid var(--line);background:#fff;border-radius:6px;
+  box-shadow:var(--shadow);padding:6px;max-height:74vh;width:auto;max-width:100%}
+figure.fig figcaption{font-family:"Zen Kaku Gothic New",sans-serif;font-size:.78rem;color:var(--ink2);
+  margin:.7rem auto 0;max-width:90%;line-height:1.55;letter-spacing:.02em}
+.cap-mark{display:inline-block;font-weight:700;color:var(--paper2);background:var(--sage);
+  border-radius:4px;font-size:.66rem;padding:.06rem .42rem;margin-right:.5rem;letter-spacing:.1em;vertical-align:.06em}
+.cap-hint{display:block;color:var(--ochre);font-size:.68rem;margin-top:.25rem;letter-spacing:.08em}
+.cap-hint::before{content:"⤢ "}
+/* wide data table figure */
+figure.fig-table{margin:1.4rem -1.3rem 1.8rem}
+.table-scroll{width:100%;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;
+  padding:.2rem 1.3rem;touch-action:pan-x pan-y}
+figure.fig-table .fig-btn{display:inline-block;width:auto;max-width:none;cursor:zoom-in;line-height:0}
+figure.fig-table .fig-btn img{max-height:none;width:900px;max-width:none;min-width:0}
+figure.fig-table figcaption{padding:0 1.3rem}
+
+/* ---- 図面と説明の対置（墳丘／石室） ---- */
+.pair{margin:1.6rem 0 1.8rem}
+.pair-label{margin:0 0 .7rem}
+.pair-label span{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.84rem;
+  letter-spacing:.22em;padding:.2rem .8rem;border-radius:4px;display:inline-block}
+.pair-mound .pair-label span{color:#5a4a2e;background:#f2f0ea;border:1px solid var(--line);border-left:3px solid #8a6a2e}
+.pair-chamber .pair-label span{color:#33402f;background:#eef0ec;border:1px solid var(--line);border-left:3px solid #3f4a3a}
+.pair-text p{margin:0 0 1rem;text-align:justify}
+.pair-text p:last-child{margin-bottom:0}
+.pair-figs figure.fig{margin:0 0 .8rem}
+.pair-figs figure.fig:last-child{margin-bottom:0}
+/* 狭い画面：図版を画面上部に固定し、説明文を読む間ずっと見えるように */
+.pair-figs{position:sticky;top:54px;z-index:5;background:#fff;
+  max-height:48vh;overflow:auto;-webkit-overflow-scrolling:touch;
+  padding:.35rem 0 .55rem;border-bottom:1px solid var(--line2)}
+.pair-figs .fig-btn img{max-height:42vh}
+.pair-figs figcaption .cap-hint{display:none}
+@media(min-width:740px){
+  /* 広い画面：図版を左、説明文を右に並べて対置（図版は追従） */
+  .pair-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;align-items:start}
+  .pair-figs{position:sticky;top:64px;max-height:none;overflow:visible;
+    background:transparent;border-bottom:none;padding:0}
+  .pair-figs .fig-btn img{max-height:80vh}
+  .pair-figs figcaption .cap-hint{display:block}
+}
+
+/* ---- Drawer (off-canvas TOC) ---- */
+.scrim{position:fixed;inset:0;z-index:50;background:rgba(28,20,12,.5);opacity:0;visibility:hidden;
+  transition:opacity .25s}
+.scrim.open{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;right:0;z-index:60;height:100%;width:min(85vw,340px);
+  background:var(--paper2);box-shadow:-8px 0 30px rgba(40,28,15,.25);
+  transform:translateX(100%);transition:transform .28s cubic-bezier(.2,.7,.2,1);
+  display:flex;flex-direction:column;border-left:3px solid var(--clay)}
+.drawer.open{transform:translateX(0)}
+.drawer .dh{display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 1.1rem;border-bottom:1px solid var(--line)}
+.drawer .dh b{font-family:"Shippori Mincho B1",serif;font-weight:700;letter-spacing:.2em;font-size:1rem;color:var(--clay2)}
+.drawer .x{border:none;background:none;font-size:1.5rem;line-height:1;color:var(--ink2);cursor:pointer;padding:.2rem .4rem}
+.drawer nav{overflow-y:auto;padding:.5rem .5rem 2rem}
+.drawer ol{list-style:none;margin:0;padding:0}
+.drawer ol li a{display:flex;align-items:baseline;gap:.7rem;padding:.7rem .8rem;border-radius:9px;color:var(--ink)}
+.drawer ol li a:active{background:var(--paper)}
+
+/* ---- Back to top ---- */
+.totop{position:fixed;right:1rem;bottom:1rem;z-index:35;width:46px;height:46px;border-radius:50%;
+  border:1px solid var(--line);background:var(--card);color:var(--clay2);font-size:1.2rem;
+  box-shadow:var(--shadow);cursor:pointer;opacity:0;visibility:hidden;transition:opacity .25s}
+.totop.show{opacity:1;visibility:visible}
+
+/* ---- Lightbox ---- */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(18,13,8,.94);display:none;
+  flex-direction:column;touch-action:none}
+.lb.open{display:flex}
+.lb-top{display:flex;justify-content:space-between;align-items:center;padding:.8rem 1rem;color:#eadfce;
+  font-family:"Zen Kaku Gothic New",sans-serif;font-size:.8rem;gap:1rem}
+.lb-top .lb-cap{flex:1;line-height:1.4}
+.lb-top button{border:1px solid rgba(234,223,206,.4);background:transparent;color:#eadfce;
+  border-radius:8px;padding:.35rem .7rem;cursor:pointer;font-size:.8rem}
+.lb-stage{flex:1;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.lb-stage img{max-width:100%;max-height:100%;touch-action:none;cursor:grab;
+  transform-origin:center center;transition:transform .05s linear;user-select:none;-webkit-user-drag:none}
+.lb-foot{text-align:center;color:#b9a98f;font-family:"Zen Kaku Gothic New",sans-serif;
+  font-size:.7rem;padding:.5rem 1rem .9rem;letter-spacing:.06em}
+
+/* ---- Footer ---- */
+footer{position:relative;z-index:1;border-top:3px double var(--clay);background:var(--paper2);
+  padding:2.2rem 1.3rem 3rem;text-align:center}
+footer .ft{max-width:var(--maxw);margin:0 auto;font-family:"Zen Kaku Gothic New",sans-serif;
+  font-size:.76rem;color:var(--ink2);line-height:1.9;letter-spacing:.03em}
+footer .ft b{font-family:"Shippori Mincho B1",serif;color:var(--clay2);font-size:.95rem;letter-spacing:.16em;display:block;margin-bottom:.5rem}
+
+@media(min-width:680px){
+  body{font-size:16.5px}
+  .fig-btn img{max-width:560px}
+  figure.fig-table .fig-btn img{width:1400px;max-width:none;min-width:0}
+  figure.fig-table{margin:1.4rem 0 1.8rem}
+  figure.fig-table .table-scroll,figure.fig-table figcaption{padding-left:0;padding-right:0}
+}
+/* maps, plates, charts, aerials, topo may show wider */
+.fig-btn[data-src*="p03"] img,.fig-btn[data-src*="p05_f1"] img,
+.fig-btn[data-src*="p18_f1"] img,.fig-btn[data-src*="p22_f1"] img,
+.fig-btn[data-src*="p23"] img,.fig-btn[data-src*="p10_f1"] img,
+.fig-btn[data-src*="p29"] img,.fig-btn[data-src*="p31_f1"] img,
+.fig-btn[data-src^="images/p34_f1"] img,.fig-btn[data-src*="p35"] img,
+.fig-btn[data-src*="p36"] img,.fig-btn[data-src*="p37"] img,
+.fig-btn[data-src*="p38"] img,.fig-btn[data-src*="p39"] img,
+.fig-btn[data-src*="p40"] img,.fig-btn[data-src*="p41"] img{max-width:100%}
+</style>
+<style>
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0 18px;border-radius:10px;border:1px solid var(--line,#dcd6cb)}
+.tbl-wrap table{border-collapse:collapse;width:100%;font-size:.92rem;background:#fff;min-width:320px}
+.tbl-wrap th,.tbl-wrap td{border:1px solid var(--line,#e2ddd2);padding:7px 10px;text-align:center;white-space:nowrap}
+.tbl-wrap thead th{background:var(--accent-soft,#eef4ee);font-weight:700}
+.tbl-wrap td:empty{background:#faf8f4}
+.tbl-cap{font-weight:700;margin:16px 0 4px;font-size:.95rem}
+@media(max-width:640px){.tbl-wrap table{font-size:.82rem}.tbl-wrap th,.tbl-wrap td{padding:6px 8px}}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="brand">駄ヶ原古墳群<small>現状調査報告書</small></div>
+  <div class="spacer"></div>
+  <button class="toc-toggle" id="tocOpen">目次</button>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">福岡市・油山山麓の一大群集墳</p>
+    <h1>駄ヶ原古墳群</h1>
+    <p class="sub">現状調査報告書</p>
+    <p class="byline">2023年　油山古墳研究室</p>
+    <p class="meta">A〜I の 9 支群・全 65 基／横穴式石室を主体とする群集墳</p>
+    <figure class="cover-fig fig">
+      <button class="fig-btn" data-src="images/cover.jpg" data-cap="油山古墳群周辺 航空写真（駄ヶ原古墳群ほか）" aria-label="油山古墳群周辺 航空写真を拡大">
+        <img src="images/cover.jpg" alt="油山古墳群周辺 航空写真">
+      </button>
+      <figcaption><span class="cap-mark">図</span>油山古墳群周辺 航空写真（駄ヶ原古墳群ほか）<span class="cap-hint">拡大表示</span></figcaption>
+    </figure>
+  </div>
+</header>
+
+<div class="preface">
+  <p>本ページは、油山古墳研究室『駄ヶ原古墳群 現状調査報告書（改訂版）』（2023年）のデジタル版です。本文・数値・図版はすべて原報告書のとおりで、内容に改変は加えていません。</p>
+  <p>駄ヶ原（駄ノ原）古墳群は、1976年・1979年・1981年の分布調査を経て A〜I の 9 支群・全 65 基に再編されました。各古墳の記述および作図は、原報告書の註記のとおり 福岡大学歴史研究部刊行「駄ノ原古墳群・霧ヶ滝古墳群分布調査概報」（1976）、「七隈 17 号」（1979）、「七隈 19 号」（1981）等から転用されたものです。なお、各図版は拡大して細部まで確認できます。</p>
+</div>
+
+<nav class="toc-inline" aria-label="目次">
+  <div class="tc">
+    <h2>目　次</h2>
+    <ol class="toc"><li><a href="#env" class="toc-link"><span class="toc-no">01</span><span class="toc-t">立地と環境</span></a></li><li><a href="#reorg" class="toc-link"><span class="toc-no">02</span><span class="toc-t">分布の再編について</span></a></li><li><a href="#A" class="toc-link"><span class="toc-no">03</span><span class="toc-t">A 支群</span></a></li><li><a href="#B" class="toc-link"><span class="toc-no">04</span><span class="toc-t">B 支群</span></a></li><li><a href="#C" class="toc-link"><span class="toc-no">05</span><span class="toc-t">C 支群</span></a></li><li><a href="#D" class="toc-link"><span class="toc-no">06</span><span class="toc-t">D 支群</span></a></li><li><a href="#E" class="toc-link"><span class="toc-no">07</span><span class="toc-t">E 支群</span></a></li><li><a href="#F" class="toc-link"><span class="toc-no">08</span><span class="toc-t">F 支群</span></a></li><li><a href="#G" class="toc-link"><span class="toc-no">09</span><span class="toc-t">G 支群</span></a></li><li><a href="#H" class="toc-link"><span class="toc-no">10</span><span class="toc-t">H 支群</span></a></li><li><a href="#I" class="toc-link"><span class="toc-no">11</span><span class="toc-t">I 支群</span></a></li><li><a href="#relics" class="toc-link"><span class="toc-no">12</span><span class="toc-t">表採遺物</span></a></li><li><a href="#plates" class="toc-link"><span class="toc-no">13</span><span class="toc-t">地形図と石室</span></a></li></ol>
+  </div>
+</nav>
+
+<main>
+<section id="env" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">01</span>
+    <h2>立地と環境</h2>
+  </header>
+  <div class="sec-body">
+<figure class="fig">
+  <button class="fig-btn" data-src="images/env_area.jpg" data-cap="駄ヶ原古墳群周辺分布図" aria-label="駄ヶ原古墳群周辺分布図を拡大"><img loading="lazy" src="images/env_area.jpg" alt="駄ヶ原古墳群周辺分布図"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群周辺分布図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>背振山系に属する油山山塊は、北嶺一帯に細長い舌状の低平な丘陵を数多く突出させ、福岡平野を展開しながら博多湾にいたっている。その丘陵群や谷間には数多くの古墳群が営まれており、それらの古墳群は存在地域別に西より、山崎古墳群（野芥 消滅）、西油山古墳群（野芥）、霧ヶ滝古墳群（野芥）、駄ヶ原古墳群（梅林）、大谷古墳群（梅林）、梅林古墳群（梅林 消滅）、七隈古墳群（七隈 消滅）、倉瀬戸古墳群（片江倉瀬戸）、早苗田古墳群（片江早苗田）、鳥越古墳群（片江鳥越）、瀬戸口古墳群（東油山）、井出古墳群（東油山）、東油山古墳群（東油山）、太平寺古墳群（桧原）、荒谷古墳群（柏原 消滅）、四十塚古墳群（柏原）、大牟田古墳群（柏原）、柏原古墳群（柏原 消滅）と続き、一大群集をなしている。</p>
+<p>今回調査対象とした駄ヶ原古墳群 55 基は、早良平野に面しており、遠くは博多湾、能古島、志賀島を望める位置に立地している。駄ヶ原古墳群は舌状に突出した丘陵上に立地する円墳であり、標高 47m～96m の間に立地し、それらの分布状態および集結状態、同一尾根上と言うことことで、A、B、C、D、E の 5 グループに分けることができる。A、B、C グループは尾根上に、D グループは急斜面上に、E グループは独立尾根上に存在している。現在は A、B、C、D、E、F、G、H、I の 9 支群に再編し、また、当時は駄ノ原古墳群との名称であったが、駄ヶ原古墳群へ変更した。</p>
+<p class="note">＊本文章は 1976 年福岡大学歴史研究部刊行の「駄ノ原古墳群・霧ヶ滝古墳群分布調査概報」より転用。</p>
+  </div>
+</section>
+<section id="reorg" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">02</span>
+    <h2>分布の再編について</h2>
+  </header>
+  <div class="sec-body">
+<p>駄ヶ原古墳群は 1976 年福岡大学歴史研究部刊行の「駄ノ原古墳群・霧ヶ滝古墳群分布調査概報」では A・B・C・D・E の 5 グループで支群分けしていたが、その後、分布調査を再度行い、1979 年福岡大学歴史研究部刊行の「七隈 17 号」で、A・B・C・D・E・F・G・H の 8 支群に細分化し、それに伴い、古墳名称の変更、削除等の修正を報告した。また、1981 年福岡大学歴史研究部刊行の「七隈 19 号」で、分布調査により、新支群を発見し、報告した。のちに I 支群とした。これにより、当古墳群は A 支群 8 基、B 支群 4 基、C 支群 21 基、D 支群 4 基、E 支群 4 基、F 支群 8 基、G 支群 3 基、H 支群 1 基、I 支群 11 基、合わせて 65 基から成り、油山古墳群の中でも一大群集墳を形成している。</p>
+<h3 class="tomb">＜1976 年当時＞</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/map1976_area.png" data-cap="駄ヶ原古墳群周辺分布図（1976 年）" aria-label="駄ヶ原古墳群周辺分布図（1976 年）を拡大"><img loading="lazy" src="images/map1976_area.png" alt="駄ヶ原古墳群周辺分布図（1976 年）"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群周辺分布図（1976 年）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p class="note">＊1976 年福岡大学歴史研究部刊行「駄ノ原古墳群・霧ヶ滝古墳群分布調査概報」より転用</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/map1976_ABC.png" data-cap="駄ヶ原古墳群 A・B・C グループ分布図（1976 年）" aria-label="駄ヶ原古墳群 A・B・C グループ分布図（1976 年）を拡大"><img loading="lazy" src="images/map1976_ABC.png" alt="駄ヶ原古墳群 A・B・C グループ分布図（1976 年）"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 A・B・C グループ分布図（1976 年）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p class="note">＊1976 年福岡大学歴史研究部刊行「駄ノ原古墳群・霧ヶ滝古墳群分布調査概報」より転用</p>
+<h3 class="tomb">＜2023 年現在＞</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/map2023_all.png" data-cap="駄ヶ原古墳群全体分布図（2023 年 8 月作成）" aria-label="駄ヶ原古墳群全体分布図（2023 年 8 月作成）を拡大"><img loading="lazy" src="images/map2023_all.png" alt="駄ヶ原古墳群全体分布図（2023 年 8 月作成）"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群全体分布図（2023 年 8 月作成）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/map2023_A.png" data-cap="駄ヶ原古墳群 A・B・C・D 支群分布図（A 支群）（2023 年 8 月作成）" aria-label="駄ヶ原古墳群 A・B・C・D 支群分布図（A 支群）（2023 年 8 月作成）を拡大"><img loading="lazy" src="images/map2023_A.png" alt="駄ヶ原古墳群 A・B・C・D 支群分布図（A 支群）（2023 年 8 月作成）"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 A・B・C・D 支群分布図（A 支群）（2023 年 8 月作成）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/map2023_BCD.png" data-cap="駄ヶ原古墳群 A・B・C・D 支群分布図（B・C・D 支群）（2023 年 8 月作成）" aria-label="駄ヶ原古墳群 A・B・C・D 支群分布図（B・C・D 支群）（2023 年 8 月作成）を拡大"><img loading="lazy" src="images/map2023_BCD.png" alt="駄ヶ原古墳群 A・B・C・D 支群分布図（B・C・D 支群）（2023 年 8 月作成）"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 A・B・C・D 支群分布図（B・C・D 支群）（2023 年 8 月作成）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/map2023_FGH.png" data-cap="駄ヶ原古墳群 F・G・H 支群分布図（2023 年 8 月作成）" aria-label="駄ヶ原古墳群 F・G・H 支群分布図（2023 年 8 月作成）を拡大"><img loading="lazy" src="images/map2023_FGH.png" alt="駄ヶ原古墳群 F・G・H 支群分布図（2023 年 8 月作成）"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 F・G・H 支群分布図（2023 年 8 月作成）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/map2023_BDEI.png" data-cap="駄ヶ原古墳群 B・D・E・I 支群分布図（2023 年 8 月作成）" aria-label="駄ヶ原古墳群 B・D・E・I 支群分布図（2023 年 8 月作成）を拡大"><img loading="lazy" src="images/map2023_BDEI.png" alt="駄ヶ原古墳群 B・D・E・I 支群分布図（2023 年 8 月作成）"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 B・D・E・I 支群分布図（2023 年 8 月作成）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p class="part part-chamber"><span>新旧名称</span></p>
+<p class="tbl-cap">（駄ヶ原古墳群 A グループ）</p>
+<div class="tbl-wrap"><table><thead><tr><th>旧名称</th><th>新名称</th><th>旧名称</th><th>新名称</th></tr></thead><tbody><tr><td>A1号墳</td><td>除外</td><td>A8号墳</td><td>A支群2号墳</td></tr><tr><td>A2号墳</td><td>A支群5号墳</td><td>A9号墳</td><td>A支群1号墳</td></tr><tr><td>A3号墳</td><td>A支群4号墳</td><td>A10号墳</td><td>除外</td></tr><tr><td>A4号墳</td><td>A支群8号墳</td><td>A11号墳</td><td>C支群21号墳</td></tr><tr><td>A5号墳</td><td>A支群7号墳</td><td>A12号墳</td><td>C支群20号墳</td></tr><tr><td>A6号墳</td><td>A支群6号墳</td><td>A13号墳</td><td>C支群19号墳</td></tr><tr><td>A7号墳</td><td>A支群3号墳</td><td></td><td></td></tr></tbody></table></div>
+<p class="tbl-cap">（駄ヶ原古墳群 B グループ）</p>
+<div class="tbl-wrap"><table><thead><tr><th>旧名称</th><th>新名称</th><th>旧名称</th><th>新名称</th></tr></thead><tbody><tr><td>B1号墳</td><td>除外</td><td>B7号墳</td><td>B支群1号墳</td></tr><tr><td>B2号墳</td><td>除外</td><td>B8号墳</td><td>D支群4号墳</td></tr><tr><td>B3号墳</td><td>B支群3号墳</td><td>B9号墳</td><td>D支群2号墳</td></tr><tr><td>B4号墳</td><td>除外</td><td>B10号墳</td><td>D支群1号墳</td></tr><tr><td>B5号墳</td><td>除外</td><td>新規</td><td>B支群4号墳</td></tr><tr><td>B6号墳</td><td>B支群2号墳</td><td></td><td></td></tr></tbody></table></div>
+<p class="tbl-cap">（駄ヶ原古墳群 C グループ）</p>
+<div class="tbl-wrap"><table><thead><tr><th>旧名称</th><th>新名称</th><th>旧名称</th><th>新名称</th></tr></thead><tbody><tr><td>C1号墳</td><td>C支群1号墳</td><td>C10号墳</td><td>C支群10号墳</td></tr><tr><td>C2号墳</td><td>C支群2号墳</td><td>C11号墳</td><td>C支群11号墳</td></tr><tr><td>C3号墳</td><td>C支群3号墳</td><td>C12号墳</td><td>C支群12号墳</td></tr><tr><td>C4号墳</td><td>C支群4号墳</td><td>C13号墳</td><td>C支群13号墳</td></tr><tr><td>C5号墳</td><td>C支群5号墳</td><td>C14号墳</td><td>C支群14号墳</td></tr><tr><td>C6号墳</td><td>C支群6号墳</td><td>C15号墳</td><td>C支群15号墳</td></tr><tr><td>C7号墳</td><td>C支群7号墳</td><td>C16号墳</td><td>C支群16号墳</td></tr><tr><td>C8号墳</td><td>C支群8号墳</td><td>C17号墳</td><td>C支群17号墳</td></tr><tr><td>C9号墳</td><td>C支群9号墳</td><td>C18号墳</td><td>C支群18号墳</td></tr></tbody></table></div>
+<p class="tbl-cap">（駄ヶ原古墳群 D グループ）</p>
+<div class="tbl-wrap"><table><thead><tr><th>旧名称</th><th>新名称</th><th>旧名称</th><th>新名称</th></tr></thead><tbody><tr><td>D1号墳</td><td>F支群1号墳</td><td>D6号墳</td><td>F支群6号墳</td></tr><tr><td>D2号墳</td><td>F支群2号墳</td><td>D7号墳</td><td>F支群7号墳</td></tr><tr><td>D3号墳</td><td>F支群3号墳</td><td>D8号墳</td><td>F支群8号墳</td></tr><tr><td>D4号墳</td><td>F支群4号墳</td><td>D9号墳</td><td>G支群2号墳</td></tr><tr><td>D5号墳</td><td>F支群5号墳</td><td>新規</td><td>D支群3号墳</td></tr></tbody></table></div>
+<p class="tbl-cap">（駄ヶ原古墳群 E グループ）</p>
+<div class="tbl-wrap"><table><thead><tr><th>旧名称</th><th>新名称</th><th>旧名称</th><th>新名称</th></tr></thead><tbody><tr><td>E1号墳</td><td>E支群1号墳</td><td>E3号墳</td><td>E支群3号墳</td></tr><tr><td>E2号墳</td><td>E支群2号墳</td><td>E4号墳</td><td>E支群4号墳</td></tr></tbody></table></div>
+<p class="part part-chamber"><span>改訂後</span></p>
+<p class="tbl-cap">（駄ヶ原古墳群 A 支群）　8 基</p>
+<div class="tbl-wrap"><table><tbody><tr><td>A支群1号墳（旧A9号墳）</td><td>A支群2号墳（旧A8号墳）</td><td>A支群3号墳（旧A7号墳）</td></tr><tr><td>A支群4号墳（旧A3号墳）</td><td>A支群5号墳（旧A2号墳）</td><td>A支群6号墳（旧A6号墳）</td></tr><tr><td>A支群7号墳（旧A5号墳）</td><td>A支群8号墳（旧A4号墳）</td><td></td></tr></tbody></table></div>
+<p class="tbl-cap">（駄ヶ原古墳群 B 支群）　4 基</p>
+<div class="tbl-wrap"><table><tbody><tr><td>B支群1号墳（旧B7号墳）</td><td>B支群2号墳（旧B6号墳）</td><td>B支群3号墳（旧B3号墳）</td></tr><tr><td>B支群4号墳（新規）</td><td></td><td></td></tr></tbody></table></div>
+<p class="tbl-cap">（駄ヶ原古墳群 C 支群）　21 基</p>
+<div class="tbl-wrap"><table><tbody><tr><td>C支群1号墳（旧C1号墳）</td><td>C支群2号墳（旧C2号墳）</td><td>C支群3号墳（旧C3号墳）</td></tr><tr><td>C支群4号墳（旧C4号墳）</td><td>C支群5号墳（旧C5号墳）</td><td>C支群6号墳（旧C6号墳）</td></tr><tr><td>C支群7号墳（旧C7号墳）</td><td>C支群8号墳（旧C8号墳）</td><td>C支群9号墳（旧C9号墳）</td></tr><tr><td>C支群10号墳（旧C10号墳）</td><td>C支群11号墳（旧C11号墳）</td><td>C支群12号墳（旧C12号墳）</td></tr><tr><td>C支群13号墳（旧C13号墳）</td><td>C支群14号墳（旧C14号墳）</td><td>C支群15号墳（旧C15号墳）</td></tr><tr><td>C支群16号墳（旧C16号墳）</td><td>C支群17号墳（旧C17号墳）</td><td>C支群18号墳（旧C18号墳）</td></tr><tr><td>C支群19号墳（旧A13号墳）</td><td>C支群20号墳（旧A12号墳）</td><td>C支群21号墳（旧A11号墳）</td></tr></tbody></table></div>
+<p class="tbl-cap">（駄ヶ原古墳群 D 支群）　4 基</p>
+<div class="tbl-wrap"><table><tbody><tr><td>D支群1号墳（旧B10号墳）</td><td>D支群2号墳（旧B9号墳）</td><td>D支群3号墳（新規）</td></tr><tr><td>D支群4号墳（旧B8号墳）</td><td></td><td></td></tr></tbody></table></div>
+<p class="tbl-cap">（駄ヶ原古墳群 E 支群）　4 基</p>
+<div class="tbl-wrap"><table><tbody><tr><td>E支群1号墳（旧E1号墳）</td><td>E支群2号墳（旧E2号墳）</td><td>E支群3号墳（旧E3号墳）</td></tr><tr><td>E支群4号墳（旧E4号墳）</td><td></td><td></td></tr></tbody></table></div>
+<p class="tbl-cap">（駄ヶ原古墳群 F 支群）　8 基</p>
+<div class="tbl-wrap"><table><tbody><tr><td>F支群1号墳（旧D1号墳）</td><td>F支群2号墳（旧D2号墳）</td><td>F支群3号墳（旧D3号墳）</td></tr><tr><td>F支群4号墳（旧D4号墳）</td><td>F支群5号墳（旧D5号墳）</td><td>F支群6号墳（旧D6号墳）</td></tr><tr><td>F支群7号墳（旧D7号墳）</td><td>F支群8号墳（旧D8号墳）</td><td></td></tr></tbody></table></div>
+<p class="tbl-cap">（駄ヶ原古墳群 G 支群）　3 基</p>
+<div class="tbl-wrap"><table><tbody><tr><td>G支群1号墳（新規）</td><td>G支群2号墳（旧D9号墳）</td><td>G支群3号墳（新規）</td></tr></tbody></table></div>
+<p class="tbl-cap">（駄ヶ原古墳群 H 支群）　1 基</p>
+<div class="tbl-wrap"><table><tbody><tr><td>H支群1号墳（新規）</td></tr></tbody></table></div>
+<p class="tbl-cap">（駄ヶ原古墳群 I 支群）　11 基</p>
+<div class="tbl-wrap"><table><tbody><tr><td>I支群1号墳（新規）</td><td>I支群2号墳（新規）</td><td>I支群3号墳（新規）</td></tr><tr><td>I支群4号墳（新規）</td><td>I支群5号墳（新規）</td><td>I支群6号墳（新規）</td></tr><tr><td>I支群7号墳（新規）</td><td>I支群8号墳（新規）</td><td>I支群9号墳（新規）</td></tr><tr><td>I支群10号墳（新規）</td><td>I支群11号墳（新規）</td><td></td></tr></tbody></table></div>
+  </div>
+</section>
+<section id="A" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">03</span>
+    <h2>A 支群</h2>
+  </header>
+  <div class="sec-body">
+<p>A 支群の立地には、尾根上の立地と尾根から谷に向かう丘陵の段上である。前者に該当するのは、1, 2, 3, 4, 5 号墳で、1 列に標高 53～89m に位置し、後者は 6, 7, 8 号墳で標高 46～55m に位置する。本グループの総古墳数は 8 基である。</p>
+<p class="note">＊後の分布再編で、A1 号墳、10 号墳は古墳と判明し難く除外。また、分布の位置から A11 号、12 号、13 号は C 支群へ、新たに A 支群 8 基に改訂した。タカバン塚古墳（消滅）は含んでいない。</p>
+<h3 class="tomb">A 支群 1 号墳（旧 A9 号墳）</h3>
+<p>A1, 2, 3, 4, 5 号墳が立地している同一尾根上に本墳も立地し、北西方向へ 15m に A8 号墳がある。標高 62m に位置する。北側墳丘は道路のため、約 7m の崖となっているので墳丘裾部の確認ができない。北西側墳丘高約 1m、南側は墳丘高 3.00m 墳丘径約 13m を測る。天井石らしき石材が露出し、その南側に窪みがあり、その中に 2、3 の石材が重なりあっている状態である。密閉されているので石室構造は不明である。</p>
+<h3 class="tomb">A 支群 2 号墳（旧 A8 号墳）</h3>
+<p>A1, 2, 3, 4, 5 号墳が立地している同一尾根上に本墳も立地し、標高 66m である。北西方向へ 18m に 3 号墳があり、南東方向に 1 号墳がある。北側、南側に高さ 2m ほどの封土をもつが、東側は道路のため崖で不明であり、西側は地形のため切り立っている。墳頂部は平らである。そのため天井石が露出していなかったならば、古墳と見落とす状態である。状況から判断するとかなりの地山掘り込みをしなければ石室を構築できないと思われる。内部構造は両袖横穴式石室である。玄室左側長さ 3.30m、右側長さ 2.90m、奥壁側幅 2.00m、玄門側幅 1.90m、玄門幅 0.60m、現状の高さは 2.00m、側壁腰石が 0.30m ぐらいしか見えないので、かなりの石室高を持つであろう。奥壁側に土が盛られているので、盗掘のあとを物語る。また、玄門より羨道を見ると、かなりの長さを持つ羨道部を付していると思われる。主軸方向は西南西である。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/A02_chamber.png" data-cap="駄ヶ原古墳群 A 支群 2 号墳石室実測図" aria-label="駄ヶ原古墳群 A 支群 2 号墳石室実測図を拡大"><img loading="lazy" src="images/A02_chamber.png" alt="駄ヶ原古墳群 A 支群 2 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 A 支群 2 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">A 支群 3 号墳（旧 A7 号墳）</h3>
+<p>A1, 2, 3, 4, 5 号墳が立地している同一尾根上に本分も立地し、北西へ 15m に 4 号墳があり、南東 18m に 2 号墳がある。墳丘径約 17m を測り、墳丘の高さは南側、西側が 1.50～1.70m あり、他方向は石抜きなどによりかなり攪乱されている。石材は残存せず、長さ 4.20m、幅 3.20m、高さ 1.50m の石抜き穴があるだけである。石抜き穴より推定する石室の大きさは、駄ノ原古墳群中、大グループに含まれる。</p>
+<h3 class="tomb">A 支群 4 号墳（旧 A3 号墳）</h3>
+<p>油山山系の北に延びた小支稜の尾根上に立地する。同一尾根上に、1, 2, 3, 4, 5 号墳が並列して立地し、本墳は北より 2 基目にあたり、標高 58m に位置する。墳丘径は約 12m で、東側墳丘は道拡張のためか、かなりの流出をよぎなくされ、西側は地形上の性質のため、盛土の最下限が不明で、北側および南側の墳丘高約 2m を多少の流出はあろうが、本墳の墳丘高とする。現状は墳丘上部が、径 4m にわたり陥没し、袖石と奥壁の一部と思われる石材が残存しているのみである。主軸方向 S-36°-W、石室全長約 5m、玄室長約 3m、玄門幅約 2m と推定する。墳丘は駄ノ原古墳群中、大グループに匹敵するが、墳丘に比べると石室の貧弱さがうかがえる。</p>
+<h3 class="tomb">A 支群 5 号墳（旧 A2 号墳）</h3>
+<p>1～5 号墳が立地している同一舌状帯に並列して築造され、本墳は 4 号墳から北へ約 10m、一番北側に位置する。同族関係もしくは、墓域を侵さないという配慮からの位置であると思われる。このことは、鳥越古墳群 7, 8, 9 号墳（片江古墳群調査報告書記載）で考察されているのと同様である。現状、墳丘径 10.5m、墳丘高 3m を測る。墳丘上部が幅 3.5m、長さ 6.5m、高さ 1.5m にわたり陥没し、石材のほとんどが抜き取られた状態を呈し、玄門側の側壁と思われる石材が一部残存している。盛土状態は良好である。つまり、石室自体は小規模と推定されるし、高さがないため、築造する際、かなり地山を掘り込んだと考えられる。主軸方向は S-88°-W である。</p>
+<h3 class="tomb">A 支群 6 号墳（旧 A6 号墳）</h3>
+<p>丘陵上より平坦地（谷）へさしかかるなだらかな斜面上に立地し、7 号墳より南へ 10m のところに位置する。なだらかな斜面上であるため、盛土状態は均等であるが、若干東側墳丘が急勾配である。墳丘径 11.50m、現状の高さ 3.00m を測り、一見して古墳であると判断がつくほど、墳丘状態は良好である。</p>
+<p>本古墳は天井石および天井部付近の石材が石室内に落ちているだけで、石室自体はさほどの破壊はみられない。内部構造として、両袖単式横穴式石室で、玄室右側長さ 1.95m、玄室左側長さ 2.15m 奥壁側幅 1.40m、玄門側幅 1.35m、高さ 2.30m を測り、長方形プランを呈する。また、袖石が側壁に対して直角ではなく、鈍角に広がっている。石材は腰石（1～1.50m）を除いては、ほぼ同大（0.60～0.70m）の花崗岩を使用しており、力石は奥壁右側に 2 段目から 4 段目まで使用され、石室石積み技法として斜め積みをとっている。A5 号墳と同様に楣石が腰石とほぼ同大の石材である。石材間の栗石は他の古墳と比べて比較的に数が少ないのが特徴であろう。羨道部は現状の高さ 0.60m、幅 0.60m、長さは閉塞石のため不明である。閉塞石および閉塞のための施設が存在している古墳は、油山の群集墳には少ない。本古墳の閉塞方式としては径 0.20～0.30m の石と土で固められている。その石材は盗掘の際、また、天井部落石を考えたが、これを包んでいる土が石室内の土とは比べものにならないほど、ぎっしりと硬い状態であったため、閉塞施設として解したのである。主軸方向は N-64°-W である。</p>
+<h3 class="tomb">A 支群 7 号墳（旧 A5 号墳）</h3>
+<p>8 号墳の南南西方向へ 25m ほど下った位置に立地し、標高は 47～48m である。墳上はほぼ半分が墳頂部より崩れ去り、ぽっかりと石室が露出している。墳丘径は 10m を測る。</p>
+<p>石室は全長約 5m、玄室は右側長さ 2.1m、左側長さ 2.3m、高さは約 2.4m である。幅は奥壁側が 1.8m、玄門側が 1.5m を測る。石室内部は土砂の落ち込みで、詳細は不明であり、現状では玄室奥壁の右の上より内部が観察できる状ただが、いつ崩れるかわからないほど危険な状態である。石積みは側壁が斜め積みと思われる。袖石は左右が一部観察できるが、巨石だと思われる。天井部に向かってドーム状に構築されているが、やはりせり出しが激しい。主軸方向は S-68°-W である。</p>
+<h3 class="tomb">A 支群 8 号墳（旧 A4 号墳）</h3>
+<p>油山山系の北に延びた小支稜の尾根上に立地し、同一斜面上に、A4, 5, 6, 10 号墳が散在し、本墳は 4 基中、最北端に位置している。現状は、墳頂部が 1.5×1.5m ほど窪んでいるだけで、墳丘状態は良好で、径 14m、高さ 5m を測り、山寄せ構築をとっているので、南東、北西側は丘の斜面が急である。</p>
+<p>内部構造は両袖単式横穴式石室で、縦長長方形プランである。石室長 7.70m で、玄室長は玄室左側長さ 3.10m、右側長さ 3.40m、奥壁側幅 2.00m、玄門側幅 2.60m、玄門幅 1.10m 玄室高 3.40m を測る。羨道部長さ 4.40m、玄門高 1.20m、羨門付近高 0.70m で、玄室規模と均衡がとれている。框石と思われる石材が玄門と玄門より羨門に 0.60m のところにある。疑似複室を思わせる。石材は自然石で、奥壁 1 枚、側壁 2 枚ずつを腰石としている。奥壁の腰石は、縦 2.50m、横 1.8m の三角形の巨石で、その他腰石、袖石、楣石も 1.50m～2.00m の巨石を使用している。2 段目から天井部までは、1.00m～0.70m の大きめの石材とやや小さめの 0.40m～0.50m の石材を組み合わせて積み上げている。側壁側は持ち送りを用いているが、ドーム状を呈していないのに比べ、奥壁、玄門側においてはドーム状を呈している。石積み技法としては特別な技法はなく、石材の面を強調し、石材間の接着度を考えた積み方であろう。</p>
+<p>石材面が斜めの場合、栗石使用がうかがえる。石室構築はせり出し、歪みも少ないので頑丈に仕上げられている。かなりの技術を必要とした古墳である。主軸方向は S-65°-W で、谷向きの開口である。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/A08_chamber.png" data-cap="駄ヶ原古墳群 A 支群 8 号墳石室実測図" aria-label="駄ヶ原古墳群 A 支群 8 号墳石室実測図を拡大"><img loading="lazy" src="images/A08_chamber.png" alt="駄ヶ原古墳群 A 支群 8 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 A 支群 8 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+  </div>
+</section>
+<section id="B" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">04</span>
+    <h2>B 支群</h2>
+  </header>
+  <div class="sec-body">
+<p>B 支群の位置は A 支群の位置する尾根より谷に向かう丘陵と谷をはさんでの谷から尾根へ向かう丘陵上にある。本支群は従来 B グループとして 10 基の構成としていたが、後の分布再編で、B1 号墳、同 2 号、同 4 号、同 5 号墳は古墳とは判断し難く除外。B8～10 号墳は D 支群へ、B7 号墳（B 支群 1 号墳へ）、B6 号墳（同 2 号墳へ）、B3 号墳（変更なし）と新たに発見された古墳（同 4 号墳）の 4 基を B 支群と改訂した。</p>
+<h3 class="tomb">B 支群 1 号墳（旧 B7 号墳）</h3>
+<p>なだらかでしかも低い尾根上に立地し、2 号墳から S-50°-E 方向へ、本古墳の墳頂部まで 10m に位置する。北東西方向に盛土の高さは 2～3m 南側 1m、墳丘径は 11m を測る。墳頂部が 0.5×0.5m、深さ 0.5m ほど落ち込みがあるだけで石室は密閉されている。内部構造は不明である。墳丘の規模、立地より、推定で 2 号墳と同規模の石室をもつのではなかろうか。</p>
+<h3 class="tomb">B 支群 2 号墳（旧 B6 号墳）</h3>
+<p>A 支群が散在する尾根と平行して南へ走っている低く、しかもなだらかな尾根上に立地し、1 号墳から西側へ隣接する。墳丘径は 11m を測り、北・東西方向の高さは 0.3m、南側は 1m あまりである。山寄せの地山掘り込みのため急斜面を利用し、構築されたと考える。1 号墳と墳丘が隣接しているが、重なったりはしていない。天井付近の石材が石室内に落ち込んでいる。内部構造は両袖単室横穴式石室で、主軸方向は S-45°-W である。玄室規模は玄室左長 1.7m、右長 1.8m、奥壁側 1.35m、玄門側 1.3m、現状高 1.5m、玄門幅 0.6m を側る。腰石は奥壁が 2 枚、左側壁 1 枚、右側壁 2 枚で、1.5～2m の巨石を使用し、2～4 段目まで横積み、5 段目より、天井付近までは、斜目積みを用いている。2 段目より徐々に持ち送り式である。また、特徴としては石材使用数が他古墳に比べて比較的少なく、天井石 3 枚で、天井部付近にかなりの栗石が使用されている。巨石は 0.6～0.7m、2m 弱で、小石は 0.2～0.3m の大きさを採っている。羨道部は埋没しているため不明である。</p>
+<h3 class="tomb">B 支群 3 号墳（旧 B3 号墳）</h3>
+<p>尾根から谷の段状へ向かうなだらかな丘陵上に立地し、A 支群 1 号墳は北東方向へ 42m に位置している。B 支群の中では最もなだらかな所へ立地し、墳丘状態、石室状態も良好な古墳である。墳丘は四方とも裾部まで確認でき、きれいな円錘形を呈している。墳径 12m、高さ約 5m を測る。墳頂部に天井石が露出し、石室を望むことができる。</p>
+<p>内部構造は両袖単式横穴式石室で、主軸方向は N-39°-E である。現状の石室長 5.3m、玄室左長 2.4m、右長 2.4m、奥壁幅 2m、玄門側 2.3m 若干長方形プランを呈している。現玄室高 2.56m で、腰石は長さ 1.2m、幅 0.5m ほどで、玄室 5 枚使用、2 段目より天井部までの石材は、さほど大きさの差はなく、持ち送り式に積まれ、右側壁は横積みで石材間の栗石は、かなり使用され、奥壁側よりも玄門側に力石の使用が顕著にみられる。楣石は 1～1.2m の石材を使い、その上の石も 1m 弱の巨石を使用している。あまりせり出しはなく、構築技術の高度さを示している。羨道部は玄門より 1.5m 程の腰石を横にし、羨門にかけては 0.5～0.6m の石材を積みあげ羨道部を形づくっている。</p>
+<p>羨道の天井石は巨石（1m 弱）を 3 枚使用している。羨道部長さ 2.6m、玄門幅 0.8m、高さ 0.8m、羨門に向かって若干の広がりを見せている。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/B03_chamber.png" data-cap="駄ヶ原古墳群 B 支群 3 号墳石室実測図" aria-label="駄ヶ原古墳群 B 支群 3 号墳石室実測図を拡大"><img loading="lazy" src="images/B03_chamber.png" alt="駄ヶ原古墳群 B 支群 3 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 B 支群 3 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">B 支群 4 号墳</h3>
+<p>1979 年福岡大学歴史研究部刊行の「七隈 17 号」において、新しく発見された古墳を 4 号墳とした内容の記載があり、本稿はそれに倣った。墳丘および石室の現状調査がされた記載がなく、詳細は不明。</p>
+  </div>
+</section>
+<section id="C" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">05</span>
+    <h2>C 支群</h2>
+  </header>
+  <div class="sec-body">
+<p>C 支群の立地は 18 号墳以外すべて屋根から谷にかけてのなだらかな斜面上に立地している。18 号墳は屋根から谷にかけての立地は同じであるが、かなりの急斜面である。山道が脇を通っているため削られていると考えられるであろうが、地形図を見てもわかるように、このような急斜面に築造しているのは、駄ノ原古墳群では、G 支群 2 号墳と本墳の 2 基であり、大谷古墳群にもこのような立地がみられる。C 支群は A 支群の立地する同一丘陵上に同じくあり標高 67～88m に群集して分布している。駄ヶ原古墳群の中では、群集墳と呼ぶにふさわしい位置関係であり、種々雑多な小、中規模の古墳がある。相互位置関係では 20m とは離れてなく、本支群でも墳丘裾部が重なっているといっても過言ではないほど接近して位置している古墳が大半である。従来本支群の総基数は 18 基であったが、後の再編で当該 18 基に A13 号墳（C 支群 19 号墳）、A12 号墳（同 20 号墳）、A11 号墳（同 21 号墳）の 3 基を加え、C 支群 21 基に改訂した。</p>
+<h3 class="tomb">C 支群 1 号墳（変更なし）</h3>
+<p>尾根から谷にかける斜面のいくぶん段状を呈するところに立地している。2 号墳は南へ約 10m の距離を置く。墳丘径は約 6.50m で、南側、東側は斜面のため封土が流出するのであるが、本墳は北側、西側よりもよく封土の確認ができる。現状は玄室の腰石らしき石材が残っており、玄室の輪郭を残している。これら石材の大きさは 0.70～0.80m が奥壁側石材で、その他方は 0.40～0.50m である。主軸方向が正確に出せないが、油山群集墳の一般的法則である谷向き開口により、奥壁側と呼ぶこととする。玄室長は、1.20m、奥壁側幅 1.20m を測る正方形プランを呈する古墳である。</p>
+<h3 class="tomb">C 支群 2 号墳（変更なし）</h3>
+<p>屋根から谷にかけてのなだらかないくぶん段状を呈す末端に立地している。3 号墳へは南東方向へ 9m の距離をもつ。現状は墳丘および石室が半壊し、石室の高さは奥壁側が高く、玄門側は低くなっている。これは盗掘や土砂流入のためである。墳丘は北側、東側は自然地形を利用し、南側、西側は盛土が確認され、一種の山寄せが用いられている。玄室は推定であるが、2.10m とし、玄室幅は、奥壁側で 1.80m、玄門側で 1.60m を測る規模をもっている。奥壁は腰石 1 枚で 3 段目より力石が見られ、左側壁の腰石は長さ約 1m、幅 0.45m で 2 段目（0.40×0.30m）から天井付近にかけて石材が順次小型になっている。力石は 1 枚の石材使用ではなく、数枚の石材を組み合わせ、その力石の効力を配分させる技法が見られる。右側壁はだいたい同じ大きさ（0.60×0.40m）の石材がよく使われ、また、本墳の栗石使用は他古墳より多めに使用されている。</p>
+<h3 class="tomb">C 支群 3 号墳（変更なし）</h3>
+<p>屋根から谷にかけてのなだらかで、しかも、広範囲におよぶ丘陵上に立地する。北東方向に 10m の距離に 4 号墳が位置している。この地点は雑木林と植林の境でもある。本墳の現状は長さ 0.60m、幅 0.40m 程の石材が 1 個あり、その西側に縦 1m、横 0.70m、深さ 0.40m 程の窪みがあるだけで、雑草、シダ類、小枝等で、足もとがはっきりしないこともあってか、盛土の有無の確認ができない。墳丘、石室、開口方向等すべて不明である。</p>
+<h3 class="tomb">C 支群 4 号墳（変更なし）</h3>
+<p>屋根から谷にかけてのなだらかな丘陵の若干段状を呈しているところへ立地し、雑木林と植林の境界にある。西方向 10m に 2 号墳が位置している。現状はシダ類、雑草等により、墳丘の確認ができない。また、石室内には土砂の流入、石室自体の崩壊により詳細は不明であるが、横穴式石室で、正方形ブランに近い形態をとる。玄室長約 1.30m、幅は奥壁側で約 1.50m、玄門側で約 1.10m を測る。石積みは 2 段確認でき、下段の石材は 0.60～0.50m で主流は 0.40～0.50m の石材である。袖石の確認はできないが、立地条件、他古墳の開口方向等を考え合わせると、主軸方向は S-82-W である。</p>
+<h3 class="tomb">C 支群 5 号墳（変更なし）</h3>
+<p>屋根から谷にかけてのなだらかで、しかも広範囲におよぶ丘陵上に立地し、本墳より北方向へ 6m の距離に 3 号墳号墳が位置している。墳丘は北西側のみ若干確認できるが、その他方向は地形斜面と変化がない。石室は、横穴式石室で、玄室長約 1.80m、奥壁側石室幅、1.30m を測る。石積みは奥壁に 2 段その他は 1 段しか確認できない。かなりの土砂が流入しているためその他は不明である。0.70～0.80m、0.40～0.30m 程の石材が主流で、奥壁に 3 枚、左側壁に 2 枚、右側壁に 3 枚、計 8 枚確認できるだけである。開口方向は推定で S-14°-W である。1, 3, 4 号墳と同規模の古墳と考えられる。</p>
+<h3 class="tomb">C 支群 6 号墳（変更なし）</h3>
+<p>尾根から谷にかけてのなだらかな丘陵上であるが、谷の段上に立地しているといった方がより適切であろう。8 号墳は本項より S-84°-W 方向に 8m の距離を置く。現状墳丘は南側のみ、高さ 0.50m 程あり、その他は地形斜面と変わらない。墳丘径は約 6m であり、墳頂部に 1.50×1.30m 程の窪みがあり、この窪みの東側に石材 2 枚、中央に石材 2 枚が残存しているだけで、土砂流入、石室崩壊により詳細は不明である。本墳を谷向き開口と仮定するなら、玄室長約 1.20m と測る。小規模古墳で、1, 3, 4, 5 号墳にほぼ類似する規模といえよう。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/C06_photo.jpg" data-cap="駄ヶ原古墳群 C 支群 6 号墳（2017 年 12 月撮影）" aria-label="駄ヶ原古墳群 C 支群 6 号墳（2017 年 12 月撮影）を拡大"><img loading="lazy" src="images/C06_photo.jpg" alt="駄ヶ原古墳群 C 支群 6 号墳（2017 年 12 月撮影）"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 C 支群 6 号墳（2017 年 12 月撮影）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">C 支群 7 号墳（変更なし）</h3>
+<p>尾根から谷にかけてのなだらかな丘陵上に立地し、本墳より南東方向へ約 5m の距離に 8 号墳が位置し、この丘陵上に数年前に植林されている。現状、盛土状態は良好で、天井石と羨門付近の左側壁 2 段、右側壁 1 段と楣石が露出し、石室も良好に残存している。墳丘は径約 9m を測り、椀をかぶせたような状態で墳丘の高さ 1.50m、天井石まで盛土があると仮定すると高さは 3.00m 程になろう。石室は両神単室横穴式石室の形態をとり、現石室長 1.65m、玄室長 1.15m、玄室幅は奥壁側で 1.30m、玄門側 1.30m、現玄室高 1.30m、玄門幅 0.70m、羨道部幅 0.60m を測るほぼ正方形プランを有している。玄門は右側よりで、左側壁がかなり中央にせり出しぎみに構築されている。すべて腰石は 0.50～0.60m の大きさの石材を各部 2 枚ずつで、天井石に至るまでだんだんと一回りずつ小ぶりになっている。力石の使用が認められない。また、栗石使用は 3 段目より存在する。石積みはやや重箱積み技法に似ている。急な持ち送り式をとりドーム状を呈していることが、天井石付近の石材のせり出しや石室への投入をよぎなくされていると考えられる。主軸方向は S-39°-W をとる。</p>
+<h3 class="tomb">C 支群 8 号墳（変更なし）</h3>
+<p>尾根より谷にかけてのなだらかでしかも広範囲におよぶ丘陵上に立地する。本墳より 9 号墳へは東方向へ 8m の距離をもつ。なだらかな丘陵上のため、椀をかぶせたような墳丘をもち、石室を包んでいる。露出している石材は、羨門付近の数個だけである。墳丘径は約 9m で墳丘斜面が急で墳丘の高さは約 4～5m あると思われる。7、9 号墳も墳丘状態は良好であるが、中でも本墳が最も良好である。内部構造は両袖単室横穴式石室で、現状石室長は 4.10m、玄室左長 1.70m、右長 1.80m、玄室幅は奥壁側で 1.80m、玄門側は 1.70m、玄門幅 0.80m、現玄室高約 1.80m と測る正方形プランをとっている。羨道部の長さ約 2.30m、幅は末広がりで羨門付近では約 1.50m、高さは低いところで 0.60m、高いところで 1.10m を測る。腰石は 1m 内外の巨石を使用し、奥壁 2 枚、両側壁 2 枚、羨道部も各 2 枚配置されている。左側壁の使用石材は、かなり大ぶりで、天井石付近に至るまで使われているのに反し、右側壁は割と形のととのった小ぶりの石材を積みあげている。また、羨道部は腰石とほぼ同大の石材を 2 段ないし 3 段積んでいる。袖石や楣石や天井石も巨石を使用している。栗石は他古墳に比べると使用が少ないようである。主軸方向は S-49°-W で谷向きの開口をとっている。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/C08_chamber.png" data-cap="駄ヶ原古墳群 C 支群 8 号墳石室実測図" aria-label="駄ヶ原古墳群 C 支群 8 号墳石室実測図を拡大"><img loading="lazy" src="images/C08_chamber.png" alt="駄ヶ原古墳群 C 支群 8 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 C 支群 8 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">C 支群 9 号墳（変更なし）</h3>
+<p>尾根から谷にかけてのなだらかな丘陵上に立地し、7, 8, 10 号墳はかなり隣接して位置している。本墳より東方向へ 8m に 10 号墳がある。現状は 8 号墳と同じく、羨道だけ口をあけ、石室内へ入る。</p>
+<p>墳丘状態は北側、東側、西側は、丘陵地形を利用し、盛土は高さ 1.50m で低く、南側は 3m 程の高さを有し、なだらかな墳丘面をもつ。墳丘径は約 8.40m を測る。</p>
+<p>石室は両袖単室横穴式石室で、石室長 4.30m、玄室左長 1.80m、右長 1.70m、玄室幅は奥壁側で 1.80m、玄門側で 1.80m、玄門幅 0.60m、玄室高約 2m、羨道部長さ 2.50m、羨道部幅は末広がりで羨門付近は 1m を測る。玄室は正方形プランをとっている。8 号墳と石室規模はほぼ同大である。1m 内外の巨石は腰石、袖石、楣石、天井石に使用されている。石室 2 段目よりは形、大きさのととのった石材を持ち送り式に積みあげ、玄門付近のみ、ドーム状を形づくり、他部分は左程ドーム状を呈しておらず、栗石の使用が目立っている。左側壁の天井付近は、かなりのせり出しを見せ、石材が玄室内に落ちている。主軸方向は S-41°-W で谷向きの開口をとっている。</p>
+<h3 class="tomb">C 支群 10 号墳（変更なし）</h3>
+<p>尾根から谷にかけてのなだらかな斜面をもつ丘陵上に立地し、本墳より南東方向へ 9m の距離に 1 号墳が位置している。現状は天井石が露出しているが、羨門だけが口をあけ、その他は密閉され盛土状態も良好である。</p>
+<p>墳丘は北東から南西に向かう傾斜をもつ地形のため、北東側の墳丘高さは、2m、南西側は傾斜とあいまって、裾部の確認はできない。南東方向は約 2.50m の墳丘の高さをもち径約 10m を測る。</p>
+<p>内部構造は両袖単室横穴式石室で、石室全長 4.70m、玄室左長 1.90m、右長 2.10m、玄室幅は、奥壁側で 2.00m、玄門側で 1.90m、玄室内は土砂、石材でかなり埋っているが、現状の高さは約 2.00m を測り正方形プランをとっている。羨道部は、玄門幅 0.90m 長さ、約 2.70m、羨門付近は、土砂が盛りあがっているので不明である。巨石使用は、奥壁、側壁の腰石、袖石、楣石、天井石で特に奥壁、天井石は 2m 以上の石材が配置されている。右羨道側壁は腰石が埋没して、2 段目より確認できる。われわれが調査している古墳中、奥壁腰石が一枚という形態をとるのは少ない。奥壁腰石が 2 枚でその石材が奥壁を形づくる状は、だいた 3 対 2 もしくは 3 対 1 の割合で配置されている古墳が大部分である。本墳は持ち送り式をとりドーム状を呈し、かなりの栗石の使用が目立っている。羨道部の石積みは雑であり、大ぶりの石材の使用でなく、羨門に向って羨道部が幅広く、末広がりになっている。先にふれたが、玄室内に石材（0.50～0.20m の大きさ）が散在しているのは玄室の石積み使用の石材が落ちたと解するより、羨道の石材が少ないこと、羨道部の破壊等からむしろ、盗掘その他で羨道部のそれを玄室内へ入れたと考える。主軸方向は S-61°-W で谷向きの開口をとっている。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/C09_chamber.png" data-cap="駄ヶ原古墳群 C 支群 9 号墳石室実測図" aria-label="駄ヶ原古墳群 C 支群 9 号墳石室実測図を拡大"><img loading="lazy" src="images/C09_chamber.png" alt="駄ヶ原古墳群 C 支群 9 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 C 支群 9 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/C10_chamber.png" data-cap="駄ヶ原古墳群 C 支群 10 号墳石室実測図" aria-label="駄ヶ原古墳群 C 支群 10 号墳石室実測図を拡大"><img loading="lazy" src="images/C10_chamber.png" alt="駄ヶ原古墳群 C 支群 10 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 C 支群 10 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">C 支群 11 号墳（変更なし）</h3>
+<p>尾根から谷にかけてのなだらかな斜面をもつ丘陵上に立地し、本墳より南西方向へ 12m の距離に 10 号墳が位置している。現状は玄室から羨道部にかけて、ぽっかりと口をあけている。墳丘は北側、東側は自然地形の斜面のため墳丘裾部がはっきりしないが、西側南側の墳丘の高さは、約 1～1.50m で、墳丘径は 8m を測る。</p>
+<p>内部構造は両袖単室横穴式石室で、玄室長 1.50m、幅は奥壁側で、1.50m、玄門側で 1.70m、玄門幅 0.60m の正方形プランを呈している。玄室内に天井石および 5 段目以上の石材が落ち込んでいて、腰石の大きさ、玄室高は不明で、また、羨道部も埋没のため不明である。確認できる石材の大きさは、0.40～0.20×0.40～0.50m が大部分を占め横積みされている。他古墳に比べ、大ぶりの石材が使用されていない。主軸方向は S-32°-W である。</p>
+<h3 class="tomb">C 支群 12 号墳（変更なし）</h3>
+<p>屋根から谷にかけてのなだらかな斜面をもつ丘陵上に立地し、本墳より南方向へ 11m の距離に 11 号墳が位置している。墳丘上部は 1.00×1.00m の穴があり、それより石室を見ることができる。墳丘状態は東側南側で自然地形の斜面を利用しているので、裾部の確認はできないが、西側北側は墳丘の高さ 1.00～1.5m、墳丘径約 7m を測る。</p>
+<p>内部構造は両袖単室横穴式石室で、玄室長 1.50m、幅は奥壁側で 1.30m、玄門側で 1.15m を測る正方形の部類に入るプランを呈している。羨道は埋没しているため不明である。石積み状態は 3 段しか確認できないが、斜め積みをとっている。石材の大きさは 0.30～0.40m が大部分を占め小ぶりの石材使用である。現状をみるに、13 号墳と同規模の石室石材をもっている。主軸方向は S-65°-W をとっている。</p>
+<h3 class="tomb">C 支群 13 号墳（変更なし）</h3>
+<p>尾根から谷にかけてのなだらかな斜面をもつ丘陵上に立地し、本墳より、北西方向へ 6m の距離に 10 号墳があり、南東方向へ 7m の距離に 14 号墳が位置している。14 号墳との噴丘裾部はかなり隣接している。現状は玄室が露出し、羨道部は不明である。墳丘も北側、東側は自然地形で同化されているが、西側、南側は 1m 程の墳丘の高さを呈している。玄室長約 1.50m、玄室幅は奥壁側で 1.30m、玄門側で 1.10m、玄門幅 0.60m を測る正方形プランに似た形態をとる。確認できる石積みは 2 段で、1 段目は横 0.70～0.80×0.40～0.50m であるが、2 段目は 0.20～0.30m と石材の大きさがあまりに違いすぎる。現状石室高が約 0.70m あるが、盛土状態、石材、石室規模等により、1m 以上埋没しているとは考えられないのである。本墳は C12 号墳と類似点が多い。主軸方向は S-78°-W で谷向きの開口をとっている。</p>
+<h3 class="tomb">C 支群 14 号墳（変更なし）</h3>
+<p>尾根から谷にかけての斜面上に立地し、本墳より 13 号墳へは北西方向に 7m の距離を測る。現状は天井石が抜かれ、砂防ダムが南 8m にあるため、墳丘上に道があり、東側のみ盛土を確認できる。墳丘の高さは 0.70m であり墳丘径は推定で 9m とする。本墳は山寄せの築造技術をとっているので 2m 程の掘り込みがあったと推定される。</p>
+<p>石室は横穴式両袖単式石室で、玄室左長 1.80m、右長 2.00m、玄室幅は奥壁側で 1.70m、玄門側で 1.75m、玄門幅は約 1m と比較的幅をもち、羨道へとこの幅は続いている。玄門幅、玄室規模に比べ羨道部幅の割合が大きいことが本墳の特徴ともいえる。現状の羨道の長さ 2.50m で梱石を有している。巨石はなく、大ぶりのもの 0.60×0.70m の大きさで大部分を占めている石材は 0.50×0.40m の大きさのものである。栗石は 2 段目、3 段目に集中している。石積みは持ち送り式をとっているが顕著に見られるのが、奥壁側だけで、その他はドーム状を呈していないと考えてもさしつかえない程である。主軸方向は S-85°-W をとり谷向きの開口である。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/C14_chamber.png" data-cap="駄ヶ原古墳群 C 支群 14 号墳石室実測図" aria-label="駄ヶ原古墳群 C 支群 14 号墳石室実測図を拡大"><img loading="lazy" src="images/C14_chamber.png" alt="駄ヶ原古墳群 C 支群 14 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 C 支群 14 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">C 支群 15 号墳（変更なし）</h3>
+<p>尾根から谷にかけてのなだらかな斜面をもつ丘陵上に立地し、本墳より北東方向へ 5m の離離に 16 号墳が位置している。現状は墳頂部に 1.10×1.50m の範囲に玄室を含む穴がある。墳丘状態は東側、北側は自然地形の斜面と合いまって、なだらかな盛土をもち、墳丘の高さ 1m を測り、西側、南側は 1.50～2.00m の墳丘の高さで、墳丘径は約 10m を測る。</p>
+<p>石室は横穴式石室で、玄室規模、状態は玄室の西側の一面（1.50×1.50m）と南側の半面だけしか石積み状態を呈しておらず、その他は土砂流入により、袖石、羨道部は不明である。しかし、本墳は石積みで、他古墳と違った様相を見せている。西側の一面は、底部に幅 1.20m の巨石を横たえ、その上に、幅 0.20～0.25×縦 0.10～0.15m の石材を小口積みに 10 段積みあげ、現状高 1.50m に達している。南側の石積みも同様であり、6 段目に幅 0.40×0.30m の石材を力石に使用している。西側巨石の位置する高さには南側では小石材を使用しているので巨石の存在はない。他古墳では幅 0.50～縦 0.40m の石材を 5～7 段積みをして天井石まで至るのであるが、本墳は先に述べた形態をとっていることが特徴であり、われわれの調査した古墳中、特異な存在である。</p>
+<h3 class="tomb">C 支群 16 号墳（変更なし）</h3>
+<p>尾根から谷にかけてのなだらかな斜面をもつ丘陵上に立地し、本墳より、南西方向へ 5m の距離に 15 号墳が位置している。現状は天井石および天井付近の石材と土砂が石室内に落ち込んでいる。墳丘はなだらかな地形の斜面に立地しているので椀をかぶせた形で、高さ 2～2.50m で、墳丘径は約 9m の規模をもっている。</p>
+<p>内部構造は両袖単室横穴式石室で、現状は石室全長 3.05m、玄室左長 1.75m、右長 1.70m、玄室幅は奥壁側で 1.60m、玄門側で 1.50m、高さ 1.50m、玄門幅 0.50m、羨道部長さ 1.30m、羨門付近の幅 0.30m、高さ 0.70m を測る石室規模をもつ。羨道部は羨門に行く程、幅員が狭くなっている。羨道部天井石は、2 枚使用されている。巨石（1.20～1.30m）は腰石、楣石、袖石に使用され、石積み使用石材は 0.60～0.80m の大きさをもち主流を占めている。積み方は、左側壁はななめ積み、右側壁は重箱積みをとって、要所に栗石（0.10～0.20m）の使用が目立つ。力石の使用は 4 段目より 0.30～0.40m の石材を使用している。持ち送り式であるが、ドーム状を呈しているのは、右側壁に見られる。主軸方向は S-41°-W で谷向きの開口をとっている。</p>
+<h3 class="tomb">C 支群 17 号墳（変更なし）</h3>
+<p>尾根より谷にかけてのなだらかな斜面をもつ丘陵上に立地し、本墳より南方向へ 12m の距離に 16 号墳が位置している。現状は北東部墳丘が山道のため削られていて、天井石および天井付近の石材が玄室内に落ち込んでいる。また、羨道部も土砂により埋没している。北東側を除く他方向の墳丘は高さ 2.00～2.50m、墳丘径約 10m を測る。</p>
+<p>石室は横穴式両袖単式石室で玄室左長 1.90m、右長 2.00m、玄室幅は奥壁側で 1.70m、玄門側で 1.70m、現状の高さは 1.60m の玄室規模をもつ。玄門幅は 0.80m とわりと広く構築されている。羨道部においては一切不明である。石積みをみると、全体的にかなりせり出してきて石材が浮きでた様相を呈している。主軸方向 S-48°-W をとる谷向きの開口である。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/C17_chamber.png" data-cap="駄ヶ原古墳群 C 支群 17 号墳石室実測図" aria-label="駄ヶ原古墳群 C 支群 17 号墳石室実測図を拡大"><img loading="lazy" src="images/C17_chamber.png" alt="駄ヶ原古墳群 C 支群 17 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 C 支群 17 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">C 支群 18 号墳（変更なし）</h3>
+<p>尾根から谷にかけての急斜面に立地し、C1～C17 号墳と本墳とは山道をへだてて位置し、C17 号墳へは南南東方向へ 20m の距離にある。現状は羨門をあけているだけで、その他は密閉されている。墳丘の確認は、かなり急斜面に立地していることと、雑木、シダ類の繁茂のため、斜面でない東側、西側ですらはっきりしない。石室規模より推定して墳丘径は約 10～12m 内外であろう。</p>
+<p>内部構造は両袖単室横穴式石室で、現状石室全長 5.70m、玄室左長 2.30m、右長 2.30m、玄室幅は奥壁側で 2.20m、玄門側で 2.20m、現状の高さ 2.30m の正方形プランの玄室である。玄門幅約 1m、羨道部全長 3.50m を測る。羨道部はかなりの土砂流入、盗掘等で正確な平面プランはとれない。巨石は 1～1.40m で、他古墳と同様腰石、楣石、袖石、天井石等に使用されている。石積みは腰石をおき天井部に至るまで、0.40～0.50m の大きさの石材が主流である。栗石の使用は適所に配置され、多くは見られない。持ち送り式で特に側壁側はドーム状を呈している。主軸方向は S-46°-W で谷向きの開口をとっている。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/C18_chamber.png" data-cap="駄ヶ原古墳群 C 支群 18 号墳石室実測図" aria-label="駄ヶ原古墳群 C 支群 18 号墳石室実測図を拡大"><img loading="lazy" src="images/C18_chamber.png" alt="駄ヶ原古墳群 C 支群 18 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 C 支群 18 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">C 支群 19 号墳（旧 A13 号墳）</h3>
+<p>A 支群より南に連なる尾根に本墳も立地し、従来 A グループ 13 号墳としていたが、支群の再編により C 支群 19 号墳とした。20 号墳は本墳より北西方向へ 13m に位置している。墳丘は奥壁側および左側壁側が道路建設のため奥壁石材の背部が露出するまで削られているので羨道部側と右側壁側に墳丘を確認できる状態である。また、墳丘上部の盛土もかなりの流出をよぎなくされ、天井石 4 枚が露出し、その間より石室をうかがえる。両袖単式横穴式石室をとり、玄室左側長さ 2.3m、右側長さ 2.4m、幅は奥壁側で 1.6m、玄門側で 1.7m、現状の高さ 1.4m を測る縦長石室プランである。羨道部は玄門幅 0.70m を測るだけで土砂流入のためその他不明である。石積み技法として、重箱積みをとっている。力石の使用は 3 段目より確認できる。主軸方向は S-70°-W である。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/C19_photo.jpg" data-cap="駄ヶ原古墳群 C 支群 19 号墳（2017 年 12 月撮影）" aria-label="駄ヶ原古墳群 C 支群 19 号墳（2017 年 12 月撮影）を拡大"><img loading="lazy" src="images/C19_photo.jpg" alt="駄ヶ原古墳群 C 支群 19 号墳（2017 年 12 月撮影）"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 C 支群 19 号墳（2017 年 12 月撮影）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">C 支群 20 号墳（旧 A12 号墳）</h3>
+<p>本墳も 19 号墳同様に従来、A グループ 12 号墳としていたが、再編により C 支群 20 号墳とした。A 支群が立地している同一尾根上であり、標高 77m に本墳はある。21 号墳は本墳より北西方向へ 34m の距離がある。本墳の盛土状態は正確には、自然地形か、若干の盛土か区別はつけにくい。開口は谷向きの南西で、その方向に石材が並べられていることにより、古墳と判断する。密閉状態なので、その他は不明である。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/C20_photo.jpg" data-cap="駄ヶ原古墳群 C 支群 20 号墳（2017 年 12 月撮影）" aria-label="駄ヶ原古墳群 C 支群 20 号墳（2017 年 12 月撮影）を拡大"><img loading="lazy" src="images/C20_photo.jpg" alt="駄ヶ原古墳群 C 支群 20 号墳（2017 年 12 月撮影）"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 C 支群 20 号墳（2017 年 12 月撮影）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">C 支群 21 号墳（旧 A11 号墳）</h3>
+<p>19 号墳、20 号墳と同尾根上、標高 76m に立地する。本墳は 20 号墳より北西方向へ 34m に位置している。現状は石材が玄室の輪郭を呈しているだけで、盛土も確認できず、この立地している尾根上の自然地形に若干の窪地があり、そこに石材があるという状態を呈している。視覚的に本墳をみると、石材が造っている輪郭は片袖石を思わせる。地山をかなり深く掘り込む方法がとられているため、現地形表面と同じ高さに露出している石材が片袖式を思わせても、ただ単なる石室上部の石材が形づくっているだけで床面、腰石等は 1m 内外の地中にあると考えられるからである。現状の石室の大きさは、玄室幅 1.20m、主軸長 1.40m、片袖石は主軸へ側壁より 0.50m 程よりである。主軸方向はほぼ A13 号墳と同様に S-73°-W の谷向きの開口をとっている。本墳も 19 号墳、20 号墳と同様に従来 A グループに属していたが、再編により C 支群とした。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/C21_photo.jpg" data-cap="駄ヶ原古墳群 C 支群 21 号墳（2017 年 12 月撮影）" aria-label="駄ヶ原古墳群 C 支群 21 号墳（2017 年 12 月撮影）を拡大"><img loading="lazy" src="images/C21_photo.jpg" alt="駄ヶ原古墳群 C 支群 21 号墳（2017 年 12 月撮影）"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 C 支群 21 号墳（2017 年 12 月撮影）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+  </div>
+</section>
+<section id="D" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">06</span>
+    <h2>D 支群</h2>
+  </header>
+  <div class="sec-body">
+<p>従来の D 支群は 9 基としていたが、後の分布調査と支群の見直しで、1～8 号墳は F 支群へ、9 号墳は G 支群 2 号墳へ再編した。現在の D 支群は B1 号墳が D 支群 1 号墳へ、B9 号墳が同 2 号墳へ、新規に発見された古墳が同 3 号墳へ、B8 号墳が同 4 号墳に修正され、本支群は C 支群の南西方向、B 支群より南東に延びる道をはさんだ 4 基で構成されている。</p>
+<h3 class="tomb">D 支群 1 号墳（旧 B10 号墳）</h3>
+<p>尾根から南の谷にかけての斜面上に立地し、D 支群中、最高位にある。2 号墳は北方向へ 8m に位置している。墳丘は東側で山道のためけずられ、北、西、南側は高さ 2m で、墳丘径は、8m を確認できる。内部構造は、横穴式石室で、玄室長は 1.3m 幅 1.3m の正方形プランで、玄門幅は 0.5m、現状高さ 0.8m を測り、右袖石の大きさは 0.4m、左側壁の存在は土砂により不明である。見える範囲の石材は、0.5～0.6m の大きさで、かなり急な持ち送り技法を採っている。主軸方向は S-74°-W である。墳丘、石室規模から推定し、2、4 号墳より二回り、小規模な古墳といえそうである。</p>
+<h3 class="tomb">D 支群 2 号墳（旧 B9 号墳）</h3>
+<p>尾根から南側の谷に向かう勾配のある斜面上に立地し、1 号墳へ南方向 8m、4 号墳へ北方向 45m に位置している。墳丘状態は北、東、西方向に見られ、高さ 2m、墳丘径 10m を測る。</p>
+<p>内部構造は両袖単式横穴式石室で、玄室長 2.1m、奥壁幅 2m、現状の高さ 1.3m 玄門幅 0.7m、天井石、その他石材が石室内に落ち込んでいるので、腰石は確認できず、見える石材の大きさは、0.7～0.8m の石材で、石材間には人頭大の石材を使用し積み方では横積みと、斜め積みを組み合わせている。</p>
+<h3 class="tomb">D 支群 3 号墳（新規）</h3>
+<p>1979 年福岡大学歴史研究部刊行の「七隈 17 号」によれば、分布調査および支群分け再編により、新たに確認された古墳を 3 号墳としている。墳丘および石室の状況は調査された形跡がなく不明である。</p>
+<h3 class="tomb">D 支群 4 号墳（旧 B8 号墳）</h3>
+<p>A 支群が散在する尾根と平行して南へ延びる尾根から谷にかけての斜面上に立地し、2 号墳へは南南東方向へ 43m で、1, 2, 4 号墳の 3 基中、最下部に位置する。墳丘は雑木林、シダ類、竹の繁茂により、はっきりした事はわからないが、墳丘高は、南東・北西方向で 2m、南は地形が急なため裾部を確認できず、墳丘径約 7m 程であろうと思われる。墳頂部は 1×1.2m 程度の落ち込みがあり、その中北東側に 0.7～0.8m の石材が重なり、一段深い 0.5m 程の深さの窪みがあるだけで、全く石室状態はうかがえない。</p>
+  </div>
+</section>
+<section id="E" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">07</span>
+    <h2>E 支群</h2>
+  </header>
+  <div class="sec-body">
+<p>当支群は駄ヶ原古墳群の中で最南緯、霧ヶ滝古墳群の北東に位置する。北より南に延びた独立峰の最上部に南北に一列に並ぶ 4 基の円墳より構成され、その標高は 90～96m の位置にある。最南に存する 4 号墳以下は、天井石および盛り土を流出してしまっている現状である。この 4 基は約 30m の区間を隔てて存在しており、その開口方向は E2 号墳が、やや西北西よりであり、他は、3 基とも南西方向に開いている。丁度、早良平野を見下す格好である。石室規模は E3 号墳が小型であり、他の 3 基は、縦長スランの石室をもつ大型古墳である。</p>
+<p class="note">＊駄ヶ原古墳群 E 支群は修正を行わず、従来通りの古墳群分布とした。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/E_topo.png" data-cap="駄ヶ原古墳群 E グループ地形図（平板実測図）" aria-label="駄ヶ原古墳群 E グループ地形図（平板実測図）を拡大"><img loading="lazy" src="images/E_topo.png" alt="駄ヶ原古墳群 E グループ地形図（平板実測図）"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 E グループ地形図（平板実測図）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">E 支群 1 号墳（変更なし）</h3>
+<p>本墳は E 支群最北部に立地し、標高 94.50 に位置している。西側は谷にむかって流出しており、羨道部付近の存在は確認できない。また、1 枚の石材を残し、天井石および、上部の盛り土も同様に流出している。</p>
+<p>石室形態および石室規模は、玄室形態が縦長プランを持ち、袖石等は流出のため確認できない。現存する玄室規模は奥行 3.6m 横幅 1.5m、開口方向は S-80°-W を示している。</p>
+<p>石材は奥壁下部に巨石 1 枚を置き、左側壁は 3 枚の巨石、右側壁は 2 枚の巨石と 1 枚と横幅 0.3m 程度の石材を使用しており、右側壁上部から左側壁下部にかけて、天井石らしきものが、1 枚残存している。その石材の大きさは、約 2×1m 程度のものである。（墳丘径等は、墳丘が流出しているため正確な数値は不明である。）</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/E01_chamber.png" data-cap="駄ヶ原古墳群 E 支群 1 号墳石室実測図" aria-label="駄ヶ原古墳群 E 支群 1 号墳石室実測図を拡大"><img loading="lazy" src="images/E01_chamber.png" alt="駄ヶ原古墳群 E 支群 1 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 E 支群 1 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">E 支群 2 号墳（変更なし）</h3>
+<p>本墳は 1 号墳より北へ約 33m の地点に位置し、標高 95.50m に存在している。自然の丘陵を利用しており、墳丘径は約 18m を測る。本墳も 1 号墳と同様に、墳頂部の盛土、天井石および羨道施設を西方の谷間に流出しており、明確な形態は明らかではない。現存する玄室の形態および規模は、玄室横幅 1.8m、奥行き約 3m 前後のかなり大型の古墳であったことが推察できる。開口方向を W-14°-N にとり、奥壁および左側壁の玄室部分と右側壁の一部を残すのみである。しかるに、残存部分によりその形態は、ほぼ 4 号墳に類似していると思われる。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/E02_chamber.png" data-cap="駄ヶ原古墳群 E 支群 2 号墳石室実測図" aria-label="駄ヶ原古墳群 E 支群 2 号墳石室実測図を拡大"><img loading="lazy" src="images/E02_chamber.png" alt="駄ヶ原古墳群 E 支群 2 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 E 支群 2 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">E 支群 3 号墳（変更なし）</h3>
+<p>本墳は 2 号墳よりさらに、北方 20m の地点、標高 94.75m の位置に立地している。</p>
+<p>現状においては、盛り土の存在状態は確認できず石室と思われる部分は、ほぼ方形に近い形で 0.5×0.5m 程度の石材が残存しているのみである。</p>
+<p>石室形態および規模については、方形の石室プランをもち、羨道の有無は確認できないが、他の古墳と同様に西方、すなわち、S-14°-W に開口していたものと思われる。石室規模は横幅 1.8m、奥行き 2m を測る。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/E03_chamber.png" data-cap="駄ヶ原古墳群 E 支群 3 号墳石室実測図" aria-label="駄ヶ原古墳群 E 支群 3 号墳石室実測図を拡大"><img loading="lazy" src="images/E03_chamber.png" alt="駄ヶ原古墳群 E 支群 3 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 E 支群 3 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">E 支群 4 号墳（変更なし）</h3>
+<p>本墳は 3 号墳より北へ 32m の地点、E 支群中、最北部に位置している。標高は 90m の地点に立地している。現状においては、本グループ中、唯一の墳丘をもつ円墳であり、大型で墳丘径 23m を測る。</p>
+<p>石室形態は両袖式の縦長プランの石室をもつ。石室規模は玄室横幅 2.4m 奥行き 3.6m、羨道幅 1m、長さ約 3m を測る。玄室内部の高さは土砂が流出していて正確ではないが推定 3m を測り、開口方向は S-40°-W である。奥壁は三角形の巨石をたてて使用し、他の石材で水平になるように石材を積んでいる。左側壁上部は崩れており、内部に石材が落ち込んでいる。右側壁は典型的な重箱積みの技法を使用しており、また、玄室前方部の最上部の石材も玄室内に落ち込んでいる。石材の間には平らな石材の充填が認められる。本墳は E グループ中、E2 号と同等のクラスの大きさの規模をなして築造されており、油山群集墳中、大型の部類に入るものと考察できうる。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/E04_chamber.png" data-cap="駄ヶ原古墳群 E 支群 4 号墳石室実測図" aria-label="駄ヶ原古墳群 E 支群 4 号墳石室実測図を拡大"><img loading="lazy" src="images/E04_chamber.png" alt="駄ヶ原古墳群 E 支群 4 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 E 支群 4 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+  </div>
+</section>
+<section id="F" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">08</span>
+    <h2>F 支群</h2>
+  </header>
+  <div class="sec-body">
+<p>従来、本支群は D 支群と呼んでおり、9 基で構成していたが、後の分布調査と支群分けで、F 支群とした。1～8 号墳は F 支群へ、9 号墳は G 支群 2 号墳へ修正した。</p>
+<p>駄ヶ原古墳群 F 支群は福岡市西区梅林に存在し、西油山の山麓が北西部に延びた尾根上に存する。すなわち、C 支群よりもさらに、東方約 60m 上方 第 2 ダムの北東部に 7 基、更にその地点の向い側（南西）の急斜面上に 1 基の 8 基の構成となっている。これらは標高 130～145m の地点にあり、油山群集墳中、最高位クラスにあたる。</p>
+<p>3 号墳から 6 号墳の存在する地域は昭和 40 年 6 月の集中豪雨で土砂崩れをおこしており、4 基の古墳の内、5 号墳は奥壁の一部を残すのみであり、他の 3 基は、1 段目ないし、2 段目の側壁を残し、3～4 段の石積みの奥壁を残しているだけであり、天井石および盛り土の存在は確認できない状態である。1 号墳、8 号墳も以上の古墳とほぼ同様な状態にあり、天井石の存する 2 号墳、6 号墳は石室内部に土砂が流入しており、ほぼ完全な形でその姿を留めるのは、9 号墳のみである。したがって、2 号墳、6 号墳の石室実測は不可能な現状にある。</p>
+<p>規模の点を概説すると、2 号墳と 9 号墳が縦長プランの石室を持つ大型古墳であり、他の古墳は小型古墳の部類に含まれる。</p>
+<p>尚、昭和 40 年 6 月の集中豪雨での土砂崩れによる 3 号墳から 6 号墳 4 基の石室崩壊で、昭和 45 年 4～5 月にかけて、倉瀬戸古墳群発掘調査団によって 3 号墳、4 号墳、6 号墳が調査された。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/F_topo.png" data-cap="駄ヶ原古墳群 F 支群地形図" aria-label="駄ヶ原古墳群 F 支群地形図を拡大"><img loading="lazy" src="images/F_topo.png" alt="駄ヶ原古墳群 F 支群地形図"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 F 支群地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p class="note">＊1976 年福岡大学歴史研究部刊行「駄ノ原古墳群・霧ヶ滝古墳群分布調査概報」より転用</p>
+<h3 class="tomb">F 支群 1 号墳（旧 D1 号墳）</h3>
+<p>本墳は、第 2 ダムの北東部、尾根の急斜面上に存在している。1 号墳よりも東 20m の地点には 2 号墳が存在している。標高は 132.5m である。</p>
+<p>この古墳において、マウンドは存在せず、石室を築くためにやや平らにしてあることが確認できるのみである。1 号墳の存在する地域では土砂崩れは免れてはいるが、急斜面上に築いた封土は流出してしまったものと考えることができる。現存する石材はすべて花崗岩であり、横幅 0.6m 程度のものが 2 枚、右側壁が 1.5×0.5m 程度の巨石、石室前方部すなわち羨道部寄りの天井石らしき石材 1×0.5m 程度の石材および羨道部寄り左側玄室付近に 0.4×0.6m 程度の石材が 2 個、計 7 個の石材が存在している。羨道部は不明であるが、羨道部付近と思われる場所に 1.4×0.4m 程度の石材が 0.3m の間隔をおいて並列にならんでいる。以上が本古墳の現状であるが、これらの石材の位置関係より、横幅約 1m、長さ 1.7m の規模を持つ玄室であることが考察できる。高さの点については不明であるが、0.5～0.7m 程度埋まっているものと考えられる。羨道部は石材の関係から約 1.5m 程度の長さがあると推定される。</p>
+<p>開口方向は S-15°-W で、ほぼ南側、すなわち、谷向きの開口である。尚、遺物等は発見できなかった。以上の点から見て、また、F 支群の特性から見て小型墳の部類に入ると考えられる。その石室プランが小型であり縦長であるという点が本古墳の大きな特徴である。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/F01.png" data-cap="駄ヶ原古墳群 F 支群 1 号墳" aria-label="駄ヶ原古墳群 F 支群 1 号墳を拡大"><img loading="lazy" src="images/F01.png" alt="駄ヶ原古墳群 F 支群 1 号墳"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 F 支群 1 号墳<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">F 支群 2 号墳（旧 D2 号墳）</h3>
+<p>本墳は西方 20m に 1 号墳、東方 14m に 3 号墳という 2 基の古墳の中間に位置している。標高は、135.75m の地点に存在し、墳丘径約 18m である。墳頂部付近を横 2m、縦 4m に渡って四角状に盗掘を受けている。また、墳丘南東部は土砂崩れのため、その一部を、羨道上部南西側は山道のため、一部を削られている現状ではあるが、盛り土の状態は、古墳の北西側から、よく見ることができる。墳丘の北東側、すなわち、尾根側における墳丘基底部の変更線は、136.25m 南西側は、先にも述べたように山道が造られているため明確ではないが、羨道入口が 131.5m の地点であると思われる。</p>
+<p>石室内部の構造は、石室規模について述べるならば、両袖式横穴式石室であり、内部に相当土砂が流入しており、特に羨道部付近は完全に埋もれており単式か複式か判別できない状態にある。玄室の奥行 3.03m 幅 2.04m、羨道幅 0.63m、長さは約 3m である。天井石は 1 枚の巨石から成り、奥壁は巨石が横に 2 枚たてており、その上に人頭大の石を積み上げてある。石室上部は、やや持ち送り方式を採用している。なお、この古墳の羨道部入口付近に小石と土とで閉塞がなされていることは注目に値する。開口方向は S-65°-W 谷向き開口であり、山寄せ技法を使用している。本古墳は縦長プランの石室を持ち、大型の部類に所属するものと考えられる。F 支群中この地区、1 号墳～7 号墳の中で、主格的存在をなしており、群集墳中、初期形態とも言える縦長プランの石室は本墳がこの地区で初期に築造されたものであるということが考察できる。</p>
+<h3 class="tomb">F 支群 3 号墳（旧 D3 号墳）</h3>
+<p>本墳については、倉瀬戸古墳群報告書に存在するので、簡単に説明する。以下 4 号墳、6 号墳も同様である。</p>
+<p>本墳は 2 号墳より東に 14m の地点、標高 137.25m の位置に存在する。外部施設としては、盛土は土砂崩れのため流出し、その玄室を露出しており、天井石の存在もない。左右両側壁は 1 段目の石材、奥壁は 3 段目の石材を残すのみであるが、その石室形態はよく留めている。</p>
+<p>石室形態は横穴式両袖であり、石室規模としては、玄室奥行 0.6m 横 1.1m 羨道幅 0.5m、長さ 1m であり、横長の石室プランを持つ典型であるということができる。その規模から見ても、天井石を羨道と並行に何枚かならべて築いたと思われる。また、羨道部には小石を積んだ閉塞の跡も確認されている。開口方向は S-85°-W で、ほぼ西の方を向いており、谷向き開口である。</p>
+<p>本墳からは須恵器碗大小 2 個発見され、その年代が VIIII 期にあたることが明らかにされている。</p>
+<p>本墳は横長式石室プランを持つ古墳であり、その出土遺物から終末期の形態を示すものとして注目されている。なお、本古墳と同様の形態を持つ古墳が他に数基確認されていることを付け加えておく。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/F03.png" data-cap="駄ヶ原古墳群 F 支群 3 号墳" aria-label="駄ヶ原古墳群 F 支群 3 号墳を拡大"><img loading="lazy" src="images/F03.png" alt="駄ヶ原古墳群 F 支群 3 号墳"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 F 支群 3 号墳<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">F 支群 4 号墳（旧 D4 号墳）</h3>
+<p>本墳は 3 号墳より南方、5.5m の地点、標高 136.5m の位置に存在する。本墳も土砂崩れのため、盛り土、天井石、羨道部を失っている。奥壁および両側壁とも 4～5 段程度の石材が残存している。開口方向は、S-75°-W にとり、その石室形態は両袖式であり、規模は奥行 1.1m、横幅 1.6m のやや方形よりも横長に近い石室プランをもち、高さは 1.6m に近いと思われる。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/F04.png" data-cap="駄ヶ原古墳群 F 支群 4 号墳" aria-label="駄ヶ原古墳群 F 支群 4 号墳を拡大"><img loading="lazy" src="images/F04.png" alt="駄ヶ原古墳群 F 支群 4 号墳"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 F 支群 4 号墳<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">F 支群 5 号墳（旧 D5 号墳）</h3>
+<p>2 号墳の東方 19.5m の地点、標高 140.75m の位置に存在する。本墳は奥壁および側壁の一部を残すのみであり、かろうじて古墳と解明できる程度まで崩壊している。石室規模はほぼ 4 号墳と同等と思われ、その開口方向もこの地区の他の古墳と同様に西方、すなわち谷向き開口であると考えられる。</p>
+<h3 class="tomb">F 支群 6 号墳（旧 D6 号墳）</h3>
+<p>5 号墳より南方、8.5m の地点、標高 141.5m の位置に存在する。本墳も 3 号墳、4 号墳、5 号墳などと同様に土砂崩れにあい、盛土も天井石も存せず、羨道部も一部を残すのみである。奥壁および側壁は 3～4 段程度の石材を残している。</p>
+<p>石室規模は玄室幅 1.5m、奥行き 2.8m、羨道の長さ 1.5m、幅 0.7m で開口方向を、S-85°-W にとる。石室形態は片袖式の横穴式石室をもち、このグループ中唯一のものである。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/F06.png" data-cap="駄ヶ原古墳群 F 支群 6 号墳" aria-label="駄ヶ原古墳群 F 支群 6 号墳を拡大"><img loading="lazy" src="images/F06.png" alt="駄ヶ原古墳群 F 支群 6 号墳"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 F 支群 6 号墳<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">F 支群 7 号墳（旧 D7 号墳）</h3>
+<p>6 号墳より南東 9.5m の地点、標高 144.75m の位置に存在している。本墳は土砂崩れによる破壊を免れてはいるものの、玄室前方部より土砂が流入しており、羨道の状態も確認できない。</p>
+<p>平板実測により、0.25m のコンタを落としてみたが、その墳丘は確認できなかった。この点において、他の古墳も本古墳同様深く地山を掘り込んでマウンドというマウンドをもたないように築造されていたであろうことが推察できる。</p>
+<p>石室規模としては玄室幅 1.7m、奥行き約 2m、高さ約 2.5m くらいと推定される。羨道付近の石材は現状では確認できず、石室形態は不明である。開口方向は他の古墳と同様、西方、谷向き開口であろうと推定される。</p>
+<h3 class="tomb">F 支群 8 号墳（旧 D8 号墳）</h3>
+<p>本墳は第 2 ダムの南方、約 150m の地点 1 号墳～7 号墳の存在する斜面の向い側の急斜面上に存在し、9 号墳とは谷を隔てて立地している。標高約 135.5m の地点に築造されているやや小型の古墳である。石材は 1×0.9m 程度の石材が奥壁左側の一部、左側壁の一部と 2 個程度しか残存しておらず、盛土、その他の施設は急斜面上に築造したため流出してしまっている。</p>
+<p>石室形態は不明である。しかし土拡および残った石材から考察するとその規模は奥行き 2m、横幅 1.5m 程度の玄室をもっていたものと思われる。開口方向は、北東で谷向き開口をとっている。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/F08.png" data-cap="駄ヶ原古墳群 F 支群 8 号墳" aria-label="駄ヶ原古墳群 F 支群 8 号墳を拡大"><img loading="lazy" src="images/F08.png" alt="駄ヶ原古墳群 F 支群 8 号墳"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 F 支群 8 号墳<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+  </div>
+</section>
+<section id="G" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">09</span>
+    <h2>G 支群</h2>
+  </header>
+  <div class="sec-body">
+<p>G 支群は従来の D 支群 9 号墳と新たに確認した 2 基の古墳の計 3 基より構成される。当支群は旧 D9 号墳（現 G2 号墳）を中心として南北にそれぞれ 1 基ずつの古墳があり、旧 D9 号墳を G 支群 2 号墳、南側の 1 基は G 支群 1 号墳、北側の 1 基は G 支群 3 号墳とした。当支群は F 支群と谷を挟んだほぼ南側に位置している。</p>
+<h3 class="tomb">G 支群 1 号墳（新規）</h3>
+<p>1979 年の分布調査で新たに確認された古墳であるが、墳丘および石室の調査がされておらず、詳細は不明である。</p>
+<h3 class="tomb">G 支群 2 号墳（旧 D9 号墳）</h3>
+<p>本墳は G 支群中、最南の位置にあり、F8 号墳と対面する尾根上部のやや平坦地に独立して存在する大型の古墳である。標高 144.75m の地点に位置している。</p>
+<p>本墳は開口こそしているが、G 支群中のみならず油山群集墳中最も保存状態のよい古墳の 1 基に数えられる。墳丘径約 16m を測る。南側、すなわち、尾根側の基底変更線は 145.5m で、北側尾根末端方向では 144.5m である。</p>
+<p>石室形態は横穴式両袖の石室をもち、玄室は典型的縦長プランの構造をなしている。石室規模は玄室奥行き 2.9m、横長 2m、高さ 2.5m、羨道部幅約 1m、長さ 4.9m、高さ 1.15m を測る。石材は奥壁幅 2.6m、高さ 1.6m の巨石、側壁は、床面で、長さ 1.5m、高さ 1m 程度の巨石をそれぞれ使用し、3～4 段目からは 0.4m×0.6m 程度の石材を使用し、石材の間には、にぎりこぶし大の栗石の充填が認められる。天井部は巨石 1 枚を使用している。なお、羨道部に 2 個所ほど閉塞の跡が認められる。開口方向は、S-80°-W であり、ほぼ真西に開口している。</p>
+<p>玄室内より坏の蓋の破片、入口より坏を表採した。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/G02_topo.png" data-cap="駄ヶ原古墳群 D9 号墳（現 G 支群 2 号墳）地形図" aria-label="駄ヶ原古墳群 D9 号墳（現 G 支群 2 号墳）地形図を拡大"><img loading="lazy" src="images/G02_topo.png" alt="駄ヶ原古墳群 D9 号墳（現 G 支群 2 号墳）地形図"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 D9 号墳（現 G 支群 2 号墳）地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/G02_chamber.png" data-cap="駄ヶ原古墳群 D9 号墳（現 G 支群 2 号墳）石室実測図" aria-label="駄ヶ原古墳群 D9 号墳（現 G 支群 2 号墳）石室実測図を拡大"><img loading="lazy" src="images/G02_chamber.png" alt="駄ヶ原古墳群 D9 号墳（現 G 支群 2 号墳）石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 D9 号墳（現 G 支群 2 号墳）石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/G02_photo_sendo.jpg" data-cap="駄ヶ原古墳群 G 支群 2 号墳 羨道入口より（2019 年 6 月撮影）" aria-label="駄ヶ原古墳群 G 支群 2 号墳 羨道入口より（2019 年 6 月撮影）を拡大"><img loading="lazy" src="images/G02_photo_sendo.jpg" alt="駄ヶ原古墳群 G 支群 2 号墳 羨道入口より（2019 年 6 月撮影）"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 G 支群 2 号墳 羨道入口より（2019 年 6 月撮影）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/G02_photo_genmon.jpg" data-cap="駄ヶ原古墳群 G 支群 2 号墳 玄門入口より（2019 年 6 月撮影）" aria-label="駄ヶ原古墳群 G 支群 2 号墳 玄門入口より（2019 年 6 月撮影）を拡大"><img loading="lazy" src="images/G02_photo_genmon.jpg" alt="駄ヶ原古墳群 G 支群 2 号墳 玄門入口より（2019 年 6 月撮影）"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 G 支群 2 号墳 玄門入口より（2019 年 6 月撮影）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/G02_photo_okabe.jpg" data-cap="駄ヶ原古墳群 G 支群 2 号墳 奥壁（2019 年 6 月撮影）" aria-label="駄ヶ原古墳群 G 支群 2 号墳 奥壁（2019 年 6 月撮影）を拡大"><img loading="lazy" src="images/G02_photo_okabe.jpg" alt="駄ヶ原古墳群 G 支群 2 号墳 奥壁（2019 年 6 月撮影）"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 G 支群 2 号墳 奥壁（2019 年 6 月撮影）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">G 支群 3 号墳</h3>
+<p>本墳も 1 号墳と同様に 1979 年の分布調査で新たに確認された古墳である。墳丘および石室の調査がされておらず、詳細は不明である。</p>
+  </div>
+</section>
+<section id="H" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">10</span>
+    <h2>H 支群</h2>
+  </header>
+  <div class="sec-body">
+<p>当支群は F 支群より南東に位置する 1 基よりなる支群であるが詳細は不明である。</p>
+  </div>
+</section>
+<section id="I" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">11</span>
+    <h2>I 支群</h2>
+  </header>
+  <div class="sec-body">
+<h3 class="tomb">I 支群 1 号墳</h3>
+<p>標高約 57m の地点に位置し、ほぼ西側に開口すると思われる。墳丘上部は削平されており、天井石が 2 枚露出しており、そのまん中が石抜きされている。石室には土砂が流入しており、左側壁の腰石はほぼ埋まっており、現床面より 3 段の石積みが残っている。現状では奥壁幅 1.7m、石側壁長 2.2m、左側壁長 2.5m、前壁幅 2.4m を測る。羨道部は土砂の流入で埋没している。全体的にせり出しが激しく残りが悪い。本墳の北東側は県の治水工事によって確認後に削平された。</p>
+<h3 class="tomb">I 支群 2 号墳</h3>
+<p>標高約 54m を測り、1 号墳より北西へ 15m の地点に位置し、ほぼ西側に開口する。墳丘は北側が著しく川の方へ流れ込んでおり、墳裾線の確認は困難である。天井石はなく上部から石室内をうかがえる。墳丘上には 1×0.5m の石材が存している。石室は相当量の土砂が流入しており、羨道部は埋没している。奥壁には腰石を 2 枚配し、周壁は現床面より 5 段の石積みが残っている。石室平面ブランは現床面で 2.35m×1.50m（タテ×ヨコ）の縦長長方形プランを呈する。全体的に大ぶりの石はなく、石室の構築状態は雑である。しかし、現在（1981 年 12 月）は県による治水工事によって完全に埋没している。</p>
+<h3 class="tomb">I 支群 3 号墳</h3>
+<p>標高 51.0m を測り、墳丘は北側が道路建設のため大きく削られている。墳上では天井石が一部露出しており、右側壁天井部の一部が石抜きされている。石室は両袖単式の横穴式石室で奥壁幅 2.0m、右側壁長 2.80m、左側壁 2.60m、前壁幅 1.8m の縦長長方形ブランを呈する。奥壁腰石には横 2m、縦約 1.2m の大ぶりの石 1 枚を配し、3 段目以上はせり出しが激しい。側壁は左右きも 2 枚の腰石で、上部は持ち送りを用いており、天井石は 1 枚である。前壁は割石と思われる大ぶりの石 2 枚を積んでおり、全体的に見ると構築状態は雑であるといえよう。羨道から玄室の半分程にかけては土砂流入でかなり埋まっており、玄室床面には落石と思われる石材が多く存在する。新確認された 11 基の中では規模において最大であると思われる。ほぼ西側に開口する。本墳も県による治水工事のため前庭部と墳丘南側は削平されている。</p>
+<h3 class="tomb">I 支群 4 号墳</h3>
+<p>本墳は道をはさんで 3 号墳の北側にあり、開口方向、標高も 3 号墳とほぼ同じである。墳丘は南側がほとんど道路で削られ、築造時の板築がうかがえ、またうちどめも見えている。現在の 3 号墳、4 号墳の状態からこの 2 基は密接した状態にあったと思われる。墳丘上部は天井石が一部露出しており、墳丘封土が相当量流出していると思われる。石室は現状で奥壁幅 17m、前壁幅 168m、右側壁長 16m、左側壁長 165m のほぼ正方形プランを呈する。石材は小ぶりの石が多く、持ち送りが用いられている。袖石は現床面より左右 2 段であるが左側の 2 段目の石が落ちている。前壁は 2 段で石室内の石材の中では、大ぶりの石が使用されている。本墳も県による治水工事によって墳丘北側は削平されている。</p>
+<h3 class="tomb">I 支群 5 号墳</h3>
+<p>第 3 溜池のほとりに近い平坦な地形に立地し、標高は約 47m を測る。墳丘は上部がほとんど埋まっているが、やや盛り上りを残すマウンドと石の並びにより、一見して古墳と判別することは可能である。現状から察して、小規模の古墳であろうと思われる。ほぼ西側に開口すると思われる。</p>
+<h3 class="tomb">I 支群 6 号墳</h3>
+<p>本墳は 5 号墳とほぼ同じ標高により、墳丘も流れてしまっており、墳裾を確認することは困難である。5 号墳と同じようにやや盛り上がりを残すマウンドと中心の落ち込みによって、かろうじて古墳と判断できるのが現状である。石材は 1 つも確認できない。</p>
+<h3 class="tomb">I 支群 7 号墳</h3>
+<p>駄ヶ原支群からおりた鋸歯状になった丘陵斜面上に位置する。墳丘は流出しており判然としない。石室は原形をとどめており残存状態は今回新確認の 11 基の中ではわりと良好な方である。奥壁幅約 16m、前壁幅 2.1m、左右側壁長約 2.7m の縦長長方形プランを呈する。天井石は 1 枚で奥壁は 3 段構築で腰石には 3 角形の大きな石を用いている。壁は左右とも腰石を 2 枚使用し、4 段構築と思われるが、全体的に左側壁の方が雑である。羨道は天井石 3 枚で、まん中の石が羨道をふさぐように落ちている。羨道長は現状で約 3.5m を測る。南西に開口する。</p>
+<h3 class="tomb">I 支群 8 号墳</h3>
+<p>7 号墳の南側に隣接しており、同一丘陵斜面上に立地する。古墳の残存状態は悪く、墳丘は上部が削平されており、墳裾は判然としない。石室も石抜き、落ち込みなどによって原形をとどめておらず玄室は奥壁と右側壁の一部がわかるのみである。奥壁は、現状で 3 麦道部は段、石側壁は、一部ではあるが、4 段構築となっている。土砂流入により埋没しておるが、ほぼ西側に開口すると思われる。</p>
+<h3 class="tomb">I 支群 9 号墳</h3>
+<p>本墳は 7.8 号墳の並ぶ南側の鋸歯状になった丘陵斜面上に位する。墳丘封土は著しく流出しており 2.2m×1.2m の天井石が完全に露出している。石室は両袖単式の横穴式石室で、玄室は奥壁幅約 2.1m、前壁幅約 1.8m、左右側壁長 2.30m のやや縦長に近い正方形プランを呈する。天井石は露出している 1 枚で、奥壁の腰石は 1 枚で、4 段構築で多少奥壁下部が湾曲している。全体的にほとんど自然の転石を使用しているようだが右側壁 2 段目、奥壁側に縦 66cm、横 85cm の長方形の割石がめだつ。全体的にせり出しが激しく、羨道の入口はわかるが、天井石が落ちているために構築状態などは判然としない。ほぼ南西に開口する。</p>
+<h3 class="tomb">I 支群 10 号墳</h3>
+<p>9 号墳の南側に隣接し、丘陵上の 4 基の中で最高所に位置する。墳丘封土は流出しており、石室も石抜き、落ち込みにより、原形をとどめておらず、現状では、玄室では、玄室奥壁と左側壁の一部だ 5、6 個の石組みが残っているだけであるが、一見して古墳と判断できる。ほぼ北西側に開口する。</p>
+<h3 class="tomb">I 支群 11 号墳</h3>
+<p>本墳は他の 10 基の古墳とは離れた第 3 溜池北側に位置する。墳丘封土は石抜きなどにより著しく流出しており、墳丘西側は道路建設のため削平されている。石室には土砂の流入が著しく、奥壁は現床面より 3 段、右側壁には現床面より 2 段の石積みが確認できるのである。ほぼ南西に開口すると思われ、開口方向側も削平を受けている。</p>
+<p class="note">＊I 支群における文章は 1981 年福岡大学歴史研究部刊行の「七隈 19 号」より転用した。</p>
+  </div>
+</section>
+<section id="relics" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">12</span>
+    <h2>表採遺物</h2>
+  </header>
+  <div class="sec-body">
+<figure class="fig">
+  <button class="fig-btn" data-src="images/relics.png" data-cap="駄ヶ原古墳群・霧ヶ滝古墳群 表採遺物実測図（須恵器坏 ①②③・須恵器甕 ④）" aria-label="駄ヶ原古墳群・霧ヶ滝古墳群 表採遺物実測図（須恵器坏 ①②③・須恵器甕 ④）を拡大"><img loading="lazy" src="images/relics.png" alt="駄ヶ原古墳群・霧ヶ滝古墳群 表採遺物実測図（須恵器坏 ①②③・須恵器甕 ④）"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群・霧ヶ滝古墳群 表採遺物実測図（須恵器坏 ①②③・須恵器甕 ④）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p class="part part-chamber"><span>①</span></p>
+<p>霧ヶ滝古墳群 G5 号墳、玄室右袖石付近で表面採集した。須恵の坏で、口縁部直径 13.4cm、高さ 3.8cm で整形はすべてロクロ使用で、口縁部のたちあがりがあまりなく、八女須恵器編年表でてらしあわせると、ⅢB に匹敵する 胎土は緻密で良質であるが、小砂がかなり混入されている。焼成は全体的に同温度で良好である。色は外面が、黄茶灰色で、内面は黄褐色がかりの灰白色である。ヘラ記号は底部に約 8cm のするどい線がそうである。ロクロを使用しているため、形は整っているが、簡素に仕上げられている。ただ口縁部は丁寧に仕上げられていて、焼いたときのゆがみもみられず、全体的に薄手に仕上げされている。</p>
+<p class="part part-chamber"><span>②</span></p>
+<p>駄ノ原古墳群 D9 号墳、玄室中央部付近より表面採集した。須恵器の坏で、口縁部直径 13.5cm、高さ 4.3cm で、胎土は小石がかなり混入され、それが表面の仕上げをさまたげている。焼成は温度が低いため、全体的に赤褐色で底部は熱がとおっていないため、その他部分より色が淡い。内面は、中央より外へヨコナデされている。底部に 5cm、5cm の 2 本の線が 60°の角度で交差する形のヘラ記号が施されている。口縁部のたちあがりが急で、八女須恵編年表で ⅢA に匹敵されると思われる。</p>
+<p class="part part-chamber"><span>③</span></p>
+<p>霧ヶ滝古墳群 F5 号墳玄室右袖石付近で出土した。口縁部直径 12.8cm、高さ 4.3cm、高台付の坏で、八女須恵編年表で Ⅵ～Ⅶ に匹敵されると思われる高台は、4mm 程ではりつけされ、その外面は、外に広がりをみせ、高台底面は水平にされている。また、口縁部は、胴部の外湾角度より大きく広がっている。胎土は、緻密で良質で小石の混入は見られず、温度がかなり低いため焼成は悪し、須恵本来の色彩がなく黄灰白色で、全体同一温度で焼かれている。外側面はヘラとヨコナデのみの整形および調整であり、内側はヨコナデののち、底面はナデにより仕上げられている。</p>
+<p class="part part-chamber"><span>④</span></p>
+<p>須恵器でかなり大きなもので、口縁部直径 16.1cm、高さ 47.0cm で胴部がふくらみ底部へと急な傾斜を形づくっている。底部は円錘形である。頸部は短かく、そこに対照的にヘラ切りがあり、胴部に、はりつけ、内面胴部はたたきがすべてほどこされている。最もふくらみのある胴部は厚さが最もうすい。また、底部よりに故意に割られた形跡がある。これは墓前祭のときの儀式の 1 つであろう。外部は胴部より底部にかけて濃灰色でその他の部分は灰色をしている。内部も同様に配色され、焼きがよかったことをものがたっている。ロクロ使用と考える。表面は頸部には刷毛文がない。胴部にはくっきりと刷毛文がある。胎土は良質で小石もあまり見られない。</p>
+<p class="note">＊本報告書における文章および作図は駄ヶ原古墳群 I 支群を除いて、1976 年福岡大学歴史研究部刊行「駄ノ原古墳群・霧ヶ滝古墳群分布調査概報」より転用した。</p>
+<p class="note">＊古墳分布再編については 1979 年福岡大学歴史研究部刊行の「七隈 17 号」を参考とした。</p>
+  </div>
+</section>
+<section id="plates" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">13</span>
+    <h2>地形図と石室</h2>
+  </header>
+  <div class="sec-body">
+<p>駄ヶ原古墳群の地形図と石室実測図を一括して掲げる。各図版は拡大して細部まで確認できる。</p>
+<h3 class="tomb">F 支群（1～7 号墳）</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/plate_F.png" data-cap="駄ヶ原古墳群 地形図と石室（F 支群 1～7 号墳）" aria-label="駄ヶ原古墳群 地形図と石室（F 支群 1～7 号墳）を拡大"><img loading="lazy" src="images/plate_F.png" alt="駄ヶ原古墳群 地形図と石室（F 支群 1～7 号墳）"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 地形図と石室（F 支群 1～7 号墳）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">E 支群</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/plate_E.png" data-cap="駄ヶ原古墳群 地形図と石室（E 支群）" aria-label="駄ヶ原古墳群 地形図と石室（E 支群）を拡大"><img loading="lazy" src="images/plate_E.png" alt="駄ヶ原古墳群 地形図と石室（E 支群）"></button>
+  <figcaption><span class="cap-mark">図</span>駄ヶ原古墳群 地形図と石室（E 支群）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="ft">
+    <b>駄ヶ原古墳群 現状調査報告書（改訂版）</b>
+    2023年　「油山古墳研究室」ホームページ準備世話人会<br>
+    本文および作図の出典：福岡大学歴史研究部「駄ノ原古墳群・霧ヶ滝古墳群分布調査概報」（1976）／<br>
+    「七隈 17 号」（1979）・「七隈 19 号」（1981）ほか。<br>
+    デジタル版（原報告書より編集）
+  </div>
+</footer>
+
+<button class="totop" id="toTop" aria-label="ページ上部へ戻る">↑</button>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="目次">
+  <div class="dh"><b>目　次</b><button class="x" id="tocClose" aria-label="閉じる">×</button></div>
+  <nav><ol><li><a href="#env" class="toc-link"><span class="toc-no">01</span><span class="toc-t">立地と環境</span></a></li><li><a href="#reorg" class="toc-link"><span class="toc-no">02</span><span class="toc-t">分布の再編について</span></a></li><li><a href="#A" class="toc-link"><span class="toc-no">03</span><span class="toc-t">A 支群</span></a></li><li><a href="#B" class="toc-link"><span class="toc-no">04</span><span class="toc-t">B 支群</span></a></li><li><a href="#C" class="toc-link"><span class="toc-no">05</span><span class="toc-t">C 支群</span></a></li><li><a href="#D" class="toc-link"><span class="toc-no">06</span><span class="toc-t">D 支群</span></a></li><li><a href="#E" class="toc-link"><span class="toc-no">07</span><span class="toc-t">E 支群</span></a></li><li><a href="#F" class="toc-link"><span class="toc-no">08</span><span class="toc-t">F 支群</span></a></li><li><a href="#G" class="toc-link"><span class="toc-no">09</span><span class="toc-t">G 支群</span></a></li><li><a href="#H" class="toc-link"><span class="toc-no">10</span><span class="toc-t">H 支群</span></a></li><li><a href="#I" class="toc-link"><span class="toc-no">11</span><span class="toc-t">I 支群</span></a></li><li><a href="#relics" class="toc-link"><span class="toc-no">12</span><span class="toc-t">表採遺物</span></a></li><li><a href="#plates" class="toc-link"><span class="toc-no">13</span><span class="toc-t">地形図と石室</span></a></li></ol></nav>
+</aside>
+
+<div class="lb" id="lb" aria-hidden="true">
+  <div class="lb-top">
+    <div class="lb-cap" id="lbCap"></div>
+    <button id="lbZoom">拡大 +</button>
+    <button id="lbClose">閉じる ×</button>
+  </div>
+  <div class="lb-stage" id="lbStage"><img id="lbImg" alt=""></div>
+  <div class="lb-foot">拡大・縮小して細部まで確認できます</div>
+</div>
+
+<script>
+(function(){
+  var drawer=document.getElementById('drawer'),scrim=document.getElementById('scrim');
+  function openD(){drawer.classList.add('open');scrim.classList.add('open');}
+  function closeD(){drawer.classList.remove('open');scrim.classList.remove('open');}
+  document.getElementById('tocOpen').addEventListener('click',openD);
+  document.getElementById('tocClose').addEventListener('click',closeD);
+  scrim.addEventListener('click',closeD);
+  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeD);});
+
+  // back to top
+  var toTop=document.getElementById('toTop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>600) toTop.classList.add('show'); else toTop.classList.remove('show');
+  },{passive:true});
+  toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+
+  // smooth anchor scroll with header offset
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href').slice(1),el=document.getElementById(id);
+      if(el){e.preventDefault();var y=el.getBoundingClientRect().top+window.scrollY-56;
+        window.scrollTo({top:y,behavior:'smooth'});history.replaceState(null,'','#'+id);}
+    });
+  });
+
+  // Lightbox with zoom & pan
+  var lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),
+      lbCap=document.getElementById('lbCap'),lbStage=document.getElementById('lbStage');
+  var scale=1,tx=0,ty=0,start=null,pinch=null;
+  function apply(){lbImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function reset(){scale=1;tx=0;ty=0;apply();document.getElementById('lbZoom').textContent='拡大 +';}
+  function open(src,cap){lbImg.src=src;lbImg.alt=cap;lbCap.textContent=cap;reset();
+    lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+  function close(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';lbImg.src='';}
+  document.querySelectorAll('.fig-btn').forEach(function(b){
+    b.addEventListener('click',function(){open(b.getAttribute('data-src'),b.getAttribute('data-cap'));});
+  });
+  document.getElementById('lbClose').addEventListener('click',close);
+  document.getElementById('lbZoom').addEventListener('click',function(){
+    scale=(scale>1?1:2.4);if(scale===1){tx=0;ty=0;}apply();this.textContent=scale>1?'戻す −':'拡大 +';
+  });
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target===lbStage)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))close();});
+
+  // double tap to zoom
+  var lastTap=0;
+  lbStage.addEventListener('click',function(e){
+    var now=Date.now();
+    if(now-lastTap<300){scale=(scale>1?1:2.4);if(scale===1){tx=0;ty=0;}apply();
+      document.getElementById('lbZoom').textContent=scale>1?'戻す −':'拡大 +';}
+    lastTap=now;
+  });
+  // drag pan (mouse + 1 finger)
+  lbImg.addEventListener('mousedown',function(e){if(scale<=1)return;start={x:e.clientX-tx,y:e.clientY-ty};e.preventDefault();});
+  window.addEventListener('mousemove',function(e){if(start){tx=e.clientX-start.x;ty=e.clientY-start.y;apply();}});
+  window.addEventListener('mouseup',function(){start=null;});
+  lbImg.addEventListener('touchstart',function(e){
+    if(e.touches.length===1&&scale>1){start={x:e.touches[0].clientX-tx,y:e.touches[0].clientY-ty};}
+    else if(e.touches.length===2){var dx=e.touches[0].clientX-e.touches[1].clientX,dy=e.touches[0].clientY-e.touches[1].clientY;
+      pinch={d:Math.hypot(dx,dy),s:scale};}
+  },{passive:true});
+  lbImg.addEventListener('touchmove',function(e){
+    if(pinch&&e.touches.length===2){var dx=e.touches[0].clientX-e.touches[1].clientX,dy=e.touches[0].clientY-e.touches[1].clientY;
+      scale=Math.min(5,Math.max(1,pinch.s*Math.hypot(dx,dy)/pinch.d));if(scale===1){tx=0;ty=0;}apply();e.preventDefault();}
+    else if(start&&e.touches.length===1&&scale>1){tx=e.touches[0].clientX-start.x;ty=e.touches[0].clientY-start.y;apply();e.preventDefault();}
+  },{passive:false});
+  lbImg.addEventListener('touchend',function(e){if(e.touches.length===0){start=null;pinch=null;}});
+})();
+</script>
+</body>
+</html>
