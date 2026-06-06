@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<meta name="description" content="鳥越古墳群 現状調査報告書（2023年・油山古墳研究室）デジタル版。福岡市城南区油山山麓の後期群集墳、全10支群の現状調査記録。">
+<title>鳥越古墳群 現状調査報告書｜油山古墳研究室</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Noto+Serif+JP:wght@400;600&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ffffff; --paper2:#f6f5f2; --card:#ffffff;
+  --ink:#1a1a1a; --ink2:#565656; --line:#d8d8d4; --line2:#ececea;
+  --clay:#7a2e2e; --clay2:#5e2222; --ochre:#8a6a2e; --sage:#3f4a3a;
+  --shadow:0 1px 2px rgba(0,0,0,.05),0 3px 12px rgba(0,0,0,.05);
+  --maxw:760px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Noto Serif JP",serif; font-weight:400; line-height:1.95;
+  font-size:16px; letter-spacing:.01em;
+  text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased;
+}
+/* faint paper grain */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;display:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--clay2);text-decoration:none}
+
+/* ---- Top bar ---- */
+.bar{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:.6rem;
+  padding:.55rem .9rem;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);}
+.bar .brand{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:.98rem;
+  letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .brand small{color:var(--ink2);font-weight:500;font-size:.72rem;margin-left:.4rem}
+.bar .spacer{flex:1}
+.toc-toggle{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.82rem;
+  color:var(--paper2);background:var(--clay);border:none;border-radius:999px;
+  padding:.42rem .95rem;cursor:pointer;letter-spacing:.08em;box-shadow:var(--shadow);transition:background .2s}
+.toc-toggle:hover{background:var(--clay2)}
+.toc-toggle::before{content:"☰ ";font-size:.9em}
+
+/* ---- Hero (title page, white) ---- */
+.hero{position:relative;z-index:1;background:#fff;border-bottom:1px solid var(--line)}
+.hero-inner{max-width:var(--maxw);margin:0 auto;padding:3rem 1.3rem 2.2rem;text-align:center}
+.hero .kicker{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:500;letter-spacing:.4em;
+  font-size:.72rem;color:var(--ink2);margin:0 0 1.4rem;text-indent:.4em}
+.hero h1{font-family:"Shippori Mincho B1",serif;font-weight:800;line-height:1.18;
+  font-size:clamp(2.3rem,8.5vw,3.4rem);letter-spacing:.16em;margin:0;color:var(--ink);text-indent:.16em}
+.hero .sub{font-family:"Shippori Mincho B1",serif;font-weight:500;font-size:clamp(1rem,4.4vw,1.3rem);
+  letter-spacing:.36em;margin:1.1rem 0 0;color:var(--ink);text-indent:.36em;
+  padding-top:1rem;position:relative;display:inline-block}
+.hero .sub::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:54px;height:2px;background:var(--clay)}
+.hero .byline{font-family:"Shippori Mincho B1",serif;font-size:1rem;letter-spacing:.18em;
+  color:var(--ink);margin:1.6rem 0 .3rem}
+.hero .meta{font-family:"Zen Kaku Gothic New",sans-serif;font-size:.78rem;letter-spacing:.08em;
+  color:var(--ink2);margin:.2rem 0 0}
+.cover-fig{margin:2.1rem auto 0;text-align:center}
+.cover-fig figcaption{font-family:"Zen Kaku Gothic New",sans-serif;font-size:.76rem;color:var(--ink2);
+  margin:.7rem auto 0;line-height:1.5}
+
+/* ---- Preface ---- */
+.preface{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:1.8rem 1.3rem .4rem}
+.preface p{font-size:.9rem;color:var(--ink2);line-height:1.85;margin:.2rem 0 .6rem;
+  border-left:3px solid var(--line);padding-left:.9rem}
+
+/* ---- Inline TOC ---- */
+.toc-inline{position:relative;z-index:1;max-width:var(--maxw);margin:1.4rem auto 0;padding:0 1.3rem}
+.toc-inline .tc{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  box-shadow:var(--shadow);padding:1.2rem 1.1rem 1rem}
+.toc-inline .tc h2{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:1.05rem;
+  letter-spacing:.22em;margin:0 0 .9rem;color:var(--clay2);text-align:center}
+.toc-inline .tc h2::before,.toc-inline .tc h2::after{content:"";display:inline-block;width:1.6rem;
+  height:1px;background:var(--line);vertical-align:middle;margin:0 .7rem}
+ol.toc{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:.1rem}
+ol.toc li a{display:flex;align-items:baseline;gap:.7rem;padding:.5rem .5rem;border-radius:8px;
+  color:var(--ink);transition:background .15s}
+ol.toc li a:hover{background:var(--paper)}
+.toc-no{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.72rem;
+  color:var(--clay);min-width:1.6rem;letter-spacing:.05em}
+.toc-t{font-family:"Shippori Mincho B1",serif;font-weight:500;font-size:.98rem;
+  border-bottom:1px dotted transparent}
+ol.toc li a:hover .toc-t{border-bottom-color:var(--line)}
+
+/* ---- Main ---- */
+main{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:1rem 1.3rem 4rem}
+.sec{scroll-margin-top:64px;padding:2.6rem 0 1.2rem;border-top:1px solid var(--line2)}
+.sec:first-of-type{border-top:none}
+.sec-head{display:flex;align-items:center;gap:.85rem;margin:0 0 1.4rem}
+.sec-no{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.78rem;
+  color:var(--paper2);background:var(--clay);border-radius:7px;padding:.28rem .55rem;letter-spacing:.06em;
+  box-shadow:var(--shadow)}
+.sec-head h2{font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:1.5rem;
+  letter-spacing:.12em;margin:0;color:var(--ink)}
+.sec-body p{margin:0 0 1.05rem;text-align:justify}
+
+/* 号墳 heading */
+h3.tomb{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:1.12rem;letter-spacing:.06em;
+  color:var(--clay2);margin:2.1rem 0 1rem;padding:.4rem 0 .5rem .9rem;
+  border-left:4px solid var(--clay);background:none;border-bottom:1px solid var(--line2)}
+h3.tomb::before{content:"";}
+.sec:first-of-type h3.tomb:first-child,.sec-body > h3.tomb:first-child{margin-top:.4rem}
+
+/* 墳丘/石室 labels */
+p.part{margin:1.4rem 0 .6rem;display:flex;align-items:center;gap:.6rem}
+p.part span{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.82rem;
+  letter-spacing:.22em;padding:.18rem .7rem;border-radius:4px}
+p.part::after{content:"";flex:1;height:1px;background:var(--line2)}
+.part-mound span{color:#5a4a2e;background:#f2f0ea;border:1px solid var(--line);border-left:3px solid #8a6a2e}
+.part-chamber span{color:#33402f;background:#eef0ec;border:1px solid var(--line);border-left:3px solid #3f4a3a}
+
+/* notes */
+p.note{font-size:.8rem;line-height:1.7;color:var(--ink2);margin:.5rem 0;padding:.55rem .8rem;
+  background:var(--paper2);border:1px dashed var(--line);border-radius:8px;text-align:justify}
+
+/* figures */
+figure.fig{margin:1.6rem 0 1.8rem;text-align:center}
+.fig-btn{display:inline-block;max-width:100%;padding:0;border:none;background:none;cursor:zoom-in;line-height:0}
+.fig-btn img{margin:0 auto;border:1px solid var(--line);background:#fff;border-radius:6px;
+  box-shadow:var(--shadow);padding:6px;max-height:74vh;width:auto;max-width:100%}
+figure.fig figcaption{font-family:"Zen Kaku Gothic New",sans-serif;font-size:.78rem;color:var(--ink2);
+  margin:.7rem auto 0;max-width:90%;line-height:1.55;letter-spacing:.02em}
+.cap-mark{display:inline-block;font-weight:700;color:var(--paper2);background:var(--sage);
+  border-radius:4px;font-size:.66rem;padding:.06rem .42rem;margin-right:.5rem;letter-spacing:.1em;vertical-align:.06em}
+.cap-hint{display:block;color:var(--ochre);font-size:.68rem;margin-top:.25rem;letter-spacing:.08em}
+.cap-hint::before{content:"⤢ "}
+/* wide data table figure */
+figure.fig-table{margin:1.4rem -1.3rem 1.8rem}
+.table-scroll{width:100%;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;
+  padding:.2rem 1.3rem;touch-action:pan-x pan-y}
+figure.fig-table .fig-btn{display:inline-block;width:auto;max-width:none;cursor:zoom-in;line-height:0}
+figure.fig-table .fig-btn img{max-height:none;width:900px;max-width:none;min-width:0}
+figure.fig-table figcaption{padding:0 1.3rem}
+
+/* ---- 図面と説明の対置（墳丘／石室） ---- */
+.pair{margin:1.6rem 0 1.8rem}
+.pair-label{margin:0 0 .7rem}
+.pair-label span{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.84rem;
+  letter-spacing:.22em;padding:.2rem .8rem;border-radius:4px;display:inline-block}
+.pair-mound .pair-label span{color:#5a4a2e;background:#f2f0ea;border:1px solid var(--line);border-left:3px solid #8a6a2e}
+.pair-chamber .pair-label span{color:#33402f;background:#eef0ec;border:1px solid var(--line);border-left:3px solid #3f4a3a}
+.pair-text p{margin:0 0 1rem;text-align:justify}
+.pair-text p:last-child{margin-bottom:0}
+.pair-figs figure.fig{margin:0 0 .8rem}
+.pair-figs figure.fig:last-child{margin-bottom:0}
+/* 狭い画面：図版を画面上部に固定し、説明文を読む間ずっと見えるように */
+.pair-figs{position:sticky;top:54px;z-index:5;background:#fff;
+  max-height:48vh;overflow:auto;-webkit-overflow-scrolling:touch;
+  padding:.35rem 0 .55rem;border-bottom:1px solid var(--line2)}
+.pair-figs .fig-btn img{max-height:42vh}
+.pair-figs figcaption .cap-hint{display:none}
+@media(min-width:740px){
+  /* 広い画面：図版を左、説明文を右に並べて対置（図版は追従） */
+  .pair-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;align-items:start}
+  .pair-figs{position:sticky;top:64px;max-height:none;overflow:visible;
+    background:transparent;border-bottom:none;padding:0}
+  .pair-figs .fig-btn img{max-height:80vh}
+  .pair-figs figcaption .cap-hint{display:block}
+}
+
+/* ---- Drawer (off-canvas TOC) ---- */
+.scrim{position:fixed;inset:0;z-index:50;background:rgba(28,20,12,.5);opacity:0;visibility:hidden;
+  transition:opacity .25s}
+.scrim.open{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;right:0;z-index:60;height:100%;width:min(85vw,340px);
+  background:var(--paper2);box-shadow:-8px 0 30px rgba(40,28,15,.25);
+  transform:translateX(100%);transition:transform .28s cubic-bezier(.2,.7,.2,1);
+  display:flex;flex-direction:column;border-left:3px solid var(--clay)}
+.drawer.open{transform:translateX(0)}
+.drawer .dh{display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 1.1rem;border-bottom:1px solid var(--line)}
+.drawer .dh b{font-family:"Shippori Mincho B1",serif;font-weight:700;letter-spacing:.2em;font-size:1rem;color:var(--clay2)}
+.drawer .x{border:none;background:none;font-size:1.5rem;line-height:1;color:var(--ink2);cursor:pointer;padding:.2rem .4rem}
+.drawer nav{overflow-y:auto;padding:.5rem .5rem 2rem}
+.drawer ol{list-style:none;margin:0;padding:0}
+.drawer ol li a{display:flex;align-items:baseline;gap:.7rem;padding:.7rem .8rem;border-radius:9px;color:var(--ink)}
+.drawer ol li a:active{background:var(--paper)}
+
+/* ---- Back to top ---- */
+.totop{position:fixed;right:1rem;bottom:1rem;z-index:35;width:46px;height:46px;border-radius:50%;
+  border:1px solid var(--line);background:var(--card);color:var(--clay2);font-size:1.2rem;
+  box-shadow:var(--shadow);cursor:pointer;opacity:0;visibility:hidden;transition:opacity .25s}
+.totop.show{opacity:1;visibility:visible}
+
+/* ---- Lightbox ---- */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(18,13,8,.94);display:none;
+  flex-direction:column;touch-action:none}
+.lb.open{display:flex}
+.lb-top{display:flex;justify-content:space-between;align-items:center;padding:.8rem 1rem;color:#eadfce;
+  font-family:"Zen Kaku Gothic New",sans-serif;font-size:.8rem;gap:1rem}
+.lb-top .lb-cap{flex:1;line-height:1.4}
+.lb-top button{border:1px solid rgba(234,223,206,.4);background:transparent;color:#eadfce;
+  border-radius:8px;padding:.35rem .7rem;cursor:pointer;font-size:.8rem}
+.lb-stage{flex:1;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.lb-stage img{max-width:100%;max-height:100%;touch-action:none;cursor:grab;
+  transform-origin:center center;transition:transform .05s linear;user-select:none;-webkit-user-drag:none}
+.lb-foot{text-align:center;color:#b9a98f;font-family:"Zen Kaku Gothic New",sans-serif;
+  font-size:.7rem;padding:.5rem 1rem .9rem;letter-spacing:.06em}
+
+/* ---- Footer ---- */
+footer{position:relative;z-index:1;border-top:3px double var(--clay);background:var(--paper2);
+  padding:2.2rem 1.3rem 3rem;text-align:center}
+footer .ft{max-width:var(--maxw);margin:0 auto;font-family:"Zen Kaku Gothic New",sans-serif;
+  font-size:.76rem;color:var(--ink2);line-height:1.9;letter-spacing:.03em}
+footer .ft b{font-family:"Shippori Mincho B1",serif;color:var(--clay2);font-size:.95rem;letter-spacing:.16em;display:block;margin-bottom:.5rem}
+
+@media(min-width:680px){
+  body{font-size:16.5px}
+  .fig-btn img{max-width:560px}
+  figure.fig-table .fig-btn img{width:1400px;max-width:none;min-width:0}
+  figure.fig-table{margin:1.4rem 0 1.8rem}
+  figure.fig-table .table-scroll,figure.fig-table figcaption{padding-left:0;padding-right:0}
+}
+/* maps, plates, charts, aerials, topo may show wider */
+.fig-btn[data-src*="p03"] img,.fig-btn[data-src*="p05_f1"] img,
+.fig-btn[data-src*="p18_f1"] img,.fig-btn[data-src*="p22_f1"] img,
+.fig-btn[data-src*="p23"] img,.fig-btn[data-src*="p10_f1"] img,
+.fig-btn[data-src*="p29"] img,.fig-btn[data-src*="p31_f1"] img,
+.fig-btn[data-src^="images/p34_f1"] img,.fig-btn[data-src*="p35"] img,
+.fig-btn[data-src*="p36"] img,.fig-btn[data-src*="p37"] img,
+.fig-btn[data-src*="p38"] img,.fig-btn[data-src*="p39"] img,
+.fig-btn[data-src*="p40"] img,.fig-btn[data-src*="p41"] img{max-width:100%}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="brand">鳥越古墳群<small>現状調査報告書</small></div>
+  <div class="spacer"></div>
+  <button class="toc-toggle" id="tocOpen">目次</button>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">福岡市城南区・油山山麓の後期群集墳</p>
+    <h1>鳥越古墳群</h1>
+    <p class="sub">現状調査報告書</p>
+    <p class="byline">2023年　油山古墳研究室</p>
+    <p class="meta">全10支群／横穴式石室を主体とする群集墳</p>
+    <figure class="cover-fig fig">
+      <button class="fig-btn" data-src="images/p01_f1.jpg" data-cap="鳥越古墳群（航空写真・分布）" aria-label="鳥越古墳群（航空写真・分布）を拡大">
+        <img src="images/p01_f1.jpg" alt="鳥越古墳群 航空写真・分布">
+      </button>
+      <figcaption><span class="cap-mark">図</span>鳥越古墳群（航空写真・分布）<span class="cap-hint">拡大表示</span></figcaption>
+    </figure>
+  </div>
+</header>
+
+<div class="preface">
+  <p>本ページは、油山古墳研究室『鳥越古墳群 現状調査報告書』（2023年）のデジタル版です。本文・数値・図版はすべて原報告書のとおりで、内容に改変は加えていません。</p>
+  <p>各支群・各古墳の記述、ならびに地形図・石室実測図等の作図は、原報告書の註記のとおり 1977年・1985年 福岡大学歴史研究部考古学班発行の各「現状調査報告書」、および福岡市教育委員会の発掘調査報告書から転用されたものです。なお、各図版は拡大して細部まで確認できます。</p>
+</div>
+
+<nav class="toc-inline" aria-label="目次">
+  <div class="tc">
+    <h2>目　次</h2>
+    <ol class="toc"><li><a href="#env" class="toc-link"><span class="toc-no">01</span><span class="toc-t">立地と環境</span></a></li><li><a href="#A" class="toc-link"><span class="toc-no">02</span><span class="toc-t">A 支群</span></a></li><li><a href="#B" class="toc-link"><span class="toc-no">03</span><span class="toc-t">B 支群</span></a></li><li><a href="#C" class="toc-link"><span class="toc-no">04</span><span class="toc-t">C 支群</span></a></li><li><a href="#D" class="toc-link"><span class="toc-no">05</span><span class="toc-t">D 支群</span></a></li><li><a href="#E" class="toc-link"><span class="toc-no">06</span><span class="toc-t">E 支群</span></a></li><li><a href="#F" class="toc-link"><span class="toc-no">07</span><span class="toc-t">F 支群</span></a></li><li><a href="#G" class="toc-link"><span class="toc-no">08</span><span class="toc-t">G 支群</span></a></li><li><a href="#H" class="toc-link"><span class="toc-no">09</span><span class="toc-t">H 支群</span></a></li><li><a href="#I" class="toc-link"><span class="toc-no">10</span><span class="toc-t">I 支群</span></a></li><li><a href="#J" class="toc-link"><span class="toc-no">11</span><span class="toc-t">J 支群</span></a></li><li><a href="#data" class="toc-link"><span class="toc-no">12</span><span class="toc-t">古墳データ</span></a></li><li><a href="#opening" class="toc-link"><span class="toc-no">13</span><span class="toc-t">石室開口方向</span></a></li><li><a href="#plates" class="toc-link"><span class="toc-no">14</span><span class="toc-t">地形図と石室</span></a></li><li><a href="#analysis" class="toc-link"><span class="toc-no">15</span><span class="toc-t">標高からみる墳丘規模と玄室面積</span></a></li></ol>
+  </div>
+</nav>
+
+<main>
+<section id="env" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">01</span>
+    <h2>立地と環境</h2>
+  </header>
+  <div class="sec-body">
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p03_f1.png" data-cap="鳥越古墳群周辺" aria-label="鳥越古墳群周辺を拡大"><img loading="lazy" src="images/p03_f1.png" alt="鳥越古墳群周辺"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群周辺<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p03_f2.png" data-cap="鳥越古墳群分布図" aria-label="鳥越古墳群分布図を拡大"><img loading="lazy" src="images/p03_f2.png" alt="鳥越古墳群分布図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群分布図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>鳥越古墳群は油山山麓部一帯に形成される一大群集墳のひとつであり、東側に瀬戸口古墳群、西側に早苗田古墳群が分布している。本古墳群は 10 の群より構成され、油山の東側丘陵に立地する古墳群においては最も多くの構成数を有している。</p>
+<p>A 支群は道手池の南側、油山山麓から派生した丘陵の北西斜面上に位置し、標高約 52m で西側の谷に向かって開口する１基をさす。</p>
+<p>B 支群は A 支群の東側に位置し、「片江古墳群」（註１）の報告書の中でいう片江 6、7、8 号墳の３基をさすが、宅地造成のため現存しない。</p>
+<p>C 支群は B 支群の南西方向の南東斜面上に位置する 4 基をさす。標高約 61~67m を測り、1、2、3 号墳に於いては、ほぼ南側に開口し両袖単室の埋葬施設を持つ。4 号墳は同斜面より続く平坦な丘陵上に存在する。</p>
+<p>D 支群は A 支群の南西に位置し、標高約 65〜92m の間の南側斜面上に 13 基で群を構成している。その分布と立地状態から見て、1〜11 号墳の上部グループと 12、13 号墳の下部グループに分けることができる。ほとんどが南から南東に開口し、1、5 号墳が両袖複室の横穴式石室を、他は両袖単室の横穴式石室を埋葬施設とする。</p>
+<p>E 支群は谷を挟んで A 支群の北西の丘陵斜面に分布する 3 基をさす。1 号墳は小石室を埋葬施設とする古墳である。（註２） 2、3 号墳は鳥越古墳群中では、最大規模を有する古墳であり、2 号墳は両袖複室の横穴式石室、3 号墳は両袖単室の横穴式石室を埋葬施設とする。</p>
+<p>F 支群は E 支群の東側、北東に延びる平坦な丘陵上に位置する 1 基をさす。（註３）</p>
+<p>G 支群は C 支群の東側丘陵の標高約 89〜114m の間に分布する 10 基をさす。1 号墳は丘陵頂部、本群の最西端、最高所に位置し、東側に開口する両袖単室の横穴式石室を埋葬施設とする。 2 〜10 号墳は同丘陵東側斜面に存在しほぼ南に開口すると思われる。</p>
+<p>H 支群は D 支群の南方向の丘陵東側斜面に位置する 1 基をさし、開口方向はほぼ南であると思われる。</p>
+<p>I 支群は D 支群の南西方向の丘陵東側斜面上に位置する 1 基をさし、標高は 123m を測る。</p>
+<p>J 支群は標高約 113~115m の間に分布する 4 基をさし、西側に谷を挟んで H 支群の存在する丘陵が延びる。 1、2、3 号墳は並列して隣接し、1 号墳は丘陵稜線に、 2、3 号墳は丘陵稜線に近い南東斜面に、4 号墳は本群中最下部のゆるやかな斜面に立地する。</p>
+<p class="note">註１　「片江古墳群」 『福岡市埋蔵文化財調査報告書第 24 集』 福岡市教育委員会 1973</p>
+<p class="note">註２　鳥越古墳群 E 支群 1 号墳は福岡大学馬術部練習場建設のため、1980 年に福岡市教育委員会による発掘調査を受けた後造成され現存しない。</p>
+<p class="note">註３　鳥越古墳群 F 支群は 1984 年に福岡市教育委員会による発掘調査を受け現存しない。</p>
+<p class="note">＊本稿で紹介する鳥越古墳群 G 支群は、従来、福岡大学歴史研究部において鳥越古墳群の中に位置づけていたが、福岡市の文化財地図では瀬戸口古墳群 A 群とされており、今後はこの名称とし、号名は従来を踏襲したい。ただ、本稿では従来の名称で紹介することをご了承願いたい。</p>
+  </div>
+</section>
+<section id="A" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">02</span>
+    <h2>A 支群</h2>
+  </header>
+  <div class="sec-body">
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p05_f1.png" data-cap="鳥越古墳群 A・B・C・D・E・F・H・I・J 支群分布図" aria-label="鳥越古墳群 A・B・C・D・E・F・H・I・J 支群分布図を拡大"><img loading="lazy" src="images/p05_f1.png" alt="鳥越古墳群 A・B・C・D・E・F・H・I・J 支群分布図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 A・B・C・D・E・F・H・I・J 支群分布図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">鳥越古墳群 A 支群 1 号墳</h3>
+<p>本墳は道手池の南側にあり、油山山麓から北東に派生した丘陵のゆるやかな北西斜面上の標高 50〜51m の間に位置する。西側には鳥越 D 支群の所在する丘陵があり、本墳の所在する丘陵との間には谷が広がっている。</p>
+<div class="pair pair-mound"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p05_f2.png" data-cap="鳥越古墳群 A 支群地形図" aria-label="鳥越古墳群 A 支群地形図を拡大"><img loading="lazy" src="images/p05_f2.png" alt="鳥越古墳群 A 支群地形図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 A 支群地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>墳丘盛土は石抜きおよび自然崩壊により土砂が流出しており判然としない。墳丘の東と南側において、墳裾線は確認しがたいが、北と西側では多少の盛り上がりが残る。現状で、東西径 10m、南北径 9m の不整な円形を呈している。</p></div></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>本墳の埋葬施設は、ほぼ西に開口する横穴式石室と推定される。玄室、羨道部ともに天井石、周壁の石抜きおよび崩壊による土砂の流入が著しく、腰石上部あるいはそれ以上に埋没していると思われる。現状では、現床面より奥壁 2 段、左側壁 2 段、右側壁 1 段が確認できる。</p><p>奥壁は左側壁と接して石材が 2 個存在し、75×40cm 程度の石の上に 65×40cm 程度の石を積んでいる。</p><p>左側壁は 3 個の石と 20cm 幅程度の栗石が数個残っており、 40×30cm 程度の石の上に 70×60cm 程度の石を積んでいる。奥壁と接して 65×40cm 程度の石がせり出している。</p><p>右側壁は奥壁と左側壁に比べると残りが悪く、30〜50cm 程度の石材が 4 個一列に並んでいる。また、玄室内に 105 ×50cm 程度の石材が 1 個転落している。</p><p>羨道部は土砂の流入などにより詳細は不明であるが、右側に 30cm 位の石材が 1 個確認できる。また、前庭部に本墳の石材であろうと思われる 50〜70 cm 程度の石が 3 個点在している。なお、本墳に使用されている石材はすべて花崗岩である。</p></div></div>
+<p class="note">＊鳥越古墳群 A 支群の文面および作図は 1985 年福岡大学歴史研究部考古学班発行「早苗田・鳥越古墳群現状調査報告書」より転用した。従って、古墳の分布状況、文面および作図は当時のものである。</p>
+  </div>
+</section>
+<section id="B" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">03</span>
+    <h2>B 支群</h2>
+  </header>
+  <div class="sec-body">
+<h3 class="tomb">鳥越古墳群 B 支群 1〜3 号墳</h3>
+<p>本古墳群はすでに発掘調査を終え消滅している。1973 年福岡市教育委員会発刊の「片江古墳群発掘調査報告書」の６〜７号墳がこれに該当する。</p>
+  </div>
+</section>
+<section id="C" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">04</span>
+    <h2>C 支群</h2>
+  </header>
+  <div class="sec-body">
+<h3 class="tomb">鳥越古墳群 C 支群 1 号墳</h3>
+<p>本墳は油山から北東に延びるゆるやかな丘陵上の標高 64.5〜67.0m の間に位置し、同一丘陵上に 2 号墳、3 号墳が存在する。2 号墳との距離は北東に 20m を測る。現状では、石抜き及び自然崩壊により残存状態は悪い。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>墳丘盛土は北西側を除いて多少の盛り上がりがみられるが、大半は流出しており、残存状態は悪い。墳丘径は現状で,主体部主軸方向で約 12m、主軸と直交する方向で約 13m を測り、墳丘平面形は不整な円形を呈する。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p06_f1.png" data-cap="鳥越古墳群 C 群 1 号墳石室平面図" aria-label="鳥越古墳群 C 群 1 号墳石室平面図を拡大"><img loading="lazy" src="images/p06_f1.png" alt="鳥越古墳群 C 群 1 号墳石室平面図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 C 群 1 号墳石室平面図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>埋葬施設はほぼ南に開口する両袖単室の横穴式石室である。石室は天井石及び周壁の大部分は失われており、土砂の流入が著しいため腰石を確認することはできず、現状では全壁とも一段のみ表出している。奥壁は 100×50 cm 程度の石材を 2 枚並べ、その間に 15cm 程石材が表出している。奥壁幅は現状で約 2.2m を測る。</p><p>右側壁は 4 個の石材が確認できる。奥壁側には 60× 60cm 程度の石材を置き、前壁側には 15cm 程表出する石材の上に 50×30cm 程度の石材を積んでいる。奥壁側と前壁側の石材の間に 10cm 程石材が表出している。現状で右側壁長は約 1.9m である。</p><p>左側壁は 60×20cm 程の 2 個の石材が確認できるのみで、現状では約 2.0m を測る。前壁は袖石しか確認できず、右袖石は約 65×40cm、左袖石は約 40×20cm を測る。羨道は右壁に 4 個、左壁に 5 個の石材が残存し、羨道長は現状で約 4.5m を計る。石材はすべて花崗岩を使用している。</p></div></div></div>
+<h3 class="tomb">鳥越古墳群 C 支群 2 号墳</h3>
+<p>本墳は北東に延びる丘陵の東側斜面、標高約 64〜67m の間に位置する。本墳の南西側約 20 m に 1 号墳が、東側約 14m に 3 号墳がそれぞれ存在している。</p>
+<div class="pair pair-mound"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p07_f1.png" data-cap="鳥越古墳群 C 支群地形図" aria-label="鳥越古墳群 C 支群地形図を拡大"><img loading="lazy" src="images/p07_f1.png" alt="鳥越古墳群 C 支群地形図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 C 支群地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の墳丘盛土は、北東側の墳裾部分がやや削られているが、全体的に残存状態は良好である。現状での墳丘径は、主体部主軸方向で約 10.5m、主体部直交方向で約 11m を測り、墳丘平面形はほぼ円形を呈している。墳頂高は標高約 67m を測り、墳裾部との比高は西側で約 1 m 東側で 3m である。</p></div></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p08_f1.png" data-cap="鳥越古墳群 C 支群 2 号墳石室実測図" aria-label="鳥越古墳群 C 支群 2 号墳石室実測図を拡大"><img loading="lazy" src="images/p08_f1.png" alt="鳥越古墳群 C 支群 2 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 C 支群 2 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の埋葬施設は、主軸を S-36°E にとり、南東に開口する両袖単室の横穴式石室である。石室は土砂の流入が著しく、石室平面形や腰石の状態等は判然としない。現状では、奥壁幅 210cm、右側壁幅 190cm、左側壁幅 190cm、前壁幅 195cm を測り、構築状態は奥壁 3 段、右側壁 3 段、左側壁 4 段、前壁 3 段であり、天井石は 1 枚の石を使用している。また、各壁とも一段目は土砂で埋没しており、上部が露出しているのみであるため構築石材の大きさは不明である。奥壁は 2 段目に 80×60cm 程度の石を 3 枚、3 段目にも同様の石を 3 枚使用している。</p><p>右側壁は 2 段目に 80×50cm 程度の石を 2 枚、3 段目 120×60cm の石を 1 枚横位に使用している。</p><p>左側壁は 2 段目に 60×50cm 程度の石を 2 枚、3 段目に 80×40cm 程度の石を 2 枚、4 段目に 100×35cm 程度の石を横位に 1 枚使用し、天井石と接合する部分に数個の栗石を使用している。</p><p>前壁は右袖石に 90×80cm 程度の石を使用し、その上に一部羨道にかかる 80×25cm 程度の石を積んでいる。左袖石には 70×60cm 程度の石を使用し、左側壁にかかる 80×40cm 程度の石を積んだその上に楣石を架構している。玄室全体にせり出しが見られ、特に左側壁部において著しい。また、玄室内には数個の石材が落ちている。羨道も土砂流入によりかなり埋没しているため、１段目は上部が露出しているのみである。現状では、右壁で 80cm、左壁で 1.4m 確認でき、両壁とも 2 段目に 50×50cm 程度の石を 2 枚使用し、その上に天井石を 1 枚架構している。なお、本墳で使用されている石材は全て花崗岩である。</p></div></div></div>
+<h3 class="tomb">鳥越古墳群 C 支群 3 号墳</h3>
+<p>本墳は北東に延びる丘陵の南東側緩斜面標高約 62〜64m の間に存在し、本群中最北端に位置する。また、本墳の南西約 14m には 2 号墳が存在し、その比高は約 3.5m を測る。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>本墳の墳丘盛土は、開口部付近を中心とした流出のため、天井石と思われる石材が一部露出しているが、残存状態は良好である。現状で墳丘径は、主体部主軸方向約 11.5m、主体部直交方向約 11.5m を測り、墳丘平面形は不整な円形を呈している。墳頂高は約 64.6m で、墳頂と墳裾との比高は開口部側で約 4.1m, 北西側で約 1.2m を測る。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p09_f1.png" data-cap="鳥越古墳群 C 支群 3 号墳石室実測図" aria-label="鳥越古墳群 C 支群 3 号墳石室実測図を拡大"><img loading="lazy" src="images/p09_f1.png" alt="鳥越古墳群 C 支群 3 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 C 支群 3 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の埋葬施設は、開口主軸方向を S-28°-E にとり、ほぼ南東に開口する両袖単室の横穴式石室である。残存状態は良好で、ほぼ原形を保っており、そのため土砂の流入も少ない。玄室の規模は現状において、奥壁幅約 1.7m、前壁幅約 2.0m、右側壁長約 2.2m、左側壁長約 2.1m、現床面から天井石までの高さ約 1.7m を測る。</p><p>奥壁は 3 段構築で、腰石に約 170 ×85cm の長方形の石を横位に 1 枚使用し、 2 段目、3 段目には不整な石材をそれぞれ 2 枚ずつ使用している。右側壁は 4 段構築で、腰石に約 75×80cm と約 145×65cm の 2 枚の石材を使用し、2 段目、3 段目にはそれぞれ 2 枚の石材を、4 段目には 3 枚の石材を使用している。</p><p>左側壁は 4 段構築で、腰石に約 100×95cm と約 90×70cm の 2 枚の石材を使用し、2 段目に 2 枚、3 段目に 3 枚、４段目に 2 枚の石材をそれぞれ使用している。奥壁と左側壁の接合部には両壁に架構する持ち送りの技法がみられる。</p><p>前壁は右袖石 1 個、左袖石 2 個で高さを合わせ、約 160×45cm の石を置き、その上に天井石を架構している。玄門は幅約 95cm、高さ約 135cm を測る。玄室全体に石積みは雑で栗石の使用が目立ち、せり出しが激しい。羨道長は約 3.6m を測る。右壁は 3 段構築、左壁は 2 段構築である。なお、本墳に使用されている石材は全て花崗岩である。</p><p>本墳玄室内には現在も祭壇があり、塚信仰が行われていたようである。玄室内にあった阿弥陀如来は昭和 30 年頃、現在の 3 号墳墳丘南のお堂の中に収められたということである。</p></div></div></div>
+<h3 class="tomb">鳥越古墳群 C 支群 4 号墳</h3>
+<p>4 号墳は当初３基とされていた鳥越 C 支群の実測調査中に発見されたものである。本群中、最も近くに位置する３号墳からは、南にちょうど開口方向側に 29m を測る距離に存在する。墳丘は西側が流出し、削られているようであり、南側は平坦に近い状態である。また、北側および東側の流出もひどく、墳丘の残存状態は非常に悪く、外観に於ける指標は明瞭ではない。墳丘と思われるほぼ中心地点に落ち込みが存在し、東側に２石が並立し、北側に 70cm 程の石と 20cm 程の小さな石が並んでいる。他の三基の開口方向と合わせて考えてみると、この北側の大きめの石が楣石ではないかと思われるが、現状では開口方向も判然とせず、わずかに残る落ち込みにより、かろうじて古墳であると推測できる状態である。</p>
+<p class="note">＊鳥越古墳群 C 群の文面および作図は 1985 年福岡大学歴史研究部考古学班発行「早苗田・鳥越古墳群現状調査報告書」より転用した。従って、古墳の分布状況、文面および作図は当時のものである。</p>
+  </div>
+</section>
+<section id="D" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">05</span>
+    <h2>D 支群</h2>
+  </header>
+  <div class="sec-body">
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p10_f1.png" data-cap="鳥越古墳群 D 支群地形図" aria-label="鳥越古墳群 D 支群地形図を拡大"><img loading="lazy" src="images/p10_f1.png" alt="鳥越古墳群 D 支群地形図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 D 支群地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">鳥越古墳群 D 支群 1 号墳</h3>
+<p>本墳は鳥越古墳群において最高所、最西端に位置し、その東に位置する 2 号墳とは、墳頂部において約 24m とかなりの距離を測る。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>本墳は傾斜角 14°の斜面に張り付くように盛りあげられている。墳丘裾の高さは、南側と北側とでは 2.3m の差があり、墳丘封土は墳頂部において、後室天井石が亀の甲状に露出する程度流出しており、前室においては天井石、側壁上部の石材がなくなっており、土砂流入は前室から後室にまで及び、羨道は埋没し窪みができている。このように封土が流れているためしっかりした墳丘裾線は認めにくいが、一応、南側で標高 90.25m の等高線を墳丘と想定した。墳丘実測でこの裾線をもとに墳丘径を求めると、主体部主軸線で 11.2m、主軸と直角の径は 9.0m と主軸方向に良く尾を引く楕円形を呈する。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p10_f2.png" data-cap="鳥越古墳群 D 支群 1 号墳石室実測図" aria-label="鳥越古墳群 D 支群 1 号墳石室実測図を拡大"><img loading="lazy" src="images/p10_f2.png" alt="鳥越古墳群 D 支群 1 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 D 支群 1 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure><figure class="fig">
+  <button class="fig-btn" data-src="images/p10_f3.jpg" data-cap="羨道部より奥壁（2019 年 11 月撮影）" aria-label="羨道部より奥壁（2019 年 11 月撮影）を拡大"><img loading="lazy" src="images/p10_f3.jpg" alt="羨道部より奥壁（2019 年 11 月撮影）"></button>
+  <figcaption><span class="cap-mark">図</span>羨道部より奥壁（2019 年 11 月撮影）<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>全長 7.70m で、主軸を S にとり、おおよそ南に開口する両袖複式の横穴式石室を内部主体とする。周壁は比較的大きな花崗岩割石を立てて後室の基礎を造り、その上に割石を平積みに重ねて築かれ、現床面より 1m 程から持ち送りとなっている。築造状態は大きさの整った石材が使用されており、天井石も１枚石であり、割と良い方である。持ち送りの場合は、平積周壁の随所に割石細片をはさんで石室崩壊の危険性をなくすのが普通だが、本項では若干の持ち送りしかみられず、奥壁上部の左側の栗石が少し目立ち、右側には力石が認められる。</p><p>奥壁、右側壁は平面的に積みあげられているのに対し、左側壁は不揃いであり、せり出しが生じているものと思われる。左袖石には特に加工の跡が顕著にみられる。後室の平面プランは、最大幅 1.86m、長さ 1.64m のほぼ正方形プランを呈す。現床面には敷石の一部と思われる川原石、割石細片が数個存在し、ボーリング棒によっても現床面下に敷石は認められず、また、腰石下辺が確認でき、現床面付近が床面であろう。後室の高さは現床面より天井石まで 1.85m を測り、床面と天井面の比は約 5 対 2 である。</p><p>一方、前室は天井石、側壁上部の石材がすでになく破壊が著しい。土砂の流入で原形は分からないが、現状で、最大幅 1.98m、長さ 1.34m と横長の長方形プランである。また、左袖石は現存しているが右袖石はみあたらない。尚、右側壁よりに横転している 2 個の石材は、どのような性質のものなのか、後室側の転落石は側壁上部のもの、道側の転落石は右袖石と考えられなくもないが判明しがたい。また、転落石の後部より、石材が認められるが性質については不明である。</p><p>羨道はすっかり埋没しており、石材はみあたらないが、前室左袖石の存在と列石のはじまりの部分、また、道の墳丘裾部の石材の抜き跡、また、墳丘の窪みの具合などにより、幅 0.94m、長さ 3.60m 程度と思われる。羨道中央よりやや前室側よりに若干の土の盛り上がりがみられるが、ボーリング棒により石材が確認でき閉塞石の残存しているものと考えられる。</p><p>・列石　羨門付近の左右に、3〜4 の石材が表出し石抜きの跡があり、ボーリング棒を挿入してみると、石材が確認されるので列石がまわっているものと考えられる。</p><p>・遺物　左前庭部から須恵器片が数片表採されているが、年代編年は判定が困難である。</p></div></div></div>
+<h3 class="tomb">鳥越古墳群 D 支群 2 号墳</h3>
+<p>2 号墳は傾斜角 15 度、標高約 85m〜88m の斜面上にあり、開口方向はほぼ等高線に直交する。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>本墳の墳丘封土は、石室の崩壊および陥没に伴いかなり流出したものと思われる。従って、しっかりした墳丘裾線は認めにくいが、南側の標高 85.5m の等高線を裾線と想定すると、墳丘径は主体部主軸方向に 8.3m、主軸と直向する方向に 9m となりその形状はほぼ円形を呈する。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p11_f1.png" data-cap="鳥越古墳群 D 支群 2 号墳石室実測図" aria-label="鳥越古墳群 D 支群 2 号墳石室実測図を拡大"><img loading="lazy" src="images/p11_f1.png" alt="鳥越古墳群 D 支群 2 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 D 支群 2 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>主体部は主軸を S-40°-E にとり、ほぼ南東に開口する全長約 4.5m の両袖単式の横穴式石室である。玄室、羨道共に天井部の石材はすでになく、また、それらによって生じる周壁の転落、石室内への土砂流入などにより、床面と現床面との差がかなりあるものと思われる。従って、この状態でプランを出すのははなはだ危険であるが、現状では、奥壁幅 1.90m、右側壁長 2.16m、左側壁長 2.08m、前幅は 17.2m を測り、不整な縦長の長方形プランを呈している。</p><p>奥壁の腰石はおおぶりの自然石 2 個を並列しており、その上部１、２段の石材は平積みであり、奥壁の随所に栗石の使用がみられる。また、３段目の持ち送りは顕著である。</p><p>右側壁も腰石におおぶりの自然石 2 個を横位に配しており、その２段目は今にも落ちそうである。</p><p>奥壁側には力石の使用がみられる。左側壁では土砂流入の為、腰石は 1 個しか確認できない。腰石から３段の石材が残っており、２段目は長さ 1.08m、厚さ約 0.18m、３段目は長さ約 1.10m 厚さ 0.20m という偏平な割石が使用され、力石の役目もしているものと思われる。</p><p>羨道部はほとんど埋没しており、その規模を求めることは困難であるが、表出するわずかな石材などから 玄門幅約 0.5m、羨門幅約 1.1m、羨道長 2.4m と推定される。また、羨道中央部の土の盛り上がりは閉塞石が残存していると思われる。</p></div></div></div>
+<h3 class="tomb">鳥越古墳群 D 支群 3 号墳</h3>
+<p>3 号墳は標高約 87.5m で、2 号墳より北東 11m 4 号墳より西南に 9m に位置し、両墳のほぼ中間に立地している。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>墳丘の封土はかなり流れたものと思われるが、古墳のそれとは確認できる。墳丘裾の高さは 北側と南側とでは 1.75m の差があり、裾線も封土の流出のため、築造当時との相違はあろうが、おおよそ円墳と確認できる。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p12_f1.png" data-cap="鳥越古墳群 D 群 3 号墳石室実測図" aria-label="鳥越古墳群 D 群 3 号墳石室実測図を拡大"><img loading="lazy" src="images/p12_f1.png" alt="鳥越古墳群 D 群 3 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 D 群 3 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>主軸方向を S-24°-E にとる両袖単式の横穴式石室を内部主体としている。石室の天井石はすでになくなっており、周壁の転落、土砂の流入が激しく平面プランをだすのは危険であるが、現状では横長の長方形プランである (1.30m×1.05m) 。</p><p>石材は小ぶりの自然石を用いており、現床面より奥壁、左側壁が２段、右側壁が１段確認できるが、その上に数段、また、現床面の下に腰石があると思われる。それゆえ、現状では小規模の石室と思われるが、断定はできない。</p><p>羨道部も土砂流入が著しく、確たることは分らない状態であるが、閉塞石らしいものが確認できる。</p></div></div></div>
+<h3 class="tomb">鳥越古墳群 D 支群 4 号墳</h3>
+<p>4 号墳は標高約 95m の斜面上に立地する円墳である。南西に 3 号墳と近接し、開口方向は等高線に斜交する。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>墳丘径は南北 8.25m、東西 8.00m を測り、円形を呈し列石は認められない。墳頂部の封土は天井石および周壁の崩壊に伴い陥没しており、全く失なわれている。</p></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>主体部は主軸を S-6°-W にとり、ほぼ南に開口する全長約 6.7m の両袖単式の横穴式石室であろう。玄室部は土砂流入が激しく腰石がすでに埋没しており、現在露出している部分は 2〜3 段目の石材と思われる。現床面には周壁からの転落石等が散在し埋没している。</p><p>床面と現床面との差が激しいためプランを求めるのは困難であるが、現状では、奥壁幅 1.69m、右側壁 1.51m、左側壁長 1.47m、前幅 1.68m を測る正方形プランを呈している。石材は油山に多数存在している花崗岩の自然石を使用している。</p><p>右側壁は左側壁に比べ石材が明確でなく、土砂に覆われている。</p><p>羨道は天井石がすでになく、石材も上部の一部分がわずかに見られる程度である。羨道の幅は約 1.03m と広く、羨門部に向ってやや「ハ」の字形に広がっている。</p></div></div>
+<h3 class="tomb">鳥越古墳群 D 群 5 号墳</h3>
+<p>5 号墳は鳥越古墳群上部 (1 号から 11 号) のほぼ中央に位置する両袖複式の石室を有する円墳である。規模としては、墳丘、石室共に当古墳群中最大であり、並びに羨道部の崩壊を除けばほぼ完全に原型を留めているものと思われる。主体部は等高線と直交する南々東へ開口している。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>封土は標高 84m の斜面に盛り土されており、墳丘の径は主体部主軸線で 11.2m、主軸と直角の径は 10.2m であり、軸に沿って南側で墳頂と墳裾の比高が 3.0m、北側で 0.2m である。墳頂部において後室天井石の一部と思われる石材の一角が露呈し、南側墳裾が斜面下方に向かって若干尾を引いているものの、大幅な流出によるものではなく、ほぼ原型を留めているものとみて差しつかえなかろう。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p13_f1.png" data-cap="鳥越古墳群 D 支群 5 号墳石室実測図" aria-label="鳥越古墳群 D 支群 5 号墳石室実測図を拡大"><img loading="lazy" src="images/p13_f1.png" alt="鳥越古墳群 D 支群 5 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 D 支群 5 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の主体部は、主軸を S-38-E にとる両袖複式の横穴式石室である。玄室はほぼ原型を保っているが、羨道は天井石が流出し埋没している。</p><p>玄門の楣石と埋没した羨道との間に高さ 30cm ほどの空間ができ、そこより玄室をうかがうことができる。玄室は前室中央まで羨道より土砂が流入しているが、他の床面は原状に近いものと思われる。また、敷石が散積され前室にも同様の石材がみられる。</p><p>玄室の規模は全長 3.74m を測り、 後室は奥壁幅 1.89m、 前幅 1.34m、 長さ 2.16m と奥壁に向って開く縦長の台形状のプランであり、前室は中央部において縦と横 1.06m×1.64m の横長の長方形プランである。また、後室と前室の中央において床面より天井石までの高さは、それぞれ 2.15m と 1.64m である。</p><p>構築状態は後室周壁において各 5 段構築で、奥壁腰石 1 枚、左右両壁にそれぞれ 2 枚の大ぶりの割石を縦に配し、２段目以上は平積みにより持ち送りを用いて築かれている。また、前室の両側壁は 4 段に構築されており、腰石は後室のものと同等の大きさである。</p><p>袖石の各々大きさはまちまちであるが、 腰石の高さと同じくらいの高さに立てられている。玄門右袖石は特に形が整っているのが目につく。天井石は後室、前室共に 1 枚の大石であり、楣石の規模の大きさも目立つ。後室と前室に散積している敷石は人頭大の自然石である。</p><p>本墳では持ち送りが非常に顕著であり、後室においては力石の効用が目立ち、中央で床面の横幅が 1.68m であるのに対し、天井では 0.69m にまで狭まっている。また、右側壁の奥壁側に見られるようないわゆる重箱積み的な築造が感じられる箇所がある。しかしながら、全体的に石室構築状態は粗雑であり、栗石の使用が目立つ。それにもかかわらず、せり出しもなく玄室が崩壊からまぬがれ得た箇所があるのは、天井石、橘石が持ち送られた周壁をバランスよく押えているからであろう。</p><p>前述したように、羨道は天井部が流出欠損し、下部は埋没している為にその規模を知るのは困難であるが、現状では玄門幅 0.94m を測り、墳丘裾の主軸線両側に連なって露出する外護列石らしき石材までを仮に羨道とすれば 3.76m ほどの長さである。また、羨道の玄門寄りはわずかに盛り上がっているが、 閉塞石が残存しているものと思われる。</p></div></div></div>
+<h3 class="tomb">鳥越古墳群 D 支群 6 号墳</h3>
+<p>本墳の標高は 81.5m であり、標高において鳥越古墳群のほぼ中間に位置する。9 号墳から南へ 9.1m、10 号墳の西北 14m 11 号墳の東北 14.3m の所に立地する。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>墳頂部から羨道にかけて天井石はすでになく、その部分の封土を失っているにもかかわらず、他は比較的良く保たれている。傾斜角 15°の斜面に築造されており、墳丘径は南北 7.30m、東西 7.00m を測る円墳である。開口方向が等高線に対して斜交するため、墳丘裾の標高は東側 81.5m、西側 80.5m と東西において差異が認められる。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p14_f1.png" data-cap="鳥越古墳群 D 支群 6 号墳石室実測図" aria-label="鳥越古墳群 D 支群 6 号墳石室実測図を拡大"><img loading="lazy" src="images/p14_f1.png" alt="鳥越古墳群 D 支群 6 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 D 支群 6 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>石室全体に土砂流入が著しく、また、左右両側壁からは石材も多数抜かれている状態である。全長約 4.6m で、主軸を S にとる両袖単式の横穴式石室を内部主体とする。玄室では床面のほとんどが土砂に覆われており、原床面の数値を出すことは困難である。</p><p>現状での玄室のプランは、右側壁長 1.84m、左側壁長 1.6m、奥壁幅 1.8m、前幅 1.37m で不整正方形を呈す。腰石は現状で奥壁 2 枚、両側壁 1 枚ずつを見ることができる。</p><p>石材の種類は花崗岩で、 同程度の大きさの石を使用し、石の形に合わせて組んでいるため隙間がなく、栗石の使用が少ない。ただし、側壁では石抜きが激しいためか粗雑に感じる。石室構築技法には持ち送りが採用され、力石は奥壁、右側壁間では２段目に、奥壁・左側壁間では ４段目に見られる。</p><p>羨道部はほとんど埋没しており、わずかに露呈している石材によってその規模をある程度は窺うことができるだけである。</p></div></div></div>
+<h3 class="tomb">鳥越古墳群 D 支群 7 号墳</h3>
+<p>7 号墳は標高約 82m に位置し、5 号墳の南方に立地している。現墳丘径は 5.95m を測る円墳であり、墳丘の比高は 1.20m でかなり流出したものと思われる。石室は石材の抜き取り及び土砂の流入のためほとんど原形を保っていないので詳細ははっきりつかめない。</p>
+<p>現状では、油山に散在する花崗岩を用いた南々東に開口する両袖単式の小規模な横穴式石室を内部主体とすると思われ、羨道に残存する石材は閉塞石と推定される。</p>
+<h3 class="tomb">鳥越古墳群 D 支群 8 号墳</h3>
+<p>8 号墳は傾斜角 15.5°、標高 84.5m の斜面に立地している。墳裾線は確めにくいが、南東側では標高 84.2m の等高線を裾線と想定し、墳丘径を測ると主体部主軸方向に 8.6m、主軸と直交する方向に 8.2m となり、ほぼ円形を呈している。</p>
+<p>本墳の主体部は、南々東に開口する単式の横穴式石室と思われる。石室においては天井石、周壁上部の石材がほとんどみられず、土砂が流入して埋没したものと思われる。</p>
+<p>現床面から奥壁では一段の石材が、また、石側壁にも石材がみられ、 左側壁は２段の石積みがみられる。しかし、袖石はみあたらない。従って、この状態でプランを出すのは不可能である。なお、石室中央にみられるやや大きめの石材は楣石ではないかと思われる。以上のように、外部、内部共に残存状態はあまりよくない。墳丘裾の南東部に数個の石材が表出しており、列石と思われる。</p>
+<h3 class="tomb">鳥越古墳群 D 支群 9 号墳</h3>
+<p>9 号墳は標高約 81.5m に位置し、北東に 8 号墳を見上げ、北西に 6 号墳、南に 11 号墳が接している。現状では、石室の石材が抜かれているため、凹地を呈しており封土は流れている。</p>
+<p>墳丘の規模は判然としないが、 裾線は確認でき、 直径 8.5m 程度の円墳であろう。本墳も 6 号墳などと同様、主軸が等高線に斜交しているため墳丘裾の東側と西側の比高は 2.2m である。</p>
+<p>石室は石抜きのために確たることは言えないが、おおよそ南に開口する横穴式石室であろう。また、掘り込みに沿って土の盛り上りが見られ、石材が埋まっていると思われる。</p>
+<h3 class="tomb">鳥越古墳群 D 支群 10 号墳</h3>
+<p>10 号墳は鳥越古墳群の上部において、標高 74.5m と最も低く、東端に位置する。また、下部の 12、13 号墳とは西南に約 50m 離れている。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>墳丘径が東西 7.6m、南北 7.7m の円墳である。墳頂部の封土はなく、道部は陥没しており、墳丘東側の封土は流れている。しかしながら、当古墳群中では良好な部類に入る。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p16_f1.png" data-cap="鳥越古墳群 D 支群 10 号墳石室実測図" aria-label="鳥越古墳群 D 支群 10 号墳石室実測図を拡大"><img loading="lazy" src="images/p16_f1.png" alt="鳥越古墳群 D 支群 10 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 D 支群 10 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure><figure class="fig">
+  <button class="fig-btn" data-src="images/p16_f2.jpg" data-cap="正面左側壁部（2019 年 11 月撮影）" aria-label="正面左側壁部（2019 年 11 月撮影）を拡大"><img loading="lazy" src="images/p16_f2.jpg" alt="正面左側壁部（2019 年 11 月撮影）"></button>
+  <figcaption><span class="cap-mark">図</span>正面左側壁部（2019 年 11 月撮影）<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>全長 4.1m で、主軸を S-10°-W にとる両袖単式の横穴式石室を内部主体とする。また、主軸は等高線に対して斜交している。楣石をのぞく天井石はすでになく、床面床域に土砂が数 cm から数 10cm 堆積しており、床面の施設は不明である。</p><p>玄室は現状の長さが右側壁 1.62m、左側壁 1.72m で、幅が奥壁 1.60m、玄門 1.95m を測る正方形プランをなしている。</p><p>周壁は花崗岩の自然石を３段から５段積んでおり、その高さは約 1.60m である。石材使用法は奥壁の腰石２枚、左右両側壁、玄門よりの腰石１枚ずつと、右袖石が縦積みであり、他はほぼ横積みとなっている。また、袖石を縦に積んだと同じ高さにしている。構築技法には持ち送りが用いられて、奥壁と側壁の２段目、３段目の石材の角を交互にかみ合わせ、力石の役割をさせている。栗石の使用が多く、左側壁の３、４段目ではせり出しがあり、全体に石組みの粗雑さを感じる。</p><p>羨道は羨門から約 1m の間に土砂が約 90cm も堆積しており、また左側壁上部では石抜きがされている。規模は長さ約 1.60m 幅 0.96m、高さ 1.10m であり、玄室幅に等しい羨道幅が広く感じる。</p></div></div></div>
+<h3 class="tomb">鳥越古墳群 D 支群 11 号墳</h3>
+<p>11 号墳は標高約 79m、 9 号墳の南 3m の斜面上に立地する円墳である。墳丘はそのほとんどが失われ、一見して古墳とはわからない状態である。墳裾線ははっきりとしたものは認められないが、かろうじてその概形はつかめる。石室は周壁が全くなく、現床面には石材が二個露呈し、転落石と思われる小石材が埋没している程度で、ほとんど原形を保っていない。また、開口はその掘り方により南と推測されるだけである。以上のように１１号墳は当古墳群中、最も破壊が進んでいる。</p>
+<h3 class="tomb">鳥越古墳群 D 支群 12 号墳</h3>
+<p>12 号墳はこの古墳群の下部標高 69.0m にあり、上部の 10 号墳と約 50m の距離をはかり、東側下方に 13 号墳が隣接しその墳頂間は 12.6m である。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>本墳は傾斜角 22°の急斜面に立地し、墳丘裾の差が南北で約 2.4m あり、そのことによって墳丘がかなり高くみえる。墳形は直径約 7m の円墳である。</p></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>主軸が E-22°-S で、南東方向に開口する両袖単式の横穴式石室である。現状では、天井石がすでに失なわれており、石室の崩壊、土砂流入により、上部の石材が一部見えるだけで他はほとんど埋没している。従って、石室プランを推測するのは困難である。</p></div></div>
+<h3 class="tomb">鳥越古墳群 D 支群 13 号墳</h3>
+<p>13 号墳はこの古墳群の最東端、最下部に位置し、南に開口する単式両袖の横穴式石室を内部主体とする円墳である。現状では、羨道がほとんど損壊しているために玄室が大きく口を開いている。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>墳丘の状態は、玄室がほぼ完全に原形を保っていることもあり良好である。ただ、墳頂部は流出し、天井石が露出しているが、しっかりした墳丘裾線が確認できる。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p17_f1.png" data-cap="鳥越古墳群 D 支群 13 号墳石室実測図" aria-label="鳥越古墳群 D 支群 13 号墳石室実測図を拡大"><img loading="lazy" src="images/p17_f1.png" alt="鳥越古墳群 D 支群 13 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 D 支群 13 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>玄室がよく原形を保っているのに対し、羨道の石材は崩壊して見あたらない。しかし、玄室床面のレベルより羨道のレベルが 0.75m ほど高くなっており、羨道最下部の石材および閉塞石が埋没していることを推察できる。</p><p>主軸は S-6°-E にとり、中央部で縦 1.66m、横 2.02m とやや横長であるが、本来は正方形に近いプランであったろう。床面にはある程度土砂が流入しているが、現床面の標高は 86.70m であり、天井石まで中央で 1.85m ある。</p><p>周壁はともに４段に構築され、栗石が少なく大きさの揃った石材を用い、持ち送りが使われている。特に左側壁のそれが非常に顕著であるのがこの古墳の特徴である。左側壁の場合、力石などの組み具合からいってもせり出しではないだろう。この古墳の場合、玄室の規模に対して石材が大きい為に持ち送りが容易だったのであろう。また天井石は 1 枚であり、墳頂に露出しているのでその規模を測ることができ、およそ 1.2m、厚さ 0.8m の扁平な石材である。</p></div></div></div>
+<p class="note">＊鳥越古墳群 D 群の文面および作図は 1977 年福岡大学歴史研究部考古学班発行「鳥越古墳群現状調査報告書」より転用した。従って、古墳の分布状況、文面および作図は当時のものである。</p>
+  </div>
+</section>
+<section id="E" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">06</span>
+    <h2>E 支群</h2>
+  </header>
+  <div class="sec-body">
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p18_f1.png" data-cap="鳥越古墳群 A・B・D・E・F 支群分布図" aria-label="鳥越古墳群 A・B・D・E・F 支群分布図を拡大"><img loading="lazy" src="images/p18_f1.png" alt="鳥越古墳群 A・B・D・E・F 支群分布図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 A・B・D・E・F 支群分布図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">鳥越古墳群 E 支群 1 号墳</h3>
+<p>本墳は福岡大学馬術練習場建設に伴い、発掘調査され、現存しない。</p>
+<p class="note">＊1985 年福岡市教育委員会発行の「鳥越・七隈古墳群発掘調査報告書」参照</p>
+<h3 class="tomb">鳥越古墳群 E 群 2 号墳</h3>
+<p>油山より北東に延びる丘陵の東側斜面、標高 51.0〜57.0m の間に位置する。本墳より東側約 20m に 3 号墳が存在する。残存状態は墳丘、石室ともに良好である。</p>
+<div class="pair pair-mound"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p18_f2.png" data-cap="鳥越古墳群 E 支群 2・3 号墳地形図" aria-label="鳥越古墳群 E 支群 2・3 号墳地形図を拡大"><img loading="lazy" src="images/p18_f2.png" alt="鳥越古墳群 E 支群 2・3 号墳地形図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 E 支群 2・3 号墳地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>墳丘盛土は頂部付近で一部人為的に削られており、東側では若干の流出が見られる。また、北西側の墳裾付近は福岡大学馬術練習場建設のため削平されている。全体的には残存状態は良好である。現状での墳丘径は、主体部主軸方向で 15m, 主体部直交方向で 14m を測り、墳丘平面形はほぼ円形を呈している。墳頂高は標高約 56m であり、墳裾部との比高は主軸に沿って南側で 4m、北側で 1.5m 程である。</p></div></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p19_f1.png" data-cap="鳥越古墳群 E 支群 2 号墳石室実測図" aria-label="鳥越古墳群 E 支群 2 号墳石室実測図を拡大"><img loading="lazy" src="images/p19_f1.png" alt="鳥越古墳群 E 支群 2 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 E 支群 2 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure><figure class="fig">
+  <button class="fig-btn" data-src="images/p19_f2.jpg" data-cap="羨道より奥壁（2019 年 11 月撮影）" aria-label="羨道より奥壁（2019 年 11 月撮影）を拡大"><img loading="lazy" src="images/p19_f2.jpg" alt="羨道より奥壁（2019 年 11 月撮影）"></button>
+  <figcaption><span class="cap-mark">図</span>羨道より奥壁（2019 年 11 月撮影）<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の埋葬施設は、開口主軸方向を S-22°-E にとり、ほぼ南南西に開口する両袖複室の横穴式石室である。石室残存状態は良好であるが、羨道部と前室の一部が土砂の流入によって埋没している。玄室規模は奥壁幅 1.8m、前壁幅 2.25m、右側壁長 2.85m,、左側壁幅 3.10m である。</p><p>玄室の構築状態は、奥壁では 1 枚の腰石を縦位に置き、その上に石材を 3 段横位に積んでいる。右側壁は 2 枚の腰石を横位に置き、その上に 4 段積み上げ、天井石を架構している。左側壁は 3 枚の腰石を縦位に置き, その上に 4 段積み上げている。奥壁と右側壁の隅角は腰石の上 1 段目の石を力石として用いている。前壁と左側壁の隅角では、3 段目に力石の使用が見られる。</p><p>玄門部は両袖石とも腰石を縦位に置き、右はその上に 2 段の石を横位に積み、左は腰石の 1 段目に 40×30cm 程度の石を置き、2〜4 段に扁平な石を積んでいる。前室は土砂の流入によってかなり埋没しているが、現状において、奥幅 1.88m、前幅 1.68m、右側壁長 1.26m、左側壁長 1.24m を測る。壁体の構築法は玄室が大型の石材を使用しているのに比べて、前室は小型の石材を多く使用している。これは左側壁に顕著に見ることができ、現状では 7〜8 段の小型の扁平な石材を持ち送って積み上げている。</p><p>右側壁は 5 段の石積みが確認できる。なお、本墳に使用されている石材はすべて花崗岩である。</p></div></div></div>
+<h3 class="tomb">鳥越古墳群 E 群 3 号墳</h3>
+<p>本墳は東側斜面上、標高約 50.0〜52.0m の間に立地する。本墳の西方 20m には 2 号墳が存在する。墳丘、石室とも残存状態は良好である。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>本墳の墳丘盛土は北側で流出が著しく、石材が一部露出しているが、残存状態は良好である。墳丘径は主体部主軸方向約 13.0m、主体部直交方向約 12.0m を測り、墳丘平面形は円形を呈している。墳頂高は約 53.5m で、墳頂と墳裾との比高は開口部側で約 2.5m、南側で約 3.5m を測る。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p20_f1.png" data-cap="鳥越古墳群 E 支群 3 号墳石室実測図" aria-label="鳥越古墳群 E 支群 3 号墳石室実測図を拡大"><img loading="lazy" src="images/p20_f1.png" alt="鳥越古墳群 E 支群 3 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 E 支群 3 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の埋葬施設は開口主軸方向を S-54°-W にとり、等高線と平行にほぼ南に開口する両袖単室の横穴式石室である。羨道の天井石が一部抜き取られ、そこからの土砂の流入は奥壁まで達しているものの、各壁体の残存状態は良好である。</p><p>玄室の規模は現状において、奥壁幅約 2.0m、前幅約 2.2m、右側壁長約 2.2m、左側壁長約 2.2m を測り、ほぼ正方形プランを呈している。</p><p>各壁体の構成をみると、奥壁は 5 段構築で、腰石には大ぶりの石材を 1 枚内傾させるようにして横位に立て、3 段目より持ち送りが強くみられ、天井部に至らせている。</p><p>右側壁は奥壁側で 5 段、前壁側で 6 段の構築で、腰石には大ぶりの石材を横位に立て、2 段目までほぼ垂直に積み、3 段目より強く持ち送っている。前壁との接合部には下より小ぶりの石材を積み上げ、3 段目より持ち送りが見られる。又、奥壁との接合部は 3 段目から力石の使用がみられ、上部に行くにつれ、持ち送りが顕著である。</p><p>左側壁は 5 段構築で、腰石には大小の石材 2 枚を横位縦位に内傾させて立て、その上に同じように内傾させながら積んで行き、上部に持ち送りが顕著にみられる。袖部は右壁 1 段、左壁 2 段で構成し、その上に石を積んで楣石とし、前壁部を構成している。左側壁との接合部は袖部 2 段目の石材が力石の働きをしており、それから持ち送りが強くなっている。壁高は奥壁部で約 2.0m、前壁部で約 2.2m、右側壁部で約 2.2m、左側壁部で約 2.2m を測り、天井石には大ぶりの石材を 1 枚使用している。なお、腰石を含め下より 2 段程は割石が、上部には自然石が使用されている。</p><p>羨道部は土砂の流入が著しく、壁面のすべてをみることはできない。現状で玄門幅約 1.0m、右壁長約 2.0m、左壁長約 2.0m を測る。壁面の構成をみると、土砂の流入のため腰石の上部まで埋没しているが、両壁とも 3 段構築で、ほぼ玄室と同様の石積みをしており、栗石の多用が認められる。左右壁とも凹凸が玄室に比べて少なく、石材の面取りが良好である。楣石は床面より高さ 1.2m のところに架構され、その次に大ぶりの石材を 1 枚、計 2 枚の石材を用いて羨道天井部を構成している。なお、使用されている石材は全て花崗岩である。</p></div></div></div>
+<p class="note">＊鳥越古墳群 E 群の文面および作図は 1985 年福岡大学歴史研究部考古学班発行「早苗田・鳥越古墳群現状調査報告書」より転用した。従って、古墳の分布状況、文面および作図は当時のものである。</p>
+  </div>
+</section>
+<section id="F" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">07</span>
+    <h2>F 支群</h2>
+  </header>
+  <div class="sec-body">
+<h3 class="tomb">鳥越古墳群 F 支群 1 号墳</h3>
+<p>本墳は油山山塊より北東になだらかにのびる派生丘陵の標高 42〜42.5m に位置し本群を構成している。本墳の所在する丘陵は, 本墳より西におよそ 100m に存する浅い谷によって D 群の丘陵と分けられる。現在丘陵の周囲の四方で、道路や宅地造成、用水路などにより削平及び整地が施されており、本墳も一部、その影響を受けて南西側に見られる落ち込みなども造成に伴う削平による可能性が充分考えられる。また、地形の変化も顕著で、現状では平坦な地形を呈する。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>墳丘盛土の残存状況は悪く、現状では上部付近のほとんどの盛土は存在していない。墳丘平面形は円形を呈すると思われる。</p><p>墳丘径は南北約 7m, 東西約 7m を測り墳丘遺存の最高所は西側にみられ、標高 42.5m を測る。また、南側は宅地造成にかかり、その約 4 分の 1 を削平されている。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p21_f1.png" data-cap="鳥越古墳群 F 支群 1 号墳" aria-label="鳥越古墳群 F 支群 1 号墳を拡大"><img loading="lazy" src="images/p21_f1.png" alt="鳥越古墳群 F 支群 1 号墳"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 F 支群 1 号墳<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>埋葬施設は開口をほぼ南に向ける横穴式石室と推測されるが、石室が存在していたと考えられる墳丘の中央に南北約 3m、東西約 2m の楕円形の陥没がみられ、奥壁側 35×40cm 程度の石材と 30×30cm 程度の石材 2 個が並列して露出している。それらの石材に接して左側壁側に 30×70cm 程度の石材を上段に、10×40cm 程度の石材を下段に縦積みされている。石材はいずれも花崗岩を使用している。また、陥没穴内部には他に数個転石が認められる。羨道部は埋没もしくは削平のため不明である。</p></div></div></div>
+<p class="note">＊鳥越古墳群 F 支群は 1984 年に福岡市教育委員会による発掘調査を受け現存しない。</p>
+<p class="note">＊鳥越古墳群 F 支群の文面および作図は 1985 年福岡大学歴史研究部考古学班発行「早苗田・鳥越古墳群現状調査報告書」より転用した。従って、古墳の分布状況、文面および作図は当時のものである。</p>
+<p class="note">＊前項で述べたが、鳥越古墳群 G 支群は瀬戸口古墳群 A 群となっているが、ここでは鳥越古墳群 G 支群の名称でご紹介する。</p>
+  </div>
+</section>
+<section id="G" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">08</span>
+    <h2>G 支群</h2>
+  </header>
+  <div class="sec-body">
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p22_f1.png" data-cap="鳥越古墳群 G 支群分布図" aria-label="鳥越古墳群 G 支群分布図を拡大"><img loading="lazy" src="images/p22_f1.png" alt="鳥越古墳群 G 支群分布図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 G 支群分布図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">鳥越古墳群 G 支群 1 号墳</h3>
+<p>本墳は油山から北東に延びる丘陵に存在し、標高 112〜115m の間、本群中最高所に位置する。本墳から早良平野の東部及び福岡平野をのぞむことができる。本群の他の古墳は丘陵斜面に位置しているのに対して、本墳は丘陵のほぼ頂部稜線上に位置している。</p>
+<div class="pair pair-mound"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p22_f2.png" data-cap="鳥越古墳群 G 支群 1 号墳地形図" aria-label="鳥越古墳群 G 支群 1 号墳地形図を拡大"><img loading="lazy" src="images/p22_f2.png" alt="鳥越古墳群 G 支群 1 号墳地形図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 G 支群 1 号墳地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>墳丘盛土は天井石及び周壁の石抜き、自然崩壊に伴ない南東側へほとんど流出していて、腰石の高さまでしか残っておらず、丘陵斜面と墳丘の区別がつかない。北側から南東側にかけて墳裾線が判然としないが、現状の墳丘径は主体部主軸方向で約 10m、主軸と直交方向で約 10m を測り、墳丘平面形は円形を呈している。</p></div></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p22_f3.png" data-cap="鳥越古墳群 G 支群 1 号墳石室実測図" aria-label="鳥越古墳群 G 支群 1 号墳石室実測図を拡大"><img loading="lazy" src="images/p22_f3.png" alt="鳥越古墳群 G 支群 1 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 G 支群 1 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>埋葬施設は主軸を S-2°-E にとる両袖単室の横穴式石室である。現在、楣石は載せているものの天井石はない。</p><p>玄室は石抜き及び自然崩壊により、奥壁、右側壁、前壁が石の高さで、左側壁は腰石だけが残存する。現状では、 奥壁幅 1.9m, 前壁幅 2.0m, 右側壁長 1.7m、左側壁長 2.0m を測る正方形プランを呈する。壁面の構築法を見てみると、奥壁の腰石は,100 ×190cm の石材を横位に置き、2 段目に 50×80cm の石材とその左側にはやや小ぶりの石材を載せており、2 段の石積みである。</p><p>右側壁は腰石にやや大ぶりの石材を 2 枚横位に置き、その上に小ぶりの石材を積んでいる。4 段目の石材は相当せり出している。また、数個の栗石を使用している。</p><p>左側壁は大ぶりの腰石を奥壁側に、小ぶりの腰石を前壁側に配置している。現床面には奥壁と接して、また、右側壁と接して 2 個の石材が存する。前壁の右袖石は 1 材の石材を縦位に使用し、左袖石は小ぶりの石材を 3 段積んでいる。その上に櫃石を載せているが、不安定な状態である。羨道部は埋没してしまっており、玄室内から羨道部をのぞき込むと閉塞石が確認できる。使用している石材は、すべて花崗岩である。</p></div></div></div>
+<h3 class="tomb">鳥越古墳群 G 支群 2 号墳</h3>
+<p>本墳は北東に延びる丘陵の南東側急斜面上、 標高 94.0~97.5m の間に位置し,、本墳より北東約 15m に 4 号墳、北西に約 9m に 7 号墳がそれぞれ存在する。また、本群中最上部に位置する 1 号墳との比高は約 17m を測る。</p>
+<div class="pair pair-mound"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p23_f1.png" data-cap="鳥越古墳群 G 支群 2〜10 号墳地形図" aria-label="鳥越古墳群 G 支群 2〜10 号墳地形図を拡大"><img loading="lazy" src="images/p23_f1.png" alt="鳥越古墳群 G 支群 2〜10 号墳地形図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 G 支群 2〜10 号墳地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の墳丘盛土は、自然崩壊及び石抜きによりそのほとんどが流出している。現状では、本墳の南東側にわずかにその盛り上がりを確認できる程度である。現状での墳径及び墳丘平面形は、東西に 4m、南北に 6m を測る不整な円形を呈している。また、本墳の石室南東側には数個の石が点在している。</p></div></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>埋葬施設はほぼ南に開口する単室の横穴式石室であると推定されるが、土砂の流入、石材の流出などによってその原形をとどめていない。現状において、現床面より奥壁、左側壁それぞれ 3 段の石積みが確認できるだけで他の周壁及び天井石等の石積みは確認できず、その詳細は不明である。左側壁は現状で、長さ約 1.2m を測り、現床面より 1 段目に 40×30cm 程度の石材を、2 段目より 3 段目にかけては 40×20cm 程度の石材を横位に 5 枚並べている。3 段目の石積みはせり出しが激しい。</p><p>奥壁は現状で約 1m を測り、現床面より 40×20cm 程度の石を横位に 1 段目に 2 枚、2 段目に 2 枚、3 段目に 1 枚ならべている。また、奥壁と左側壁の 2 段目の隅角には力石の使用が認められる。</p><p>羨道部は埋没、崩壊などによりその詳細は不明である。石材は全て花崗岩を使用している。</p></div></div>
+<h3 class="tomb">鳥越古墳群 G 支群 3 号墳</h3>
+<p>本墳は北東にのびる丘陵の南東側急斜面上、標高 92.5〜95.0m の間に位置する。本墳より西側 13m に 4 号墳、東側約 15.5m に 5 号墳が存在する。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>本墳の墳丘盛土は流出が激しく、ほとんど原形をとどめていないが、北西部より南東部にかけて若干の盛り上がりが認められる。墳丘規模は現状において、東西径約 7m、南北径約 7.5m を測り、墳丘平面形は不整な円形を呈している。</p></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>埋葬施設は石抜き及び自然崩壊のため、石材の大部分が失われており極めて残存状態が悪い。石室内部には大量の土砂が流入しており、石室規模等は判然としないが残存している石材の配列状態より、ほぼ南に開口する両袖単室の横穴式石室と思われる。</p><p>周壁は左右両側壁に 30×60cm 程度の石が数個表出しているのみである。また、羨道部も大きいもので 70×40cm 程度、小さいもので 40×20cm 程度の石が表出しているにすぎない。</p><p>奥壁はボーリング棒によりその存在が確認できる程度である。石室構築状態の詳細については石積みが認められないため不明である。なお、石室に使用されている石材は全て花崗岩である。</p></div></div>
+<h3 class="tomb">鳥越古墳群 G 支群 4 号墳</h3>
+<p>本墳は油山山塊より北東に延びる丘陵の南東側斜面上にあり、標高 96.5〜100.0m の間に位置する。本墳より南南西側約 11m に 2 号墳、東側約 13m に 3 号墳、北東側約 20m に 6 号墳、西南西側約 6m に 8 号墳、北側約 16m に 9 号墳が存在する。また、本群中 1 号墳を除く 9 基の中で最高位の 6 号墳、最下位の 5 号墳との標高差はそれぞれ約 6.5m、約 9m を測る。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>墳丘盛土は斜面の傾斜が急なため、全体的に流失が著しく, ほとんど原形をとどめておらず、墳裾線もはっきりしない。しかし、墳丘上の傾斜が他よりもわずかにゆるやかになっているため、現状では墳丘径が東西径約 7m、南北約 7m で、墳丘平面形はほぼ円形を呈していると思われる。南東墳裾付近には数個の石材が存在する。</p></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>本墳の埋葬施設は、開口方向をほぼ南南東にとる両袖単室の横穴式石室と思われる。石抜き及び自然崩壊が著しく、石室内に土砂や数個の石材が流入しているため、現床面より奥壁に 3 段、左側壁に 1 段の石積みが確認できるにすぎない。また、左右袖石付近も埋没しているため玄室部と羨道部との区別は明確ではない。</p><p>奥壁は 1 段目に 50×30cm 程度の石が 2 枚並び、2 段目は 30×20cm 程度の石を、3 段目は 40×40cm 程度の石を積んでいる。</p><p>左側壁は 50×30cm 程度の石を 2 枚並べているだけしか確認できない。羨道部左壁は現床面より 30×40cm 程度の石を 1〜2 段積んでいる。壁長は約 3.1m を測る。右壁は完全に埋没しているため詳細は不明である。なお、本墳の石材はすべて花崗岩である。</p></div></div>
+<h3 class="tomb">鳥越古墳群 G 支群 5 号墳</h3>
+<p>本墳は標高 88.5〜91.5m の間の斜面上に立地し、3 号墳の東側約 16m に位置している。また、本墳は G 群最下部に存在し、比較的残存状態は良いが、墳丘、石室とも半壊の状態である。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>本墳の墳丘盛土は、本群中最も残存状態がよく、半壊してはいるものの西側上部には盛上りが確認できる。東側の盛土は流出し、周囲に数個石材が点在している。墳丘径は主体部主軸方向で約 9.4m、主軸直交方向で約 9.4m を測り、墳形は円形を呈する。比高は南側で 2.5m を測る。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p25_f1.png" data-cap="鳥越古墳群 G 支群 5 号墳石室実測図" aria-label="鳥越古墳群 G 支群 5 号墳石室実測図を拡大"><img loading="lazy" src="images/p25_f1.png" alt="鳥越古墳群 G 支群 5 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 G 支群 5 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の埋葬施設は、開口主軸方向を S-17°-E にとる単室の横穴式石室である。</p><p>現状において、奥壁幅 2m、左側壁幅 2m を測り、右側壁は残存しないが、袖石と思われる石の位置よりほぼ 2m と思われる。</p><p>奥壁は現状で 5 段が残り、1 段目には幅 135cm の石と 60cm の石を 2 個使用している。2 段目より 3 段目までは 60×50cm 程度の石材を使用してあり、それより上段になると 20×30cm 程度の石材を使用してある。</p><p>左側壁は現状では 6 段が残り、1 段目には幅 40cm 前後の石材を使用してある。2 段目以上は 80×40cm 程度の石が積まれてある。また、壁面は整っておらず、縦に目路が一本通っている。</p><p>右側壁は残存しておらず、奥壁に接し、1 個石が確認できるのみである。奥壁、左側壁とも 2 段目、3 段目には栗石の使用が見られ、2 段目より上段はせり出しが激しく不安定な状態である。楣石も存在せず、羨道部は土砂の流入により判然としない。なお、本墳の石材は花崗岩を使用している。</p></div></div></div>
+<h3 class="tomb">鳥越古墳群 G 支群 6 号墳</h3>
+<p>本墳は北東に延びる丘陵の南東側急斜面上、標高 102.5~106.5m の間にあり、4 号墳の北約 16m、9 号墳の西約 15m に位置する。本群中で最上部に位置する 1 号墳の次に高い位置にあり、1 号墳との比高は約 8.5m である。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>墳丘盛土は流出が著しく、ほとんど原形をとどめていないが、南東側の墳裾部には数個の石材が存在し、わずかに墳丘の盛り上がりが認められる。現状における墳丘径は、東西 7m、南北 8m を測り、不整な円形を呈している。</p></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>本墳の埋葬施設は、ほぼ南に開口する横穴式石室である。天井石、周壁の崩壊などにより、原形をとどめておらず、残存状態は悪い。内部は土砂流入が著しく、床面、腰石については不明である。</p><p>前壁付近の埋没は特に著しい。石積みは現床面から左側壁 1 段、奥壁 2 段が確認できる。右側壁は２個の石が確認できるが、ほとんど埋没している。左側壁は 1 個の石が確認できる。奥壁は一段目に 2 個の石が確認でき、2 段目には 1 段目の 2 個の石の間にはさまるように石が 1 個あり、左側壁との隅角に力石が 1 個確認できる。羨道部は崩壊が著しく、表出する石材により判別できる程度である。現状では、羨道左壁には 2〜3 個の石材が確認でき、右壁の石材および両袖石は確認できない。また、玄門付近には大ぶりの石材が 1 枚残っている。なお、本墳に使用されている石材はすべて花崗岩である。</p></div></div>
+<h3 class="tomb">鳥越古墳群 G 支群 7 号墳</h3>
+<p>本墳は南東に延びる丘陵の南東側急斜面上標高約 97.5〜100.0m の間に存在し、本群中最も西方に位置する。また、本墳より東方約 10m には 2 号墳が存在し、その比高は約 2.5m を測る。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>本墳の墳丘盛土は、流出が著しく、ほとんど原形をとどめていないが、墳丘下部東側にはわずかに盛り上がりが認められる。現状で墳丘径は、主体部主軸方向で約 5.6m、主体部直交方向で約 6.2m を測り、墳丘平面形は不正な円形を呈している。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p26_f1.png" data-cap="鳥越古墳群 G 支群 7 号墳石室実測図" aria-label="鳥越古墳群 G 支群 7 号墳石室実測図を拡大"><img loading="lazy" src="images/p26_f1.png" alt="鳥越古墳群 G 支群 7 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 G 支群 7 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の埋葬施設は、開口主軸方向を S-23°-W にほぼ南に開口する単室の横穴式石室である。</p><p>天井石は既に失われており、玄室床面には土砂が流入しているものの床面は現状よりさほど下がらないと思われる。玄室の規模は現状において、奥壁幅約 1.5m、右側壁長約 1.3m、左側壁長約 1.3m、前壁幅約 1.5m を測り、プランは正方形を呈している。</p><p>奥壁は 1 段目に腰石と思われる 50×60cm、45×90cm 程度の石材を 2 枚配しており、その上に 30×30cm 程度の石材を用いた 3 段の石積みが認められ、現状では壁高約 1.5m を測る。</p><p>右側壁は腰石と思われる 30 × 80cm、30×45cm 程度の石材を 2 枚横位に配してあり、その上に 35cm×35cm 程度の石材を多く用いた 2 段の石積みが認められ、現状では壁高約 1.0m を測る。</p><p>左側壁は腰石と思われる 65× 70cm、50×50cm 程度の三角形の石材を 2 枚配しており、その間に 20×20cm 程度の石材が挟まれて 2 個積んであり、その上に 20×20cm、30×30cm 程度の石材を用いた 3 段の石積みが認められ、3 段目よりせり出しが見られる。現状では壁高約 1.2m を測る。奥壁と両側壁との隅角には 2 段目より力石の使用が認められる。</p><p>玄門部は右袖石に 50×40cm、左袖石には 60×40cm 程度の石材を縦位に配してある。道部は石抜き等に伴う土砂の流入により埋没している。なお、本墳に使用されている石材は全て花崗岩である。</p></div></div></div>
+<h3 class="tomb">鳥越古墳群 G 支群 8 号墳</h3>
+<p>本墳は北東に延びる丘陵の南西側急斜面上の標高約 99.5〜100.5m の間に位置しており、南南西方向約 14m に 7 号墳、東北東方向約 6m に 4 号墳、南方向約 9m に 2 号墳が存在する。また本墳より北へ見上げる位置に 6 号墳があり標高差は約 5m、本群中最も低い位置に存在する 5 号墳とは約 10m を測る。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>墳丘盛土は流出が著しいため、残存状態はきわめて悪く、その規模も測定不可能な状態であるが、南東側に微かに墳丘と思われる盛り上がりが認められる。</p></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>本墳の埋葬施設は、土砂流入及び自然崩壊のため周壁の一部が認められるのみである。北壁は 30×15cm 程度の石を 1 枚使用し、東壁は 30×10cm 程度の石が 3 枚残存している。西壁は 3 段目まで残存しており 2 段目までは 20×8cm 程度の石を、3 段目は 30×20cm 程度の石をそれぞれ 2 枚ずつ並列している。また、本墳は長軸 1.25m、短軸 0.55m を測り、小石室の形態を成すものと思われる。なお、本墳で使用している石材は花崗岩である。</p></div></div>
+<h3 class="tomb">鳥越古墳群 G 支群 9 号墳</h3>
+<p>本墳は油山山系より北東に延びる丘陵の標高 97.0 〜99.5m の間の南側斜面上に立地し、6 号墳より東に 15m、10 号墳より西に 21m の位置にある。また、本墳より見下ろす位置に 5 号墳が存在し、標高差は 8.5m を測る。開口方向は南東の谷側である。現状は、天井石が石抜きあるいは自然崩壊のため失われ、石室の周囲上部の石が露出しており、そこより石室内部をうかがうことができる。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>本墳の墳丘盛土は流出が激しく、ほとんど原形をとどめていないが、北東部に墳丘と思われる盛上がりが見られる。現状から見て墳丘径は、主体部主軸方向 4.5m、主軸直交方向 4.5m を測り、油山に於いては比較的小規模な円墳である。周囲には数個の石材が認められる。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p27_f1.png" data-cap="鳥越古墳群 G 支群 9 号墳石室実測図" aria-label="鳥越古墳群 G 支群 9 号墳石室実測図を拡大"><img loading="lazy" src="images/p27_f1.png" alt="鳥越古墳群 G 支群 9 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 G 支群 9 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の埋葬施設は石室天井部が失われているが周壁が残っており、本群中最も残存状態がよい。石室は開口主軸方向を S-30°-W にとり、ほぼ南東の谷に向って開口する両袖単室の横穴式石室である。現状で奥壁幅 1.25m 左右側壁幅 1.0m、前壁幅 1.25m、玄門幅 0.54m、玄門高 0.35m を測り、横長長方形プランを呈する。玄室内部には多量の土砂が流入しており、床面、腰石については不明である。現床面より奥壁 5 段、右側壁 5 段、左側壁 6 段の石積みが確認できる。</p><p>奥壁は 3 段目までは 30×15cm 前後の石材を横位に使用してあり積み方も比較的丁寧である。それより上段になると 20×20cm 程度の石材を雑に積み上げており、上部ではややせり出しも見られる。</p><p>右側壁は 1 段目に 30×20cm 前後の石材が 3 個使用してあり、袖石と接合する部分の石材のせり出しが激しい。 2 段目に数個の栗石の使用が見られ、3 段目には奥壁へ架構する力石の使用が見られる。</p><p>左側壁は 1 段目に 20×10cm 程度の小ぶりの石材が数個使用してあり、その上に 30×20cm 前後の石材が 3 段積まれている。右側壁と同様に 2 段目に栗石、3 段目に力石の使用が認められる。奥壁や右側壁に比べてせり出しが著しい。前壁は右袖石 3 段、左袖石 3 段、楣石 1 枚を確認できる。右袖石は 20×10cm の石材の上に 26×26cm の石材を積み、その上にやや小さめの石材を積んでいる。左袖石は 30×15cm 程度の石材を横位に積んであり、積み方も丁寧である。また、袖石の前に左側壁より 38×30cm 程度の石材がはり出している。楣石は 80×25cm の本墳中最も大きな石材を使用している。全体的に見て、奥壁左半分と左側壁は石材も不整で石積みも雑である。周壁上部ではせり出しが見られドーム状を呈している。</p><p>羨道部はわずかに表出している石が数個認められるが、土砂の流入により埋没しており、詳細は不明である。なお、本墳で使用されている石材はすべて花崗岩である。</p></div></div></div>
+<h3 class="tomb">鳥越古墳群 G 支群 10 号墳</h3>
+<p>本墳は本群中、東北端に位置し、丘陵の南東斜面の標高 90〜92m の間に存在する。本群中の他の古墳との位置関係は南西約 12m に 5 号墳が存在し、標高はほぼ同じである。また、西方斜面上、距離 20m に 9 号墳が、同 35m の位置に 6 号墳が存在する。比高は 9 号墳と 7.5m、6 号墳と 11.25m である。本墳東側にはゆるやかな斜面が北東に下りながら延びており、そのさらに東側には一本松川の谷が存在する。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>墳丘は土砂の流出によりその原形をとどめていない。本墳の存在する斜面は 2、3、4、6〜9 号墳の存在する斜面に比べ斜面がゆるやかであるが、盛土の流出が激しく、墳丘の中央部でさえ自然地形か盛土か判断が困難である。本墳の東南側、北西側の地形は非常になだらかであり、わずかにその部分は墳丘のなごりを止めていると思われる。墳裾は東南側(斜面下方) と南西側に確認できるような状態であり、それより墳形は南北 6m、東西 5m の楕円形であると考えられる。</p></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>埋葬施設は単室の横穴式石室であると思われる。石室は残存状態が悪く、天井石は現存せず、羨道部は完全に崩壊し、玄室も奥壁が 4 段、左側壁 2 段、右側壁 1 段が露出しているにすぎない。袖石と思われる縦長の石が 60cm 程度の間隔をおいて存在しており、開口方向はほぼ南ではないかと考えられる。</p><p>奥壁は 4 段残っており、左側壁との接合部で高さ 60cm、 右側壁との接合部で 40cm、幅は 135cm である。1 段目は 3 個の石材があり、右端の石が高さ 20cm、幅 60cm ほど露出しており、残りは 2 個とも高さ 10cm、幅 30cm ほど露出している。 2〜4 段目は横長の石を多く使っている。 大きさは不揃いであり積み方も雑である。また、2 段目以上はせり出しが激しく、それにより左側 2 個の石は覆い隠されているような状態である。左側壁に接している 3 段目には力石の架構が認められる。</p><p>左側壁は 2 段で、 高さ約 50cm、幅約 80cm ほど残存している。左側壁もせり出しが激しく 2 段目の石が 1 段目の石の上にかなり張り出している。石材の大きさは不揃いであるが、奥壁と比べ大きめの石を使用している。</p><p>右側壁は奥壁に接した 1 段目が 1 個残存しているのみで、他は全て崩壊している。現状での床面の規模は 130×130cm 程度の正方形を呈する。石材はすべて花崗岩であり、ほとんどが自然石を使用している。なお、左袖石の前部には石室の石材と同様のものが数個ころがっている。また、袖石の前方墳裾付近 2m の位置には 4 個の石組らしきものが確認できる。</p></div></div>
+<p class="note">＊鳥越古墳群 G 群の文面および作図は 1985 年福岡大学歴史研究部考古学班発行「早苗田・鳥越古墳群現状調査報告書」より転用した。従って、古墳の分布状況、文面および作図は当時のものである。</p>
+  </div>
+</section>
+<section id="H" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">09</span>
+    <h2>H 支群</h2>
+  </header>
+  <div class="sec-body">
+<h3 class="tomb">鳥越古墳群 H 支群 1 号墳</h3>
+<p>本墳は鳥越 D 群より山道をはさみ、ほぼ南方に約 100m、標高 83〜86m 間の東側急斜面上に位置する。 D 群とは谷を隔てて丘陵を異にする。周囲には花崗岩が点在し、一見して古墳と見紛うものもあるが、現在確認でき得る形状をとどめるものはこの一基のみである。</p>
+<div class="pair pair-mound"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p29_f1.png" data-cap="鳥越古墳群 H 支群 1 号墳地形図" aria-label="鳥越古墳群 H 支群 1 号墳地形図を拡大"><img loading="lazy" src="images/p29_f1.png" alt="鳥越古墳群 H 支群 1 号墳地形図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 H 支群 1 号墳地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>石室の石抜きおよび、急斜面上の立地による自然崩壊により、墳丘盛土は著しく流出している。この為、墳裾線は明確でないが、現状で墳丘径は南北に約 5.5m、東西 5.5m を測り、南東方向に長く延びる不整の円形を呈する。また、谷側の墳裾付近には数個の石材が認められる。</p></div></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>本墳の埋葬施設は、谷に向かってほぼ南東に開口する横穴式石室である。天井石および周壁の石抜きにより、玄室内の土砂の流入が著しく、ボーリング棒の挿入により現床面の下に石材が確認され、腰石は完全に埋没している状態である。</p><p>玄室は現床面より奥壁で 2 段の石積みが認められ、左側壁では奥壁に接して 2 個の石材が並列しているのみである。</p><p>右側壁には石材の存在は認められない。また、袖石部にあたると想定される所にも石材が現存するが、埋没が著しく、その詳細は不明である。以上のように正確な玄室の平面プランを求めることは困難であるが現状で奥壁幅は 120cm、左側壁長は 110cm を測る。羨道部の石材もそのほとんどが埋没、欠失し原状をとどめ得ない。玄室に使用される石材は油山に多く見られる花崗岩で 30×30cm 程度の石材を用いている。</p></div></div>
+<p class="note">＊鳥越古墳群 H 支群の文面および作図は 1985 年福岡大学歴史研究部考古学班発行「早苗田・鳥越古墳群現状調査報告書」より転用した。従って、古墳の分布状況、文面および作図は当時のものである。</p>
+  </div>
+</section>
+<section id="I" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">10</span>
+    <h2>I 支群</h2>
+  </header>
+  <div class="sec-body">
+<h3 class="tomb">鳥越古墳群 I 支群 1 号墳</h3>
+<p>本墳は油山から北東に延びる小丘陵の尾根頂部に近いかなり急な斜面に存在し、標高約 120.5〜124.0m の間に位置する。本墳の存在する丘陵の谷を挟んで北にある丘陵には、鳥越 D 群 13 基が、南にある丘陵には H 群 1 基がそれぞれ存在している。</p>
+<div class="pair pair-mound"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p30_f1.png" data-cap="鳥越古墳群 I 支群 1 号墳" aria-label="鳥越古墳群 I 支群 1 号墳を拡大"><img loading="lazy" src="images/p30_f1.png" alt="鳥越古墳群 I 支群 1 号墳"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 I 支群 1 号墳<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>墳丘盛土は本墳がかなり急な斜面に存在するため流出が著しく、原形をとどめていない。しかし、石室の北西側、南西側、北東側にそれぞれわずかながら盛り上がりが見られ、現状で墳丘規模は、東西径 6.5m、南西径 6.5m を測り、墳丘平面形は不整な楕円形を呈している。また、谷側の墳裾付近に大ぶりな石が数個点在している。</p></div></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>本墳の埋葬施設は、ほぼ南東に開口する単室の横穴式石室であると思われる。残存状態は悪く、天井石は失われ、周壁を残すのみで玄室内には土砂がかなり流入している。流入した土砂の上に 110×110cm 程度の平らな石材が玄室右側壁寄りに落ちている。さらにその上に土砂が流入しているため、右側壁及び奥壁の右半分は埋没が著しい。</p><p>現状で、奥壁幅約 1.6m、左側壁長約 1.5m を測る。奥壁の左半分は 4 段、左側壁は 3〜4 段の石積みが認められる。奥壁、左側壁とも、1 段目の石材はわずかに露出する程度で、ほとんど埋没している。奥壁の 2 段目に約 60×110cm の石材を左側壁にかかるように内傾させて横位に置き、その上には約 40×60cm の石材を力石に据えている。右側壁は奥壁と同レベルまで残存しているが、埋没が著しく、わずかに 1 段が露出するのみである。奥壁との接合部には力石の使用が認められる。</p><p>前壁は埋没及び崩壊のため判然とせず、数個の石材が表出するのみである。全体的 30×50cm〜40×70cm 程度の自然石を横位に使用し、内傾させ、持ち送りして積んでいる。左側壁にはせり出しも見られる。羨道部は崩壊しており、現状では認められない。玄室のすぐ南東に大ぶりの石材が 2 個落ちている。使用されている石材は全て花崗岩である。</p></div></div>
+<p class="note">＊鳥越古墳群 I 支群の文面および作図は 1985 年福岡大学歴史研究部考古学班発行「早苗田・鳥越古墳群現状調査報告書」より転用した。従って、古墳の分布状況、文面および作図は当時のものである。</p>
+  </div>
+</section>
+<section id="J" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">11</span>
+    <h2>J 支群</h2>
+  </header>
+  <div class="sec-body">
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p31_f1.png" data-cap="鳥越古墳群 J 支群地形図" aria-label="鳥越古墳群 J 支群地形図を拡大"><img loading="lazy" src="images/p31_f1.png" alt="鳥越古墳群 J 支群地形図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 J 支群地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">鳥越古墳群 J 支群 1 号墳</h3>
+<p>本墳は北東に延びる丘陵の頂部、標高約 122.0〜124.5m の間に存在する。本墳の北東約 12.5m に 2 号墳、同じく北東約 21.0m に 3 号墳、東方約 32.0m に 4 号墳が存在し、比高はそれぞれ約 1.5m、約 3.5m、約 9.5m を測る。また、I 群 1 号墳とほぼ同じ高さに位置する。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>本墳の墳丘盛土は、石抜き, および自然崩壊のため、南東側は流出しているが、北西及び南西側の墳裾部は流出が比較的少なく、墳裾線が確認できる。現状において、墳丘規模は南北径約 6.0m、東西径約 6.0m を測り、墳丘平面形はほぼ円形を呈している。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/p31_f2.png" data-cap="鳥越古墳群 J 支群 1 号墳石室実測図" aria-label="鳥越古墳群 J 支群 1 号墳石室実測図を拡大"><img loading="lazy" src="images/p31_f2.png" alt="鳥越古墳群 J 支群 1 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 J 支群 1 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の埋葬施設は谷に向かってほぼ南東に開口する横穴式石室である。現状では、奥壁と両側壁に数段の石積みが確認できるのみで前壁及び羨道は認められない。現状において、奥壁幅は約 1.5m、右側壁約 1.1m、左側壁約 1.2m を測る。</p><p>奥壁は現床面より 4 段からなり、1 段目には 50×20cm 程度の石材を 3 枚横位に使用し、上段になるにつれて小ぶりの石材を用いている。また、せり出しが激しい。</p><p>両側壁は現床面より 3 段からなり、60×20cm 程度の石材を横位に積んでおり、奥壁に比べて上段に大ぶりの石材が使用されている。</p><p>右側壁と奥壁との接合部全体、左側壁との接合部の 1 段目及び 3 段目には力石の使用が認められる。全体に不整に不整形な石材を用いている。なお、本墳に使用されている石材は全て花崗岩である。</p></div></div></div>
+<h3 class="tomb">鳥越古墳群 J 支群 2 号墳</h3>
+<p>本墳は油山から北東に延びる丘陵の南東斜面に存在し、標高 119.5〜122.5m の間に位置する。1 号墳より北東に 12.5m、3 号墳より南西に 8.5m の距離を測り、本群中では 1 号墳に次いで高い位置にある。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>墳丘盛土はかなり流出しており、墳丘は原形をとどめていない。しかし、石室南側と北側に盛り上がりが確認できる。現状で墳丘規模は、南北径 6.5m 東西径 8.5m を測り、楕円形を呈している。谷側の盛土上には、石材と思われる大ぶりな石が数個点在している。なお、谷側の墳裾付近でスラッグを 3 個表採した。</p></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>本墳の埋葬施設は、ほぼ東に開口する単室の横穴式石室であると思われる。天井石は既に失われており、玄室内には多量の土砂が流入している。前壁及び羨道は認められず、奥壁及び左右側壁は埋没が著しく 1〜2 段の石積みが認められる程度である。</p><p>奥壁は石材と思われる石材が 2 個わずかに表出しているのみで、石積みの状態は不明である。</p><p>右側壁は現床面より 2 段の石積みが認められる。1 段目はかなり埋没しているが 2 枚の石材が認められる。奥壁側の石材は幅 30cm、前壁側の石材は幅 80cm を測る。2 段目も 2 枚の石材が認められる。奥壁側に 75×50cm の大ぶりな石材を奥壁にかけるように横位に置き、前壁側に 70×25cm の石材を横位に置いている。</p><p>左側壁は奥壁及び右側壁に比べ 50cm 程低いレベルまでしか残存しておらず、現床面より 1 段の石積みが認められるのみである。前壁側に 35×25cm の横位に置いた石材が認められるのみで、それより奥壁側は埋没により判然とせず、石が数個わずかに露出するのみである。現状で奥壁幅は 1.8m を測るが、土砂による埋没が激しいため、玄室平面プランは定かではない。石材は全て花崗岩を使用している。</p></div></div>
+<h3 class="tomb">鳥越古墳群 J 支群 3 号墳</h3>
+<p>本墳は北東に延びる丘陵の標高 120〜121m のゆるやかな南東斜面上に立地し、2 号墳とはほぼ同じ標高にある。また、本墳より見下ろす位置にある 4 号墳とは標高差 6m を測る。また、1 号墳より南西に 20.5m、2 号墳より南西に 8.5m、4 号墳より南東に 14m の距離を測る。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>墳丘盛土は完全に流出しており、その存在が全く確認できず外観における指標は明瞭ではない。わずかに残存する周壁と、それに伴う落ちこみなどにより、かろうじて古墳であると判断できる。</p></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>石室は天井石および周壁の崩壊、土砂の流入などにより原形をとどめず、西壁と北壁がわずかに残存するにすぎない。埋葬施設は南東に開口する横穴式石室と考えられるが判然としない。現状では西壁幅 120cm、北壁幅約 150cm を測ることができる 西壁は、露出している部分で 40×90cm 程度と 30×30cm 程度の 2 個の石材が並列している。北壁は 20×20cm 程度の石材が 4 個並列し、南端には 50×50cm 程の石材が存在する。また、西壁と北壁の隅角には 20×40cm 程度の石材が内傾して存在する。羨道部は全く不明である。なお、石材はすべて花崗岩である。</p></div></div>
+<h3 class="tomb">鳥越古墳群 J 支群 4 号墳</h3>
+<p>本墳は 1、2、3 号墳の存在する丘陵の緩やかな斜面の谷あい付近に立地する。2 号墳の東、約 20m の標高 113〜15.5m の間に存在し、J 群中で最東端、最下部に位置する。本群で最高所に存在する 1 号墳との比高は約 9.5m を測る。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>天井石や周壁の石抜き及び自然崩壊により、西側での盛土の流出は著しい。それに対し、東側(谷側)では盛りあがりが残り、明瞭な墳裾線が認められる。現状で墳丘規模は南北径 8m、東西径 7m を測り、平面形は不整な円形を呈する。残存する墳丘で最も高い奥壁後方部分と谷側墳裾との比高は約 1.5m である。また、谷側の墳裾付近より約 8m 下の谷まで 10 数個の花崗岩が点在する。</p></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>埋葬施設はほぼ南東に開口する横穴式石室と思われる。石室現床面には 90×70cm 程度の石材が落ちている。また、奥壁部分において土砂が著しく流入しており,わずかに上段の石積み 2 段が認められるだけとなっている。石材は 50×20cm 程度の長方形の石を横位に積んでいる。石材のせり出した激しい。奥壁以外の周壁は、石抜きおよび自然崩壊等により残存状態は悪く、左右側壁はそれぞれ石材 1 個ずつしか現存しない。前壁、羨道とも石材が全くみられず不明である。石室に使用されている石材は全て花崗岩である。</p></div></div>
+<p class="note">＊鳥越古墳群 J 群の文面および作図は 1985 年福岡大学歴史研究部考古学班発行「早苗田・鳥越古墳群現状調査報告書」より転用した。従って、古墳の分布状況、文面および作図は当時のものである。</p>
+  </div>
+</section>
+<section id="data" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">12</span>
+    <h2>古墳データ</h2>
+  </header>
+  <div class="sec-body">
+<p>各古墳の残存・発掘状況、墳形、標高・墳頂高、墳丘規模、石室形式・開口方向、玄室および前室・羨道の各部寸法、玄室面積を一覧にした基礎データ表である。（横スクロール・拡大表示が可能）</p>
+<figure class="fig fig-table">
+  <div class="table-scroll"><button class="fig-btn" data-src="images/p34_table.png" data-cap="鳥越古墳群古墳データ" aria-label="鳥越古墳群古墳データを拡大"><img loading="lazy" src="images/p34_table.png" alt="鳥越古墳群古墳データ"></button></div>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群古墳データ<span class="cap-hint">横スクロール／拡大表示</span></figcaption>
+</figure>
+  </div>
+</section>
+<section id="opening" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">13</span>
+    <h2>石室開口方向</h2>
+  </header>
+  <div class="sec-body">
+<h3 class="tomb">鳥越古墳群 A・B・C・D・E・F・H・I 支群</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p34_f1.jpg" data-cap="鳥越古墳群石室開口方向（A・B・C・D・E・F・H・I 支群）" aria-label="鳥越古墳群石室開口方向（A・B・C・D・E・F・H・I 支群）を拡大"><img loading="lazy" src="images/p34_f1.jpg" alt="鳥越古墳群石室開口方向（A・B・C・D・E・F・H・I 支群）"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群石室開口方向（A・B・C・D・E・F・H・I 支群）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">鳥越古墳群 J 支群・瀬戸口古墳群 A 支群（旧鳥越古墳群 G 支群）</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p35_f1.jpg" data-cap="鳥越古墳群石室開口方向（J 支群・瀬戸口古墳群 A 支群〔旧 G 支群〕）" aria-label="鳥越古墳群石室開口方向（J 支群・瀬戸口古墳群 A 支群〔旧 G 支群〕）を拡大"><img loading="lazy" src="images/p35_f1.jpg" alt="鳥越古墳群石室開口方向（J 支群・瀬戸口古墳群 A 支群〔旧 G 支群〕）"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群石室開口方向（J 支群・瀬戸口古墳群 A 支群〔旧 G 支群〕）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+  </div>
+</section>
+<section id="plates" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">14</span>
+    <h2>地形図と石室</h2>
+  </header>
+  <div class="sec-body">
+<h3 class="tomb">鳥越古墳群 C 支群</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p36_f1.png" data-cap="鳥越古墳群 C 支群 地形図と石室" aria-label="鳥越古墳群 C 支群 地形図と石室を拡大"><img loading="lazy" src="images/p36_f1.png" alt="鳥越古墳群 C 支群 地形図と石室"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 C 支群 地形図と石室<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">鳥越古墳群 D 支群</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p37_f1.png" data-cap="鳥越古墳群 D 支群 地形図と石室" aria-label="鳥越古墳群 D 支群 地形図と石室を拡大"><img loading="lazy" src="images/p37_f1.png" alt="鳥越古墳群 D 支群 地形図と石室"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 D 支群 地形図と石室<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">鳥越古墳群 E 支群</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p38_f1.png" data-cap="鳥越古墳群 E 支群 地形図と石室" aria-label="鳥越古墳群 E 支群 地形図と石室を拡大"><img loading="lazy" src="images/p38_f1.png" alt="鳥越古墳群 E 支群 地形図と石室"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 E 支群 地形図と石室<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p class="note">＊鳥越古墳群 E 支群の地形図および E 支群１号墳の石室実測図は 1985 年福岡市教育委員会発刊の「鳥越・七隈古墳群」から転用した。</p>
+<h3 class="tomb">鳥越古墳群 G 支群</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p39_f1.png" data-cap="鳥越古墳群 G 支群 地形図と石室" aria-label="鳥越古墳群 G 支群 地形図と石室を拡大"><img loading="lazy" src="images/p39_f1.png" alt="鳥越古墳群 G 支群 地形図と石室"></button>
+  <figcaption><span class="cap-mark">図</span>鳥越古墳群 G 支群 地形図と石室<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+  </div>
+</section>
+<section id="analysis" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">15</span>
+    <h2>標高からみる墳丘規模と玄室面積</h2>
+  </header>
+  <div class="sec-body">
+<h3 class="tomb">鳥越古墳群（墳丘径）</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p40_f1.jpg" data-cap="標高からみる墳丘規模（墳丘径）— 鳥越古墳群" aria-label="標高からみる墳丘規模（墳丘径）— 鳥越古墳群を拡大"><img loading="lazy" src="images/p40_f1.jpg" alt="標高からみる墳丘規模（墳丘径）— 鳥越古墳群"></button>
+  <figcaption><span class="cap-mark">図</span>標高からみる墳丘規模（墳丘径）— 鳥越古墳群<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">鳥越古墳群（玄室面積）</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p40_f2.jpg" data-cap="標高からみる玄室面積 — 鳥越古墳群" aria-label="標高からみる玄室面積 — 鳥越古墳群を拡大"><img loading="lazy" src="images/p40_f2.jpg" alt="標高からみる玄室面積 — 鳥越古墳群"></button>
+  <figcaption><span class="cap-mark">図</span>標高からみる玄室面積 — 鳥越古墳群<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">油山古墳群全域からみるポジショニング（墳丘径）</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p41_f1.jpg" data-cap="油山古墳群全域からみるポジショニング（墳丘径）" aria-label="油山古墳群全域からみるポジショニング（墳丘径）を拡大"><img loading="lazy" src="images/p41_f1.jpg" alt="油山古墳群全域からみるポジショニング（墳丘径）"></button>
+  <figcaption><span class="cap-mark">図</span>油山古墳群全域からみるポジショニング（墳丘径）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">油山古墳群全域からみるポジショニング（玄室面積）</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p41_f2.jpg" data-cap="油山古墳群全域からみるポジショニング（玄室面積）" aria-label="油山古墳群全域からみるポジショニング（玄室面積）を拡大"><img loading="lazy" src="images/p41_f2.jpg" alt="油山古墳群全域からみるポジショニング（玄室面積）"></button>
+  <figcaption><span class="cap-mark">図</span>油山古墳群全域からみるポジショニング（玄室面積）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p class="note">＊油山古墳群全域とは鳥越古墳群、早苗田古墳群、倉瀬戸古墳群、大谷古墳群、駄ヶ原古墳群、霧ヶ滝古墳群、影塚古墳群、西油山古墳群を指す。</p>
+<p class="note">＊座標軸上の赤線は油山古墳群全域の平均値である。</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="ft">
+    <b>鳥越古墳群 現状調査報告書</b>
+    2023年　油山古墳研究室<br>
+    本文および作図の出典：福岡大学歴史研究部考古学班「鳥越古墳群現状調査報告書」（1977）／<br>
+    「早苗田・鳥越古墳群現状調査報告書」（1985）、福岡市教育委員会「片江古墳群」（1973）・「鳥越・七隈古墳群」（1985）ほか。<br>
+    デジタル版（原報告書より編集）
+  </div>
+</footer>
+
+<button class="totop" id="toTop" aria-label="ページ上部へ戻る">↑</button>
+
+<!-- Drawer -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="目次">
+  <div class="dh"><b>目　次</b><button class="x" id="tocClose" aria-label="閉じる">×</button></div>
+  <nav><ol><li><a href="#env" class="toc-link"><span class="toc-no">01</span><span class="toc-t">立地と環境</span></a></li><li><a href="#A" class="toc-link"><span class="toc-no">02</span><span class="toc-t">A 支群</span></a></li><li><a href="#B" class="toc-link"><span class="toc-no">03</span><span class="toc-t">B 支群</span></a></li><li><a href="#C" class="toc-link"><span class="toc-no">04</span><span class="toc-t">C 支群</span></a></li><li><a href="#D" class="toc-link"><span class="toc-no">05</span><span class="toc-t">D 支群</span></a></li><li><a href="#E" class="toc-link"><span class="toc-no">06</span><span class="toc-t">E 支群</span></a></li><li><a href="#F" class="toc-link"><span class="toc-no">07</span><span class="toc-t">F 支群</span></a></li><li><a href="#G" class="toc-link"><span class="toc-no">08</span><span class="toc-t">G 支群</span></a></li><li><a href="#H" class="toc-link"><span class="toc-no">09</span><span class="toc-t">H 支群</span></a></li><li><a href="#I" class="toc-link"><span class="toc-no">10</span><span class="toc-t">I 支群</span></a></li><li><a href="#J" class="toc-link"><span class="toc-no">11</span><span class="toc-t">J 支群</span></a></li><li><a href="#data" class="toc-link"><span class="toc-no">12</span><span class="toc-t">古墳データ</span></a></li><li><a href="#opening" class="toc-link"><span class="toc-no">13</span><span class="toc-t">石室開口方向</span></a></li><li><a href="#plates" class="toc-link"><span class="toc-no">14</span><span class="toc-t">地形図と石室</span></a></li><li><a href="#analysis" class="toc-link"><span class="toc-no">15</span><span class="toc-t">標高からみる墳丘規模と玄室面積</span></a></li></ol></nav>
+</aside>
+
+<!-- Lightbox -->
+<div class="lb" id="lb" aria-hidden="true">
+  <div class="lb-top">
+    <div class="lb-cap" id="lbCap"></div>
+    <button id="lbZoom">拡大 +</button>
+    <button id="lbClose">閉じる ×</button>
+  </div>
+  <div class="lb-stage" id="lbStage"><img id="lbImg" alt=""></div>
+  <div class="lb-foot">拡大・縮小して細部まで確認できます</div>
+</div>
+
+<script>
+(function(){
+  var drawer=document.getElementById('drawer'),scrim=document.getElementById('scrim');
+  function openD(){drawer.classList.add('open');scrim.classList.add('open');}
+  function closeD(){drawer.classList.remove('open');scrim.classList.remove('open');}
+  document.getElementById('tocOpen').addEventListener('click',openD);
+  document.getElementById('tocClose').addEventListener('click',closeD);
+  scrim.addEventListener('click',closeD);
+  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeD);});
+
+  // back to top
+  var toTop=document.getElementById('toTop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>600) toTop.classList.add('show'); else toTop.classList.remove('show');
+  },{passive:true});
+  toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+
+  // smooth anchor scroll with header offset
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href').slice(1),el=document.getElementById(id);
+      if(el){e.preventDefault();var y=el.getBoundingClientRect().top+window.scrollY-56;
+        window.scrollTo({top:y,behavior:'smooth'});history.replaceState(null,'','#'+id);}
+    });
+  });
+
+  // Lightbox with zoom & pan
+  var lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),
+      lbCap=document.getElementById('lbCap'),lbStage=document.getElementById('lbStage');
+  var scale=1,tx=0,ty=0,start=null,pinch=null;
+  function apply(){lbImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function reset(){scale=1;tx=0;ty=0;apply();document.getElementById('lbZoom').textContent='拡大 +';}
+  function open(src,cap){lbImg.src=src;lbImg.alt=cap;lbCap.textContent=cap;reset();
+    lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+  function close(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';lbImg.src='';}
+  document.querySelectorAll('.fig-btn').forEach(function(b){
+    b.addEventListener('click',function(){open(b.getAttribute('data-src'),b.getAttribute('data-cap'));});
+  });
+  document.getElementById('lbClose').addEventListener('click',close);
+  document.getElementById('lbZoom').addEventListener('click',function(){
+    scale=(scale>1?1:2.4);if(scale===1){tx=0;ty=0;}apply();this.textContent=scale>1?'戻す −':'拡大 +';
+  });
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target===lbStage)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))close();});
+
+  // double tap to zoom
+  var lastTap=0;
+  lbStage.addEventListener('click',function(e){
+    var now=Date.now();
+    if(now-lastTap<300){scale=(scale>1?1:2.4);if(scale===1){tx=0;ty=0;}apply();
+      document.getElementById('lbZoom').textContent=scale>1?'戻す −':'拡大 +';}
+    lastTap=now;
+  });
+  // drag pan (mouse + 1 finger)
+  lbImg.addEventListener('mousedown',function(e){if(scale<=1)return;start={x:e.clientX-tx,y:e.clientY-ty};e.preventDefault();});
+  window.addEventListener('mousemove',function(e){if(start){tx=e.clientX-start.x;ty=e.clientY-start.y;apply();}});
+  window.addEventListener('mouseup',function(){start=null;});
+  lbImg.addEventListener('touchstart',function(e){
+    if(e.touches.length===1&&scale>1){start={x:e.touches[0].clientX-tx,y:e.touches[0].clientY-ty};}
+    else if(e.touches.length===2){var dx=e.touches[0].clientX-e.touches[1].clientX,dy=e.touches[0].clientY-e.touches[1].clientY;
+      pinch={d:Math.hypot(dx,dy),s:scale};}
+  },{passive:true});
+  lbImg.addEventListener('touchmove',function(e){
+    if(pinch&&e.touches.length===2){var dx=e.touches[0].clientX-e.touches[1].clientX,dy=e.touches[0].clientY-e.touches[1].clientY;
+      scale=Math.min(5,Math.max(1,pinch.s*Math.hypot(dx,dy)/pinch.d));if(scale===1){tx=0;ty=0;}apply();e.preventDefault();}
+    else if(start&&e.touches.length===1&&scale>1){tx=e.touches[0].clientX-start.x;ty=e.touches[0].clientY-start.y;apply();e.preventDefault();}
+  },{passive:false});
+  lbImg.addEventListener('touchend',function(e){if(e.touches.length===0){start=null;pinch=null;}});
+})();
+</script>
+</body>
+</html>
