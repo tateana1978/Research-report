@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<meta name="description" content="早苗田古墳群 現状調査報告書（改訂版・2023年／油山古墳研究室）デジタル版。福岡市城南区片江、油山山麓の群集墳。A・B・C・D の 4 支群の現状調査記録。">
+<title>早苗田古墳群 現状調査報告書｜油山古墳研究室</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Noto+Serif+JP:wght@400;600&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ffffff; --paper2:#f6f5f2; --card:#ffffff;
+  --ink:#1a1a1a; --ink2:#565656; --line:#d8d8d4; --line2:#ececea;
+  --clay:#7a2e2e; --clay2:#5e2222; --ochre:#8a6a2e; --sage:#3f4a3a;
+  --shadow:0 1px 2px rgba(0,0,0,.05),0 3px 12px rgba(0,0,0,.05);
+  --maxw:760px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Noto Serif JP",serif; font-weight:400; line-height:1.95;
+  font-size:16px; letter-spacing:.01em;
+  text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased;
+}
+/* faint paper grain */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;display:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--clay2);text-decoration:none}
+
+/* ---- Top bar ---- */
+.bar{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:.6rem;
+  padding:.55rem .9rem;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);}
+.bar .brand{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:.98rem;
+  letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .brand small{color:var(--ink2);font-weight:500;font-size:.72rem;margin-left:.4rem}
+.bar .spacer{flex:1}
+.toc-toggle{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.82rem;
+  color:var(--paper2);background:var(--clay);border:none;border-radius:999px;
+  padding:.42rem .95rem;cursor:pointer;letter-spacing:.08em;box-shadow:var(--shadow);transition:background .2s}
+.toc-toggle:hover{background:var(--clay2)}
+.toc-toggle::before{content:"☰ ";font-size:.9em}
+
+/* ---- Hero (title page, white) ---- */
+.hero{position:relative;z-index:1;background:#fff;border-bottom:1px solid var(--line)}
+.hero-inner{max-width:var(--maxw);margin:0 auto;padding:3rem 1.3rem 2.2rem;text-align:center}
+.hero .kicker{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:500;letter-spacing:.4em;
+  font-size:.72rem;color:var(--ink2);margin:0 0 1.4rem;text-indent:.4em}
+.hero h1{font-family:"Shippori Mincho B1",serif;font-weight:800;line-height:1.18;
+  font-size:clamp(2.3rem,8.5vw,3.4rem);letter-spacing:.16em;margin:0;color:var(--ink);text-indent:.16em}
+.hero .sub{font-family:"Shippori Mincho B1",serif;font-weight:500;font-size:clamp(1rem,4.4vw,1.3rem);
+  letter-spacing:.36em;margin:1.1rem 0 0;color:var(--ink);text-indent:.36em;
+  padding-top:1rem;position:relative;display:inline-block}
+.hero .sub::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:54px;height:2px;background:var(--clay)}
+.hero .byline{font-family:"Shippori Mincho B1",serif;font-size:1rem;letter-spacing:.18em;
+  color:var(--ink);margin:1.6rem 0 .3rem}
+.hero .meta{font-family:"Zen Kaku Gothic New",sans-serif;font-size:.78rem;letter-spacing:.08em;
+  color:var(--ink2);margin:.2rem 0 0}
+.cover-fig{margin:2.1rem auto 0;text-align:center}
+.cover-fig figcaption{font-family:"Zen Kaku Gothic New",sans-serif;font-size:.76rem;color:var(--ink2);
+  margin:.7rem auto 0;line-height:1.5}
+
+/* ---- Preface ---- */
+.preface{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:1.8rem 1.3rem .4rem}
+.preface p{font-size:.9rem;color:var(--ink2);line-height:1.85;margin:.2rem 0 .6rem;
+  border-left:3px solid var(--line);padding-left:.9rem}
+
+/* ---- Inline TOC ---- */
+.toc-inline{position:relative;z-index:1;max-width:var(--maxw);margin:1.4rem auto 0;padding:0 1.3rem}
+.toc-inline .tc{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  box-shadow:var(--shadow);padding:1.2rem 1.1rem 1rem}
+.toc-inline .tc h2{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:1.05rem;
+  letter-spacing:.22em;margin:0 0 .9rem;color:var(--clay2);text-align:center}
+.toc-inline .tc h2::before,.toc-inline .tc h2::after{content:"";display:inline-block;width:1.6rem;
+  height:1px;background:var(--line);vertical-align:middle;margin:0 .7rem}
+ol.toc{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:.1rem}
+ol.toc li a{display:flex;align-items:baseline;gap:.7rem;padding:.5rem .5rem;border-radius:8px;
+  color:var(--ink);transition:background .15s}
+ol.toc li a:hover{background:var(--paper)}
+.toc-no{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.72rem;
+  color:var(--clay);min-width:1.6rem;letter-spacing:.05em}
+.toc-t{font-family:"Shippori Mincho B1",serif;font-weight:500;font-size:.98rem;
+  border-bottom:1px dotted transparent}
+ol.toc li a:hover .toc-t{border-bottom-color:var(--line)}
+
+/* ---- Main ---- */
+main{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:1rem 1.3rem 4rem}
+.sec{scroll-margin-top:64px;padding:2.6rem 0 1.2rem;border-top:1px solid var(--line2)}
+.sec:first-of-type{border-top:none}
+.sec-head{display:flex;align-items:center;gap:.85rem;margin:0 0 1.4rem}
+.sec-no{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.78rem;
+  color:var(--paper2);background:var(--clay);border-radius:7px;padding:.28rem .55rem;letter-spacing:.06em;
+  box-shadow:var(--shadow)}
+.sec-head h2{font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:1.5rem;
+  letter-spacing:.12em;margin:0;color:var(--ink)}
+.sec-body p{margin:0 0 1.05rem;text-align:justify}
+
+/* 号墳 heading */
+h3.tomb{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:1.12rem;letter-spacing:.06em;
+  color:var(--clay2);margin:2.1rem 0 1rem;padding:.4rem 0 .5rem .9rem;
+  border-left:4px solid var(--clay);background:none;border-bottom:1px solid var(--line2)}
+h3.tomb::before{content:"";}
+.sec:first-of-type h3.tomb:first-child,.sec-body > h3.tomb:first-child{margin-top:.4rem}
+
+/* 墳丘/石室 labels */
+p.part{margin:1.4rem 0 .6rem;display:flex;align-items:center;gap:.6rem}
+p.part span{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.82rem;
+  letter-spacing:.22em;padding:.18rem .7rem;border-radius:4px}
+p.part::after{content:"";flex:1;height:1px;background:var(--line2)}
+.part-mound span{color:#5a4a2e;background:#f2f0ea;border:1px solid var(--line);border-left:3px solid #8a6a2e}
+.part-chamber span{color:#33402f;background:#eef0ec;border:1px solid var(--line);border-left:3px solid #3f4a3a}
+
+/* notes */
+p.note{font-size:.8rem;line-height:1.7;color:var(--ink2);margin:.5rem 0;padding:.55rem .8rem;
+  background:var(--paper2);border:1px dashed var(--line);border-radius:8px;text-align:justify}
+
+/* figures */
+figure.fig{margin:1.6rem 0 1.8rem;text-align:center}
+.fig-btn{display:inline-block;max-width:100%;padding:0;border:none;background:none;cursor:zoom-in;line-height:0}
+.fig-btn img{margin:0 auto;border:1px solid var(--line);background:#fff;border-radius:6px;
+  box-shadow:var(--shadow);padding:6px;max-height:74vh;width:auto;max-width:100%}
+figure.fig figcaption{font-family:"Zen Kaku Gothic New",sans-serif;font-size:.78rem;color:var(--ink2);
+  margin:.7rem auto 0;max-width:90%;line-height:1.55;letter-spacing:.02em}
+.cap-mark{display:inline-block;font-weight:700;color:var(--paper2);background:var(--sage);
+  border-radius:4px;font-size:.66rem;padding:.06rem .42rem;margin-right:.5rem;letter-spacing:.1em;vertical-align:.06em}
+.cap-hint{display:block;color:var(--ochre);font-size:.68rem;margin-top:.25rem;letter-spacing:.08em}
+.cap-hint::before{content:"⤢ "}
+/* wide data table figure */
+figure.fig-table{margin:1.4rem -1.3rem 1.8rem}
+.table-scroll{width:100%;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;
+  padding:.2rem 1.3rem;touch-action:pan-x pan-y}
+figure.fig-table .fig-btn{display:inline-block;width:auto;max-width:none;cursor:zoom-in;line-height:0}
+figure.fig-table .fig-btn img{max-height:none;width:900px;max-width:none;min-width:0}
+figure.fig-table figcaption{padding:0 1.3rem}
+
+/* ---- 図面と説明の対置（墳丘／石室） ---- */
+.pair{margin:1.6rem 0 1.8rem}
+.pair-label{margin:0 0 .7rem}
+.pair-label span{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.84rem;
+  letter-spacing:.22em;padding:.2rem .8rem;border-radius:4px;display:inline-block}
+.pair-mound .pair-label span{color:#5a4a2e;background:#f2f0ea;border:1px solid var(--line);border-left:3px solid #8a6a2e}
+.pair-chamber .pair-label span{color:#33402f;background:#eef0ec;border:1px solid var(--line);border-left:3px solid #3f4a3a}
+.pair-text p{margin:0 0 1rem;text-align:justify}
+.pair-text p:last-child{margin-bottom:0}
+.pair-figs figure.fig{margin:0 0 .8rem}
+.pair-figs figure.fig:last-child{margin-bottom:0}
+/* 狭い画面：図版を画面上部に固定し、説明文を読む間ずっと見えるように */
+.pair-figs{position:sticky;top:54px;z-index:5;background:#fff;
+  max-height:48vh;overflow:auto;-webkit-overflow-scrolling:touch;
+  padding:.35rem 0 .55rem;border-bottom:1px solid var(--line2)}
+.pair-figs .fig-btn img{max-height:42vh}
+.pair-figs figcaption .cap-hint{display:none}
+@media(min-width:740px){
+  /* 広い画面：図版を左、説明文を右に並べて対置（図版は追従） */
+  .pair-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;align-items:start}
+  .pair-figs{position:sticky;top:64px;max-height:none;overflow:visible;
+    background:transparent;border-bottom:none;padding:0}
+  .pair-figs .fig-btn img{max-height:80vh}
+  .pair-figs figcaption .cap-hint{display:block}
+}
+
+/* ---- Drawer (off-canvas TOC) ---- */
+.scrim{position:fixed;inset:0;z-index:50;background:rgba(28,20,12,.5);opacity:0;visibility:hidden;
+  transition:opacity .25s}
+.scrim.open{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;right:0;z-index:60;height:100%;width:min(85vw,340px);
+  background:var(--paper2);box-shadow:-8px 0 30px rgba(40,28,15,.25);
+  transform:translateX(100%);transition:transform .28s cubic-bezier(.2,.7,.2,1);
+  display:flex;flex-direction:column;border-left:3px solid var(--clay)}
+.drawer.open{transform:translateX(0)}
+.drawer .dh{display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 1.1rem;border-bottom:1px solid var(--line)}
+.drawer .dh b{font-family:"Shippori Mincho B1",serif;font-weight:700;letter-spacing:.2em;font-size:1rem;color:var(--clay2)}
+.drawer .x{border:none;background:none;font-size:1.5rem;line-height:1;color:var(--ink2);cursor:pointer;padding:.2rem .4rem}
+.drawer nav{overflow-y:auto;padding:.5rem .5rem 2rem}
+.drawer ol{list-style:none;margin:0;padding:0}
+.drawer ol li a{display:flex;align-items:baseline;gap:.7rem;padding:.7rem .8rem;border-radius:9px;color:var(--ink)}
+.drawer ol li a:active{background:var(--paper)}
+
+/* ---- Back to top ---- */
+.totop{position:fixed;right:1rem;bottom:1rem;z-index:35;width:46px;height:46px;border-radius:50%;
+  border:1px solid var(--line);background:var(--card);color:var(--clay2);font-size:1.2rem;
+  box-shadow:var(--shadow);cursor:pointer;opacity:0;visibility:hidden;transition:opacity .25s}
+.totop.show{opacity:1;visibility:visible}
+
+/* ---- Lightbox ---- */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(18,13,8,.94);display:none;
+  flex-direction:column;touch-action:none}
+.lb.open{display:flex}
+.lb-top{display:flex;justify-content:space-between;align-items:center;padding:.8rem 1rem;color:#eadfce;
+  font-family:"Zen Kaku Gothic New",sans-serif;font-size:.8rem;gap:1rem}
+.lb-top .lb-cap{flex:1;line-height:1.4}
+.lb-top button{border:1px solid rgba(234,223,206,.4);background:transparent;color:#eadfce;
+  border-radius:8px;padding:.35rem .7rem;cursor:pointer;font-size:.8rem}
+.lb-stage{flex:1;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.lb-stage img{max-width:100%;max-height:100%;touch-action:none;cursor:grab;
+  transform-origin:center center;transition:transform .05s linear;user-select:none;-webkit-user-drag:none}
+.lb-foot{text-align:center;color:#b9a98f;font-family:"Zen Kaku Gothic New",sans-serif;
+  font-size:.7rem;padding:.5rem 1rem .9rem;letter-spacing:.06em}
+
+/* ---- Footer ---- */
+footer{position:relative;z-index:1;border-top:3px double var(--clay);background:var(--paper2);
+  padding:2.2rem 1.3rem 3rem;text-align:center}
+footer .ft{max-width:var(--maxw);margin:0 auto;font-family:"Zen Kaku Gothic New",sans-serif;
+  font-size:.76rem;color:var(--ink2);line-height:1.9;letter-spacing:.03em}
+footer .ft b{font-family:"Shippori Mincho B1",serif;color:var(--clay2);font-size:.95rem;letter-spacing:.16em;display:block;margin-bottom:.5rem}
+
+@media(min-width:680px){
+  body{font-size:16.5px}
+  .fig-btn img{max-width:560px}
+  figure.fig-table .fig-btn img{width:1400px;max-width:none;min-width:0}
+  figure.fig-table{margin:1.4rem 0 1.8rem}
+  figure.fig-table .table-scroll,figure.fig-table figcaption{padding-left:0;padding-right:0}
+}
+/* maps, plates, charts, aerials, topo may show wider */
+.fig-btn[data-src*="p03"] img,.fig-btn[data-src*="p05_f1"] img,
+.fig-btn[data-src*="p18_f1"] img,.fig-btn[data-src*="p22_f1"] img,
+.fig-btn[data-src*="p23"] img,.fig-btn[data-src*="p10_f1"] img,
+.fig-btn[data-src*="p29"] img,.fig-btn[data-src*="p31_f1"] img,
+.fig-btn[data-src^="images/p34_f1"] img,.fig-btn[data-src*="p35"] img,
+.fig-btn[data-src*="p36"] img,.fig-btn[data-src*="p37"] img,
+.fig-btn[data-src*="p38"] img,.fig-btn[data-src*="p39"] img,
+.fig-btn[data-src*="p40"] img,.fig-btn[data-src*="p41"] img{max-width:100%}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="brand">早苗田古墳群<small>現状調査報告書</small></div>
+  <div class="spacer"></div>
+  <button class="toc-toggle" id="tocOpen">目次</button>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">福岡市城南区片江・油山山麓の群集墳</p>
+    <h1>早苗田古墳群</h1>
+    <p class="sub">現状調査報告書</p>
+    <p class="byline">2023年　油山古墳研究室</p>
+    <p class="meta">A・B・C・D の 4 支群／横穴式石室を主体とする群集墳</p>
+    <figure class="cover-fig fig">
+      <button class="fig-btn" data-src="images/cover.jpg" data-cap="油山古墳群周辺 航空写真（早苗田古墳群ほか）" aria-label="油山古墳群周辺 航空写真を拡大">
+        <img src="images/cover.jpg" alt="油山古墳群周辺 航空写真">
+      </button>
+      <figcaption><span class="cap-mark">図</span>油山古墳群周辺 航空写真（早苗田古墳群ほか）<span class="cap-hint">拡大表示</span></figcaption>
+    </figure>
+  </div>
+</header>
+
+<div class="preface">
+  <p>本ページは、油山古墳研究室『早苗田古墳群 現状調査報告書（改訂版）』（2023年）のデジタル版です。本文・数値・図版はすべて原報告書のとおりで、内容に改変は加えていません。</p>
+  <p>各支群・各古墳の記述、ならびに地形図・石室実測図等の作図は、原報告書の註記のとおり 1985年 福岡大学歴史研究部考古学班発行「早苗田・鳥越古墳群現状調査報告書」、および福岡市教育委員会の発掘調査報告書から転用されたものです。なお、各図版は拡大して細部まで確認できます。</p>
+</div>
+
+<nav class="toc-inline" aria-label="目次">
+  <div class="tc">
+    <h2>目　次</h2>
+    <ol class="toc"><li><a href="#env" class="toc-link"><span class="toc-no">01</span><span class="toc-t">立地と環境</span></a></li><li><a href="#A" class="toc-link"><span class="toc-no">02</span><span class="toc-t">A 支群</span></a></li><li><a href="#B" class="toc-link"><span class="toc-no">03</span><span class="toc-t">B 支群</span></a></li><li><a href="#C" class="toc-link"><span class="toc-no">04</span><span class="toc-t">C 支群</span></a></li><li><a href="#D" class="toc-link"><span class="toc-no">05</span><span class="toc-t">D 支群</span></a></li><li><a href="#plates" class="toc-link"><span class="toc-no">06</span><span class="toc-t">地形図と石室</span></a></li></ol>
+  </div>
+</nav>
+
+<main>
+<section id="env" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">01</span>
+    <h2>立地と環境</h2>
+  </header>
+  <div class="sec-body">
+<figure class="fig">
+  <button class="fig-btn" data-src="images/env_area.jpg" data-cap="早苗田古墳群周辺（A・C・D 支群位置）" aria-label="早苗田古墳群周辺（A・C・D 支群位置）を拡大"><img loading="lazy" src="images/env_area.jpg" alt="早苗田古墳群周辺（A・C・D 支群位置）"></button>
+  <figcaption><span class="cap-mark">図</span>早苗田古墳群周辺（A・C・D 支群位置）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/env_all.png" data-cap="早苗田古墳群全体地形図" aria-label="早苗田古墳群全体地形図を拡大"><img loading="lazy" src="images/env_all.png" alt="早苗田古墳群全体地形図"></button>
+  <figcaption><span class="cap-mark">図</span>早苗田古墳群全体地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>背振山塊の派生支脈である油山 (標高 592m) は福岡市の西郊にそびえ、博多湾に向かって多くの丘陵を派生している。特に小笹、平尾周辺の台地は、標高 100m の鴻ノ巣山を最高位として発達しており、福岡平野と早良平野を二分する。樋井川流域一帯は油山を源とする西の片江川と東の一本松川による開析によって狭長な沖積地が開け、片江川流域の低台地には古墳時代の集落片江辻遺跡などが存在する。また、室見川の開析によって開けた早良平野の周辺には羽根戸古墳群、金武古墳群、重留古墳群など多くの古墳群が存在している。</p>
+<p>早苗田古墳群は福岡市城南区大字片江に所在し、油山山麓部一帯に群集する一大群集墳のひとつである。西側に倉瀬戸古墳群、東側に鳥越古墳群が分布している。本古墳群は標高 30～80m 前後の丘陵上に位置し、A、B、C、D の 4 支群で構成される。</p>
+<p>A 支群は油山より北東にのびる低丘陵上の先端部、標高約 33m に存在し、黙想の家の敷地内に位置する 1 基をさす。</p>
+<p>B 支群は A 支群の南方向の西側丘陵斜面に位置する 2 基をさし、東側に C 支群、西側には倉瀬戸古墳群がある。1、2 号墳ともに横穴式石室を埋葬施設とする円墳である。</p>
+<p>C 支群は B 支群の東側丘陵頂部に位置し、「片江古墳群」（註１）の報告書の中でいう片江 2、3、4 号墳の 3 基をさすが宅地造成のために現存しない。</p>
+<p>D 支群は油山から北東に延びる丘陵のゆるやかな南側斜面に立地する 13 基をさす。横穴式石室を埋葬主体に持つと思われる円墳からなり、西側に B 支群、C 支群、東側に鳥越古墳群が存在する。また、本群は 1～4 号墳、5 号墳、6～10 号墳、11～13 号墳とその分布、立地状態によって分けることができる。1～4 号墳は標高 45～55m の間に位置し、谷に向かって南東方向に開口する。各々の古墳は互いの墳裾を接する状態にある。5 号墳は D 支群中最北端にあり、7 号墳とは 70m 近く離れている。しかも標高 45m の尾根上に占地し、開口方向を西にとるため、D 支群中に於いて特異の在り方を示す。6～10 号墳は標高 35～40m の間に分布し、谷に向かいほぼ南に開口する。また、先の 1～4 号墳と同様に近接している。10 号墳は宅地造成のため現存しない。（註２） 11～13 号墳は 1～4 号墳から西に約 50m 離れ、標高 65～85m の尾根東側に位置し、D 支群中でも最高所に存在する。1～4 号墳と同一方向に開口するが、占地の在り方に若干の相違がみられる。</p>
+<p class="note">註１　「片江古墳群」『福岡市埋蔵文化財調査報告書第 24 集』 福岡市教育委員会 1973</p>
+<p class="note">註２　「早苗田 D 群 10 号墳」『福岡市埋蔵文化財調査報告書第 67 集』 福岡市教育委員会 1981</p>
+  </div>
+</section>
+<section id="A" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">02</span>
+    <h2>A 支群</h2>
+  </header>
+  <div class="sec-body">
+<h3 class="tomb">早苗田古墳群 A 支群 1 号墳</h3>
+<p>本墳は油山より北西に延びる低丘陵上の先端部、標高 33.5～36.0m に位置する。本墳の北側斜面は急傾斜で水田へと落ちており、また、南側は本墳の南側に位置する「黙想の家」の道路建設に伴う整地作業によって自然地形を有しておらず低く落ち込んでいる。</p>
+<div class="pair pair-mound"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/A_topo.png" data-cap="早苗田古墳群 A 支群地形図" aria-label="早苗田古墳群 A 支群地形図を拡大"><img loading="lazy" src="images/A_topo.png" alt="早苗田古墳群 A 支群地形図"></button>
+  <figcaption><span class="cap-mark">図</span>早苗田古墳群 A 支群地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>墳丘北側は斜面が急なため、多量の盛土が流出したものと考えられ、また、墳丘西側は後年の削平のため墳丘の残存状態は極度に悪い。</p><p>墳丘頂部付近においても、北側および北西側は盛土の流出が激しく、東側および南側はやや盛り上がりが見られる。また、墳丘の北西側墳裾付近は削平を受け、構状の落ち込みとなっている。尚、墳丘径および墳丘平面形等の詳細は不明である。</p></div></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>石室は埋没しており、埋葬施設は明らかでない。西側に 50×35cm 程度の石が 1 個表出し東側にも同じ程度の石が 2 段積まれているのみである。</p></div></div>
+<p class="note">＊早苗田古墳群 A 支群 1 号墳の文面および作図は 1985 年福岡大学歴史研究部考古学班発行「早苗田・鳥越古墳群現状調査報告書」より転用した。従って、古墳の分布状況、保存状況、図面は当時のものである。</p>
+  </div>
+</section>
+<section id="B" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">03</span>
+    <h2>B 支群</h2>
+  </header>
+  <div class="sec-body">
+<h3 class="tomb">早苗田古墳群 B 支群 1 号墳</h3>
+<p>本墳は北東に延びる低丘陵の頂部よりやや西側の斜面上、標高 39.0～40.0m の間に位置し、墳頂高は 41.0m を測る。本墳の北側約 17m に 2 号墳が存在し、標高差は約 1.5m を測る。</p>
+<div class="pair pair-mound"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/B_topo.png" data-cap="早苗田古墳群 B 支群地形図" aria-label="早苗田古墳群 B 支群地形図を拡大"><img loading="lazy" src="images/B_topo.png" alt="早苗田古墳群 B 支群地形図"></button>
+  <figcaption><span class="cap-mark">図</span>早苗田古墳群 B 支群地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の墳丘盛土は、多少の流出は見られるが、残存状態は良好である。墳丘平面形は、現状では不整な円形を呈し、墳丘径は主体部主軸方向で約 10m、主体部直交方向で約 12m を測る。墳頂部と墳裾部の比高は東側で約 1m、西側で約 2m を測る。墳丘の羨道部付近は、石抜きあるいは自然崩壊により陥没している。</p></div></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>本墳の埋葬施設は、開口主軸方向を S-80°-W にとり、ほぼ西側の谷に向って開口する横穴式石室である。石室の残存状態が悪く、現状では奥壁と奥壁側の左右側壁、そして、それらに架構する天井石、それに羨道部の一部を残すのみである。玄室の規模は現状において奥壁幅約 1.0m、左右側壁幅約 0.9m を測り、現床面より奥壁に 4 段、右側壁に 3 段、左側壁に 4 段の石積みが確認できる。</p><p>奥壁は 1 段目が石材の上部がわずかに表出するのみであり、2 段目に 45×40cm 程度の方形の石材を 2 枚、3 段目には 40×20cm 程度の横長の石材を 1 枚、4 段目には 20×30cm 程度の石材を 2 枚用い、その上に天井石を架構している。</p><p>右側壁は 1 段目に 2 枚の石材を用い、その上に 55×45cm 程度の石を積み、3 段目には 20×30cm 程度の石材を 2 枚用いている。左側壁の 1 段目は石材の上部がわずかに表出するのみで、2 段目は 40×20cm 程度の方形の石材を 2 枚、3、4 段目には 40×15cm 程度の横長の石材を各 2 枚用いており、奥壁へ架構する力石の使用が見られる。天井石は奥壁側の 1 枚が残っているのみである。また、左側壁上部には持ち送りが見られる。</p><p>羨道付近は石抜きあるいは、自然崩壊により詳細は不明であるが、南側に 1 個の石材が認められる。本墳の石材はすべて花崗岩である。</p></div></div>
+<h3 class="tomb">早苗田古墳群 B 支群 2 号墳</h3>
+<p>本墳は 1 号墳の存在する低丘陵上の先端部ほぼ頂部、1 号墳の北約 17m、標高約 40～42m に位置する。本墳の北側から西側にかけて斜面は急傾斜となり谷が通っている。本墳が位置している低丘陵部より早苗田古墳群 C 支群（1972 年発掘）の位置していた丘陵を望むことができる。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>本墳の墳丘盛土は、天井石及び周壁上半部の崩壊により、墳頂部付近では失われており、楣石の高さまでしか残っていないが、全体的にみると、残存状態は良好である。墳丘径は現状で、主体部主軸方向で約 13.5m、主体部直交方向で約 13m を測り、墳丘平面形はほぼ円形を呈している。墳丘の最高所は標高約 42.5m を測り、墳裾部との比高は東側で約 2.5m、北側で約 1.5m である。</p></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>埋葬施設は開口主軸方向を S-55°-W にとり、ほぼ西に開口する両袖の横穴式石室である。現状では、石抜き及び自然崩壊により土砂が流入し、残存状態は悪く、両袖石と楣石、また、奥壁、右側壁各々 1 枚の石材が確認できるのみである。</p><p>玄室の奥壁は右側壁側に約 90×50cm の石材が残っている。それとほぼ直角に約 60×70cm の右側壁の石材が接している。</p><p>左側壁は現状では石材を確認できない。前壁は左右袖石が 30cm 程表出しており、その上に約 120×30cm の石材を架構し、楣石としている。</p><p>羨道は土砂の流入により明確ではないが、墳丘上に羨道部天井石と思われる約 140×70cm の石材が確認できる。石材はすべて花崗岩である。</p></div></div>
+<p class="note">＊早苗田古墳群 B 支群の文面および作図は 1985 年福岡大学歴史研究部考古学班発行「早苗田・鳥越古墳群現状調査報告書」より転用した。従って、古墳の分布状況、保存状況、図面は当時のものである。</p>
+  </div>
+</section>
+<section id="C" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">04</span>
+    <h2>C 支群</h2>
+  </header>
+  <div class="sec-body">
+<h3 class="tomb">早苗田古墳群 C 支群（1～3 号墳）</h3>
+<p>本古墳群はすでに発掘調査を終え消滅している。1973 年福岡市教育委員会発刊の「片江古墳群発掘調査報告書」の 2～4 号墳がこれに該当する。</p>
+  </div>
+</section>
+<section id="D" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">05</span>
+    <h2>D 支群</h2>
+  </header>
+  <div class="sec-body">
+<h3 class="tomb">早苗田古墳群 D 支群 1 号墳</h3>
+<p>本墳は油山から北東に延びるなだらかな丘陵の南東斜面にあり、2 号墳の西北西約 18m、3 号墳の南西約 24m、標高 55.5～59.0m の間に位置する。</p>
+<div class="pair pair-mound"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/D01-04_topo.png" data-cap="早苗田古墳群 D 支群 1～4 号墳地形図" aria-label="早苗田古墳群 D 支群 1～4 号墳地形図を拡大"><img loading="lazy" src="images/D01-04_topo.png" alt="早苗田古墳群 D 支群 1～4 号墳地形図"></button>
+  <figcaption><span class="cap-mark">図</span>早苗田古墳群 D 支群 1～4 号墳地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の墳丘盛土は、天井石及び壁体上半部の欠落による石室内への土砂流入のため、著しく変形し、墳丘中央部は円形状の落ち込みをなしており、墳丘南東部は斜面に伴う土砂流出がみられる。しかし、墳丘北西部は本墳の他の部分と比較して残存状態は良好である。現状では墳丘径東西で約 11.5m、南北で約 11.5m を測る円形を呈する。墳丘の最高所では標高 56.8m を測り、墳裾部との比高は北西側で 0.8m、南東側で 3.3m である。</p></div></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>本墳の埋葬施設は、天井石と壁体上半部の欠落により土砂流入が著しく、大半が埋没していると思われ、詳細は不明であるが、落ち込みの状態より等高線に直交して南東方向即ち谷側に向って開口する横穴式石室であると思われる。その落ち込みの大きさは長軸で 2.5m、短軸 1.6m、深さ 0.8m を測る。落ち込みには縦に積まれた石材が 2 個とほぼ中央部に石室に使用されたと思われる石材が露出している。本墳の石材はすべて花崗岩である。</p></div></div>
+<h3 class="tomb">早苗田古墳群 D 支群 2 号墳</h3>
+<p>本墳は北東に延びる丘陵の南東側斜面にあり、標高 52.5～55.0m の間に位置する。西北西約 18m に 1 号墳が、北北東約 19m に 3 号墳が、それぞれ存在している。残存状態は墳丘、石室ともに良好である。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>本墳の墳丘盛土は、若干の流出は見られるが良好である。墳丘径は主体部主軸方向で約 10m、主体部直交方向で約 11m を測り、平面形は不整な円形を呈している。墳頂部は盛土の流出により、やや平坦になっており、墳丘の羨道部付近は盛土の削平および流出により、羨道部の天井石と楣石の一部が露出している。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/D02_chamber.png" data-cap="早苗田古墳群 D 支群 2 号墳石室実測図" aria-label="早苗田古墳群 D 支群 2 号墳石室実測図を拡大"><img loading="lazy" src="images/D02_chamber.png" alt="早苗田古墳群 D 支群 2 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>早苗田古墳群 D 支群 2 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の埋葬施設は、開口主軸方向を S-4°-E にとり、谷に向かってほぼ南に開口する、両袖単室の横穴式石室である。</p><p>玄室規模は現状において、奥壁幅 1.8m、前壁幅 1.5m、右側壁長 2.0m、左側壁長 1.86m である。壁体の構築法は、奥壁では 2 枚の腰石を縦位に置き、その上に 3 段積み上げ、天井石を架構している。</p><p>側壁は両壁とも共通しており、奥壁側に各 1 枚の腰石を縦位に、次に各 2 枚の腰石を横位に置き、その上に 4 段～5 段積み上げ、天井石を架構している。奥壁と両側壁の隅角は右側壁で 3 段目に、左側壁で 4 段目に力石が用いられている。</p><p>前壁は楣石の上に石材を 1 枚積み、天井石を架構している。玄門部は両袖石とも土砂の流入のため、その構成は不明な点があるが、現状で右側に 3 段、左側に 2 段確認することができる。その上に楣石を載せている。</p><p>羨道部は大半が埋没しており、その詳細は不明である。本墳に使用されている石材はすべて花崗岩である。</p></div></div></div>
+<h3 class="tomb">早苗田古墳群 D 支群 3 号墳</h3>
+<p>本墳は油山から北東に延びるなだらかな丘陵の南東斜面に存在し、標高約 56.0～57.5m の間に位置する。また、本墳の南東約 24m に 1 号墳が、南南西約 19m に 2 号墳が、南東約 21m に 4 号墳がそれぞれ存在する。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>本墳の墳丘盛土は、墳丘の南東側を中心に斜面に伴う土砂流出が激しく、著しく変形しているものの、北西側にはかなりの盛り上がりが残っている。現状で、墳丘規模は南北径約 11.5m、東西径約 12.0m を測り、墳丘平面形はほぼ円形を呈している。</p></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>本墳の埋葬施設は、石抜き及び自然崩壊、また、土砂の流出のために、長軸 4.5m、短軸約 3.5m を測る楕円形状の落ち込みとなっているため、詳細は不明であるが、落ち込みの状態より、等高線に直交して南東、即ち、谷に向かって開口する横穴式石室であると思われる。落ち込みの左側壁側に縦に積まれた石材が 2 個、半ば埋没した状態で確認できるのみである。本墳に使用されている石材はすべて花崗岩である。</p></div></div>
+<h3 class="tomb">早苗田古墳群 D 支群 4 号墳</h3>
+<p>本墳は油山から北東に延びる丘陵の南東斜面上、標高 49.0～52.0m の間に位置し、本墳より西へ約 25m に 2 号墳、北西へ約 23.5m に 3 号墳が存在する。残存状態は、墳丘は比較的良好であるが、石室は落ち込みが残るのみである。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>墳丘盛土は左側壁側の一部が削平され流出しているが、残存状態は比較的良好である。規模は現状で、南北径 15.5m、東西径 13m の不整な円形を呈している。墳頂高は約 53.4m を測り、墳裾部との比高は南側で約 4.4m、北側で約 1.4m である。また羨道部の墳丘は石抜き、自然崩壊のため流出が激しい。西側墳裾付近に小ぶりの石を数個確認することができる。</p></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>埋葬施設は石抜き及び自然崩壊のため陥没し、現在落ち込みが残るのみで、残存状態は悪いが、その落ち込みから判断して、南西方向に開口する横穴式石室と思われる。落ち込みの規模は現状で約 4×8m である。石材は現在、左側壁側に 1 個確認できるのみである。石材は花崗岩である。</p></div></div>
+<h3 class="tomb">早苗田古墳群 D 支群 5 号墳</h3>
+<p>本墳は油山から北東に派生した丘陵の北側斜面、標高 43.5～44.0m で、早苗田 D 群中、最も北に位置しており、本群の 4 号墳より北に 50m 程離れている。他の古墳が東～南東側斜面に位置し、南側の谷に向かって開口しているのに対し、本墳は北西側の谷に向かってほぼ西側に開口しており、本群の他の古墳とは立地、開口方向に関して異なっている。また、本墳の東側、約 50m の位置まで、片江地区区画整理事業に伴う宅地造成により削平整備されている。</p>
+<div class="pair pair-mound"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/D05_topo.png" data-cap="早苗田古墳群 D 支群 5 号墳地形図" aria-label="早苗田古墳群 D 支群 5 号墳地形図を拡大"><img loading="lazy" src="images/D05_topo.png" alt="早苗田古墳群 D 支群 5 号墳地形図"></button>
+  <figcaption><span class="cap-mark">図</span>早苗田古墳群 D 支群 5 号墳地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>天井石及び周壁の石抜き、自然崩壊などにより中央部付近は陥没している。墳丘盛土の流出は、特に墳丘西側において激しい。墳丘東側は本墳の他の部分に比べると残りはよい。現状で、墳丘径は東西に 16.8m、南北に 16.1m を測り、ほぼ円形を呈す。また、北東側墳裾部から南東側にかけて削平された部分があり、北側の墳丘斜面には半円形の落ち込みが見られる。また、墳丘の南西側にも 1.5×0.8m 程度の落ち込みが存在するが、この落ち込みの奥部には花崗岩の存在が認められる。</p></div></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>埋葬施設は現状より西側に開口する横穴式石室である。石室内は石抜きや自然崩壊などにより、大量の土砂が流入しており、床面は著しく陥没している。石室の落ち込みは現状で、長軸 5.24m、短軸 2.02m を測る。石室内における石積みは、奥壁と左側壁の奥壁側を残すのみである。奥壁は現状において、壁高 1.6m、壁幅 1.3m を測る。その構築状態は 30×50～70cm 程度の石材を横位に組み合わせており、現床面より 5 段の石積みが認められる。左側壁は 50cm 前後の石材を組み合わせており、現床面より 3 段の石積みが認められる。特に奥壁の石材は割石を使用し、壁面を整えている。石材の材質はすべて花崗岩である。</p></div></div>
+<h3 class="tomb">早苗田古墳群 D 支群 6 号墳</h3>
+<p>本墳は北東に延びる丘陵の東側斜面に位置し、標高は約 40.0～43.5m を測る。本墳より東側約 20m に 9 号墳、北東側約 20m に 7 号墳が存在する。</p>
+<div class="pair pair-mound"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/D06-09_topo.png" data-cap="早苗田古墳群 D 支群 6～9 号墳地形図" aria-label="早苗田古墳群 D 支群 6～9 号墳地形図を拡大"><img loading="lazy" src="images/D06-09_topo.png" alt="早苗田古墳群 D 支群 6～9 号墳地形図"></button>
+  <figcaption><span class="cap-mark">図</span>早苗田古墳群 D 支群 6～9 号墳地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>墳丘盛土はほぼ原形を保っているが、前壁から羨道部にかけての盛土は落ち込んで石室内に流入している。また、墳丘中央部付近の盛土が流出して天井石が露出している。墳頂高は 45.3m を測り、墳裾部との比高は南東側で約 4m、北西側で約 2m である。墳丘径は主体部主軸方向で約 12.8m、主体部直交方向で約 13.5m を測り、墳丘平面形は不整円形を呈している。</p></div></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/D06_chamber.png" data-cap="早苗田古墳群 D 支群 6 号墳石室実測図" aria-label="早苗田古墳群 D 支群 6 号墳石室実測図を拡大"><img loading="lazy" src="images/D06_chamber.png" alt="早苗田古墳群 D 支群 6 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>早苗田古墳群 D 支群 6 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure><figure class="fig">
+  <button class="fig-btn" data-src="images/D06_photo.jpg" data-cap="早苗田古墳群 D 支群 6 号墳 羨道部から奥壁（2019 年 11 月撮影）" aria-label="早苗田古墳群 D 支群 6 号墳 羨道部から奥壁（2019 年 11 月撮影）を拡大"><img loading="lazy" src="images/D06_photo.jpg" alt="早苗田古墳群 D 支群 6 号墳 羨道部から奥壁（2019 年 11 月撮影）"></button>
+  <figcaption><span class="cap-mark">図</span>早苗田古墳群 D 支群 6 号墳 羨道部から奥壁（2019 年 11 月撮影）<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>埋葬施設は主軸を S-4°-W にとり、ほぼ南に開口する両袖単室の横穴式石室である。現状では前壁及び羨道部が完全に崩壊している。現床面より天井石までの高さは 2.5m を測り、天井石は現状で一枚の石が奥壁から 2m 程度かぶされている。</p><p>奥壁は現状で 5 段より構築され、腰石は左側壁側に 150×110cm 程度の石を、右側壁側に 60×110cm 程度の石を配し、2～4 段目に大ぶりの石を横位に配し、1 段小ぶりの石を 2 個積んで構築している。</p><p>右側壁は腰石に奥壁とほぼ同大の 2 個の割石を配しているが、袖石側の腰石は土砂流入の為埋もれている。2 段目からは奥壁側は小ぶりな石を多用している。前室側は大ぶりな割石を使用し 4 段で構築されている。奥壁側にややせり出しがみられる。</p><p>左側壁は腰石に大ぶりな石 2 個と前壁側に小ぶりな石を 1 個配している。2 段目からも大ぶりの石が積れ、4 段で構築されている。奥壁側と 4 段目に力石の架構がみられる。</p><p>周壁は腰石の上 1 段目で一定レベルを構成している。持ち送りはさほど顕著ではないが、左側壁においては腰石をやや内傾させて配し、同傾斜に持ち送っている。本墳に使用された石材は、すべて花崗岩である。</p></div></div></div>
+<h3 class="tomb">早苗田古墳群 D 支群 7 号墳</h3>
+<p>本墳は D 群の下部 5 基の 1 基であり、緩やかな丘陵の標高 39.5～42.0m の東側斜面上に立地し、6 号墳より北東に約 20m、8 号墳より西南西に約 12m の距離にある。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>本墳の墳丘盛土は、石室の石抜き及び自然崩壊により中央部付近は失われ、円形状の落ち込みをなしている。しかし、墳裾部はかなりはっきりしており、墳丘径は南北約 11m、東西約 10m を測り、円形の墳丘を呈する。墳丘最高所では 48.3m を測り、墳裾部との比高は北側で約 1m、南側で約 3m 程である。東側、南側墳裾はやや急に流れ落ちており、東側墳裾は 8 号墳に隣接する。</p></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>本墳の埋葬施設は、石抜き及び自然崩壊のため落ち込みとなっており詳細は不明であるが、その状態より南に開口する横穴式石室であると思われる。その落ち込みの規模は長軸約 5m、短軸約 2.5m、深さ約 1.5m を測る。また、左側壁と奥壁が接すると思われる部分には縦位に配された石材を 2 枚確認することができる。本墳に使用されている石材は全て花崗岩である。</p></div></div>
+<h3 class="tomb">早苗田古墳群 D 支群 8 号墳</h3>
+<p>本墳は 6、7 号墳の位置する緩やかな丘陵の傾斜が南東方向に急に落ちる変更線付近にあり、標高 38.0～41.0m の間に位置する。本墳の南西約 12m に 6 号墳が、南東約 21m に 10 号墳がそれぞれ存在している。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>本墳の墳丘盛土は、石抜き等により中央部付近が陥没している以外は流出もなく、残存状態は良好である。現状では墳丘径は東西約 11m、南北約 10m を測り、円形を呈している。墳丘最高所は約 41m を測り、墳裾部との比高は北側で約 1m、南側で約 2m、西側で約 1.5m、東側で約 2m 程である。</p></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>本墳の埋葬施設は、石抜きおよび自然崩壊のため陥没しており、詳細は不明である。陥没部分の大きさは長軸約 5.5m、短軸約 2～3.5m、深さ約 2m 程であり、その方向などから南に開口する横穴式石室であると思われる。</p></div></div>
+<h3 class="tomb">早苗田古墳群 D 支群 9 号墳</h3>
+<p>本墳は北東にのびる丘陵の南東側斜面の標高約 36～38.5m にあり、墳頂高約 40.5m を測る。本墳より西約 20m に 6 号墳が、東北東約 27m に 10 号墳がそれぞれ存在し、北西側では 7・8 号墳と近接している。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>本墳の墳丘盛土は、南東側および東側で若干の流出が見られるが、残存状態は良好である。現状では、墳丘径は主体部主軸方向で約 15m、主体部直交方向で約 13m を測り、墳丘平面形は不整の円形を呈している。墳頂部と墳裾部の比高は北西側で約 1m、南東側で約 4.5m である。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/D09_chamber.png" data-cap="早苗田古墳群 D 支群 9 号墳石室実測図" aria-label="早苗田古墳群 D 支群 9 号墳石室実測図を拡大"><img loading="lazy" src="images/D09_chamber.png" alt="早苗田古墳群 D 支群 9 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>早苗田古墳群 D 支群 9 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の埋葬施設は、主軸を S-40°-W にとり、南西に開口する両袖単室の横穴式石室である。現状は土砂の流入が激しく、羨道部では、そのほとんどが玄室部でも腰石下部までが埋没しているが、残存状態は良好である。床面には石材が散乱している。玄室は奥壁幅 1.65m、前壁幅 1.77m、右側壁幅 1.52m、左側壁幅 1.55m を測る。</p><p>奥壁は水平に目路の通った 4 段構築である。腰石には大ぶりな石を 1 枚横位に置き、腰石上段の石 2 枚と共に若干内傾させている。右側壁との隅角には壁幅を合わせるため、腰石途中より小ぶりの石を 3 枚積みあげている。3 段目および 4 段目は持ち送りが顕著となる。</p><p>側壁は右側壁 5 段、左側壁 6 段である。両壁とも類似した構築法である。大ぶりな石を奥壁側に横位に配置し、壁長を合わせるために小ぶりな石を配して腰石としている。3 段目までは、縦横に目路が通るように大ぶりな石を横位積み、その上段からは下段の 2 石にまたがる様な横積みを 2 段施し、その上に天井石を架構している。また奥壁と同様に、3 段目より内側への張り出しが顕著となる。奥壁との隅角は、右側壁では腰石の上から左側壁では 3 段目から互いに重なる力石が使用されている。玄門部は両袖で 2 段構築であり、玄門幅 0.90m を測る。楣石には巨石を用いており、天井石との間には天井石を安定させるために小ぶりな石を 2 枚横位に積んでいる。天井石は 1 枚である。</p><p>羨道は土砂の流入が著しく上段の 1～3 段を残し、袖石下部まで埋没している。羨道長は現状で、右壁 2.14m、左壁 1.92m を測る。天井には長さ 1.15m を測る石が 1 枚残っている。石室に使用されている石材は、すべて花崗岩である。</p></div></div></div>
+<h3 class="tomb">早苗田古墳群 D 支群 10 号墳</h3>
+<p>本墳はすでに発掘調査を終え消滅している。1981 年福岡市教育委員会発刊の「早苗田古墳群 D 群 10 号埋蔵文化財墳調査報告書」がこれに該当する。</p>
+<h3 class="tomb">早苗田古墳群 D 支群 11 号墳</h3>
+<p>本墳は油山から北東に派生する丘陵の南側斜面、標高約 66.5～約 68.5m に存在する。本墳の東側下方約 40m のところに 1 号墳が位置している。本墳の南側斜面は非常に急なため墳丘盛土は流出が激しく、墳頂高は不明であるが、1 号墳との比高は、現状で約 9m を測る。</p>
+<div class="pair pair-mound"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/D11_topo.png" data-cap="早苗田古墳群 D 支群 11 号墳地形図" aria-label="早苗田古墳群 D 支群 11 号墳地形図を拡大"><img loading="lazy" src="images/D11_topo.png" alt="早苗田古墳群 D 支群 11 号墳地形図"></button>
+  <figcaption><span class="cap-mark">図</span>早苗田古墳群 D 支群 11 号墳地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の墳丘盛土は、本墳が急斜面に存在しているため盛土の流出が著しく、ほとんど原形をとどめていないが、わずかに東側に高まりが確認でき、現状で墳丘規模は南北 10.0m、東西径約 8.0m を測り、墳丘平面形は不正な円形を呈している。</p></div></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>本墳の埋葬施設は、南西に開口する横穴式石室である。石室内には多量の土砂が流入し、また、約 70×70cm の石が落ち込んでいるため内部の詳細は不明である。現状で奥壁幅 1.6m、左右側壁長約 2.5m を測る。現在露出している周壁の石材は 30×30cm 程度の自然石を使用している。石室下部の状態は土砂で埋まっているため不明である。羨道部は埋没しており、現状では確認できない。本墳に使用されている石材はすべて花崗岩である。</p></div></div>
+<h3 class="tomb">早苗田古墳群 D 支群 12 号墳</h3>
+<p>本墳は北東に延びる丘陵の尾根稜線に近い南東斜面に立地している。標高は 77～79m を測り、同一丘陵上に存在する 13 号墳より約 40m を測る距離にある。本墳が存在する丘陵は尾根稜線の付近がやや平坦になっており、本墳はその平坦部分と比較的急な南東側斜面との変換点に位置している。</p>
+<div class="pair pair-mound"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/D12_topo.png" data-cap="早苗田古墳群 D 支群 12 号墳地形図" aria-label="早苗田古墳群 D 支群 12 号墳地形図を拡大"><img loading="lazy" src="images/D12_topo.png" alt="早苗田古墳群 D 支群 12 号墳地形図"></button>
+  <figcaption><span class="cap-mark">図</span>早苗田古墳群 D 支群 12 号墳地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>墳丘盛土は流出が著しく、墳丘はその原形をとどめておらず、石室構築石材の周囲に若干の高まりが認められる程度である。したがって、一見して古墳と判断することは難かしい。墳丘径は現状において、東西径 6m、南北径 6m を測り、やや不整な円形を呈している。</p></div></div></div>
+<div class="pair pair-chamber pair-nofig"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-text"><p>埋葬施設は石抜きや自然崩壊のために、天井石をはじめその他の石材が大部分失なわれており、周壁は南西側と北西側の石を 1 段残すのみである。石室の崩壊と土砂の流入により、玄室の規模および平面プランは判然とせず、一見して石室と判断することは難かしいが、残存している石材の配列状態より推して横穴式石室と思われる。開口方向については、羨道部の石材が全く認められないため不明である。周壁は南東側に 60×50cm 程の石が 1 個あり、これに対して北東 1m の所にわずかに上部を表出する石がある。また、南西から北西にかけて大きいもので 60×50cm、小さいもので 50×30cm 程度の数個の石が円弧状に 1 段 1 列に並んでいる。石室構築状態の詳細については、石材が 1 段しか残っていないため不明である。なお、石材は花崗岩である。</p></div></div>
+<h3 class="tomb">早苗田古墳群 D 支群 13 号墳</h3>
+<p>本墳は油山から北東に延びる丘陵の尾根稜線に近いやや南東よりの斜面、標高 81.5～84.0m の間に存在する。本群の最高部、最西端に在り、12 号墳の南西約 40m に位置する。</p>
+<div class="pair pair-mound pair-nofig"><div class="pair-label part-mound"><span>墳丘</span></div><div class="pair-text"><p>本墳の墳丘盛土は、天井石及び周壁の石抜きや自然崩壊のために現存する周壁の高さまで流れ出している。また、谷側は激しい土砂の流出により崩壊しており、旧状をとどめていないが、西側には墳丘と思われる盛り上がりが若干見られる。墳丘規模は現状において、主体部主軸方向で 4.7m、主軸直交方向で 5.2m を測り、不整な円形を呈する。</p></div></div>
+<div class="pair pair-chamber"><div class="pair-label part-chamber"><span>石室</span></div><div class="pair-grid"><div class="pair-figs"><figure class="fig">
+  <button class="fig-btn" data-src="images/D13_chamber.png" data-cap="早苗田古墳群 D 群 13 号墳石室実測図" aria-label="早苗田古墳群 D 群 13 号墳石室実測図を拡大"><img loading="lazy" src="images/D13_chamber.png" alt="早苗田古墳群 D 群 13 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>早苗田古墳群 D 群 13 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure></div><div class="pair-text"><p>本墳の埋葬施設は、谷に向ってほぼ南西方向に開口する両袖単室の横穴式石室と思われる。玄室は石抜きや自然崩壊のために多量の土砂が流入しており、床面や腰石は判然としない。現状では奥壁幅約 1.5m、左側壁約 1.5m を測り、正方形プランを呈している。</p><p>奥壁は現床面より 3 段残っており、壁高は 90cm である。各段とも 70×40cm 前後の石材を使用しており、すべて横位に積み上げている。左右側壁と比較すると石積みは丁寧であり、せり出しもそれほど激しくないが、栗石が多く使用されている。</p><p>左側壁は現床面より 3 段、右側壁は 2 段残っており、それぞれ壁高は 90cm、40cm である。左側壁の奥壁側の 1 段目の 50×80cm の石材を除いては、両側壁とも奥壁よりやや小さめの 30×40cm 程度の石材を使用している。しかし、両側壁とも残存状態は悪く、せり出しも激しい。左側壁は栗石が多く使用されており、右側壁は袖石が埋没あるいは流出しており、確認することができない。奥壁と左側壁との隅角には 2 段目に、右側壁との隅角には 2 段目、3 段目に力石の使用が見られる。</p><p>羨道部は左側壁の袖石の部分を除いてすべて埋没あるいは崩壊しており、表出する石もない。なお、本墳使用の石材はすべて花崗岩である。</p></div></div></div>
+<p>墳東側の墳丘上よりスラッグ 1 個を表採した。本群においては、1980 年に発掘調査を受けた 10 号墳からも 21 個出土している。</p>
+<p class="part part-chamber"><span>スラッグ肉眼観察</span></p>
+<p>表面は全体的に赤褐色を呈しているが、やや赤味の強い個所と色の淡い個所とに二分される。また、表面には微小な気孔と大きな巣とが認められ、あまり砂を含んでいない。</p>
+<p class="note">＊早苗田古墳群 D 群 1、2、3、4、5、6、7、8、9、11、12、13 号墳の文面および作図は 1985 年福岡大学歴史研究部考古学班発行「早苗田・鳥越古墳群現状調査報告書」より転用した。従って、古墳の分布状況、保存状況、図面は当時のものである。</p>
+  </div>
+</section>
+<section id="plates" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">06</span>
+    <h2>地形図と石室</h2>
+  </header>
+  <div class="sec-body">
+<p>早苗田古墳群 D 支群の地形図と石室実測図を、群の分布（1～4 号墳・6～10 号墳）ごとに一括して掲げる。各図版は拡大して細部まで確認できる。</p>
+<h3 class="tomb">早苗田古墳群 D 支群（1～4 号墳）</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/plate_D01-04.png" data-cap="早苗田古墳群 D 支群 地形図と石室（1～4 号墳）" aria-label="早苗田古墳群 D 支群 地形図と石室（1～4 号墳）を拡大"><img loading="lazy" src="images/plate_D01-04.png" alt="早苗田古墳群 D 支群 地形図と石室（1～4 号墳）"></button>
+  <figcaption><span class="cap-mark">図</span>早苗田古墳群 D 支群 地形図と石室（1～4 号墳）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">早苗田古墳群 D 支群（6～10 号墳）</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/plate_D06-10.png" data-cap="早苗田古墳群 D 支群 地形図と石室（6～10 号墳）" aria-label="早苗田古墳群 D 支群 地形図と石室（6～10 号墳）を拡大"><img loading="lazy" src="images/plate_D06-10.png" alt="早苗田古墳群 D 支群 地形図と石室（6～10 号墳）"></button>
+  <figcaption><span class="cap-mark">図</span>早苗田古墳群 D 支群 地形図と石室（6～10 号墳）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="ft">
+    <b>早苗田古墳群 現状調査報告書（改訂版）</b>
+    2023年　油山古墳研究室<br>
+    本文および作図の出典：福岡大学歴史研究部考古学班「早苗田・鳥越古墳群現状調査報告書」（1985）／<br>
+    福岡市教育委員会「片江古墳群」（1973）・「早苗田 D 群 10 号墳」（1981）ほか。<br>
+    デジタル版（原報告書より編集）
+  </div>
+</footer>
+
+<button class="totop" id="toTop" aria-label="ページ上部へ戻る">↑</button>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="目次">
+  <div class="dh"><b>目　次</b><button class="x" id="tocClose" aria-label="閉じる">×</button></div>
+  <nav><ol><li><a href="#env" class="toc-link"><span class="toc-no">01</span><span class="toc-t">立地と環境</span></a></li><li><a href="#A" class="toc-link"><span class="toc-no">02</span><span class="toc-t">A 支群</span></a></li><li><a href="#B" class="toc-link"><span class="toc-no">03</span><span class="toc-t">B 支群</span></a></li><li><a href="#C" class="toc-link"><span class="toc-no">04</span><span class="toc-t">C 支群</span></a></li><li><a href="#D" class="toc-link"><span class="toc-no">05</span><span class="toc-t">D 支群</span></a></li><li><a href="#plates" class="toc-link"><span class="toc-no">06</span><span class="toc-t">地形図と石室</span></a></li></ol></nav>
+</aside>
+
+<div class="lb" id="lb" aria-hidden="true">
+  <div class="lb-top">
+    <div class="lb-cap" id="lbCap"></div>
+    <button id="lbZoom">拡大 +</button>
+    <button id="lbClose">閉じる ×</button>
+  </div>
+  <div class="lb-stage" id="lbStage"><img id="lbImg" alt=""></div>
+  <div class="lb-foot">拡大・縮小して細部まで確認できます</div>
+</div>
+
+<script>
+(function(){
+  var drawer=document.getElementById('drawer'),scrim=document.getElementById('scrim');
+  function openD(){drawer.classList.add('open');scrim.classList.add('open');}
+  function closeD(){drawer.classList.remove('open');scrim.classList.remove('open');}
+  document.getElementById('tocOpen').addEventListener('click',openD);
+  document.getElementById('tocClose').addEventListener('click',closeD);
+  scrim.addEventListener('click',closeD);
+  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeD);});
+
+  // back to top
+  var toTop=document.getElementById('toTop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>600) toTop.classList.add('show'); else toTop.classList.remove('show');
+  },{passive:true});
+  toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+
+  // smooth anchor scroll with header offset
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href').slice(1),el=document.getElementById(id);
+      if(el){e.preventDefault();var y=el.getBoundingClientRect().top+window.scrollY-56;
+        window.scrollTo({top:y,behavior:'smooth'});history.replaceState(null,'','#'+id);}
+    });
+  });
+
+  // Lightbox with zoom & pan
+  var lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),
+      lbCap=document.getElementById('lbCap'),lbStage=document.getElementById('lbStage');
+  var scale=1,tx=0,ty=0,start=null,pinch=null;
+  function apply(){lbImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function reset(){scale=1;tx=0;ty=0;apply();document.getElementById('lbZoom').textContent='拡大 +';}
+  function open(src,cap){lbImg.src=src;lbImg.alt=cap;lbCap.textContent=cap;reset();
+    lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+  function close(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';lbImg.src='';}
+  document.querySelectorAll('.fig-btn').forEach(function(b){
+    b.addEventListener('click',function(){open(b.getAttribute('data-src'),b.getAttribute('data-cap'));});
+  });
+  document.getElementById('lbClose').addEventListener('click',close);
+  document.getElementById('lbZoom').addEventListener('click',function(){
+    scale=(scale>1?1:2.4);if(scale===1){tx=0;ty=0;}apply();this.textContent=scale>1?'戻す −':'拡大 +';
+  });
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target===lbStage)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))close();});
+
+  // double tap to zoom
+  var lastTap=0;
+  lbStage.addEventListener('click',function(e){
+    var now=Date.now();
+    if(now-lastTap<300){scale=(scale>1?1:2.4);if(scale===1){tx=0;ty=0;}apply();
+      document.getElementById('lbZoom').textContent=scale>1?'戻す −':'拡大 +';}
+    lastTap=now;
+  });
+  // drag pan (mouse + 1 finger)
+  lbImg.addEventListener('mousedown',function(e){if(scale<=1)return;start={x:e.clientX-tx,y:e.clientY-ty};e.preventDefault();});
+  window.addEventListener('mousemove',function(e){if(start){tx=e.clientX-start.x;ty=e.clientY-start.y;apply();}});
+  window.addEventListener('mouseup',function(){start=null;});
+  lbImg.addEventListener('touchstart',function(e){
+    if(e.touches.length===1&&scale>1){start={x:e.touches[0].clientX-tx,y:e.touches[0].clientY-ty};}
+    else if(e.touches.length===2){var dx=e.touches[0].clientX-e.touches[1].clientX,dy=e.touches[0].clientY-e.touches[1].clientY;
+      pinch={d:Math.hypot(dx,dy),s:scale};}
+  },{passive:true});
+  lbImg.addEventListener('touchmove',function(e){
+    if(pinch&&e.touches.length===2){var dx=e.touches[0].clientX-e.touches[1].clientX,dy=e.touches[0].clientY-e.touches[1].clientY;
+      scale=Math.min(5,Math.max(1,pinch.s*Math.hypot(dx,dy)/pinch.d));if(scale===1){tx=0;ty=0;}apply();e.preventDefault();}
+    else if(start&&e.touches.length===1&&scale>1){tx=e.touches[0].clientX-start.x;ty=e.touches[0].clientY-start.y;apply();e.preventDefault();}
+  },{passive:false});
+  lbImg.addEventListener('touchend',function(e){if(e.touches.length===0){start=null;pinch=null;}});
+})();
+</script>
+</body>
+</html>
