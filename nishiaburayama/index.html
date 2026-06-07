@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<meta name="description" content="西油山古墳群 現状調査報告書（2023年・油山古墳研究室）デジタル版。福岡市・油山北西丘陵の群集墳、A〜I 全9支群の現状調査記録。">
+<title>西油山古墳群 現状調査報告書｜油山古墳研究室</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Noto+Serif+JP:wght@400;600&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ffffff; --paper2:#f6f5f2; --card:#ffffff;
+  --ink:#1a1a1a; --ink2:#565656; --line:#d8d8d4; --line2:#ececea;
+  --clay:#7a2e2e; --clay2:#5e2222; --ochre:#8a6a2e; --sage:#3f4a3a;
+  --shadow:0 1px 2px rgba(0,0,0,.05),0 3px 12px rgba(0,0,0,.05);
+  --maxw:760px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Noto Serif JP",serif; font-weight:400; line-height:1.95;
+  font-size:16px; letter-spacing:.01em;
+  text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased;
+}
+/* faint paper grain */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;display:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--clay2);text-decoration:none}
+
+/* ---- Top bar ---- */
+.bar{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:.6rem;
+  padding:.55rem .9rem;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);}
+.bar .brand{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:.98rem;
+  letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .brand small{color:var(--ink2);font-weight:500;font-size:.72rem;margin-left:.4rem}
+.bar .spacer{flex:1}
+.toc-toggle{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.82rem;
+  color:var(--paper2);background:var(--clay);border:none;border-radius:999px;
+  padding:.42rem .95rem;cursor:pointer;letter-spacing:.08em;box-shadow:var(--shadow);transition:background .2s}
+.toc-toggle:hover{background:var(--clay2)}
+.toc-toggle::before{content:"☰ ";font-size:.9em}
+
+/* ---- Hero (title page, white) ---- */
+.hero{position:relative;z-index:1;background:#fff;border-bottom:1px solid var(--line)}
+.hero-inner{max-width:var(--maxw);margin:0 auto;padding:3rem 1.3rem 2.2rem;text-align:center}
+.hero .kicker{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:500;letter-spacing:.4em;
+  font-size:.72rem;color:var(--ink2);margin:0 0 1.4rem;text-indent:.4em}
+.hero h1{font-family:"Shippori Mincho B1",serif;font-weight:800;line-height:1.18;
+  font-size:clamp(2.3rem,8.5vw,3.4rem);letter-spacing:.16em;margin:0;color:var(--ink);text-indent:.16em}
+.hero .sub{font-family:"Shippori Mincho B1",serif;font-weight:500;font-size:clamp(1rem,4.4vw,1.3rem);
+  letter-spacing:.36em;margin:1.1rem 0 0;color:var(--ink);text-indent:.36em;
+  padding-top:1rem;position:relative;display:inline-block}
+.hero .sub::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:54px;height:2px;background:var(--clay)}
+.hero .byline{font-family:"Shippori Mincho B1",serif;font-size:1rem;letter-spacing:.18em;
+  color:var(--ink);margin:1.6rem 0 .3rem}
+.hero .meta{font-family:"Zen Kaku Gothic New",sans-serif;font-size:.78rem;letter-spacing:.08em;
+  color:var(--ink2);margin:.2rem 0 0}
+.cover-fig{margin:2.1rem auto 0;text-align:center}
+.cover-fig figcaption{font-family:"Zen Kaku Gothic New",sans-serif;font-size:.76rem;color:var(--ink2);
+  margin:.7rem auto 0;line-height:1.5}
+
+/* ---- Preface ---- */
+.preface{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:1.8rem 1.3rem .4rem}
+.preface p{font-size:.9rem;color:var(--ink2);line-height:1.85;margin:.2rem 0 .6rem;
+  border-left:3px solid var(--line);padding-left:.9rem}
+
+/* ---- Inline TOC ---- */
+.toc-inline{position:relative;z-index:1;max-width:var(--maxw);margin:1.4rem auto 0;padding:0 1.3rem}
+.toc-inline .tc{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  box-shadow:var(--shadow);padding:1.2rem 1.1rem 1rem}
+.toc-inline .tc h2{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:1.05rem;
+  letter-spacing:.22em;margin:0 0 .9rem;color:var(--clay2);text-align:center}
+.toc-inline .tc h2::before,.toc-inline .tc h2::after{content:"";display:inline-block;width:1.6rem;
+  height:1px;background:var(--line);vertical-align:middle;margin:0 .7rem}
+ol.toc{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:.1rem}
+ol.toc li a{display:flex;align-items:baseline;gap:.7rem;padding:.5rem .5rem;border-radius:8px;
+  color:var(--ink);transition:background .15s}
+ol.toc li a:hover{background:var(--paper)}
+.toc-no{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.72rem;
+  color:var(--clay);min-width:1.6rem;letter-spacing:.05em}
+.toc-t{font-family:"Shippori Mincho B1",serif;font-weight:500;font-size:.98rem;
+  border-bottom:1px dotted transparent}
+ol.toc li a:hover .toc-t{border-bottom-color:var(--line)}
+
+/* ---- Main ---- */
+main{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:1rem 1.3rem 4rem}
+.sec{scroll-margin-top:64px;padding:2.6rem 0 1.2rem;border-top:1px solid var(--line2)}
+.sec:first-of-type{border-top:none}
+.sec-head{display:flex;align-items:center;gap:.85rem;margin:0 0 1.4rem}
+.sec-no{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.78rem;
+  color:var(--paper2);background:var(--clay);border-radius:7px;padding:.28rem .55rem;letter-spacing:.06em;
+  box-shadow:var(--shadow)}
+.sec-head h2{font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:1.5rem;
+  letter-spacing:.12em;margin:0;color:var(--ink)}
+.sec-body p{margin:0 0 1.05rem;text-align:justify}
+
+/* 号墳 heading */
+h3.tomb{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:1.12rem;letter-spacing:.06em;
+  color:var(--clay2);margin:2.1rem 0 1rem;padding:.4rem 0 .5rem .9rem;
+  border-left:4px solid var(--clay);background:none;border-bottom:1px solid var(--line2)}
+h3.tomb::before{content:"";}
+.sec:first-of-type h3.tomb:first-child,.sec-body > h3.tomb:first-child{margin-top:.4rem}
+
+/* 墳丘/石室 labels */
+p.part{margin:1.4rem 0 .6rem;display:flex;align-items:center;gap:.6rem}
+p.part span{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.82rem;
+  letter-spacing:.22em;padding:.18rem .7rem;border-radius:4px}
+p.part::after{content:"";flex:1;height:1px;background:var(--line2)}
+.part-mound span{color:#5a4a2e;background:#f2f0ea;border:1px solid var(--line);border-left:3px solid #8a6a2e}
+.part-chamber span{color:#33402f;background:#eef0ec;border:1px solid var(--line);border-left:3px solid #3f4a3a}
+
+/* notes */
+p.note{font-size:.8rem;line-height:1.7;color:var(--ink2);margin:.5rem 0;padding:.55rem .8rem;
+  background:var(--paper2);border:1px dashed var(--line);border-radius:8px;text-align:justify}
+
+/* figures */
+figure.fig{margin:1.6rem 0 1.8rem;text-align:center}
+.fig-btn{display:inline-block;max-width:100%;padding:0;border:none;background:none;cursor:zoom-in;line-height:0}
+.fig-btn img{margin:0 auto;border:1px solid var(--line);background:#fff;border-radius:6px;
+  box-shadow:var(--shadow);padding:6px;max-height:74vh;width:auto;max-width:100%}
+figure.fig figcaption{font-family:"Zen Kaku Gothic New",sans-serif;font-size:.78rem;color:var(--ink2);
+  margin:.7rem auto 0;max-width:90%;line-height:1.55;letter-spacing:.02em}
+.cap-mark{display:inline-block;font-weight:700;color:var(--paper2);background:var(--sage);
+  border-radius:4px;font-size:.66rem;padding:.06rem .42rem;margin-right:.5rem;letter-spacing:.1em;vertical-align:.06em}
+.cap-hint{display:block;color:var(--ochre);font-size:.68rem;margin-top:.25rem;letter-spacing:.08em}
+.cap-hint::before{content:"⤢ "}
+/* wide data table figure */
+figure.fig-table{margin:1.4rem -1.3rem 1.8rem}
+.table-scroll{width:100%;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;
+  padding:.2rem 1.3rem;touch-action:pan-x pan-y}
+figure.fig-table .fig-btn{display:inline-block;width:auto;max-width:none;cursor:zoom-in;line-height:0}
+figure.fig-table .fig-btn img{max-height:none;width:900px;max-width:none;min-width:0}
+figure.fig-table figcaption{padding:0 1.3rem}
+
+/* ---- 図面と説明の対置（墳丘／石室） ---- */
+.pair{margin:1.6rem 0 1.8rem}
+.pair-label{margin:0 0 .7rem}
+.pair-label span{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.84rem;
+  letter-spacing:.22em;padding:.2rem .8rem;border-radius:4px;display:inline-block}
+.pair-mound .pair-label span{color:#5a4a2e;background:#f2f0ea;border:1px solid var(--line);border-left:3px solid #8a6a2e}
+.pair-chamber .pair-label span{color:#33402f;background:#eef0ec;border:1px solid var(--line);border-left:3px solid #3f4a3a}
+.pair-text p{margin:0 0 1rem;text-align:justify}
+.pair-text p:last-child{margin-bottom:0}
+.pair-figs figure.fig{margin:0 0 .8rem}
+.pair-figs figure.fig:last-child{margin-bottom:0}
+/* 狭い画面：図版を画面上部に固定し、説明文を読む間ずっと見えるように */
+.pair-figs{position:sticky;top:54px;z-index:5;background:#fff;
+  max-height:48vh;overflow:auto;-webkit-overflow-scrolling:touch;
+  padding:.35rem 0 .55rem;border-bottom:1px solid var(--line2)}
+.pair-figs .fig-btn img{max-height:42vh}
+.pair-figs figcaption .cap-hint{display:none}
+@media(min-width:740px){
+  /* 広い画面：図版を左、説明文を右に並べて対置（図版は追従） */
+  .pair-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;align-items:start}
+  .pair-figs{position:sticky;top:64px;max-height:none;overflow:visible;
+    background:transparent;border-bottom:none;padding:0}
+  .pair-figs .fig-btn img{max-height:80vh}
+  .pair-figs figcaption .cap-hint{display:block}
+}
+
+/* ---- Drawer (off-canvas TOC) ---- */
+.scrim{position:fixed;inset:0;z-index:50;background:rgba(28,20,12,.5);opacity:0;visibility:hidden;
+  transition:opacity .25s}
+.scrim.open{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;right:0;z-index:60;height:100%;width:min(85vw,340px);
+  background:var(--paper2);box-shadow:-8px 0 30px rgba(40,28,15,.25);
+  transform:translateX(100%);transition:transform .28s cubic-bezier(.2,.7,.2,1);
+  display:flex;flex-direction:column;border-left:3px solid var(--clay)}
+.drawer.open{transform:translateX(0)}
+.drawer .dh{display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 1.1rem;border-bottom:1px solid var(--line)}
+.drawer .dh b{font-family:"Shippori Mincho B1",serif;font-weight:700;letter-spacing:.2em;font-size:1rem;color:var(--clay2)}
+.drawer .x{border:none;background:none;font-size:1.5rem;line-height:1;color:var(--ink2);cursor:pointer;padding:.2rem .4rem}
+.drawer nav{overflow-y:auto;padding:.5rem .5rem 2rem}
+.drawer ol{list-style:none;margin:0;padding:0}
+.drawer ol li a{display:flex;align-items:baseline;gap:.7rem;padding:.7rem .8rem;border-radius:9px;color:var(--ink)}
+.drawer ol li a:active{background:var(--paper)}
+
+/* ---- Back to top ---- */
+.totop{position:fixed;right:1rem;bottom:1rem;z-index:35;width:46px;height:46px;border-radius:50%;
+  border:1px solid var(--line);background:var(--card);color:var(--clay2);font-size:1.2rem;
+  box-shadow:var(--shadow);cursor:pointer;opacity:0;visibility:hidden;transition:opacity .25s}
+.totop.show{opacity:1;visibility:visible}
+
+/* ---- Lightbox ---- */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(18,13,8,.94);display:none;
+  flex-direction:column;touch-action:none}
+.lb.open{display:flex}
+.lb-top{display:flex;justify-content:space-between;align-items:center;padding:.8rem 1rem;color:#eadfce;
+  font-family:"Zen Kaku Gothic New",sans-serif;font-size:.8rem;gap:1rem}
+.lb-top .lb-cap{flex:1;line-height:1.4}
+.lb-top button{border:1px solid rgba(234,223,206,.4);background:transparent;color:#eadfce;
+  border-radius:8px;padding:.35rem .7rem;cursor:pointer;font-size:.8rem}
+.lb-stage{flex:1;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.lb-stage img{max-width:100%;max-height:100%;touch-action:none;cursor:grab;
+  transform-origin:center center;transition:transform .05s linear;user-select:none;-webkit-user-drag:none}
+.lb-foot{text-align:center;color:#b9a98f;font-family:"Zen Kaku Gothic New",sans-serif;
+  font-size:.7rem;padding:.5rem 1rem .9rem;letter-spacing:.06em}
+
+/* ---- Footer ---- */
+footer{position:relative;z-index:1;border-top:3px double var(--clay);background:var(--paper2);
+  padding:2.2rem 1.3rem 3rem;text-align:center}
+footer .ft{max-width:var(--maxw);margin:0 auto;font-family:"Zen Kaku Gothic New",sans-serif;
+  font-size:.76rem;color:var(--ink2);line-height:1.9;letter-spacing:.03em}
+footer .ft b{font-family:"Shippori Mincho B1",serif;color:var(--clay2);font-size:.95rem;letter-spacing:.16em;display:block;margin-bottom:.5rem}
+
+@media(min-width:680px){
+  body{font-size:16.5px}
+  .fig-btn img{max-width:560px}
+  figure.fig-table .fig-btn img{width:1400px;max-width:none;min-width:0}
+  figure.fig-table{margin:1.4rem 0 1.8rem}
+  figure.fig-table .table-scroll,figure.fig-table figcaption{padding-left:0;padding-right:0}
+}
+/* maps, plates, charts, aerials may show wider */
+.fig-btn[data-src*="shuhen"] img,.fig-btn[data-src*="1976"] img,
+.fig-btn[data-src*="_fg"] img,.fig-btn[data-src*="zentai"] img,
+.fig-btn[data-src*="Bchikei"] img,.fig-btn[data-src*="opening"] img,
+.fig-btn[data-src*="diameter"] img,.fig-btn[data-src*="area"] img{max-width:100%}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="brand">西油山古墳群<small>現状調査報告書</small></div>
+  <div class="spacer"></div>
+  <button class="toc-toggle" id="tocOpen">目次</button>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">福岡市・油山北西丘陵の群集墳</p>
+    <h1>西油山古墳群</h1>
+    <p class="sub">現状調査報告書</p>
+    <p class="byline">2023年　油山古墳研究室</p>
+    <p class="meta">A〜I 全9支群／すべて横穴式石室の円墳からなる群集墳</p>
+    <figure class="cover-fig fig">
+      <button class="fig-btn" data-src="images/cover.png" data-cap="西油山古墳群周辺（航空写真・分布）" aria-label="西油山古墳群周辺（航空写真・分布）を拡大">
+        <img src="images/cover.png" alt="西油山古墳群周辺 航空写真・分布">
+      </button>
+      <figcaption><span class="cap-mark">図</span>西油山古墳群周辺（航空写真・分布）<span class="cap-hint">拡大表示</span></figcaption>
+    </figure>
+  </div>
+</header>
+
+<div class="preface">
+  <p>本ページは、油山古墳研究室『西油山古墳群 現状調査報告書』（2023年）のデジタル版です。本文・数値・図版はすべて原報告書のとおりで、内容に改変は加えていません。</p>
+  <p>各支群・各古墳の記述、ならびに地形図・石室実測図等の作図は、原報告書の註記のとおり 福岡大学歴史研究部考古学班発行の「七隈」各号（22号・23号・24号・25号・28号）から転用されたものです。従って、古墳の分布状況および状態は当時のものです。なお、各図版は拡大して細部まで確認できます。</p>
+</div>
+
+<nav class="toc-inline" aria-label="目次">
+  <div class="tc">
+    <h2>目　次</h2>
+    <ol class="toc"><li><a href="#env" class="toc-link"><span class="toc-no">01</span><span class="toc-t">立地と環境</span></a></li><li><a href="#A" class="toc-link"><span class="toc-no">02</span><span class="toc-t">A 支群</span></a></li><li><a href="#B" class="toc-link"><span class="toc-no">03</span><span class="toc-t">B 支群</span></a></li><li><a href="#C" class="toc-link"><span class="toc-no">04</span><span class="toc-t">C 支群</span></a></li><li><a href="#D" class="toc-link"><span class="toc-no">05</span><span class="toc-t">D 支群</span></a></li><li><a href="#E" class="toc-link"><span class="toc-no">06</span><span class="toc-t">E 支群</span></a></li><li><a href="#F" class="toc-link"><span class="toc-no">07</span><span class="toc-t">F 支群</span></a></li><li><a href="#G" class="toc-link"><span class="toc-no">08</span><span class="toc-t">G 支群</span></a></li><li><a href="#H" class="toc-link"><span class="toc-no">09</span><span class="toc-t">H 支群</span></a></li><li><a href="#I" class="toc-link"><span class="toc-no">10</span><span class="toc-t">I 支群</span></a></li><li><a href="#data" class="toc-link"><span class="toc-no">11</span><span class="toc-t">古墳データ</span></a></li><li><a href="#opening" class="toc-link"><span class="toc-no">12</span><span class="toc-t">石室開口方向</span></a></li><li><a href="#analysis" class="toc-link"><span class="toc-no">13</span><span class="toc-t">標高からみる墳丘規模と玄室面積</span></a></li><li><a href="#plates" class="toc-link"><span class="toc-no">14</span><span class="toc-t">地形図と石室</span></a></li></ol>
+  </div>
+</nav>
+
+<main>
+<section id="env" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">01</span>
+    <h2>立地と環境</h2>
+  </header>
+  <div class="sec-body">
+<figure class="fig">
+  <button class="fig-btn" data-src="images/env_shuhen.png" data-cap="西油山古墳群周辺分布図" aria-label="西油山古墳群周辺分布図を拡大"><img loading="lazy" src="images/env_shuhen.png" alt="西油山古墳群周辺分布図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群周辺分布図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/env_oilmt.png" data-cap="油山遠景" aria-label="油山遠景を拡大"><img loading="lazy" src="images/env_oilmt.png" alt="油山遠景"></button>
+  <figcaption><span class="cap-mark">図</span>油山遠景<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>福岡市の南西部にそびえる背振山系の一支脈である油山（標高 592m）の山麓は、いくつもの舌状台地を派生させる。特に小笹・平尾周辺の台地は鴻ノ巣山を中心として発達しており、福岡平野と早良平野を二分し、博多湾に至っている。その油山山麓部一帯には、古墳時代後期の小古墳が群集し、一大群集墳を形成している。西油山古墳群もその一部で、油山より北西に突出した一丘陵の中央部近くに位置し、東に霧ヶ滝古墳群・影塚古墳群・駄ヶ原古墳群、西に山崎古墳群・重留古墳群が分布している。本古墳群はすべて横穴式石室の円墳である。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/env_ABC.png" data-cap="西油山古墳群 A・B・C 支群分布図" aria-label="西油山古墳群 A・B・C 支群分布図を拡大"><img loading="lazy" src="images/env_ABC.png" alt="西油山古墳群 A・B・C 支群分布図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 A・B・C 支群分布図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>A 支群は 2 基より構成されるが、1 号墳はすでに消滅している。2 号墳は平坦な丘陵上の標高 131〜134m の間で、北東側と南東側には山道があり、この山道が直交する場所に立地しており、西に開口する両袖複室の埋葬施設を持つ。</p>
+<p>B 支群は 3 基より構成され、北西に延びる丘陵の比較的緩やかな南西側の斜面上で、標高 135〜145m の間に立地し、A 支群 2 号墳の北東約 100m の所に位置する。1・2 号墳とも南西に開口し、両袖単室の埋葬施設を持つ。2 号墳は 1 号墳の南東約 15m に位置する。3 号墳は 2 号墳より南東約 14m に位置するが、残存状態が悪く、詳細については不明である。</p>
+<p>C 支群は 2 基より構成されるが、1 号墳はすでに消滅している。2 号墳は平坦な丘陵上で標高 117〜119m の間に立地し、A 支群と同一丘陵上に位置する。墳丘盛土はなく、判然としないが南西に開口する。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/env_DEFG.png" data-cap="西油山古墳群 D・E・F・G 支群分布図" aria-label="西油山古墳群 D・E・F・G 支群分布図を拡大"><img loading="lazy" src="images/env_DEFG.png" alt="西油山古墳群 D・E・F・G 支群分布図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 D・E・F・G 支群分布図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>D 支群は 4 基より構成され、C 支群と同一丘陵上で標高 100〜105m の間に立地する。立地状態より、1 号墳と 2・3・4 号墳の二つのグループに分けることができると思われる。1 号墳は西に開口し、両袖単室の埋葬施設を持つ。2・3・4 号墳は東に開口し、2・4 号墳は両袖単室、3 号墳は両袖複室の埋葬施設を持つ。</p>
+<p>E 支群は 6 基より構成され、D 支群と同一丘陵上で、標高 88〜94m の間に立地し、すべて西から南西に開口する。1 号墳は残存状態が悪く判然としない。2・3 号墳は両袖単室、4・5・6 号墳は両袖複室の埋葬施設を持つ。</p>
+<p>F 支群は 8 基より構成され、B 支群が存在する丘陵の東側の谷をはさんだ丘陵の比較的緩やかな南西側斜面上で、標高 115〜160m の間に立地する。1・2・3 号墳は南に、4・5・8 号墳は南西に、6・7 号墳は北西に開口する。全て両袖単室の埋葬施設を持つ。</p>
+<p>G 支群は 16 基より構成され、北西に延びる丘陵の比較的緩やかな斜面上で、標高 85〜125m の間に立地し、F 支群より北西約 70m の所に位置する。本支群は全て西に開口し、2・3・4・5・6・7・8・9・11・13・14・15 号墳は両袖単室の埋葬施設を持つ。1・3・16 号墳については、詳細は不明である。</p>
+<p>H 支群は 3 基より構成され、平坦な丘陵上の標高 60m の間に立地し、G 支群より北西約 100m の所に位置する。1 号墳は北側に若干の盛土と数個の石材が確認できるだけで、判然としない。2 号墳は東に開口する両袖複室、3 号墳は西に開口する両袖単室の埋葬施設を持つ。</p>
+<p>I 支群は 3 基より構成され、北西に延びる丘陵の西側斜面、標高 70〜75m の間に立地し、H 支群の北東約 50m に位置する。1・2 号墳は西に開口し、両袖単室の埋葬施設を持つ。3 号墳は残存状態が悪く、詳細は不明である。</p>
+  </div>
+</section>
+<section id="A" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">02</span>
+    <h2>A 支群</h2>
+  </header>
+  <div class="sec-body">
+<h3 class="tomb">A 支群 1 号墳</h3>
+<p>本墳はすでに消滅しており、残存していない。</p>
+<h3 class="tomb">A 支群 2 号墳</h3>
+<p>本墳は平坦な丘陵上に立地し、北東側と南東側には山道があり、山道が直交する場所に立地している。標高は 131〜134m を測り、本古墳群中においては、F 支群・B 支群に次いで高所に立地する。B 支群より西に直線距離約 100m、C 支群より南西に直線距離約 200m を測る。また、本墳より西約 24m の所には川が流れている。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘盛土は流出が激しく、東側においては奥壁が露出しており、南西側においても羨道部の石材の一部が露出している。墳丘規模は現状において、主体部主軸方向に約 9m、主軸に直交する方向に約 8m を測り、不整円形を呈している。墳頂高は 134.447m である。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/A2_photo.png" data-cap="西油山古墳群 A 支群 2 号墳（2023 年 10 月撮影）" aria-label="西油山古墳群 A 支群 2 号墳（2023 年 10 月撮影）を拡大"><img loading="lazy" src="images/A2_photo.png" alt="西油山古墳群 A 支群 2 号墳（2023 年 10 月撮影）"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 A 支群 2 号墳（2023 年 10 月撮影）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/A2_chikei.png" data-cap="西油山古墳群 A 支群 2 号墳地形図" aria-label="西油山古墳群 A 支群 2 号墳地形図を拡大"><img loading="lazy" src="images/A2_chikei.png" alt="西油山古墳群 A 支群 2 号墳地形図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 A 支群 2 号墳地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/A2_sekishitsu.png" data-cap="西油山古墳群 A 支群 2 号墳石室実測図" aria-label="西油山古墳群 A 支群 2 号墳石室実測図を拡大"><img loading="lazy" src="images/A2_sekishitsu.png" alt="西油山古墳群 A 支群 2 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 A 支群 2 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/A2_photo2.jpeg" data-cap="西油山古墳群 A 支群 2 号墳石室（2023 年 10 月撮影）" aria-label="西油山古墳群 A 支群 2 号墳石室（2023 年 10 月撮影）を拡大"><img loading="lazy" src="images/A2_photo2.jpeg" alt="西油山古墳群 A 支群 2 号墳石室（2023 年 10 月撮影）"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 A 支群 2 号墳石室（2023 年 10 月撮影）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、土砂の流入により判然としないが、開口主軸方向を S-27.2°-W にとり、南西に開口する両袖複室の横穴式石室と思われる。現状において、玄室平面プランは縦長長方形プランを呈しており、玄室規模は現状において、奥壁幅 200cm、左側壁幅 300cm、右側壁幅 360cm、玄室高 200cm、玄門高 90cm を測る。</p>
+<p>奥壁は右側壁側の 2 段目から 4 段目にかけての石材が石抜き、あるいは自然崩壊により失われているが、石室の残存状態は比較的良好である。奥壁は 5 段で、腰石には 2 枚の石材が設置され、左側壁側に 60×40cm 程度の石材を縦位に、右側壁側に 60×80cm 程度の石材を横位に設置している。2・3 段目には 40×60cm 前後の石材を横位に使用し、4・5 段目には比較的偏平な石材を使用している。</p>
+<p>左側壁は 5 段で、腰石には 3 枚の石材が設置され、奥壁側より 70×50cm 程度の石材を縦位に、40×160cm 程度の石材を横位に、羨道側には 50×160cm 程度の石材を横位に使用している。2・3・4 段目には 50×80cm 前後の石材が雑に積まれており、栗石の使用も見られる。5 段目には偏平な石材が使用されている。</p>
+<p>右側壁は 5 段で、腰石には 4 枚の石材が設置され、奥壁側に 20×20cm の石材 2 枚と 26×50cm 程度の石材を横位に使用し、羨道側に 60×160cm 程度の石材を横位に使用している。2 段目には 50×70cm 前後の石材を使用しており、3・4 段目には 50×60cm 前後の石材が雑に積まれている。最上部には 20×20cm 程度の石材が、奥壁から前壁にかけて比較的整然と目路が通るように使用されている。また、左側壁と比べ栗石の使用が目立つ。前壁の楣石は、80×100cm 程度の石材を横位に使用し、その上に 70×60cm 程度の石材を横位に使用している。羨道部左側壁には 50×120cm 程度の石材を横位に使用し、2・3 段目には 40×100cm 程度の石材を横位に使用している。同右側壁は 40×100cm 程度の石材を使用し、2・3 段目には 30×70cm 程度の石材が雑に積まれている。また、栗石の使用が認められる。なお、羨道長は前室長を含め 460cm を測る。</p>
+<p>本墳の石室は、全体として比較的大ぶりの石材を使用しており、天井石に近い上部では、小ぶりの石材が使用され、左右両側壁はせり出しが激しい。また、後室と前室を含めた羨道部とでは、後室の方がやや雑な石積みとなっている。なお、本墳石室に使用された石材は、全て花崗岩である。</p>
+  </div>
+</section>
+<section id="B" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">03</span>
+    <h2>B 支群</h2>
+  </header>
+  <div class="sec-body">
+<figure class="fig">
+  <button class="fig-btn" data-src="images/B_chikei.png" data-cap="西油山古墳群 B 支群地形図" aria-label="西油山古墳群 B 支群地形図を拡大"><img loading="lazy" src="images/B_chikei.png" alt="西油山古墳群 B 支群地形図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 B 支群地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">B 支群 1 号墳</h3>
+<p>本墳は北西に延びる丘陵の比較的緩やかな南西側の斜面上の標高 137m〜139.5m に立地し、同丘陵上の 2 号墳より北西に 17m、標高差 2.5m、3 号墳より北西に 29.5m、標高差 4.0m を測る。なお、本墳の北方向は徳栄寺建設のため、削平されている。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘盛土は本支群中において比較的残存状態が良く、ほぼ原形を保っていると思われるが、南側の墳裾あたりに墓が建てられており、2 ヶ所若干の落ち込みが見られる。墳丘規模は現状において、主体部主軸方向に約 14m、主軸に直交する方向に約 12m を測る円墳である。墳頂高は 140.687m である。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/B1_sekishitsu.png" data-cap="西油山古墳群 B 支群 1 号墳石室実測図" aria-label="西油山古墳群 B 支群 1 号墳石室実測図を拡大"><img loading="lazy" src="images/B1_sekishitsu.png" alt="西油山古墳群 B 支群 1 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 B 支群 1 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/B1_photo1.png" data-cap="西油山古墳群 B 支群 1 号墳（2023 年 10 月撮影）①" aria-label="西油山古墳群 B 支群 1 号墳（2023 年 10 月撮影）①を拡大"><img loading="lazy" src="images/B1_photo1.png" alt="西油山古墳群 B 支群 1 号墳（2023 年 10 月撮影）①"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 B 支群 1 号墳（2023 年 10 月撮影）①<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/B1_photo2.png" data-cap="西油山古墳群 B 支群 1 号墳（2023 年 10 月撮影）②" aria-label="西油山古墳群 B 支群 1 号墳（2023 年 10 月撮影）②を拡大"><img loading="lazy" src="images/B1_photo2.png" alt="西油山古墳群 B 支群 1 号墳（2023 年 10 月撮影）②"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 B 支群 1 号墳（2023 年 10 月撮影）②<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/B1_photo3.png" data-cap="西油山古墳群 B 支群 1 号墳（2023 年 10 月撮影）③" aria-label="西油山古墳群 B 支群 1 号墳（2023 年 10 月撮影）③を拡大"><img loading="lazy" src="images/B1_photo3.png" alt="西油山古墳群 B 支群 1 号墳（2023 年 10 月撮影）③"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 B 支群 1 号墳（2023 年 10 月撮影）③<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、いくつかの栗石は失われているが、本支群中、最も残存状態が良く、開口主軸方向を S-65°-W にとり、西の谷へ向かって開口する両袖単室の横穴式石室である。</p>
+<p>玄室平面プランは正方形プランを呈しており、玄室規模は現状において、奥壁幅 236cm、左側壁幅 260cm、右側壁幅 270cm、前壁幅 220cm、玄門高 118cm、玄門幅 80cm を測る。奥壁は 6 段で、腰石には 100×200cm 程度の石材を横位に設置し、2 段目には 50×60cm 程度の石材と 40×70cm 程度の石材が並べて使用されている。3 段目には 20×110cm の石材を横位に使用し、5 段目には左側壁に架構する力石の使用がみられる。</p>
+<p>左側壁は 6 段で、腰石には 60×260cm 程度の石材を横位に設置し、2 段目には 70×120cm 程度と 50×150cm 程度の石材を並べて使用し、3・4 段目には 50×60cm 前後の石材を 5 枚使用している。</p>
+<p>右側壁は 6 段で、腰石には 80×130cm、100×80cm、90×60cm 程度の 3 枚の石材を並べて設置し、その上は羨道側半分の石材は、40×60cm 前後の石材を 5 段積み上げている。</p>
+<p>前壁は左袖石に 100×70cm の石材を設置し、その上 30×50cm の石材を積み上げ、右袖石に 120×60cm 程度の石材を設置し、その上に 50×20cm 程度の石材を積み上げ、また、栗石の使用によって左右の高さを合わせている。楣石は 90×140cm の石材を横位に据え、その上に 40×60cm 程度の石材を使用している。</p>
+<p>羨道部は土砂の流入によって、基底面や腰石の詳細は不明である。羨道長は現状において、360cm を測る。石材は 40×60cm 前後の使用が多く、栗石の使用が多く認められる。また、梱石が奥壁より 290cm の距離にあり、15×75cm 程度の石材を使用している。石室の持ち送りが顕著であり、栗石の使用が多い。石材は全て花崗岩である。なお、石室実測中に右側壁付近より須恵器の坏身の破片を表採した。</p>
+<h3 class="tomb">B 支群 2 号墳</h3>
+<p>本墳は北西に延びる丘陵の比較的緩やかな南西側斜面上の標高 141.5m〜143m の間に立地する。また、同一丘陵上に立地する 1 号墳より南東に 17m、標高差 2.5m、3 号墳より北西に 14m、標高差 2.0m を測る。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘盛土は自然崩壊などにより上部が流出しており、天井石も失われている。そのため、玄室内部に土砂が流入している。また、西側は土砂で開口部が埋没している。墳丘規模は現状において、主体部主軸方向に約 7.5m、主軸に直交する方向に約 8m を測る。墳頂高は 143.199m である。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/B2_photo.png" data-cap="西油山古墳群 B 支群 2 号墳（2023 年 10 月撮影）" aria-label="西油山古墳群 B 支群 2 号墳（2023 年 10 月撮影）を拡大"><img loading="lazy" src="images/B2_photo.png" alt="西油山古墳群 B 支群 2 号墳（2023 年 10 月撮影）"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 B 支群 2 号墳（2023 年 10 月撮影）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/B2_sekishitsu.png" data-cap="西油山古墳群 B 支群 2 号墳石室実測図" aria-label="西油山古墳群 B 支群 2 号墳石室実測図を拡大"><img loading="lazy" src="images/B2_sekishitsu.png" alt="西油山古墳群 B 支群 2 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 B 支群 2 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、残存する石材よりほぼ南西に向って開口する両袖単室の横穴式石室であろうと推定されるが、前述したように開口部は、土砂の流入によって埋没しており、正確には判断できない。玄室も天井石が失われており、玄室内部にも大量に土砂が流入しているため、腰石の確認ができず、従って基底面も確認出来ない。</p>
+<p>玄室平面プランはほぼ正方形プランを呈しており、玄室規模は現状において、奥壁幅 138cm、左側壁幅 132cm、右側壁幅 138cm を測る。次に石積みであるが、現状において、奥壁は 2 段までしかなく、1 段目は 35×45cm 程度の石材 2 枚を使用している。2 段目は 35×70cm 程度の石材と 15×25cm 程度の石材を使用している。左側壁も 2 段までしかなく、1 段目は 20×55cm 程度の石材と 20×25cm 程度の石材、15×30cm 程度の石材を使用している。2 段目は 65×60cm 程度の石材と 30×30cm 程度の石材を使用している。</p>
+<p>右側壁も 2 段までしかなく、1 段目は 30×40cm 程度の石材 1 枚と 25×50cm 程度の石材 2 枚を使用し、2 段目は 25×50cm 程度の石材 1 枚と 25×35cm 程度の石材 2 枚を使用している。確認できる範囲ではあまり大ぶりな石材は使用されていない。袖石は右側しか確認出来ず、30×50cm 程度の石材を使用している。楣石は 30×70cm 程度の大きさである。羨道部は埋没して確認出来ない。なお、本墳の石材は全て花崗岩である。</p>
+<h3 class="tomb">B 支群 3 号墳</h3>
+<p>本墳は北西に延びる丘陵の比較的緩やかな南西側斜面上の標高 143m〜145m の間に存在し、本群中において最高所に立地する。また、同一丘陵上に立地する 1 号墳より南東に 29.5m、標高差 4.0m、2 号墳より南東に 14m、標高差 2.0m を測る。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘盛土は本群中最も流出が激しく、墳丘はほとんど原形をとどめていない。墳丘規模は現状において、東西径約 7.5m、南北径約 9m を測り不整円形を呈している。また、若干の盛土が認められ、北西側において 170×100cm 程度の石材があり、他に小ぶりの石材が数個墳丘上にみられる。墳頂高は 145.073m である。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>本墳の埋葬施設は、石抜き及び自然崩壊のために大部分の石材が失われており、先に述べた石材の他、北東側に 30×40cm 程度の石材が一個見られるだけである。石室内への土砂の流入により、石室規模・平面プランは判然とせず、一見して石室と判断することは非常に困難である。石室構築状態の詳細については、石積みが認められないため不明である。なお、本墳の石材は全て花崗岩である。</p>
+  </div>
+</section>
+<section id="C" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">04</span>
+    <h2>C 支群</h2>
+  </header>
+  <div class="sec-body">
+<h3 class="tomb">C 支群 1 号墳</h3>
+<p>本墳はすでに消滅しており、残存していない。</p>
+<h3 class="tomb">C 支群 2 号墳</h3>
+<p>本墳は北西に延びる比較的平坦な丘陵上の標高約 117〜119m の間に立地する。A 支群 2 号墳より東に直線距離約 200m を測る。また、本墳より東約 20m の所には川が流れている。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘盛土は土砂の流入が著しく、墳丘はほとんど原形をとどめていないが、北側に若干の盛土が認められるだけである。そのため墳丘規模は判然としない。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/C2_chikei.png" data-cap="西油山古墳群 C 支群 2 号墳地形図" aria-label="西油山古墳群 C 支群 2 号墳地形図を拡大"><img loading="lazy" src="images/C2_chikei.png" alt="西油山古墳群 C 支群 2 号墳地形図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 C 支群 2 号墳地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、石抜き及び自然崩壊により、天井石と羨道部左側壁の石材を残すのみである。石室内への土砂の流入により、石室規模や平面プランは判然とせず、一見して、石室と判断することは難しい。天井石には 180×90cm、110×170cm 程度の石材 2 枚が使用されている。</p>
+<p>羨道部左側壁には 60×80cm 程度の石材が 1 個みられる。この石材の配置より、本墳はほぼ南西に開口する横穴式石室と思われる。また、周辺には 100×100×200cm、150×70cm、70×100cm 程度の石材が認められる。なお、本墳の石材は全て花崗岩である。</p>
+<p class="note">＊西油山古墳群 A・B・C 支群の文面および作図は 1985 年福岡大学歴史研究部考古学班発行の「七隈 22 号」から転用した。従って、古墳の分布状況および状態は当時のものである。</p>
+  </div>
+</section>
+<section id="D" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">05</span>
+    <h2>D 支群</h2>
+  </header>
+  <div class="sec-body">
+<figure class="fig">
+  <button class="fig-btn" data-src="images/D_chikei.png" data-cap="西油山古墳群 D 支群地形図" aria-label="西油山古墳群 D 支群地形図を拡大"><img loading="lazy" src="images/D_chikei.png" alt="西油山古墳群 D 支群地形図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 D 支群地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">D 支群 1 号墳</h3>
+<p>本墳は北西に延びる比較的緩やかな斜面上の標高 105〜107m の間に立地する。また、隣接するように存在する 2・3・4 号墳より東へ約 50m のところに位置し、比高差約 4m を測る。南東へ約 8m の同一丘陵上には西油山古墳群 C 支群 2 号墳が存在する。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>本墳の墳丘盛土は、石抜き・自然崩壊のため流出が著しく、墳丘はほとんど原形をとどめていない。現状では、墳丘規模は主体部軸方向 10m、主軸と直交に 9m を測り、不整円形を呈している。なお、西側の墳裾付近より直刀片を、北西側の墳裾付近より大蓋の破片を表採した。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/D1_sekishitsu.png" data-cap="西油山古墳群 D 支群 1 号墳石室実測図" aria-label="西油山古墳群 D 支群 1 号墳石室実測図を拡大"><img loading="lazy" src="images/D1_sekishitsu.png" alt="西油山古墳群 D 支群 1 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 D 支群 1 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/D1_photo1.png" data-cap="西油山古墳群 D 支群 1 号墳（2023 年 10 月撮影）①" aria-label="西油山古墳群 D 支群 1 号墳（2023 年 10 月撮影）①を拡大"><img loading="lazy" src="images/D1_photo1.png" alt="西油山古墳群 D 支群 1 号墳（2023 年 10 月撮影）①"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 D 支群 1 号墳（2023 年 10 月撮影）①<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/D1_photo2.png" data-cap="西油山古墳群 D 支群 1 号墳（2023 年 10 月撮影）②" aria-label="西油山古墳群 D 支群 1 号墳（2023 年 10 月撮影）②を拡大"><img loading="lazy" src="images/D1_photo2.png" alt="西油山古墳群 D 支群 1 号墳（2023 年 10 月撮影）②"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 D 支群 1 号墳（2023 年 10 月撮影）②<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、開口主軸方向を N-74°-W にとり、北西に向かって開口する両袖単室の横穴式石室である。玄室部は天井石および右側壁の自然崩壊、石抜き、土砂の流入などにより旧状をとどめていない。現状で、奥壁幅 194cm、左側壁幅 274cm、前壁幅 126cm、玄門幅 64cm、玄門高 56cm を測り、縦長長方形プランを呈している。</p>
+<p>奥壁は現床面より 3 段目まで石積みが確認でき、1 段目は 50×30cm 程度の石を横位に並べ 2 段目・3 段目に 50×50cm 程度の石材 3 枚と、40×30cm 程度の石材 3 枚を使用している。左側壁はせり出しが著しいが、現床面より 5 段目まで石積みが確認できる。1 段目は幅 60cm 程度の石材 2 枚と幅 30cm 程度の石材 3 枚が並べられており、2 段目には 60×30cm 程度の石材を、3 段目に 40×30cm 程度の石材を使用し高さをそろえている。4 段目には 70×40cm 程度の比較的大ぶりの石材を使用し、5 段目に比較的小ぶりの石材を積み上げている。袖石には左右とも 60×50cm 程度の石材を横位に使用し、その上に 70×30cm 程度の石を積み上げている。楣石には 80×40cm 程度の大ぶりの石材を使用し、その上に 60×40cm 程度の石を横位に積み上げている。</p>
+<p>羨道部においても土砂の流入により、床面及び腰石は完全に埋没しており、両側壁のせり出しが顕著にみられる。羨道長は現状において 236cm を測り、やや小ぶりの 40×20cm 程度の石を粗雑に積み上げている。なお、本墳の使用石材は全て花崗岩である。</p>
+<p class="note">○表採鉄器について　本墳の羨道右側壁側の墳丘より表採された直刀の刀部と思われる鉄器は、現状では幅 2.2cm を測る。断面は元来、二等辺三角形を呈するものと考えられるが、錆・ひび割れのため判然としない。</p>
+<h3 class="tomb">D 支群 2 号墳</h3>
+<p>本墳は北西に延びる丘陵上の比較的平坦な標高約 102〜103m の間に位置し、同一丘陵上に立地する 3 号墳より東へ約 14.5m、4 号墳より南へ約 15m の距離を測る。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>本墳の墳丘盛土は、自然崩壊及び土砂の流出により残存状態は悪く、天井石の一部が露出している。また、墳裾の東北東付近に羨門部の石材が確認できる。墳裾は不明瞭であるが、現状より墳丘規模は、南北 9m、東西 9m を測る円墳である。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>本墳の埋葬施設は現状において、土砂が著しく流入しており、石室内部の残存状態および規模・プランなどは全く不明である。なお、本墳の石材は油山に点在する花崗岩である。</p>
+<h3 class="tomb">D 支群 3 号墳</h3>
+<p>本墳は北西に延びる丘陵上の比較的平坦な標高 102m〜103m の間に位置し、同一丘陵上に立地する 2 号墳より西へ 14.5m、4 号墳より南南東へ 20m を測る。また、1 号墳より西へ 60m、比高差約 3m を測る。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>本墳の墳丘盛土は、石抜き・自然崩壊によって土砂が流出し、墳丘の南側の墳裾は判然とせず、西側も果樹園の開墾によって削平されている。このため墳丘形・墳丘規模とも判然としない。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/D3_sekishitsu.png" data-cap="西油山古墳群 D 支群 3 号墳石室実測図" aria-label="西油山古墳群 D 支群 3 号墳石室実測図を拡大"><img loading="lazy" src="images/D3_sekishitsu.png" alt="西油山古墳群 D 支群 3 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 D 支群 3 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、主軸を N-80°-E にとり、ほぼ東に開口する両袖複室の横穴式石室である。石室内は奥壁側の天井石および袖壁の一部の石材が失なわれているものの西油山古墳群中において、残存状態は比較的良好である。現状で、主軸長 640cm、奥壁幅 210cm、左側壁幅 310cm、右側壁幅 360cm、前壁幅 200cm、玄門 80cm、玄門高 90cm を測り、平面プランは縦長長方形プランを呈する。奥壁は 3 段構築で、腰石に横 160×55cm の石材を設置し、2 段目に 150×75cm の石材、3 段目に 120×20cm の石材を伴に横位に使用している。</p>
+<p>左側壁は腰石に 160×60cm の石材と 130×40cm の石材を伴に横位に設置している。2 段目には 70×80cm の石材と 120×70cm の石材を使用している。3 段目は 70×50cm 程度の 2 枚の石材と 110×60cm の石材を使用している。4 段目には 90×30cm の石材の使用が見られる。</p>
+<p>右側壁は腰石に 160×40cm の石材を横位に、また、140×80cm の不整形の石材を設置している。2 段目には 70×50cm の石材と 150×40cm の石材を伴に横位に使用し、3 段目には 85×60cm の石材と 130×50cm の石材をそれぞれ横位に使用しており、4 段目には 90×40cm の石材と 50×30cm 程度の 2 枚の石材の使用がみられる。</p>
+<p>前壁は右側壁側の袖石として 70×100cm の石材を設置し、その上に、70×20cm の偏平な石材を使用し、袖石との高さを合わせている。楣石は 210×60cm の比較的大ぶりの石材を使用している。前室について見ると、左側壁は 2 段構築で、腰石として 80×80cm の石材を設置し、2 段目には 110×20cm の石材を使用している。右側壁は 3 段構築で、腰石として 50×40cm の石材を設置している。2 段目には 60×50cm の石材を使用し、3 段目には 80×30cm の石材を積み上げている。</p>
+<p>羨道部の左側壁は 80×80cm の石材と、20×50cm の石材を腰石として設置し、その上に 70×50cm、40×20cm の石材の使用が見られる。なお、羨道長は前室を含めて 3.1m を測る。本墳は全体的に比較的大ぶりの石材が多数使用され、石積みも比較的整然としている。本墳の石材は、油山に多く見られる花崗岩を使用している。</p>
+<h3 class="tomb">D 支群 4 号墳</h3>
+<p>本墳は北西に延びる丘陵の平坦部の標高 100.5〜101.5m の間に位置し、同一丘陵上にある 2 号墳より北へ 15m、3 号墳より南南東に 20m を測る。また、1 号墳より西へ約 55m、比高差約 4m を測る。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>本墳の墳丘盛土は、自然崩壊による土砂の流出が著しく、天井石の一部及び左右両側壁の上部が露出しており、墳丘規模と墳丘形は判然としない。また、本墳の周囲に石が数個点在している。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/D4_sekishitsu.png" data-cap="西油山古墳群 D 支群 4 号墳石室実測図" aria-label="西油山古墳群 D 支群 4 号墳石室実測図を拡大"><img loading="lazy" src="images/D4_sekishitsu.png" alt="西油山古墳群 D 支群 4 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 D 支群 4 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、土砂の流入により判然としないが、主軸を N-83°-E にとりほぼ東に開口する横穴式石室である。現状では奥壁幅 250cm が確認できるのみで、石室の規模及びプラン等は判然としない。また、奥壁および左側壁の上部は、石抜きあるいは自然崩壊により失われており、石室の残存状態は悪い。</p>
+<p>石室の構築状態についてみると、奥壁は 5 段存在しており、1 段目に横 100cm×縦 50cm の石材を横位に使用している。2 段目に 60×20cm の石材を横位に、100×40cm の石材を横位に、50×60cm の石材を使用し、3 段目には 60×40cm 程度の石材を使用している。4・5 段目には、石材がほとんど残っておらず、60×40cm 程度の石材を 3 枚使用しているのみである。</p>
+<p>左側壁は 4 段存在しており、1 段目は、130×30cm の石材を横位に、40×30cm の石材と 50×30cm の石材を使用しており、2 段目には 100×30cm の石材を横位に、60×20cm の石材を横位に、60×20cm 前後の石材を使用している。また、3・4 段目には 40×20cm 前後の石材を使用している。なお、左側壁はせり出しが激しい。</p>
+<p>右側壁はかなり崩壊しているが、現状では 4 段確認できる。1 段目には 90×40cm の石材を使用しており、2 段目には 50×30cm 程度の石材を使用し、3・4 段目には 80×50cm 程度の石材を使用している。前壁の袖石は、土砂の流入が著しいため判然としない。前壁の楣石は、180×50cm の石材を横位に設置している。</p>
+<p>羨道部は土砂の流入が著しいため、羨道部左側壁の石材は確認できず、羨道部右側壁においても、40×10cm の石材と 20×10cm 程度の石材の使用しか確認できない。なお、本墳は大ぶりの石材が多く使用され、これらはすべて花崗岩である。</p>
+<p class="note">＊西油山古墳群 D 支群の文面および作図は 1986 年福岡大学歴史研究部考古学班発行の「七隈 23 号」から転用した。従って、古墳の分布状況および状態は当時のものである。</p>
+  </div>
+</section>
+<section id="E" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">06</span>
+    <h2>E 支群</h2>
+  </header>
+  <div class="sec-body">
+<figure class="fig">
+  <button class="fig-btn" data-src="images/E_chikei.png" data-cap="西油山古墳群 E 支群地形図" aria-label="西油山古墳群 E 支群地形図を拡大"><img loading="lazy" src="images/E_chikei.png" alt="西油山古墳群 E 支群地形図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 E 支群地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">E 支群 1 号墳</h3>
+<p>本墳は北西に延びる比較的平坦な丘陵上の標高 93〜94m の間に存在し、本群中最高所に立地する。また、同一丘陵上に立地する 2 号墳より東に 20m、4 号墳より南に 28m の所に位置する。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘盛土は土砂の流出によって原形をとどめておらず、一見して墳丘と判断するのは難しい。わずかに残存する石材と落ち込みによって古墳であると判断できるが、墳丘規模等の詳細は不明である。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>本墳の埋葬施設は、残存する数個の石材から判断して、西に開口する横穴式石室であると考えられる。石室は自然崩壊及び石抜きによって石材の大部分が失われており、また、激しい土砂の流入が見られるため、奥壁の一部と思われる 60×40cm 程度の石材と袖石と思われる 90×70cm 程度の石材がわずかに確認できる程度で、平面プラン・玄室規模等の詳細は不明である。また、本墳のものと思われる石材が落ち込みの内部に数個点在している。なお、本墳の石材は全て花崗岩である。</p>
+<h3 class="tomb">E 支群 2 号墳</h3>
+<p>本墳は北西に延びる比較的平坦な丘陵上の標高約 91m の所に立地する。また、同一丘陵上に立地する 1 号墳より西に 20m、3 号墳より南に 9m の所に位置する。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘盛土は自然崩壊及び石抜きにより、土砂の流入が著しく原形をとどめていない。そのため墳丘規模等の詳細は不明である。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/E2_sekishitsu.png" data-cap="西油山古墳群 E 支群 2 号墳石室実測図" aria-label="西油山古墳群 E 支群 2 号墳石室実測図を拡大"><img loading="lazy" src="images/E2_sekishitsu.png" alt="西油山古墳群 E 支群 2 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 E 支群 2 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、土砂の流入により判然としないが、開口主軸方向を N-89°-W にとり、ほぼ西に開口する両袖単室の横穴式石室であると思われる。石室は自然崩壊及び石抜きにより、天井石・周壁上部の石材が失われており、原形をとどめておらず、右側壁の一部をのぞいて、奥壁・左側壁・羨道側壁は腰石を残すのみで、石室内には本墳のものと思われる石材が散在している。また、多量の土砂の流入により基底面は不明瞭である。</p>
+<p>玄室規模は、現状において奥壁幅 210cm、左側壁幅 250cm、右側壁幅 230cm を測るが、左右袖石が失われているため平面プランを判断することは困難である。奥壁の腰石は 100×250cm 程度の大ぶりの石材を 1 枚横位に設置し、数個の栗石をはさんで、左側壁側に 80×30cm 程度の石材を縦位に使用している。左側壁の腰石は 100×250cm 程度の大ぶりの石材を 1 枚横位に使用している。右側壁の腰石には 20×230cm 程度の石材を 1 枚横位に使用し、その奥壁側上段に 40×40cm 程度の石材が積み上げられている。羨道部左側壁の腰石には 60×130cm 程度、右側壁の腰石には 100×160cm 程度の大ぶりの石材を 1 枚横位に使用している。なお、本墳の石材は全て花崗岩である。</p>
+<h3 class="tomb">E 支群 3 号墳</h3>
+<p>本墳は北西に延びる比較的平坦な丘陵上の標高 90〜91m の間に立地する。また、同一丘陵上に立地する 2 号墳より北に 9m、4 号墳より南西に 22m の所に位置する。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘盛土は自然崩壊および石抜きにより土砂の流出が著しく原形をとどめていない。そのため墳丘規模等の詳細は不明である。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/E3_sekishitsu.png" data-cap="西油山古墳群 E 支群 3 号墳石室実測図" aria-label="西油山古墳群 E 支群 3 号墳石室実測図を拡大"><img loading="lazy" src="images/E3_sekishitsu.png" alt="西油山古墳群 E 支群 3 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 E 支群 3 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、開口主軸方向を S-70°-W にとり、南西に開口する両袖単室の横穴式石室である。石室は天井石が失われており、また、周壁上部の自然崩壊及び石抜きにより原形をとどめておらず、玄室内に古墳に使用されたと思われる大ぶりの石材が数個落ち込んでおり、周壁は腰石を残すのみである。玄室規模は現状において、奥壁幅 250cm、右側壁 290cm を測り、玄室平面プランはほぼ正方形プランを呈している。</p>
+<p>奥壁は腰石に 80×200cm 程度の石材を 1 枚横位に設置し、その右側壁側上部にやや大ぶりの石材 2 枚がみられ、一部に栗石の使用がみられる。左側壁は 50×70cm 程度の石材と 40×50cm 程度の石材 2 枚がみられるだけで、羨道部側は残存しない。右側壁は腰石に 110×190cm 程度の石材と 70×105cm 程度の石材 2 枚が横位に設置されている。羨道部は左袖石に 60×100cm 程度の石材が、右袖石には 90×80cm 程度の石材が設置されている。羨道部左側壁には 65×200cm 程度の石材が、羨道部右側壁には 90×150cm 程度の石材が設置されている。なお、本墳の石材は全て花崗岩である。</p>
+<h3 class="tomb">E 支群 4 号墳</h3>
+<p>本墳は北西に延びる比較的平坦な丘陵上の標高 90〜91m の間に立地する。また、同一丘陵上に立地する 3 号墳より北東へ 22m、5 号墳より東へ 27m の所に位置する。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘盛土は自然崩壊および石抜きにより流出が著しく、全く原形をとどめておらず、墳丘規模等ははっきりしない。本墳の存在する丘陵の北側斜面上には、石室に使用していたと思われる数個の石材が点在している。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/E4_sekishitsu.png" data-cap="西油山古墳群 E 支群 4 号墳石室実測図" aria-label="西油山古墳群 E 支群 4 号墳石室実測図を拡大"><img loading="lazy" src="images/E4_sekishitsu.png" alt="西油山古墳群 E 支群 4 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 E 支群 4 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/E4_photo1.png" data-cap="西油山古墳群 E 支群 4 号墳（2023 年 10 月撮影）①" aria-label="西油山古墳群 E 支群 4 号墳（2023 年 10 月撮影）①を拡大"><img loading="lazy" src="images/E4_photo1.png" alt="西油山古墳群 E 支群 4 号墳（2023 年 10 月撮影）①"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 E 支群 4 号墳（2023 年 10 月撮影）①<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/E4_photo2.png" data-cap="西油山古墳群 E 支群 4 号墳（2023 年 10 月撮影）②" aria-label="西油山古墳群 E 支群 4 号墳（2023 年 10 月撮影）②を拡大"><img loading="lazy" src="images/E4_photo2.png" alt="西油山古墳群 E 支群 4 号墳（2023 年 10 月撮影）②"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 E 支群 4 号墳（2023 年 10 月撮影）②<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、開口主軸方向を S-80°-W にとり、ほぼ西に開口する両袖複室の横穴式石室である。玄室の残存状態は悪く、天井石は失われ、周壁上部の崩壊等によりほとんど原形をとどめていない。玄室規模は現状において、奥壁幅 200cm、左側壁幅 310cm、右側壁幅 330cm、前室幅 210cm、玄門幅 100cm を測り、玄室平面プランは縦長長方形プランを呈する。</p>
+<p>現床面から奥壁は 1 段、左側壁 2 段、右側壁 2 段、前壁 1 段の石積みが確認できる。奥壁は 80×195cm 程度の大ぶりの石材を横位に、1 枚腰石として設置している。左側壁は多量の土砂が流入しており、腰石については不明瞭である。現状において、1 段目には奥壁側から 60×80cm、40×100cm、80×80cm 程度の石材とそれよりやや小ぶりの石材を 2 枚使用している。2 段目は奥壁側に 60×60cm 程度の石材と羨道部側にそれより小さめの石材が 3 段積まれている。</p>
+<p>右側壁は奥壁側から 80×160cm、50×110cm、50×50cm 程度の石材 3 枚を腰石として設置している。2 段目は 80×70cm と 100×100cm 程度の石材 2 枚と羨道部側にそれよりやや小ぶりの石材が 3 段積まれている。前壁は 40×70cm 程度の大ぶりの石材を楣石として横位に使用している。また、玄室には石材として使用していたと思われる石材が散在している。</p>
+<p>前室は土砂の流入により腰石が不明瞭である。現状においては左側壁 3 段、右側壁 4 段の石積みが確認できる。左側壁は 1 段目に 10×60cm 程度の石材が確認できる程度である。2 段目以上は 40×60cm 程度の石材を 1 枚ずつ使用している。右側壁は 1 段目に 50×30cm、10×10cm 程度の石材を使用している。2 段目は 40×70cm 程度の石材を 1 枚使用し、3 段目以上は 40×50cm 程度の石材を比較的丁寧に積み上げている。なお、両側壁ともせり出しが著しい。羨道は石抜きなどにより石材がほとんど残存しておらず、左側壁に 60×80cm 程度の石材と右側壁に 80×80cm 程度の石材が確認できる程度である。また、本墳に使用していたと思われる石材が羨道部に散在している。なお、本墳の石材は全て花崗岩である。</p>
+<h3 class="tomb">E 支群 5 号墳</h3>
+<p>本墳は北西に延びる比較的平坦な丘陵上の標高 88〜90m の間に立地する。また、同一丘陵上に立地する 3 号墳より北へ 22m、4 号墳より西へ 27m の所に位置する。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘盛土は自然崩壊および石抜きにより、ほとんど原形をとどめていない。そのため墳丘規模等の詳細は不明である。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/E5_sekishitsu.png" data-cap="西油山古墳群 E 支群 5 号墳石室実測図" aria-label="西油山古墳群 E 支群 5 号墳石室実測図を拡大"><img loading="lazy" src="images/E5_sekishitsu.png" alt="西油山古墳群 E 支群 5 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 E 支群 5 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、土砂の流入により判然としないが、開口主軸方向を N-76°-W にとり、北西に開口する両袖複室の横穴式石室と思われる。玄室は土砂の流入で埋没しており、現状において、詳細は不明である。</p>
+<p>羨道長は現状において、前室を含めて 328cm を測る。羨道部左側壁は腰石が 3 枚設置され、前室部に 80×60cm 程度の石材を縦位に、開口部側に 90×150cm 程度、玄室側に 90×100cm 程度の石材を縦位に使用している。2 段目には 20×40cm 程度の石材を 2 枚使用している。3 段目には 35×80cm 程度の石材を 2 枚、4 段目には 30×70cm 程度の石材が 1 枚確認できる。羨道部右側壁は腰石が 3 枚設置され、前室部に 15×80cm 程度の石材を横位に、玄室側に 90×110cm 程度の石材を横位に使用している。2 段目には 40×90cm 程度、3 段目には 60×100cm 程度の石材を使用している。なお、本墳の石材は全て花崗岩である。</p>
+<h3 class="tomb">E 支群 6 号墳</h3>
+<p>本墳は北西に延びる比較的平坦な丘陵上の標高 88〜90m の間に存在し、本古墳群中で最北端に立地する。また、同一丘陵上に立地する 1 号墳との標高差 4m を測り、4 号墳より北へ 23m、5 号墳より北東へ 34m の所に位置する。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘盛土は自然崩壊及び石抜きにより土砂の流入が著しく、ほとんど原形をとどめておらず、石室の羨道側と奥壁側にわずかに盛土がみられるにすぎない。従って、墳丘規模等は判然としない。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/E6_sekishitsu.png" data-cap="西油山古墳群 E 支群 6 号墳石室実測図" aria-label="西油山古墳群 E 支群 6 号墳石室実測図を拡大"><img loading="lazy" src="images/E6_sekishitsu.png" alt="西油山古墳群 E 支群 6 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 E 支群 6 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/E6_photo1.png" data-cap="西油山古墳群 E 支群 6 号墳（2023 年 10 月撮影）①" aria-label="西油山古墳群 E 支群 6 号墳（2023 年 10 月撮影）①を拡大"><img loading="lazy" src="images/E6_photo1.png" alt="西油山古墳群 E 支群 6 号墳（2023 年 10 月撮影）①"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 E 支群 6 号墳（2023 年 10 月撮影）①<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/E6_photo2.png" data-cap="西油山古墳群 E 支群 6 号墳（2023 年 10 月撮影）②" aria-label="西油山古墳群 E 支群 6 号墳（2023 年 10 月撮影）②を拡大"><img loading="lazy" src="images/E6_photo2.png" alt="西油山古墳群 E 支群 6 号墳（2023 年 10 月撮影）②"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 E 支群 6 号墳（2023 年 10 月撮影）②<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、開口主軸方向を N-75°-W にとり、北西に開口する両袖複室の横穴式石室である。現状では、玄室部の天井石はすでになく、石室内には土砂の流入が著しく基底面は明らかではない。玄室内には数個の石材が散在しており、周壁の上部の石材と思われる。前室はせり出しが著しく土砂の流入がみられるものの、残存状態は比較的良好である。玄室規模は現状において、奥壁幅 190cm、左側壁幅 230cm、右側壁幅 235cm を測る。</p>
+<p>奥壁は奥壁の左側壁側にかけて土砂の流入が著しいため、石材の一部が露出しているにすぎないので詳細は不明である。左側壁は土砂の流入により判然としない。前室側に 40×70cm 程度の石材が一枚確認できる。右側壁は 2 段確認でき、1 段目には 80×150cm 程度の石材と 75×80cm 程度の石材をそれぞれ横位に使用し、2 段目には 80×135cm 程度の石材を 1 段目と同じように積み上げている。また、栗石の使用が若干みられる。前壁については、楣石として 105×165cm 程度の石材を使用している。左袖石には 30×110cm 程度の石材を横位に設置し、右袖石には 85×80cm 程度の石材を縦位に設置している。</p>
+<p>前室は土砂の流入が著しく、左側壁は 1 段確認でき、1 段目には 55×100cm 程度の石材を横位に使用している。右側壁は 2 段確認でき、1 段目には 85×75cm 程度の石材を横位に使用し、2 段目に 85×125cm 程度の石材を横位に積み上げている。左袖石には 60×90cm 程度の石材を横位に設置し、右袖石には 110×140cm 程度の石材を横位に設置している。羨道部は土砂の流入が著しく、その石積みは明確ではない。なお、本墳には大ぶりの石材が多く使用され、全て花崗岩である。</p>
+<p class="note">＊西油山古墳群 E 支群の文面および作図は 1985 年福岡大学歴史研究部考古学班発行の「七隈 22 号」から転用した。従って、古墳の分布状況および状態は当時のものである。</p>
+  </div>
+</section>
+<section id="F" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">07</span>
+    <h2>F 支群</h2>
+  </header>
+  <div class="sec-body">
+<figure class="fig">
+  <button class="fig-btn" data-src="images/F_chikei_upper.png" data-cap="西油山古墳群 F 支群上部地形図" aria-label="西油山古墳群 F 支群上部地形図を拡大"><img loading="lazy" src="images/F_chikei_upper.png" alt="西油山古墳群 F 支群上部地形図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 F 支群上部地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">F 支群 1 号墳</h3>
+<p>本墳は北西にのびる丘陵の比較的緩やかな南西斜面上の標高約 128.0〜129.5m の間に立地する。同一丘陵上に立地する 3 号墳は、南東へ約 20m、比高差 6m の所に位置する。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>本墳の墳丘盛土は、石抜き・自然崩壊による土砂の流出が著しく原形をほとんどとどめておらず、そのため墳丘規模は判然としない。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/F1_fukan.png" data-cap="西油山古墳群 F 支群 1 号墳俯瞰図" aria-label="西油山古墳群 F 支群 1 号墳俯瞰図を拡大"><img loading="lazy" src="images/F1_fukan.png" alt="西油山古墳群 F 支群 1 号墳俯瞰図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 F 支群 1 号墳俯瞰図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、開口主軸方向を S-74°-W にとり、西側の谷に向って南西方向に開口すると思われる。石室は石抜き・自然崩壊により、天井石が落ちこみ、左右側壁の一部も失われ、羨道部も埋没していることなどから詳細は不明である。そのため石室形態は判然としないが、横穴式石室であると思われる。</p>
+<p>玄室平面プランは不明である。石室の構築状態は現状において、奥壁は 4 段構築で、1 段目は約縦 30×横 60cm 程度の石材と約 30×45cm 程度の石材を 2 枚横位に、2〜3 段目までは約 20×25cm 程度の石材を横位に使用し、4 段目ではそれらより小さめの石材を使用している。右側壁は 4 段構築で、1 段目は約 10×15cm 程度の石材を横位に、2 段目は約 25×55cm 程度の石材を 1 枚、3〜4 段目は約 15×25cm の石材をそれぞれ 2 枚使用している。石材は花崗岩を使用している。なお、本墳は石室実測が困難であったため俯瞰図とした。</p>
+<h3 class="tomb">F 支群 2 号墳</h3>
+<p>本墳は北西に延びる丘陵の比較的緩やかな南西斜面上の標高約 132.5〜134.0m の間に立地し、同一丘陵上に立地する 1 号墳より南へ約 32m、比高差約 4m の所に位置する。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>本墳の墳丘盛土は、石抜き・自然崩壊による土砂の流出が著しく、原形をとどめていない。そのため墳丘規模等の詳細は不明である。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/F2_sekishitsu.png" data-cap="西油山古墳群 F 支群 2 号墳石室実測図" aria-label="西油山古墳群 F 支群 2 号墳石室実測図を拡大"><img loading="lazy" src="images/F2_sekishitsu.png" alt="西油山古墳群 F 支群 2 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 F 支群 2 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、開口主軸方向を S-7°-W にとり、西側の谷に向って南南西に開口する両袖単室の横穴式石室と思われる。石室は自然崩壊及び石抜きにより、天井石・左側壁の石材は失われており、右側壁・奥壁の一部が失われている。また、羨道部と羨道右側壁の一部が残存しているのみである。</p>
+<p>現状において、玄室規模は右側壁幅約 175cm を測り、玄室平面プランは左側壁・奥壁が失われているため判断することは困難である。石室の構築状態について見ると現状において、奥壁は 2 段構築で、1 段目には約縦 20×40cm の石材を横位に使用しており、また、目路を通すため約 20×30cm の石材を 2 段積んでいる。2 段目に約 20×30cm の石材を横位に使用している。右側壁は 4 段構築で、1 段目には約 10×40cm の石材を 4 枚横位に使用し、その上に約 20×30cm の小さめの石材を使用している。前壁の袖石は、多量の土砂の流入のため判然としないが、高さを合わせるために使用されたと思われる約 20×50cm の石材が 2 段に積まれている。羨道部は土砂の流入や自然崩壊により詳細は不明である。なお、本墳の石材は全て花崗岩である。</p>
+<h3 class="tomb">F 支群 3 号墳</h3>
+<p>本墳は北西に延びる丘陵の比較的緩やかな南西斜面上の標高約 134.0〜136.0m に立地し、同一丘陵上に立地する 2 号墳より北東へ約 20m、比高差約 2m の所に位置する。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>本墳の墳丘盛土は、石抜き・自然崩壊による土砂の流出が著しく、天井石の一部および左側壁の一部が露出し、墳丘はほとんど原形をとどめておらず、開口部は土砂で埋没している。現状での墳丘規模は、主体部方向に 3m、主軸と直交する方向に 3.5m を測り、ほぼ円形を呈している。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/F3_sekishitsu.png" data-cap="西油山古墳群 F 支群 3 号墳石室実測図" aria-label="西油山古墳群 F 支群 3 号墳石室実測図を拡大"><img loading="lazy" src="images/F3_sekishitsu.png" alt="西油山古墳群 F 支群 3 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 F 支群 3 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、開口主軸方向を S-75°-W にとり、西側の谷に向って西南西に開口する両袖単室の横穴式石室である。石室は自然崩壊及び石抜きにより、左側壁の一部は失なわれ、羨道部は埋没している。また、土砂の流入により基底面・腰石については判然としない。</p>
+<p>現状において石室規模は、奥壁幅約 159cm、左側壁約 153cm、右側壁約 165cm、羨道幅約 74cm であり、玄室平面プランは正方形プランである。石室の構築状態についてみると、現状において、奥壁は 4 段構築で、1・2 段目には約縦 30cm×40cm の石材を横位に、3 段目に約 50×70cm の大きめの石を横位に使用し、その上に約 30×40cm 程度の石を横位に乗せている。左側壁は 4 段構築で、1・3・4 段目に約 30×50cm 程度の石材を横位に、2 段目は約 30×25cm の石材を 2 枚使用し大きさを合わせている。右側壁は 5 段構築で、1 段目には約 30×50cm 程度の石材を横位に、2・5 段目に約 20×50cm 程度の石材を横位に、この間には約 30×40cm の石材を横位に使用している。また、右側壁は 3 段目以上でせり出しが激しいが、整然と積まれている。前壁は多量の土砂の流入のため袖石は埋没しており、詳細は不明である。羨道部は土砂の流入が著しく埋没しており、規模・石積等は不明である。なお、本墳の石材は全て花崗岩である。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/F_chikei_45678.png" data-cap="西油山古墳群 F 支群 4・5・6・7・8 号墳地形図" aria-label="西油山古墳群 F 支群 4・5・6・7・8 号墳地形図を拡大"><img loading="lazy" src="images/F_chikei_45678.png" alt="西油山古墳群 F 支群 4・5・6・7・8 号墳地形図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 F 支群 4・5・6・7・8 号墳地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">F 支群 4 号墳</h3>
+<p>本墳は北西にのびる丘陵の標高 149.5〜152m の南西斜面上に立地し、同丘陵上の 5 号墳より北東に 8m を測る。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>本墳の墳丘盛土は、土砂の流出が激しく、そのほとんどが失われている。墳丘規模は現状において主体部主軸方向に約 8m、主軸に直交する方向に約 8.5m を測る円墳である。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/F4_sekishitsu.png" data-cap="西油山古墳群 F 支群 4 号墳石室実測図" aria-label="西油山古墳群 F 支群 4 号墳石室実測図を拡大"><img loading="lazy" src="images/F4_sekishitsu.png" alt="西油山古墳群 F 支群 4 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 F 支群 4 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は開口主軸方向を S-70°-W にとり、西南西に開口する両袖単室の横穴式石室である。現状では、玄室部の天井石はすでになく、石室内には土砂の流入が著しく、基底面は明らかではない。玄室部は全ての天井石を失っているものの周壁の残存状態は比較的良好である。</p>
+<p>現状において、玄室規模は主軸長 510cm、奥壁幅約 190cm、左側幅 200cm、前壁幅 170cm、玄門幅 100cm、玄門高 60cm を測り、現状においての玄室平面プランは正方形プランを呈する。奥壁は 65×135cm 程度の石と 30×30cm の石材が設置されている。2 段目には約 80×40cm 程度の石と 80×50cm 程度の石材が並べて使用されている。3 段目も 80×30cm と 30×25cm の 2 つの石材が使用されている。2 段目と 3 段目の間には高さを合わせるために栗石が多く使用されている。4 段目・5 段目は 40×70cm 前後の石が一枚ずつ使用されている。</p>
+<p>左側壁は現状では、4 段の石積みが確認できる。1 段目には奥壁側に約 160×80cm 程の大ぶりの石材と 60×60cm の石とその石に高さを合わせるように前壁側に、20×30cm の石が 2 つ積まれて設置されている。2 段目は 120×40cm の石と、60×40cm、30×40cm 程度の石が 2 つ使用されている。3 段目は 50×30cm 程度の石が 5 個使用され、4 段目には 80×40cm、20×20cm、20×40cm の石を使用している。1 段目・2 段目には大ぶりの石材を使用しているが、上壁部・前壁部には 60×30cm 程度の石が一見雑然と使用されており、栗石の使用も目立つ。</p>
+<p>右側壁は 4 段の石積みが確認でき、1 段目には奥壁側 160×100cm の大ぶりの石が設置され、前壁側にはその石と高さを合わせる様に 40×25cm 程度の石が 2 つ積まれている。上部の石はほぼ 50×50cm の石を使用している。前壁は 100×50cm 程度の大ぶりの石を横位に楣石として使用している。羨道部は土砂の流入・石抜き等で基底面・腰石の詳細は判然としない。なお、本墳の石材は全て花崗岩である。</p>
+<h3 class="tomb">F 支群 5 号墳</h3>
+<p>本墳は北西に延びる比較的緩やかな丘陵上の標高約 149.5〜151.0m の間に位置し、同一丘陵上に立地する 4 号墳より南西に約 8m、6 号墳から北北西に約 12m の所に位置する。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>本墳の墳丘盛土は、石抜き・自然崩壊による土砂の流出が著しく、天井石の一部および両側壁の一部が露出し、墳丘はほとんど原形をとどめておらず、開口部は土砂で埋没している。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/F5_sekishitsu.png" data-cap="西油山古墳群 F 支群 5 号墳石室実測図" aria-label="西油山古墳群 F 支群 5 号墳石室実測図を拡大"><img loading="lazy" src="images/F5_sekishitsu.png" alt="西油山古墳群 F 支群 5 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 F 支群 5 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、開口主軸方向を E-78°-S にとり、西側の谷に向って西南西に開口する両袖単室の横穴式石室である。石室は自然崩壊及び石抜きにより、左側壁の一部は失なわれ、羨道部は埋没している。現状では主軸長 251cm、奥壁幅 148cm、左側壁幅 214cm、右側壁幅 220cm であり、玄室平面プランは長方形プランである。</p>
+<p>石室の構築状態についてみると、奥壁は 2 段構築で腰石に約 95×80cm の石材を横位に、また、約 35×70cm の石材を縦位に設置し、2 段目に 120×70cm の石材を使用している。左側壁は 4 段構築で腰石に 120×60cm 程度の石材を設置し、3・4 段目に 80×40cm 程度の石材を設置しており、2 段目は自然崩壊により、石材が欠落している。右側壁は 5 段構築で腰石に 130×40cm と 80×30cm の 2 枚の石材を横位に設置しており、2・3 段目は 80×40cm、60×40cm、3・4 段目は 80×40cm、40×40cm 程度の石材を使用している。前壁は右袖に 40×30cm の石材を設置し、その上に 30×20cm の石材を設置しており、左袖も 40×40cm の石材を設置し、その上に 20×10cm の石材を設置し、高さを合わせている。羨道部は土砂の流入や自然崩壊により詳細は不明である。なお、本墳の石材は全て花崗岩である。</p>
+<h3 class="tomb">F 支群 6 号墳</h3>
+<p>本墳は北西にのびる丘陵の比較的緩やかな斜面上の標高 152〜153m の間に立地し、同一丘陵上に立地する 5 号墳から南南東へ約 12m、7 号墳から北西に約 13m の所に位置する。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>本墳の墳丘盛土には、石抜き・自然崩壊による土砂の流出が著しく、天井石及び側壁上部を失っており、墳丘形・墳丘規模は判然としない。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/F6_sekishitsu.png" data-cap="西油山古墳群 F 支群 6 号墳石室実測図" aria-label="西油山古墳群 F 支群 6 号墳石室実測図を拡大"><img loading="lazy" src="images/F6_sekishitsu.png" alt="西油山古墳群 F 支群 6 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 F 支群 6 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、開口主軸方向を北北西にとり、西側の谷に向って北北西に開口する両袖単室の横穴式石室である。石室は石抜き・自然崩壊などにより旧状をとどめていない。</p>
+<p>現状で奥壁幅約 200cm、左側壁幅約 160cm、右側壁幅約 174cm を測り、ほぼ正方形プランを呈する。現状で奥壁は 2 段目まで残っている。1 段目は 60×20cm 程の石材、60×30cm 程の石材、50×30cm 程の石材を横位に用いている。2 段目も 60×20cm の石材で 2 枚横位に並べている。左側壁は 2 段目まで残り、1 段目には 70×35cm 程の石材と 90×40cm 程の石材が横位に並べてある。また、2 段目には 50×18cm 程の石材を 2 枚と 60×25cm 程の石材を立てている。右側壁および羨道左側壁は、石の落ち込みにより実測不可能であった。前壁部は袖石として 40×40cm 程の石材を立てている。羨道部は土砂の流入のため判然としないが、50×30cm 程の不整形の石材を 2 枚と 30×15cm 程の石材を腰石としており、2 段目 30×15cm 程の石材を載せている。なお、本古墳の石材は全て花崗岩である。</p>
+<h3 class="tomb">F 支群 7 号墳</h3>
+<p>本墳は北西にのびる比較的緩やかな丘陵上の標高約 155.0〜156.0m の間に位置し、同一丘陵上に立地する 6 号墳より南東に約 13m、8 号墳より北西に約 8m の所に位置する。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>本墳の墳丘盛土は、石抜き及び自然崩壊により、土砂の流出が激しく原形をとどめていない。そのため墳形・規模とも判然としない。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/F7_sekishitsu.png" data-cap="西油山古墳群 F 支群 7 号墳石室実測図" aria-label="西油山古墳群 F 支群 7 号墳石室実測図を拡大"><img loading="lazy" src="images/F7_sekishitsu.png" alt="西油山古墳群 F 支群 7 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 F 支群 7 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、開口主軸方向を N-19°-W にとり、西側の谷に向って北北西に開口する両袖単室の横穴式石室である。石室は自然崩壊及び石抜き等により天井石が失われており、また、奥壁・側壁共に石材が一部失われている。</p>
+<p>玄室平面プランはほぼ正方形プランを呈しており、現状では主軸長 270cm、奥壁幅 170cm、左側壁幅 186cm、右側壁幅約 180cm である。石室の構築状態についてみると、奥壁は現状で 2 段目まで残っており、1 段目には 100×40cm 程の石材、50×40cm 程の石材を横位に設置している。また、2 段目は 1 個しか石材は残っていないが、50×45cm 程のものが使われている。左側壁は 3 段目まで残っており、1 段目は 70×40cm 程の不整形の石材、50×20cm 程の石材、40×20cm 程の石材をそれぞれ横位に積み重ねている。2 段目には 120×50cm 程の石材と 50×40cm 程の石材を用いているが現状ではせり出しが著しい。右側壁はほとんど石材が失われており、1 段目しか残っていないが、130×50cm の石材を横位に用いている。前壁部は袖石として、右側には 50×50cm 程の石材を用いているが、左側は 50×20cm の石材の上にさらに小さめの石材を積んで袖石としている。羨道部は右側には 1 個を残すのみであり、40×20cm 程の石材である。また、左側壁は 40×20cm 程の石材を 3 段目まで積み、4 段目に 80×40cm 程の石材を用いている。本古墳は大ぶりの石と小ぶりの石を両方用いており、石積みはあまり整然としているとは言えない。なお、本古墳の石材は全て花崗岩である。</p>
+<h3 class="tomb">F 支群 8 号墳</h3>
+<p>本墳は北西にのびる緩やかな丘陵の標高 156〜159m の間に立地し、同丘陵上の 7 号墳より南東に 8m に位置する。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>本墳の墳丘盛土は、本群中では比較的残存状態が良好だが、土砂の流出が激しく、西側の開口部においては羨道・天井石の一部が露出している。墳丘規模は現状において、主軸方向に約 8m、主軸に直交する方向に約 10m を測り、ほぼ円形を呈している。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/F8_sekishitsu.png" data-cap="西油山古墳群 F 支群 8 号墳石室実測図" aria-label="西油山古墳群 F 支群 8 号墳石室実測図を拡大"><img loading="lazy" src="images/F8_sekishitsu.png" alt="西油山古墳群 F 支群 8 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 F 支群 8 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、本古墳群中最も残存状態が良い。石室は開口主軸方向を S-68°-W にとり、西側の谷に向って西南西に開口する両袖単室の横穴式石室である。現状において、石室は土砂の流入により右側壁側と羨道部の基底面が判然としないが、主軸長約 410cm、奥壁幅約 210cm、左側壁幅約 220cm、右側壁幅約 212cm、羨道幅約 94cm であり、玄室平面プランは正方形プランである。</p>
+<p>石室の構築状態についてみると、現状において、奥壁は 3 段構築で、1・2 段には約 200×80cm 程の石材を横位に、3 段目には約 120×40cm 程の石材を横位に使用している。左側壁は 4 段構築で、1 段目には 150×80cm 程の石材を横に、また、80×80cm の石材を共に用いて高さを揃えている。2 段目には 80×40cm 程の石材を、3 段目には 80×60cm、60×50cm、40×40cm の石材を、また、4 段目には 40×40cm の石材を用いている。</p>
+<p>右側壁は 4 段構築で、1 段目は基底面がもっと下がると思われるが、1・2 段目共に 120×40cm 程の石材と 80×40cm 程の石材を横位に積み上げている。3・4 段目は 120×80cm 程の石材を載せ、その横に 80×40cm 程の石材を 2 個横位に積み上げている。右側壁は 3 段目から多少せり出しているが、奥壁・側壁共に 1 段目で高さをそろえ、2 段目以上もそれぞれ高さを揃えるなどの技術が見られる。</p>
+<p>前壁は袖石として 80×50cm 程の石材と 100×60cm 程の石材をそれぞれ左右に縦位に設置し、さらにその上にそれぞれ 50×20cm 程の石材と、60×15cm 程の石材を横位に積んで左右の高さを合わせている。また、楣石には 130×60cm の石材を用いている。羨道部は左壁に 80×60cm 程の石材を縦位に用い、その上に 60×15cm 程の石材、右側壁には 90×80cm 程の石材とその上に 70×30cm 程の石材を使用しており、この羨道部にも石の高さを合わせるように調整してある。本墳は高さを合わせてある他、両合わせしてあり、整然とした石室である。なお、本墳の石材は全て花崗岩である。</p>
+  </div>
+</section>
+<section id="G" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">08</span>
+    <h2>G 支群</h2>
+  </header>
+  <div class="sec-body">
+<h3 class="tomb">G 支群 1 号墳</h3>
+<p>本墳は詳細不明である。</p>
+<h3 class="tomb">G 支群 2 号墳</h3>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>本墳は北西に延びる丘陵上の比較的緩やかな斜面上の標高 106.5m〜109m に立地し、3 号墳より西に約 15m、4 号墳より南東に 20m を測る。</p>
+<p>石室は緩やかではあるが、丘陵斜面を掘り込んで造られているため、墳丘は上面においてはあまり目立たないが、斜面下墳丘裾部においては、外護列石状の貼り石が存在するなど比較的良好な残存状態であり、ほぼ原型を呈していると思われる。墳丘規模は主軸方向に約 14m、主軸に直交する方向に約 14m のやや不整円形を呈した円墳である。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/G2_sekishitsu.png" data-cap="西油山古墳群 G 支群 2 号墳石室実測図" aria-label="西油山古墳群 G 支群 2 号墳石室実測図を拡大"><img loading="lazy" src="images/G2_sekishitsu.png" alt="西油山古墳群 G 支群 2 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 G 支群 2 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、開口主軸方向を S-39°-W にとり、南西に開口する両袖単室の横穴式石室である。石室内においては土砂流入により、入口部の高さが 20cm 程しかない。玄室から玄門部においては、床面貼石と思われる石材の散在や、梱石が露出しているなどの事から、過去に盗掘が行われたものと思われる。しかし、残存そのものは良好である。</p>
+<p>石室は現状、主軸長 430cm、奥壁幅約 160cm、左側壁幅約 180cm、右側壁幅約 180cm、前壁幅約 190cm、玄門幅約 95cm、玄門高約 180cm を測り、平面プランはやや縦長の正方形プランを呈する。奥壁は 5 段構築で、160×120cm の台形状の石材を一枚腰石として据えており、その上部の 4 段においては、40×70cm 程の石材が積み上げられている。</p>
+<p>左側壁は 6 段構築で、80×120cm、70×80cm の石材を腰石に使用し、残り 5 段においては 50×40cm や 30×60cm の石材を積み上げている。栗石の多用が見うけられる。前壁は 70×50cm の袖石上に 40×60cm、70×80cm の石材が乗り、これらの石材で楣石が支えられている。楣石上は 20〜30cm 程の石材が雑に積まれる。羨道は玄門側 2 段構成で、50×100cm、50×80cm 程の石材が積まれている。羨門側においては 30〜40cm 程の石材が雑に積まれている。なお、本墳の石材は全て花崗岩である。</p>
+<h3 class="tomb">G 支群 3〜6 号墳</h3>
+<p>3・4・5・6 号墳においては、詳細な平面図・石室実測図が存在せず、割愛し、次回報告する。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/G_chikei_78910.png" data-cap="西油山古墳群 G 支群 7・8・9・10 号墳地形図" aria-label="西油山古墳群 G 支群 7・8・9・10 号墳地形図を拡大"><img loading="lazy" src="images/G_chikei_78910.png" alt="西油山古墳群 G 支群 7・8・9・10 号墳地形図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 G 支群 7・8・9・10 号墳地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">G 支群 7 号墳</h3>
+<p>本墳は北西に延びる丘陵の標高 98.5〜101.5m の間に位置し、同一丘陵上にある 9 号墳より南西へ 17m、10 号墳より南へ 19m を測る。また、8 号墳へは約 4m の比高差を測る。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>本墳は斜面上に立地するため土砂の流出が著しくみられるが、墳丘北西側に墳丘を思わせる盛り上がりが見られる。現存する墳丘径は、主軸方向 9.5m、主軸と直交する方向に 10m を測り、ほぼ正円を呈する円墳である。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/G7_zu.png" data-cap="西油山古墳群 G 支群 7 号墳" aria-label="西油山古墳群 G 支群 7 号墳を拡大"><img loading="lazy" src="images/G7_zu.png" alt="西油山古墳群 G 支群 7 号墳"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 G 支群 7 号墳<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、ほぼ南西に開口する両袖単室の横穴式石室である。玄室は全体的に不整形な石材を用いている。玄室の残存状態は、天井石が失なわれており、土砂の流出および石抜きのため、奥壁・両側壁に数段の石積が確認できるだけで、羨道・前壁付近については明確でない。</p>
+<p>右側壁は袖石が確認できないため計測不可能であるが、現状では、奥壁幅 150cm を測るほぼ正方形プランを呈している。奥壁は 1 段目に 70×70cm、40×65cm 程の石材を使用し、その上に 30×30cm 程度の石材を雑然と積んでいる。右側壁は奥壁側に 3 段、前壁側に 2 段の石積みが認められる。1 段目には小ぶりの石材と大ぶりの石材が使用され、小ぶりの石材が積まれた 2 段目で大ぶりの石とほぼ高さが同じになる。奥壁側 3 段目の石材は 45×40cm、左側壁は奥壁側の石材が埋没しており、前面へせり出している壁側の 3 段しか認められない。本墳の石積みは、土砂の流出・石抜きのため土中から石材が一部露出した形で確認できる。なお、本墳の石材はすべて花崗岩である。</p>
+<h3 class="tomb">G 支群 8 号墳</h3>
+<p>本墳は北西に延びる丘陵の標高 96.5〜99m の間の西斜面上に立地し、同丘陵上の 7 号墳より南南西に 19m、9 号墳より東南東に 16m を測る。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘盛土は羨道部分が流出してしまい存在しないが、他は概して残りの良い方である。墳丘規模は現状において、主体部主軸方向に 8.5m、主軸に直交する方向に 9m を測る円墳である。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/G8_sekishitsu.png" data-cap="西油山古墳群 G 支群 8 号墳石室実測図" aria-label="西油山古墳群 G 支群 8 号墳石室実測図を拡大"><img loading="lazy" src="images/G8_sekishitsu.png" alt="西油山古墳群 G 支群 8 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 G 支群 8 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、開口主軸方向を南西にとり、南西に開口する両袖単室の横穴式石室である。現在では、石室の残存状態は楣石および羨道部天井石が失われているものの比較的良好である。玄室規模は奥壁幅約 190cm、左側壁幅約 246cm、右側壁幅約 228cm、玄門幅約 72cm を測り、玄室平面プランは縦長長方形プランを呈している。</p>
+<p>奥壁は 5 段構築で、腰石に約 90×110cm と約 70×80cm の大ぶりの石を横位に使用し、2 段目は約 34×86cm の石と約 18×30cm の石を横位に、3 段目には約 30×80cm と約 20×80cm の石を横位に、4 段目は 18×60cm と約 34×80cm の石を横位に、5 段目は約 48×82cm の石材を 1 枚横位に使用している。右側壁は 5 段構築で、腰石に約 70×102cm と約 72×112cm の大ぶりの石を横位に使用し、2 段目には約 44×120cm の石とそれより小ぶりの石 2 つを横位に、3 段目には約 36×80cm の石と小ぶりの石 3 つを横位に、4 段目には約 40×82cm の石を横位にと、小ぶりの石を約 3 個、5 段目には約 30×32cm、約 60×50cm の石を横位にと、小ぶりの石を約 3 個使用している。</p>
+<p>左側壁は 4 段構築で、腰石には約 52×92cm と約 80×112cm の石を横位に、2 段目には約 60×80cm の石と、それよりもやや小ぶりの石を 7 つ程、3 段目に約 40×80cm の石と 40×40cm 程度の石を 3 つ、4 段目には約 40×40cm 程度の石を 4 つ程使用している。側壁は左右ともに持ち送りが見られ、奥壁との間には力石が用いられている。羨道部は袖石から約 30cm の所に第 1 梱石、約 110cm の所に第 2 梱石を配しており、また、袖石も配している。袖石は右側約 56×70cm、左側 64×80cm の石材を用いている。羨道部の現時点での長さは、右側 140cm、左側 162cm であり、両側とも羨道側壁が 2 個ずつ露出している。石積みは全体的に見て、それ程丁寧ではなく、腰石に大ぶりの石材を使用し、上段に小ぶりの石が多く積まれている。また、栗石の使用もみられる。なお、本墳の石材は全て花崗岩である。</p>
+<h3 class="tomb">G 支群 9 号墳</h3>
+<p>本墳は北西に延びる丘陵の標高 93.5〜95.5m の東南東斜面上に立地し、同丘陵上の 7 号墳より北東に 17m、8 号墳より西北西に 6m、10 号墳より東南東に 18m を測る。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘盛土は土砂の流出が激しく、天井石が一部露出している。墳丘規模は現状で主体部方向 8m、主軸と直交する方向 7.5m を測る円墳である。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/G9_sekishitsu.png" data-cap="西油山古墳群 G 支群 9 号墳石室実測図" aria-label="西油山古墳群 G 支群 9 号墳石室実測図を拡大"><img loading="lazy" src="images/G9_sekishitsu.png" alt="西油山古墳群 G 支群 9 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 G 支群 9 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、南西に開口する両袖単室の横穴式石室である。石室の残存状態は天井石が失われ石抜きがみられる。現状において、玄室規模は奥壁幅約 190cm を測り、玄室平面プランを呈している。</p>
+<p>奥壁は 4 段構築で、腰石に約 76×180cm の大ぶりの石材を横位に 1 枚設置している。2 段目は約 33×40cm と約 45×70cm の 2 枚の石材を横位に使用している。4 段目は約 47×79cm と約 48×30cm の石材を横位に使用している。左側壁は 4 段構築で、腰石に約 80×156cm と約 80×110cm の 2 枚の石材を横位に設置している。2 段目は約 38×98cm と約 52×56cm と約 36×56cm の石材を使用している。3 段目は約 40×60cm の石材を 4 枚横位に使用している。4 段目は 50×60cm の石材を 2 枚と、40×70cm の石材を横位に使用している。右側壁に比べて栗石が多く用いられている。</p>
+<p>右側壁は 4 段構築で、腰石に約 80×56cm の 2 枚の石材を横位に設置している。2 段目は約 40×60cm の石材を 3 枚と、30×60cm の石材を横位に使用している。3 段目は 50×60cm と 36×80cm と 30×50cm の石材を横位に使用している。4 段目は約 46×70cm と 32×54cm の石材を横位に使用している。奥壁・左側壁・右側壁には持ち送りが見られる。また、羨道部は自然崩壊のために詳細は不明である。なお、本墳の石材は全て花崗岩である。</p>
+<h3 class="tomb">G 支群 10 号墳</h3>
+<p>本墳は北西に延びる丘陵上の標高 90〜92.5m の西斜面に立地し、9 号墳より西北西に 18m を測る。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は羨道部の封土が流出し、羨道部天井石が一部失なわれている以外は、ほぼ原形をとどめている。墳丘規模は主軸方向に 7m、主軸に直交する方向に 8m の不整円を呈する円墳である。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/G10_sekishitsu.png" data-cap="西油山古墳群 G 支群 10 号墳石室実測図" aria-label="西油山古墳群 G 支群 10 号墳石室実測図を拡大"><img loading="lazy" src="images/G10_sekishitsu.png" alt="西油山古墳群 G 支群 10 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 G 支群 10 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/G10_photo1.png" data-cap="西油山古墳群 G 支群 10 号墳（2023 年 10 月撮影）①" aria-label="西油山古墳群 G 支群 10 号墳（2023 年 10 月撮影）①を拡大"><img loading="lazy" src="images/G10_photo1.png" alt="西油山古墳群 G 支群 10 号墳（2023 年 10 月撮影）①"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 G 支群 10 号墳（2023 年 10 月撮影）①<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/G10_photo2.png" data-cap="西油山古墳群 G 支群 10 号墳（2023 年 10 月撮影）②" aria-label="西油山古墳群 G 支群 10 号墳（2023 年 10 月撮影）②を拡大"><img loading="lazy" src="images/G10_photo2.png" alt="西油山古墳群 G 支群 10 号墳（2023 年 10 月撮影）②"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 G 支群 10 号墳（2023 年 10 月撮影）②<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/G10_photo3.png" data-cap="西油山古墳群 G 支群 10 号墳（2023 年 10 月撮影）③" aria-label="西油山古墳群 G 支群 10 号墳（2023 年 10 月撮影）③を拡大"><img loading="lazy" src="images/G10_photo3.png" alt="西油山古墳群 G 支群 10 号墳（2023 年 10 月撮影）③"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 G 支群 10 号墳（2023 年 10 月撮影）③<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/G10_photo4.png" data-cap="西油山古墳群 G 支群 10 号墳（2023 年 10 月撮影）④" aria-label="西油山古墳群 G 支群 10 号墳（2023 年 10 月撮影）④を拡大"><img loading="lazy" src="images/G10_photo4.png" alt="西油山古墳群 G 支群 10 号墳（2023 年 10 月撮影）④"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 G 支群 10 号墳（2023 年 10 月撮影）④<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、両袖単室の横穴式石室であり、開口主軸方向を南西にとり、南西に向かって開口する。現状で主軸長約 490cm、奥壁幅約 180cm、左側壁幅約 220cm、右側壁幅約 220cm、羨道幅約 80cm を測り、玄室平面プランは長方形プランを呈している。</p>
+<p>石室の構築状態についてみると、奥壁は 3 段存在しており、1 段目に 100×110cm、70×100cm、2 段目に 40×70cm、70×70cm、3 段目に 50×60cm、40×50cm 程の石材を使用している。積み方は両側壁と比べ雑然と積まれており、栗石の使用も見られる。</p>
+<p>右側壁は腰石に約 65〜150cm、90〜75cm の石材を 2 個使用しており、2 段目に 40×40cm、50×70cm、50×75cm の 3 個の石材を使用し、3・4・5 段に 60×50cm 程度の石を 8 個積み上げている。石材は左側壁と比べると比較的大きさのそろった石材が使用されている。左側壁は腰石に 70×110cm の 2 個を使用し、腰石の間に 40×30cm の石を 1 個おき、2〜5 段目に 50×70cm 程度の石材を 5 個、40×50cm 程度の石材を 4 個、他にそれらより小さ目の石を 6 個使用している。袖石は右に 90×55cm の石を、左に 80×45cm の石材を使用している。大ぶりの石材の使用が目立ち、特に左側壁にそれが顕著にみられる。羨道部は右に 90×60cm の袖石の他に 60×90cm と 60×60cm の石を腰石に、その上に 50×65cm の石 1 個、30×100cm 程度の石を 2 個と 20×60cm 前後の石 2 個を使用している。なお、本墳の石材は全て花崗岩である。</p>
+<h3 class="tomb">G 支群 11・12 号墳</h3>
+<p>11・12 号墳においては、詳細な平面図・石室実測図が存在せず、割愛し、次回報告する。</p>
+<h3 class="tomb">G 支群 13 号墳</h3>
+<p>本墳は詳細不明である。</p>
+<h3 class="tomb">G 支群 14・15 号墳</h3>
+<p>14・15 号墳においては、詳細な平面図・石室実測図が存在せず、割愛し、次回報告する。</p>
+<h3 class="tomb">G 支群 16 号墳</h3>
+<p>本墳は詳細不明である。</p>
+<p class="note">＊西油山古墳群 F・G 支群の文面および作図は 1987 年福岡大学歴史研究部考古学班発行の「七隈 24 号」、1988 年発行の「七隈 25 号」、1991 年発行の「七隈 28 号」から転用した。従って、古墳の分布状況および状態は当時のものである。</p>
+  </div>
+</section>
+<section id="H" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">09</span>
+    <h2>H 支群</h2>
+  </header>
+  <div class="sec-body">
+<h3 class="tomb">H 支群 1 号墳</h3>
+<p>本墳は北に延びる平坦な丘陵上で、標高 77〜78m の間に立地する。また、同一丘陵上の 2 号墳より南へ 135m の所に位置する。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘盛土は流出が著しく、墳丘はほとんど原形をとどめていないが、北側に若干の盛土が認められる。また、盛土の付近には 170×40cm 程の石材があり、その他やや大ぶりの石材が数個散在している。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>本墳の埋葬施設は、自然崩壊及び石抜きにより大部分の石材が失われており、石室に 87×50cm 程度の石材が 1 個見られるのみである。そのため、玄室規模・平面プランは判然とせず、一見して石室と判断することは非常に困難である。石室構築状態の詳細については、石積みが認められないため不明である。なお、本墳の石材は花崗岩である。</p>
+<h3 class="tomb">H 支群 2 号墳</h3>
+<p>本墳は北に延びる平坦な丘陵上の標高約 65m で、本古墳群中では最も低い所に立地する。また、同一丘陵上の 1 号墳より北へ 135m、3 号墳より北西へ 100m の所に位置する。東側の丘陵斜面には、西油山古墳群 I 支群が存在する。本墳の西側には、墳丘を削るようにして道路が走り、東側は水田となっているため、旧状の地形とは大幅に変化している。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘盛土は自然崩壊により、その大半を失って原形をとどめていない。そのため、墳丘規模等は判然としない。また、天井石及び楣石の一部が露出している。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/H2_sekishitsu.png" data-cap="西油山古墳群 H 支群 2 号墳石室実測図" aria-label="西油山古墳群 H 支群 2 号墳石室実測図を拡大"><img loading="lazy" src="images/H2_sekishitsu.png" alt="西油山古墳群 H 支群 2 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 H 支群 2 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、開口主軸方向を S-8°-E にとり、ほぼ東に開口する両袖複室の横穴式石室である。石室内部には大量の土砂が流入しており、羨道部及び玄室の床面は完全に埋没して不明瞭であるが、本群中において残存状態は良好である。玄室規模は、現状において奥壁幅 220cm、左側壁幅 382cm、右側壁幅 348cm、前壁幅 218cm、玄室高 200cm、玄門高 88cm を測り、玄室平面プランは縦長長方形プランを呈している。</p>
+<p>奥壁は 2 段で、腰石には 100×220cm 程度の大ぶりの三角の石材を設置し、栗石を多く用いて 2 段目との石材の間に目路が通るように積まれている。2 段目には 80×70cm 程度の 2 枚の大ぶりの石材が使用されている。左側壁は 4 段で、1 段目には、奥壁側に 130×120cm 程度の大ぶりの石材を使用し、前壁側に 50×100cm 程度の石材を横位に 2 段積み、目路が通るようにして高さを合わせている。3 段目は 60×100cm 程度の石材を、4 段目には 40×40cm 程度の石材を使用している。</p>
+<p>右側壁は 4 段で、1 段目には奥壁側に 40×70cm 程度の石材と 70×120cm 程度の石材を横位に使用し、前壁側には小ぶりの石材を使用し、目路が通るようにして高さを合わせている。2 段目は、70×130cm 程度の石材を使用し、左右には 60×80cm 程度の石材を使用している。3 段目は、90×40cm 程度の石材を、その左右には 80×60cm 程度の石材を使用している。4 段目は、20×30cm 程度の小ぶりの石材を横位に使用して目路が通るようにしているが、奥壁側は、幅 100cm、高さ 30cm にわたって石材が失われている。</p>
+<p>袖石には左右とも 60×60cm 程度の石材を使用し、その上に 30×60cm 程度の石材を積み上げている。楣石には 50×180cm 程度の大ぶりの石材を使用し、その上に 50×120cm 程度の石材を積んでいる。前室は左右側壁とも 1 段目は腰石と思われる石材が一部確認できる。左側壁は数個の石材を使用しているが、上部のせり出しが著しい。右側壁は 40×60cm 程度の石材を縦に目路が通るように積み上げている。全体的にみて、1・2 段目までは、目路がきれいに通っているが、3・4 段目になると栗石の使用が多くなり、石積みも粗雑である。また、左右側壁において持ち送りが見られる。なお、本墳の石材は全て花崗岩である。</p>
+<h3 class="tomb">H 支群 3 号墳</h3>
+<p>本墳は、北へ延びる丘陵の比較的緩やかな西側斜面上の標高 75〜76m の間に立地する。また、同一丘陵上に立地する 1 号墳より、北へ 35m、2 号墳より、南東へ 100m の所に位置する。なお、本墳の周辺は道路の建設や田畑の開墾によって削平され、旧状をとどめていない。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘盛土は自然崩壊による土砂の流出により、そのほとんどが失われている。そのため、墳丘規模等は判然としない。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/H3_sekishitsu.png" data-cap="西油山古墳群 H 支群 3 号墳石室実測図" aria-label="西油山古墳群 H 支群 3 号墳石室実測図を拡大"><img loading="lazy" src="images/H3_sekishitsu.png" alt="西油山古墳群 H 支群 3 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 H 支群 3 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、開口主軸方向を S-82°-W にとり、南西に開口する両袖単室の横穴式石室である。天井石は玄室内に落ち込んではいるが、残存状態は比較的良好である。玄室規模は現状において、奥壁幅 160cm、左側壁幅 170cm、右側壁幅 160cm、前壁幅 180cm、玄門幅 90cm を測り、玄室平面プランは正方形プランを呈する。奥壁は 5 段で、腰石に 90×90cm 程度の石材と 20×50cm 程度の石材を横位に設置している。2・3・4 段目には 30×60cm 程度の石材をそれぞれ使用している。また、それぞれの段で右側壁に架構する力石が認められる。</p>
+<p>左側壁は 4 段で、腰石に 40×90cm 程度の石材と 20×60cm 程度の石材を横位に設置している。2 段目は 30×60cm 程度の石材、3 段目は 40×60cm 程度と 60×40cm 程度の石材が 2 枚、4 段目には 30×70cm 程度の石材がそれぞれ使用されている。また、3・4 段目には栗石の使用がみられる。右側壁は 4 段で、腰石には 40×100cm 程度の石材と 40×60cm 程度の石材が設置されている。2 段目には 40×50cm 程度の石材と 40×70cm 程度の石材、40×30cm 程度の石材が使用され、栗石の使用も見られる。3 段目には 60×50cm 程度の石材と 40×50cm 程度の石材が使用されている。4 段目には 50×80cm 程度の石材と 60×60cm 程度の石材を使用している。</p>
+<p>前壁において、左袖石は 60×50cm 程度の石材が使用され、その上に 30×20cm 程度の石材を積み上げている。右袖石は 60×80cm 程度の石材が使用され、その上に 20×50cm 程度の石材を積み上げている。楣石には 40×100cm 程度の石材が使用され、その上に 30×50cm 程度の石材が積まれている。羨道部は土砂の流入により、基底面・腰石の詳細は判然としないが、現状において、40×80cm 程度と 20×40cm 程度の石材が多数使用され、栗石の使用も多く見られる。なお、本墳の石材は全て花崗岩である。</p>
+<p class="note">＊西油山古墳群 H 支群の文面および作図は 1985 年福岡大学歴史研究部考古学班発行の「七隈 22 号」から転用した。従って、古墳の分布状況および状態は当時のものである。</p>
+  </div>
+</section>
+<section id="I" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">10</span>
+    <h2>I 支群</h2>
+  </header>
+  <div class="sec-body">
+<figure class="fig">
+  <button class="fig-btn" data-src="images/I_chikei.png" data-cap="西油山古墳群 I 支群地形図" aria-label="西油山古墳群 I 支群地形図を拡大"><img loading="lazy" src="images/I_chikei.png" alt="西油山古墳群 I 支群地形図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 I 支群地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">I 支群 1 号墳</h3>
+<p>本墳は北西に延びる低丘陵上先端部標高約 64〜67.5m の間に立地し、同一丘陵上に立地する 2 号墳より北へ 26m、比高差約 4m の所に位置する。墳頂高 67.25m を測る。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>本墳の墳丘盛土は石抜き・自然崩壊のため流出が著しく、天井石が一部露出している。現状で、墳丘規模は主体部方向 15m、主軸と直交する方向に 13.5m を測り、やや不整形を呈している。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/I1_sekishitsu.png" data-cap="西油山古墳群 I 支群 1 号墳石室実測図" aria-label="西油山古墳群 I 支群 1 号墳石室実測図を拡大"><img loading="lazy" src="images/I1_sekishitsu.png" alt="西油山古墳群 I 支群 1 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 I 支群 1 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、開口主軸方向を S-64°-W にとり、西側の谷に向かってほぼ南西に開口する両袖単室の横穴式石室である。石室の残存状態は、天井石の一部及び、右側壁の石材が失われているものの、本古墳群中においては比較的良好である。現状において、玄室規模は奥壁幅約 229cm、左側壁幅約 512cm、右側壁約 416cm、玄門幅約 79cm を測り、玄室平面プランは縦長長方形プランを呈している。</p>
+<p>奥壁は 4 段構築で、腰石に約縦 100×横 230cm の大ぶりの石材を横位に 1 枚設置している。2 段目・3 段目・4 段目には約 30×100cm の石材を横位に使用している。左側壁は 6 段構築で、腰石に約 70×210cm と 70×110cm の 2 枚の石材を横位に設置している。2 段目以上はせり出しが激しく、雑然と積まれている。前壁は右袖石に約 100×100cm の石材を設置し、その上に 20×80cm の石材を積んでいる。左袖石は 90×90cm の石材を設置し、その上に 40×60cm の石材を乗せ高さを合わせ約 90×110cm の石を積み構成している。羨道部は土砂の流入や自然崩壊のため、両側壁で 3 段が確認できるのみである。全体的に見ても石材には大ぶりの石材を使用し随所に栗石の使用がみられる。なお、本墳の石材は全て花崗岩である。</p>
+<h3 class="tomb">I 支群 2 号墳</h3>
+<p>本墳は北西に延びる低丘陵上の比較的急な西側斜面上、標高 60.70〜63.50m の間に立地し、同一丘陵上の 1 号墳より南へ 26m、比高差約 4m の所に位置する。墳頂高は 63.50m である。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>本墳の墳丘盛土は、墳頂部は盛土の流出によりやや平坦になっているものの本古墳群中において比較的良好である。現状での墳丘規模は、主体部主軸と直交する方向に約 8m を測り、やや不整な円形を呈している。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/I2_sekishitsu.png" data-cap="西油山古墳群 I 支群 2 号墳石室実測図" aria-label="西油山古墳群 I 支群 2 号墳石室実測図を拡大"><img loading="lazy" src="images/I2_sekishitsu.png" alt="西油山古墳群 I 支群 2 号墳石室実測図"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 I 支群 2 号墳石室実測図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>本墳の埋葬施設は、開口主軸方向を S-68°-W にとり西側の谷に向かってほぼ南西に開口する両袖単室の横穴式石室である。石室の残存状態は良好である。しかし、石室内部には多量の土砂が流入しかなり埋没しており、基底面・腰石については判然としない。現状において玄室規模は、奥壁幅約 142cm、左側壁幅約 140cm、右側壁幅約 124cm、玄門幅約 60cm を測り、玄室平面プランは、ほぼ正方形を呈している。</p>
+<p>石室の構築状態についてみると現状において、奥壁は 4 段構築で、1 段目から 3 段目までは縦約 40×横約 70cm の石材を横位に、4 段目はそれよりやや大きめの石材を使用している。左側壁は 4 段構築で、40×65cm 程度の石材を横位に 4 段使用し、天井石を架構している。右側壁は 2 段構築で、1 段目に約 25×60cm の石材が横位に使用され、2 段目には約 50×100cm の大ぶりの石材を使用し、2 段目の石材の上部は自然崩壊により石材が欠落している。前壁は土砂の流入により袖石全部を除く程度で判然としないが、その上に 30×40cm 程度の石材を積みあげている。羨道部は土砂の流入が著しく、上段の 1〜2 段が確認できるのみである。全体的にみて、この石室にはほぼ同じ程度の石材が使用され、随所に栗石の使用がみられる。なお、本墳の石材は全て花崗岩である。</p>
+<h3 class="tomb">I 支群 3 号墳</h3>
+<p>本墳において、実在する資料がなく詳細不明である。</p>
+<p class="note">＊西油山古墳群 I 支群の文面および作図は 1986 年福岡大学歴史研究部考古学班発行の「七隈 23 号」から転用した。従って、古墳の分布状況および状態は当時のものである。</p>
+  </div>
+</section>
+<section id="data" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">11</span>
+    <h2>古墳データ</h2>
+  </header>
+  <div class="sec-body">
+<p>各古墳の墳形、標高・墳頂高、墳丘規模、石室形式・開口方向、玄室および前室・羨道の各部寸法を一覧にした基礎データ表である。（横スクロール・拡大表示が可能）</p>
+<figure class="fig fig-table">
+  <div class="table-scroll"><button class="fig-btn" data-src="images/data_table1.png" data-cap="西油山古墳群石室データ（1）" aria-label="西油山古墳群石室データ（1）を拡大"><img loading="lazy" src="images/data_table1.png" alt="西油山古墳群石室データ（1）"></button></div>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群石室データ（1）<span class="cap-hint">横スクロール／拡大表示</span></figcaption>
+</figure>
+<figure class="fig fig-table">
+  <div class="table-scroll"><button class="fig-btn" data-src="images/data_table2.png" data-cap="西油山古墳群石室データ（2）" aria-label="西油山古墳群石室データ（2）を拡大"><img loading="lazy" src="images/data_table2.png" alt="西油山古墳群石室データ（2）"></button></div>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群石室データ（2）<span class="cap-hint">横スクロール／拡大表示</span></figcaption>
+</figure>
+  </div>
+</section>
+<section id="opening" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">12</span>
+    <h2>石室開口方向</h2>
+  </header>
+  <div class="sec-body">
+<h3 class="tomb">A・B・C・D・F 支群</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/opening_ABCDF.png" data-cap="西油山古墳群石室開口方向（A・B・C・D・F 支群）" aria-label="西油山古墳群石室開口方向（A・B・C・D・F 支群）を拡大"><img loading="lazy" src="images/opening_ABCDF.png" alt="西油山古墳群石室開口方向（A・B・C・D・F 支群）"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群石室開口方向（A・B・C・D・F 支群）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">D・E・G・H・I 支群</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/opening_DEGHI.png" data-cap="西油山古墳群石室開口方向（D・E・G・H・I 支群）" aria-label="西油山古墳群石室開口方向（D・E・G・H・I 支群）を拡大"><img loading="lazy" src="images/opening_DEGHI.png" alt="西油山古墳群石室開口方向（D・E・G・H・I 支群）"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群石室開口方向（D・E・G・H・I 支群）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+  </div>
+</section>
+<section id="analysis" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">13</span>
+    <h2>標高からみる墳丘規模と玄室面積</h2>
+  </header>
+  <div class="sec-body">
+<h3 class="tomb">西油山古墳群（墳丘径）</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/nishi_diameter.png" data-cap="標高からみる墳丘規模（墳丘径）— 西油山古墳群" aria-label="標高からみる墳丘規模（墳丘径）— 西油山古墳群を拡大"><img loading="lazy" src="images/nishi_diameter.png" alt="標高からみる墳丘規模（墳丘径）— 西油山古墳群"></button>
+  <figcaption><span class="cap-mark">図</span>標高からみる墳丘規模（墳丘径）— 西油山古墳群<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">西油山古墳群（玄室面積）</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/nishi_area.png" data-cap="標高からみる玄室面積 — 西油山古墳群" aria-label="標高からみる玄室面積 — 西油山古墳群を拡大"><img loading="lazy" src="images/nishi_area.png" alt="標高からみる玄室面積 — 西油山古墳群"></button>
+  <figcaption><span class="cap-mark">図</span>標高からみる玄室面積 — 西油山古墳群<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">油山古墳群全域からみるポジショニング（墳丘径）</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/all_diameter.png" data-cap="油山古墳群全域からみるポジショニング（墳丘径）" aria-label="油山古墳群全域からみるポジショニング（墳丘径）を拡大"><img loading="lazy" src="images/all_diameter.png" alt="油山古墳群全域からみるポジショニング（墳丘径）"></button>
+  <figcaption><span class="cap-mark">図</span>油山古墳群全域からみるポジショニング（墳丘径）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">油山古墳群全域からみるポジショニング（玄室面積）</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/all_area.png" data-cap="油山古墳群全域からみるポジショニング（玄室面積）" aria-label="油山古墳群全域からみるポジショニング（玄室面積）を拡大"><img loading="lazy" src="images/all_area.png" alt="油山古墳群全域からみるポジショニング（玄室面積）"></button>
+  <figcaption><span class="cap-mark">図</span>油山古墳群全域からみるポジショニング（玄室面積）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p class="note">＊油山古墳群全域とは鳥越古墳群・早苗田古墳群・倉瀬戸古墳群・大谷古墳群・駄ヶ原古墳群・霧ヶ滝古墳群・影塚古墳群・西油山古墳群を指す。</p>
+<p class="note">＊座標軸上の赤線は油山古墳群全域の平均値である。</p>
+  </div>
+</section>
+<section id="plates" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">14</span>
+    <h2>地形図と石室</h2>
+  </header>
+  <div class="sec-body">
+<h3 class="tomb">F 支群 4・5・6・7・8 号墳</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/plate_F45678.png" data-cap="西油山古墳群 F 支群 4・5・6・7・8 号墳 地形図と石室" aria-label="西油山古墳群 F 支群 4・5・6・7・8 号墳 地形図と石室を拡大"><img loading="lazy" src="images/plate_F45678.png" alt="西油山古墳群 F 支群 4・5・6・7・8 号墳 地形図と石室"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 F 支群 4・5・6・7・8 号墳 地形図と石室<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">G 支群 7・8・9・10 号墳</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/plate_G78910.png" data-cap="西油山古墳群 G 支群 7・8・9・10 号墳 地形図と石室" aria-label="西油山古墳群 G 支群 7・8・9・10 号墳 地形図と石室を拡大"><img loading="lazy" src="images/plate_G78910.png" alt="西油山古墳群 G 支群 7・8・9・10 号墳 地形図と石室"></button>
+  <figcaption><span class="cap-mark">図</span>西油山古墳群 G 支群 7・8・9・10 号墳 地形図と石室<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="ft">
+    <b>西油山古墳群 現状調査報告書</b>
+    2023年　油山古墳研究室<br>
+    本文および作図の出典：福岡大学歴史研究部考古学班「七隈」22号（1985）・23号（1986）・<br>
+    24号（1987）・25号（1988）・28号（1991）より転用。<br>
+    デジタル版（原報告書より編集）
+  </div>
+</footer>
+
+<button class="totop" id="toTop" aria-label="ページ上部へ戻る">↑</button>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="目次">
+  <div class="dh"><b>目　次</b><button class="x" id="tocClose" aria-label="閉じる">×</button></div>
+  <nav><ol><li><a href="#env" class="toc-link"><span class="toc-no">01</span><span class="toc-t">立地と環境</span></a></li><li><a href="#A" class="toc-link"><span class="toc-no">02</span><span class="toc-t">A 支群</span></a></li><li><a href="#B" class="toc-link"><span class="toc-no">03</span><span class="toc-t">B 支群</span></a></li><li><a href="#C" class="toc-link"><span class="toc-no">04</span><span class="toc-t">C 支群</span></a></li><li><a href="#D" class="toc-link"><span class="toc-no">05</span><span class="toc-t">D 支群</span></a></li><li><a href="#E" class="toc-link"><span class="toc-no">06</span><span class="toc-t">E 支群</span></a></li><li><a href="#F" class="toc-link"><span class="toc-no">07</span><span class="toc-t">F 支群</span></a></li><li><a href="#G" class="toc-link"><span class="toc-no">08</span><span class="toc-t">G 支群</span></a></li><li><a href="#H" class="toc-link"><span class="toc-no">09</span><span class="toc-t">H 支群</span></a></li><li><a href="#I" class="toc-link"><span class="toc-no">10</span><span class="toc-t">I 支群</span></a></li><li><a href="#data" class="toc-link"><span class="toc-no">11</span><span class="toc-t">古墳データ</span></a></li><li><a href="#opening" class="toc-link"><span class="toc-no">12</span><span class="toc-t">石室開口方向</span></a></li><li><a href="#analysis" class="toc-link"><span class="toc-no">13</span><span class="toc-t">標高からみる墳丘規模と玄室面積</span></a></li><li><a href="#plates" class="toc-link"><span class="toc-no">14</span><span class="toc-t">地形図と石室</span></a></li></ol></nav>
+</aside>
+
+<div class="lb" id="lb" aria-hidden="true">
+  <div class="lb-top">
+    <div class="lb-cap" id="lbCap"></div>
+    <button id="lbZoom">拡大 +</button>
+    <button id="lbClose">閉じる ×</button>
+  </div>
+  <div class="lb-stage" id="lbStage"><img id="lbImg" alt=""></div>
+  <div class="lb-foot">拡大・縮小して細部まで確認できます</div>
+</div>
+
+<script>
+(function(){
+  var drawer=document.getElementById('drawer'),scrim=document.getElementById('scrim');
+  function openD(){drawer.classList.add('open');scrim.classList.add('open');}
+  function closeD(){drawer.classList.remove('open');scrim.classList.remove('open');}
+  document.getElementById('tocOpen').addEventListener('click',openD);
+  document.getElementById('tocClose').addEventListener('click',closeD);
+  scrim.addEventListener('click',closeD);
+  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeD);});
+
+  // back to top
+  var toTop=document.getElementById('toTop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>600) toTop.classList.add('show'); else toTop.classList.remove('show');
+  },{passive:true});
+  toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+
+  // smooth anchor scroll with header offset
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href').slice(1),el=document.getElementById(id);
+      if(el){e.preventDefault();var y=el.getBoundingClientRect().top+window.scrollY-56;
+        window.scrollTo({top:y,behavior:'smooth'});history.replaceState(null,'','#'+id);}
+    });
+  });
+
+  // Lightbox with zoom & pan
+  var lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),
+      lbCap=document.getElementById('lbCap'),lbStage=document.getElementById('lbStage');
+  var scale=1,tx=0,ty=0,start=null,pinch=null;
+  function apply(){lbImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function reset(){scale=1;tx=0;ty=0;apply();document.getElementById('lbZoom').textContent='拡大 +';}
+  function open(src,cap){lbImg.src=src;lbImg.alt=cap;lbCap.textContent=cap;reset();
+    lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+  function close(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';lbImg.src='';}
+  document.querySelectorAll('.fig-btn').forEach(function(b){
+    b.addEventListener('click',function(){open(b.getAttribute('data-src'),b.getAttribute('data-cap'));});
+  });
+  document.getElementById('lbClose').addEventListener('click',close);
+  document.getElementById('lbZoom').addEventListener('click',function(){
+    scale=(scale>1?1:2.4);if(scale===1){tx=0;ty=0;}apply();this.textContent=scale>1?'戻す −':'拡大 +';
+  });
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target===lbStage)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))close();});
+
+  // double tap to zoom
+  var lastTap=0;
+  lbStage.addEventListener('click',function(e){
+    var now=Date.now();
+    if(now-lastTap<300){scale=(scale>1?1:2.4);if(scale===1){tx=0;ty=0;}apply();
+      document.getElementById('lbZoom').textContent=scale>1?'戻す −':'拡大 +';}
+    lastTap=now;
+  });
+  // drag pan (mouse + 1 finger)
+  lbImg.addEventListener('mousedown',function(e){if(scale<=1)return;start={x:e.clientX-tx,y:e.clientY-ty};e.preventDefault();});
+  window.addEventListener('mousemove',function(e){if(start){tx=e.clientX-start.x;ty=e.clientY-start.y;apply();}});
+  window.addEventListener('mouseup',function(){start=null;});
+  lbImg.addEventListener('touchstart',function(e){
+    if(e.touches.length===1&&scale>1){start={x:e.touches[0].clientX-tx,y:e.touches[0].clientY-ty};}
+    else if(e.touches.length===2){var dx=e.touches[0].clientX-e.touches[1].clientX,dy=e.touches[0].clientY-e.touches[1].clientY;
+      pinch={d:Math.hypot(dx,dy),s:scale};}
+  },{passive:true});
+  lbImg.addEventListener('touchmove',function(e){
+    if(pinch&&e.touches.length===2){var dx=e.touches[0].clientX-e.touches[1].clientX,dy=e.touches[0].clientY-e.touches[1].clientY;
+      scale=Math.min(5,Math.max(1,pinch.s*Math.hypot(dx,dy)/pinch.d));if(scale===1){tx=0;ty=0;}apply();e.preventDefault();}
+    else if(start&&e.touches.length===1&&scale>1){tx=e.touches[0].clientX-start.x;ty=e.touches[0].clientY-start.y;apply();e.preventDefault();}
+  },{passive:false});
+  lbImg.addEventListener('touchend',function(e){if(e.touches.length===0){start=null;pinch=null;}});
+})();
+</script>
+</body>
+</html>
