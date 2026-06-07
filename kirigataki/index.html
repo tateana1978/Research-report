@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<meta name="description" content="霧ヶ滝古墳群 現状調査報告書（2023年・油山古墳研究室）デジタル版。福岡市西区油山北麓の群集墳、A・B・C 全3支群57基の現状調査記録。">
+<title>霧ヶ滝古墳群 現状調査報告書｜油山古墳研究室</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Noto+Serif+JP:wght@400;600&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ffffff; --paper2:#f6f5f2; --card:#ffffff;
+  --ink:#1a1a1a; --ink2:#565656; --line:#d8d8d4; --line2:#ececea;
+  --clay:#7a2e2e; --clay2:#5e2222; --ochre:#8a6a2e; --sage:#3f4a3a;
+  --shadow:0 1px 2px rgba(0,0,0,.05),0 3px 12px rgba(0,0,0,.05);
+  --maxw:760px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Noto Serif JP",serif; font-weight:400; line-height:1.95;
+  font-size:16px; letter-spacing:.01em;
+  text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased;
+}
+/* faint paper grain */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;display:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--clay2);text-decoration:none}
+
+/* ---- Top bar ---- */
+.bar{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:.6rem;
+  padding:.55rem .9rem;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);}
+.bar .brand{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:.98rem;
+  letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .brand small{color:var(--ink2);font-weight:500;font-size:.72rem;margin-left:.4rem}
+.bar .spacer{flex:1}
+.toc-toggle{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.82rem;
+  color:var(--paper2);background:var(--clay);border:none;border-radius:999px;
+  padding:.42rem .95rem;cursor:pointer;letter-spacing:.08em;box-shadow:var(--shadow);transition:background .2s}
+.toc-toggle:hover{background:var(--clay2)}
+.toc-toggle::before{content:"☰ ";font-size:.9em}
+
+/* ---- Hero (title page, white) ---- */
+.hero{position:relative;z-index:1;background:#fff;border-bottom:1px solid var(--line)}
+.hero-inner{max-width:var(--maxw);margin:0 auto;padding:3rem 1.3rem 2.2rem;text-align:center}
+.hero .kicker{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:500;letter-spacing:.4em;
+  font-size:.72rem;color:var(--ink2);margin:0 0 1.4rem;text-indent:.4em}
+.hero h1{font-family:"Shippori Mincho B1",serif;font-weight:800;line-height:1.18;
+  font-size:clamp(2.3rem,8.5vw,3.4rem);letter-spacing:.16em;margin:0;color:var(--ink);text-indent:.16em}
+.hero .sub{font-family:"Shippori Mincho B1",serif;font-weight:500;font-size:clamp(1rem,4.4vw,1.3rem);
+  letter-spacing:.36em;margin:1.1rem 0 0;color:var(--ink);text-indent:.36em;
+  padding-top:1rem;position:relative;display:inline-block}
+.hero .sub::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:54px;height:2px;background:var(--clay)}
+.hero .byline{font-family:"Shippori Mincho B1",serif;font-size:1rem;letter-spacing:.18em;
+  color:var(--ink);margin:1.6rem 0 .3rem}
+.hero .meta{font-family:"Zen Kaku Gothic New",sans-serif;font-size:.78rem;letter-spacing:.08em;
+  color:var(--ink2);margin:.2rem 0 0}
+.cover-fig{margin:2.1rem auto 0;text-align:center}
+.cover-fig figcaption{font-family:"Zen Kaku Gothic New",sans-serif;font-size:.76rem;color:var(--ink2);
+  margin:.7rem auto 0;line-height:1.5}
+
+/* ---- Preface ---- */
+.preface{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:1.8rem 1.3rem .4rem}
+.preface p{font-size:.9rem;color:var(--ink2);line-height:1.85;margin:.2rem 0 .6rem;
+  border-left:3px solid var(--line);padding-left:.9rem}
+
+/* ---- Inline TOC ---- */
+.toc-inline{position:relative;z-index:1;max-width:var(--maxw);margin:1.4rem auto 0;padding:0 1.3rem}
+.toc-inline .tc{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  box-shadow:var(--shadow);padding:1.2rem 1.1rem 1rem}
+.toc-inline .tc h2{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:1.05rem;
+  letter-spacing:.22em;margin:0 0 .9rem;color:var(--clay2);text-align:center}
+.toc-inline .tc h2::before,.toc-inline .tc h2::after{content:"";display:inline-block;width:1.6rem;
+  height:1px;background:var(--line);vertical-align:middle;margin:0 .7rem}
+ol.toc{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:.1rem}
+ol.toc li a{display:flex;align-items:baseline;gap:.7rem;padding:.5rem .5rem;border-radius:8px;
+  color:var(--ink);transition:background .15s}
+ol.toc li a:hover{background:var(--paper)}
+.toc-no{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.72rem;
+  color:var(--clay);min-width:1.6rem;letter-spacing:.05em}
+.toc-t{font-family:"Shippori Mincho B1",serif;font-weight:500;font-size:.98rem;
+  border-bottom:1px dotted transparent}
+ol.toc li a:hover .toc-t{border-bottom-color:var(--line)}
+
+/* ---- Main ---- */
+main{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:1rem 1.3rem 4rem}
+.sec{scroll-margin-top:64px;padding:2.6rem 0 1.2rem;border-top:1px solid var(--line2)}
+.sec:first-of-type{border-top:none}
+.sec-head{display:flex;align-items:center;gap:.85rem;margin:0 0 1.4rem}
+.sec-no{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.78rem;
+  color:var(--paper2);background:var(--clay);border-radius:7px;padding:.28rem .55rem;letter-spacing:.06em;
+  box-shadow:var(--shadow)}
+.sec-head h2{font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:1.5rem;
+  letter-spacing:.12em;margin:0;color:var(--ink)}
+.sec-body p{margin:0 0 1.05rem;text-align:justify}
+
+/* 号墳 heading */
+h3.tomb{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:1.12rem;letter-spacing:.06em;
+  color:var(--clay2);margin:2.1rem 0 1rem;padding:.4rem 0 .5rem .9rem;
+  border-left:4px solid var(--clay);background:none;border-bottom:1px solid var(--line2)}
+h3.tomb::before{content:"";}
+.sec:first-of-type h3.tomb:first-child,.sec-body > h3.tomb:first-child{margin-top:.4rem}
+
+/* 墳丘/石室 labels */
+p.part{margin:1.4rem 0 .6rem;display:flex;align-items:center;gap:.6rem}
+p.part span{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.82rem;
+  letter-spacing:.22em;padding:.18rem .7rem;border-radius:4px}
+p.part::after{content:"";flex:1;height:1px;background:var(--line2)}
+.part-mound span{color:#5a4a2e;background:#f2f0ea;border:1px solid var(--line);border-left:3px solid #8a6a2e}
+.part-chamber span{color:#33402f;background:#eef0ec;border:1px solid var(--line);border-left:3px solid #3f4a3a}
+
+/* notes */
+p.note{font-size:.8rem;line-height:1.7;color:var(--ink2);margin:.5rem 0;padding:.55rem .8rem;
+  background:var(--paper2);border:1px dashed var(--line);border-radius:8px;text-align:justify}
+
+/* figures */
+figure.fig{margin:1.6rem 0 1.8rem;text-align:center}
+.fig-btn{display:inline-block;max-width:100%;padding:0;border:none;background:none;cursor:zoom-in;line-height:0}
+.fig-btn img{margin:0 auto;border:1px solid var(--line);background:#fff;border-radius:6px;
+  box-shadow:var(--shadow);padding:6px;max-height:74vh;width:auto;max-width:100%}
+figure.fig figcaption{font-family:"Zen Kaku Gothic New",sans-serif;font-size:.78rem;color:var(--ink2);
+  margin:.7rem auto 0;max-width:90%;line-height:1.55;letter-spacing:.02em}
+.cap-mark{display:inline-block;font-weight:700;color:var(--paper2);background:var(--sage);
+  border-radius:4px;font-size:.66rem;padding:.06rem .42rem;margin-right:.5rem;letter-spacing:.1em;vertical-align:.06em}
+.cap-hint{display:block;color:var(--ochre);font-size:.68rem;margin-top:.25rem;letter-spacing:.08em}
+.cap-hint::before{content:"⤢ "}
+/* wide data table figure */
+figure.fig-table{margin:1.4rem -1.3rem 1.8rem}
+.table-scroll{width:100%;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;
+  padding:.2rem 1.3rem;touch-action:pan-x pan-y}
+figure.fig-table .fig-btn{display:inline-block;width:auto;max-width:none;cursor:zoom-in;line-height:0}
+figure.fig-table .fig-btn img{max-height:none;width:900px;max-width:none;min-width:0}
+figure.fig-table figcaption{padding:0 1.3rem}
+
+/* ---- 図面と説明の対置（墳丘／石室） ---- */
+.pair{margin:1.6rem 0 1.8rem}
+.pair-label{margin:0 0 .7rem}
+.pair-label span{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.84rem;
+  letter-spacing:.22em;padding:.2rem .8rem;border-radius:4px;display:inline-block}
+.pair-mound .pair-label span{color:#5a4a2e;background:#f2f0ea;border:1px solid var(--line);border-left:3px solid #8a6a2e}
+.pair-chamber .pair-label span{color:#33402f;background:#eef0ec;border:1px solid var(--line);border-left:3px solid #3f4a3a}
+.pair-text p{margin:0 0 1rem;text-align:justify}
+.pair-text p:last-child{margin-bottom:0}
+.pair-figs figure.fig{margin:0 0 .8rem}
+.pair-figs figure.fig:last-child{margin-bottom:0}
+/* 狭い画面：図版を画面上部に固定し、説明文を読む間ずっと見えるように */
+.pair-figs{position:sticky;top:54px;z-index:5;background:#fff;
+  max-height:48vh;overflow:auto;-webkit-overflow-scrolling:touch;
+  padding:.35rem 0 .55rem;border-bottom:1px solid var(--line2)}
+.pair-figs .fig-btn img{max-height:42vh}
+.pair-figs figcaption .cap-hint{display:none}
+@media(min-width:740px){
+  /* 広い画面：図版を左、説明文を右に並べて対置（図版は追従） */
+  .pair-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;align-items:start}
+  .pair-figs{position:sticky;top:64px;max-height:none;overflow:visible;
+    background:transparent;border-bottom:none;padding:0}
+  .pair-figs .fig-btn img{max-height:80vh}
+  .pair-figs figcaption .cap-hint{display:block}
+}
+
+/* ---- Drawer (off-canvas TOC) ---- */
+.scrim{position:fixed;inset:0;z-index:50;background:rgba(28,20,12,.5);opacity:0;visibility:hidden;
+  transition:opacity .25s}
+.scrim.open{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;right:0;z-index:60;height:100%;width:min(85vw,340px);
+  background:var(--paper2);box-shadow:-8px 0 30px rgba(40,28,15,.25);
+  transform:translateX(100%);transition:transform .28s cubic-bezier(.2,.7,.2,1);
+  display:flex;flex-direction:column;border-left:3px solid var(--clay)}
+.drawer.open{transform:translateX(0)}
+.drawer .dh{display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 1.1rem;border-bottom:1px solid var(--line)}
+.drawer .dh b{font-family:"Shippori Mincho B1",serif;font-weight:700;letter-spacing:.2em;font-size:1rem;color:var(--clay2)}
+.drawer .x{border:none;background:none;font-size:1.5rem;line-height:1;color:var(--ink2);cursor:pointer;padding:.2rem .4rem}
+.drawer nav{overflow-y:auto;padding:.5rem .5rem 2rem}
+.drawer ol{list-style:none;margin:0;padding:0}
+.drawer ol li a{display:flex;align-items:baseline;gap:.7rem;padding:.7rem .8rem;border-radius:9px;color:var(--ink)}
+.drawer ol li a:active{background:var(--paper)}
+
+/* ---- Back to top ---- */
+.totop{position:fixed;right:1rem;bottom:1rem;z-index:35;width:46px;height:46px;border-radius:50%;
+  border:1px solid var(--line);background:var(--card);color:var(--clay2);font-size:1.2rem;
+  box-shadow:var(--shadow);cursor:pointer;opacity:0;visibility:hidden;transition:opacity .25s}
+.totop.show{opacity:1;visibility:visible}
+
+/* ---- Lightbox ---- */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(18,13,8,.94);display:none;
+  flex-direction:column;touch-action:none}
+.lb.open{display:flex}
+.lb-top{display:flex;justify-content:space-between;align-items:center;padding:.8rem 1rem;color:#eadfce;
+  font-family:"Zen Kaku Gothic New",sans-serif;font-size:.8rem;gap:1rem}
+.lb-top .lb-cap{flex:1;line-height:1.4}
+.lb-top button{border:1px solid rgba(234,223,206,.4);background:transparent;color:#eadfce;
+  border-radius:8px;padding:.35rem .7rem;cursor:pointer;font-size:.8rem}
+.lb-stage{flex:1;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.lb-stage img{max-width:100%;max-height:100%;touch-action:none;cursor:grab;
+  transform-origin:center center;transition:transform .05s linear;user-select:none;-webkit-user-drag:none}
+.lb-foot{text-align:center;color:#b9a98f;font-family:"Zen Kaku Gothic New",sans-serif;
+  font-size:.7rem;padding:.5rem 1rem .9rem;letter-spacing:.06em}
+
+/* ---- Footer ---- */
+footer{position:relative;z-index:1;border-top:3px double var(--clay);background:var(--paper2);
+  padding:2.2rem 1.3rem 3rem;text-align:center}
+footer .ft{max-width:var(--maxw);margin:0 auto;font-family:"Zen Kaku Gothic New",sans-serif;
+  font-size:.76rem;color:var(--ink2);line-height:1.9;letter-spacing:.03em}
+footer .ft b{font-family:"Shippori Mincho B1",serif;color:var(--clay2);font-size:.95rem;letter-spacing:.16em;display:block;margin-bottom:.5rem}
+
+@media(min-width:680px){
+  body{font-size:16.5px}
+  .fig-btn img{max-width:560px}
+  figure.fig-table .fig-btn img{width:1400px;max-width:none;min-width:0}
+  figure.fig-table{margin:1.4rem 0 1.8rem}
+  figure.fig-table .table-scroll,figure.fig-table figcaption{padding-left:0;padding-right:0}
+}
+/* maps, plates, charts, aerials may show wider */
+.fig-btn[data-src*="shuhen"] img,.fig-btn[data-src*="1976"] img,
+.fig-btn[data-src*="_fg"] img,.fig-btn[data-src*="zentai"] img,
+.fig-btn[data-src*="Bchikei"] img,.fig-btn[data-src*="opening"] img,
+.fig-btn[data-src*="diameter"] img,.fig-btn[data-src*="area"] img{max-width:100%}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="brand">霧ヶ滝古墳群<small>現状調査報告書</small></div>
+  <div class="spacer"></div>
+  <button class="toc-toggle" id="tocOpen">目次</button>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">福岡市西区・油山北麓の群集墳</p>
+    <h1>霧ヶ滝古墳群</h1>
+    <p class="sub">現状調査報告書</p>
+    <p class="byline">2023年　油山古墳研究室</p>
+    <p class="meta">A・B・C 全3支群／円墳・横穴式石室を主体とする群集墳　全57基</p>
+    <p class="meta" style="margin-top:.6rem;letter-spacing:.16em;color:var(--clay2);font-weight:700">デジタル版　v1.1.0</p>
+    <figure class="cover-fig fig">
+      <button class="fig-btn" data-src="images/p01_cover.png" data-cap="霧ヶ滝古墳群周辺（航空写真・分布）" aria-label="霧ヶ滝古墳群周辺（航空写真・分布）を拡大">
+        <img src="images/p01_cover.png" alt="霧ヶ滝古墳群周辺 航空写真・分布">
+      </button>
+      <figcaption><span class="cap-mark">図</span>霧ヶ滝古墳群周辺（航空写真・分布）<span class="cap-hint">拡大表示</span></figcaption>
+    </figure>
+  </div>
+</header>
+
+<div class="preface">
+  <p>本ページは、油山古墳研究室『霧ヶ滝古墳群 現状調査報告書』（2023年）のデジタル版（v1.1.0）です。本文・数値・図版はすべて原報告書のとおりで、内容に改変は加えていません。</p>
+  <p>各支群・各古墳の記述、ならびに分布図・地形図等は、原報告書の註記のとおり 1976年福岡大学歴史研究部刊行「駄ノ原古墳群・霧ヶ滝古墳群分布調査概報」、1979年「七隈17号」、1982年「七隈20号」から転用・加筆されたものです。なお、各図版は拡大して細部まで確認できます。</p>
+</div>
+
+<nav class="toc-inline" aria-label="目次">
+  <div class="tc">
+    <h2>目　次</h2>
+    <ol class="toc"><li><a href="#env" class="toc-link"><span class="toc-no">01</span><span class="toc-t">立地と分布</span></a></li><li><a href="#reorg" class="toc-link"><span class="toc-no">02</span><span class="toc-t">分布の再編について</span></a></li><li><a href="#A" class="toc-link"><span class="toc-no">03</span><span class="toc-t">A 支群</span></a></li><li><a href="#B" class="toc-link"><span class="toc-no">04</span><span class="toc-t">B 支群</span></a></li><li><a href="#C" class="toc-link"><span class="toc-no">05</span><span class="toc-t">C 支群</span></a></li><li><a href="#data" class="toc-link"><span class="toc-no">06</span><span class="toc-t">古墳データ</span></a></li><li><a href="#opening" class="toc-link"><span class="toc-no">07</span><span class="toc-t">石室開口方向</span></a></li><li><a href="#analysis" class="toc-link"><span class="toc-no">08</span><span class="toc-t">標高からみる墳丘規模と玄室面積</span></a></li></ol>
+  </div>
+</nav>
+
+<main>
+<section id="env" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">01</span>
+    <h2>立地と分布</h2>
+  </header>
+  <div class="sec-body">
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p03_shuhen.png" data-cap="霧ヶ滝古墳群周辺分布図" aria-label="霧ヶ滝古墳群周辺分布図を拡大"><img loading="lazy" src="images/p03_shuhen.png" alt="霧ヶ滝古墳群周辺分布図"></button>
+  <figcaption><span class="cap-mark">図</span>霧ヶ滝古墳群周辺分布図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p>霧ヶ滝古墳群は福岡市西区油山北麓の野芥、霧ヶ滝に所在している。油山から複雑な支脈を生じさせた低平な北西に伸びる尾根上に存在する。この古墳群は南西に西油山古墳群、北に駄ヶ原古墳群、この 2 つの古墳群の間にはさまれた位置に存する。</p>
+<p>この古墳群は全て円墳で、霧ヶ滝晃恩寺に向かう山道から、南西方向の尾根に存在する 26 基を下部 A 支群と呼び、南東の尾根に存在する 25 基を上部 B 支群と呼ぶ。A 支群は標高 65〜85m の間に、B 支群は 89〜125m の間に存在している。また、B 支群が存在する斜面の谷を挟んで向かい側に C 支群 6 基が存在する。</p>
+<p>分布状態は南東から北西に向かって、ほぼ一列になって分布しており、尾根の南西側に両古墳群ともに築造されているということが、その特徴と云えよう。特に B 支群は古墳の規模が大きく墳丘径が 10m 程度であるのに対し、A 支群は B 支群に比べて、大規模な古墳も多く見られ、墳丘径が約 5〜15m まで幅が広く大・中・小の規模の古墳がそれぞれ 3 分の 1 ずつみられる。これらの古墳は同規模で密集しているのではなく、均等に分散している。また、B 支群・A 支群共すべて盗掘を受け、自然破壊または採石のため石材を抜き取られており、完全な姿で存在する古墳は B 支群 1 基、A 支群 2 基という状態である。なお、B 支群は林道が作られたために、約 10 基程度の墳丘裾部が削られており、道路に須恵器・土師器の散乱が見られる。B 支群 1 号墳より 17 号墳までは密集して存在し、尾根上に墳丘が連なって存在し、まさに墳丘裾部を接せんとする位置に築造されており、群集墳と呼ぶに値するグループである。</p>
+<p>A 支群の開口方向は谷向き開口であり、山の斜面を利用した山寄せ技法を用いており、石室プランは上部で横長、または正方形が主流をなし、下部はやや正方形プランの石室をもつ古墳が相対的にその主流をなしている。</p>
+<p class="note">＊本文章は 1976 年福岡大学歴史研究部刊行の「駄ノ原古墳群・霧ヶ滝古墳群分布調査概報」より転用。</p>
+  </div>
+</section>
+<section id="reorg" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">02</span>
+    <h2>分布の再編について</h2>
+  </header>
+  <div class="sec-body">
+<p>霧ヶ滝古墳群は 1976 年福岡大学歴史研究部刊行の「駄ノ原古墳群・霧ヶ滝古墳群分布調査概報」では G（上部）・F（下部）の 2 グループで支群分けしていたが、その後、分布調査を再度行い、G グループが存在する斜面の谷を挟んで向かい側の斜面、北東斜面に古墳が 3 基存在することがわかり、これをひとつの支群とし、霧ヶ滝古墳群は 3 つの支群で構成され、A・B・C 支群とした。また、この時、A 支群で 1 基、後に C 支群で 3 基の新しい古墳が確認され、古墳数は A 支群 26 基、B 支群 25 基、C 支群 6 基、あわせて 57 基となっている。</p>
+<h3 class="tomb">＜1976 年当時＞</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p05_1976shuhen.png" data-cap="霧ヶ滝古墳群周辺分布図（1976 年）" aria-label="霧ヶ滝古墳群周辺分布図（1976 年）を拡大"><img loading="lazy" src="images/p05_1976shuhen.png" alt="霧ヶ滝古墳群周辺分布図（1976 年）"></button>
+  <figcaption><span class="cap-mark">図</span>霧ヶ滝古墳群周辺分布図（1976 年）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p class="note">＊1976 年福岡大学歴史研究部刊行「駄ノ原古墳群・霧ヶ滝古墳群分布調査概報」より転用</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p05_fg.png" data-cap="霧ヶ滝古墳群 F・G グループ分布図" aria-label="霧ヶ滝古墳群 F・G グループ分布図を拡大"><img loading="lazy" src="images/p05_fg.png" alt="霧ヶ滝古墳群 F・G グループ分布図"></button>
+  <figcaption><span class="cap-mark">図</span>霧ヶ滝古墳群 F・G グループ分布図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p class="note">＊1976 年福岡大学歴史研究部刊行「駄ノ原古墳群・霧ヶ滝古墳群分布調査概報」より転用</p>
+<p class="note">＊支群の再編については以下の「七隈」の記事を参考とした。</p>
+<p class="note">①1979 年福岡大学歴史研究部刊行「七隈 17 号」参照（3 支群への再編記事）</p>
+<p class="note">②1982 年福岡大学歴史研究部刊行「七隈 20 号」参照（C 支群 3 基の新古墳確認記事）</p>
+<h3 class="tomb">＜2023 年現在＞</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p06_zentai2023.png" data-cap="霧ヶ滝古墳群全体分布図（2023 年 8 月作成）" aria-label="霧ヶ滝古墳群全体分布図（2023 年 8 月作成）を拡大"><img loading="lazy" src="images/p06_zentai2023.png" alt="霧ヶ滝古墳群全体分布図（2023 年 8 月作成）"></button>
+  <figcaption><span class="cap-mark">図</span>霧ヶ滝古墳群全体分布図（2023 年 8 月作成）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p class="part part-mound"><span>新旧古墳名称</span></p>
+<p class="note">（A 支群）26 基：1 号墳（旧 F1）／2 号墳（旧 F2）／3 号墳（旧 F3）／4 号墳（旧 F4）／5 号墳（旧 F5）／6 号墳（旧 F7）／7 号墳（旧 F6）／8 号墳（旧 F12）／9 号墳（旧 F8）／10 号墳（旧 F9）／11 号墳（旧 F13）／12 号墳（旧 F14）／13 号墳（旧 F17）／14 号墳（旧 F10）／15 号墳（旧 F15）／16 号墳（旧 F16）／17 号墳（旧 F19）／18 号墳（旧 F18）／19 号墳（旧 F23）／20 号墳（旧 F20）／21 号墳（旧 F11）／22 号墳（旧 F24）／23 号墳（旧 F21）／24 号墳（旧 F25）／25 号墳（旧 F22）／26 号墳（新規）</p>
+<p class="note">（B 支群）25 基：1 号墳（旧 G1）／2 号墳（旧 G2）／3 号墳（旧 G3）／4 号墳（旧 G4）／5 号墳（旧 G5）／6 号墳（旧 G6）／7 号墳（旧 G7）／8 号墳（旧 G8）／9 号墳（旧 G9）／10 号墳（旧 G10）／11 号墳（旧 G11）／12 号墳（旧 G12）／13 号墳（旧 G13）／14 号墳（旧 G14）／15 号墳（旧 G15）／16 号墳（旧 G16）／17 号墳（旧 G17）／18 号墳（旧 G18）／19 号墳（旧 G19）／20 号墳（旧 G20）／21〜25 号墳（新規）</p>
+<p class="note">（C 支群）6 基：1〜6 号墳（すべて新規）</p>
+  </div>
+</section>
+<section id="A" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">03</span>
+    <h2>A 支群</h2>
+  </header>
+  <div class="sec-body">
+<p>霧ヶ滝古墳群 A 支群は霧ヶ滝晃恩寺に向かう山道の下方、南西側の尾根に立地しておりその尾根は、南東から北西に延びた扇状地の形相を示し、なだらかである。標高 56〜88m の間に位置し、当支群は従来 F グループ 25 基としていたが、その後の支群分けの再編により、A 支群とし、新たに確認された 1 基を加え 26 基で構成されている。</p>
+<h3 class="tomb">A 支群 1 号墳（旧 F1 号墳）</h3>
+<p>本古墳は霧ヶ滝古墳群下部グループの中で最も高い位置に築造されている。標高 86〜87m で、山道のそばに近世人為的に耕作された畑地の石垣の裏側、ほぼ西側に立地している。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は墳頂部と羨道部から出入りができる状態である。羨道部は長さ 0.75m で破壊しており、また土砂が流出していて、使用されたはずの石材は見あたらない。盛土の様相は北から西側が自然地形を利用していて、地山を掘り込み、南東側の斜面がかなり急なため、土を盛り上げている。墳丘径は 12.5m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室形式は横穴式両袖単式で、縦長の長方形プランである。主軸方向は S-60°-W で、ほぼ南西開口で、斜面にむかって開口している。</p>
+<p>石室内部は天井石、奥壁上段、右側壁上段の石材、土砂が崩れ落ちて、石室床面を斜めに覆っている。このため、石室内部状況は左側壁および袖石の状態で観察する。石室全長は約 4m まで残存しており、玄室長は左側で約 2m、高さは土砂間の床面露出部分から天井部まで 2.5m を測る。奥壁幅は 1.2m ほどである。羨道部は玄門幅 0.6m 高さ 0.8m である。石材の状態は、奥壁は 1〜3 段目ともに石が斜めになっており、崩れてはいるが、1 枚石を横に並べて積み上げている。2〜3 段目の石材は 1.3×0.5m ほどである。石室内に落下している天井石は、縦 0.95m 横 0.7m、幅 0.3m である。左側壁は 1 段目が不明瞭で、2〜4 段と同程度の 0.6×0.3m ほどの石材がほぼ箱積みされ、5〜6 段は 0.2×0.4m ほどがみられるが、石材の落下や土砂が流れており不明である。右側壁は崩れ 2 段目ほどの高さの石が 1 個残存しており、0.6×0.7m を測る。石室内部の石材間隔があいており、石材間の土砂の流出が著しいため崩壊の危険性が大である。</p>
+<p>羨道部は袖石より 0.75m までの長さが残存し、右袖石は 3 段で構成され 1×0.35m、0.7×0.25m、0.28×0.25m ほどの石材を使用しており、間隙に 0.3×0.25m の石材の充填がみられる。積み方は割に整然としている。左袖石は 2 段で構成されそれに続く羨道左側壁の石材も同程度であり、0.45×0.5m、0.3×0.6m ほどの石材が大きいほうである。残りは 0.2×0.2m、0.2×0.3m の石材などを組み合わせている。積み方は雑である。羨道部天井石は、落下しているものもある。楣石は 1.2×0.45m、その上の段の石材は 0.5×0.7m である。羨道部は左側が墓道式に開く曲線を示し、列石が 1 個確認できる。羨道部入口の天井石は、縦 0.75m、横 0.9m、幅 0.35m である。石材は玄室の上段に使用されている石材に対して、羨道部の方が比較的大きいと感じる。墳丘は山状に盛り上げており、墳丘の傾斜が非常に大きい。</p>
+<h3 class="tomb">A 支群 2 号墳（旧 F2 号墳）</h3>
+<p>本古墳は 1 号墳と同様に、畑地の石垣のそば、北西側に立地していて、標高 84〜85m の位置にあり、1 号墳より 25m ほど北北西に築造されている。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は石室と羨道部の一部が露出している。墳丘東側は斜面にむかって崩れ、土砂が流れている。盛土は北西側は地形自体が急な斜面であり、そこに墳丘を形成し、高さが 3.5〜3.8m ほどである。構築技術の高度さを要求されたと思われる。南東側は自然地形の丘陵を利用しているため、盛土は 1.5〜2.0m ほどである。古墳築造の際、自然地形の丘陵崖状地を利用しているため、盛土の高さにかなりの差ができている。墳丘径は 13m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室の残存状況からは、形式や主軸方向を観察するのは困難である。石室内部は天井石や石室上段の石が落下しているため、埋もれており、観察できない。また、奥壁側が斜面にむかって崩れており、石室内の石材および土砂も多少流出していると考えられる。表面からの観察では陥没穴の大きさは、1.5×1.7m ほどで、深さは深い所で 0.5m を測る。盗掘のための穴とみられる部分は 0.4×0.5m を測るが、子供が中にやっと入れる程で、内部の様子は観察できない。床面は穴からの土砂流入のため、埋まっている。石材は石室にあたると思われる部分に 2 個、残存しており、楣石と思われる石材と奥壁の石材であり、双方とも部分的に露出しており、全体の大きさは観察できないが、楣石は幅 1.0m、奥壁の石材は 0.73×0.3m ほどを測る。</p>
+<h3 class="tomb">A 支群 3 号墳（旧 F3 号墳）</h3>
+<p>本古墳は 2 号墳より南西下方 18.3m の位置に築造されている。立地としては、西に向かってなだらかな傾斜をなしている尾根の斜面上にあり、斜面角度もゆるやかである。標高は 82m である。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は石室上部と羨道部が埋没している。盛土は東側が自然地形を利用しており、西側に盛土がみられるが、封土は低く、最高で 1.0m ほどではなかろうか。盛土は全体的に流出している感があるが、北西側は盛土の状態をよく残している。墳丘径は 12.5m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室形式は横穴式両袖単式である。石室は残存石の状況より奥壁幅 1.4m、右側壁長 1.0m、左側壁長 1.3m、玄門側幅 1.6m であり、やや台形のプランを呈する。主軸方向は N-88°-W で、ほぼ西向きで、斜面にむかって開口している。石室内部は石室上段の石材と土砂の落下で埋没している。羨道部は埋没のため観察できない。石室内部の長さは前述の通りで羨門幅は 1.0m である。石材は奥壁右側 1 個、右側壁 1 個、左側壁 1 個、左右袖石 1 個ずつが露出していて、大体 0.4×0.5m ぐらいである。</p>
+<h3 class="tomb">A 支群 4 号墳（旧 F4 号墳）</h3>
+<p>本古墳は 3 号墳の南西方向 10m ほどの距離に位置し、なだらかな斜面に立地している。標高は 80m である。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は石室の天井部が落ち込み、羨道部（西側）は破壊されており、石材および土砂も流出している。盛土は東側で斜面を利用していて高さが 1.5m ほどあり、西側は盛土を高くあげており 3m ほどあると思われる。墳丘径は 12m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室形式は横穴式単式である。主軸方向は S-70°-W で、ほぼ西向き開口である。石室内部は奥壁と左側壁の石材が露出しており、右側壁は破壊と陥没のため、観察できない。羨道部と思われる箇所には石材があるが動いており、袖石の状態は不明である。石室は深さが 1.0〜1.5m 近く埋まっていると思われる。玄室長は 2.4m で、石室全長は、陥没穴の状況より、5m ほどあったのではないかと思われる。玄室幅は奥壁側で 1.4m を測る。石材は奥壁と左側壁で、それぞれ 2〜3 個露出しているが、ほぼ 0.4×0.5m ぐらいである。間隙に 0.1×0.15m のこぶし大の石材を使用していて、構築法としては、石材を積み上げ、空いたすき間に小石を入れていく割に雑な方法をとっており、立体的に石材を重ねていく高度な方法を使わなかったと思われる。石室の規模の割には、上段に 0.4×0.5m ほどの大きめの石材を使用している。</p>
+<h3 class="tomb">A 支群 5 号墳（旧 F5 号墳）</h3>
+<p>本古墳は 4 号墳の南西側 6m ほどの距離に位置し、墳丘は近接しており、墳丘裾部の間隔があいている所で 1.0m ほどである。標高 77m に立地している。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は石室の上部が落下あるいは流出して、石室から袖にかけて、丁度、枠組みしたように石材が露出している。盛土の様子は墳丘が流れ出しており、ほとんど原状はわからないが、北東側が斜面を利用しており、南西側は盛土がうかがえるが高さを示すほどはない。南西側はそのまま丘陵の裾に続いている。墳丘径は 9.50m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室形式は横穴式単式両袖であり、やや縦長の長方形プランである。主軸方向は S-42°-W で、ほぼ南西開口である。石室内部は袖石の最上部まで埋まっており、露出石材は、たぶん床面より 2 段目の石材であろうと思われる。羨道部も袖石を残すのみで、あとは不明であり、残存状況より、羨道が八の字に開いているのではなかろうかと思われる。石室は、玄室両長はそれぞれ左側壁 2.0m、右側壁 1.9m で、石室幅は奥壁側 1.6m、玄門側 1.4m である。石材は奥壁に 2 個、左側壁に 3 個、右側壁に 3 個、袖石 2 個の計 10 個露出しており、石材の露出部分の大きさは、奥壁が幅 0.7m の石材と 0.15×0.2m の石材、左側壁は 0.5×0.4×0.3m、0.45×0.25m、0.45×0.3m で、右側壁は 0.45×0.3m 幅 0.4m の石材、幅 0.5m の石材で、袖石は左袖石が 0.45×0.45×0.3m、右袖石が 0.35×0.4m である。</p>
+<h3 class="tomb">A 支群 6 号墳（旧 F7 号墳）</h3>
+<p>本古墳は 7 号墳の北側 12m の位置に築造され、4 号墳・5 号墳・7 号墳が丘陵裾の斜面に立地していたのに対し、丘陵の中側に立地する。標高は 77m である。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は天井部が陥没し、土砂が流入している。盛土も低く、東側は自然地形の斜面を利用していて、0.5m の盛土があり、北西側には、1m ほどの盛土が見られる。羨道部も不明である。墳丘径は 6m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室形式なども不明で、1.2×1.2m の窪みがあるのみで、石材も 1 個しか露出しておらず、長さ 0.95m 幅 0.4m であるが、どの部分の石材か明らかでない。墳丘が低く、窪みの状態より、小規模な古墳であったと思われる。</p>
+<h3 class="tomb">A 支群 7 号墳（旧 F6 号墳）</h3>
+<p>本古墳は 5 号墳の西側 6m ほどの距離に位置しており、墳丘は近接していて、墳丘の裾で接している部分がある。標高 76m に立地している。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は天井部があいているが、他の部分は完全に原状を保っている。盛土は北から北東側が自然地形を利用しており、盛土は 1m ほどであるが、西側は、盛土が高く 2.5m あり、墳丘はそのまま丘陵の裾へ続いている。羨道側（南西）の墳丘に羨道部の天井石と思われる石の一部が露出しており、1.0×0.75m を測る。墳丘径は 9.3m である。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室形式は両袖単室横穴式石室であり、やや台形のプランである。主軸方向は S-41°-W で、ほぼ南西にむかって開口している。石室内部は石室上部の石材であろうと思われる石が落下しているが、明らかではなく、床面には天井部・石室上部から落下した石材に相当するだけの量はない。石室は玄室長が 2.20m、玄室幅は奥壁側 1.65m、玄門側 2m、高さは 2.5m を測る。羨道の長さは状況より推定して、2m 強であると思われる。玄門幅は 0.7m であった。奥壁は 4〜5 段で、腰石は一枚で、長さ 0.75m・幅 1.45m の大きな石材を使用しており、2 段目は右側に 0.75×0.75m、左側 0.3×0.3m が 2 個、0.35×0.35m、0.3×0.6m の計 5 個を組み合わせている。組み方は腰石が三角形状であるため、2 段目は斜めに積まれている。2・3 段目に力石がみられ、特に右側壁は 0.65×0.7m の大きな力石が組まれている。3 段目より上段は小さめの石である。右側壁は 4 段で腰石 2 個を使用し、長さ 1.45m 幅 0.8m の三角形状と 0.55×0.5m の石を土台にしている。2 段目・3 段目にそれぞれ長さ 0.7m と 1.0m の大きな石を使用している。ほぼ横積みである。左側壁は 5 段ほどで、腰石は長さ 1.5m・幅 0.6m と長さ 0.5m の石 2 個を土台にして、残りは長さ 0.6m ほどの石を横積みしている。羨道部は袖石と楣石、それに上段の石材が観察できるが、やはり、大きな石材を使っており、楣石は長さ 2m ほどもある。その上 2 段・3 段には 0.5×0.45m の石材を組んでいる。羨道には閉塞が現状のまま残存しており、土で固めている様子がわかる。羨道部天井石は 2 枚である。本古墳は両側面共に巨大な石材を利用しており、割に垂直に近い状態で石を積み上げていて、高度の構築技術を用いている。全体としてはいまだに石組みはしっかりしており、墳丘も土を高く盛り上げている。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p07_A7photo.jpeg" data-cap="霧ヶ滝古墳群 A 支群 7 号墳（2017 年 12 月撮影）" aria-label="霧ヶ滝古墳群 A 支群 7 号墳（2017 年 12 月撮影）を拡大"><img loading="lazy" src="images/p07_A7photo.jpeg" alt="霧ヶ滝古墳群 A 支群 7 号墳（2017 年 12 月撮影）"></button>
+  <figcaption><span class="cap-mark">図</span>霧ヶ滝古墳群 A 支群 7 号墳（2017 年 12 月撮影）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">A 支群 8 号墳（旧 F12 号墳）</h3>
+<p>本古墳は 7 号墳の北西 22m の距離に位置し、斜面にむかって少し中ほどの標高 74m に立地している。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は天井部に穴があいており、西側で土砂が流出していて、自然破壊を強くうけている。東側は斜面を利用していて、盛土はほとんどみられず、北側は、1m ほど盛土高を測れる。墳丘径は 5.9m である。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室は上部の石が観察できるが下部は土砂流入のため不明である。主軸方向は土砂の落ち込みと墳丘の土砂流出の状況から S-84°-W で、ほぼ西向き開口である。土砂落ち込みの窪みは、2.1×1.1m である。石材は上部 1 段目・2 段目は 0.4〜0.5m ほどの大きさで、上部の石材の状態や落ち込み穴の規模より小さめの古墳である。</p>
+<h3 class="tomb">A 支群 9 号墳（旧 F8 号墳）</h3>
+<p>本古墳は 6 号墳の北側 22m ほどの距離に位置し、霧ヶ滝古墳群 A 支群が存在する丘陵の中ほど、標高 78m に築造されている。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は天井部が細長い楕円形状にあいている。北東側に 1.5m ほどの盛土がみられ、南側は若干あるのみで、割に平らな感じである。墳丘径は 8m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室内部は天井部 1 段だけは観察できるが、土砂に覆われていて石材の大きさは不明である。下部も土砂流入のため不明である。細長い楕円状の陥没穴は、長さ 2.0m、幅は南東側が 0.4m、真中 0.7m、北西側が 0.6m である。主軸方向は N-52°-W で、ほぼ北西開口である。陥没穴の状況より左側壁がせり出していると考えられる。現状の墳丘の高さから推測しても石室高は高くて 1.5m 程度ではなかろうかと考えられる。あるいは、石室を構築する際に、地山をかなり深く掘ったとも考えられる。</p>
+<h3 class="tomb">A 支群 10 号墳（旧 F9 号墳）</h3>
+<p>本古墳は 9 号墳の北東 18m ほどの距離に位置し、墳丘の北側が山道と接している。標高 77m に立地している。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は石室石材が 1 個を残すのみで、石抜き穴になっているが、墳丘は一応原状を保っている。高さ 1.5〜2.0m 盛り上がり、盛土は南東側が斜面を利用しており、西側は 2.0〜2.5m である。墳丘径は 11m である。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室は既に原状を知る手掛かりもなく、主軸方向も判別できず、一見土壙墓を思わせる形態である。石ぬき穴は 0.3×2.5m で、石室内には長さ 1.3m の石材が残されているが、どの部分の石材であるのか明らかではない。</p>
+<h3 class="tomb">A 支群 11 号墳（旧 F13 号墳）</h3>
+<p>本古墳は 8 号墳の北北東 10m ほどの距離に位置し、墳丘が近接している。山の斜面をさらに登った標高 73m に立地している。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は頂上部に天井石の一部が露出しており（長さ 1.0m、幅 0.25m、高さ 0.3m）、羨道部入口が開いていて、石室内に入ることができる。また、羨道部入口の土砂が少量流出しているがあとの部分は原状を保っている。盛土は北東側が斜面を利用していて、盛土高がせいぜい 0.2〜0.3m ほどしかみられず、西側が 1.5m を観察できる。墳丘径は 11m ほどである。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室形式は横穴式両袖単式で、縦長の長方形プランであり、やや三味胴に近い感がある。主軸方向は S-44°-W で、ほぼ南西開口である。石室内部は羨道部に人が 1 人横になって入れるほどの穴があり、そこから入って観察することができ、石室内部および羨道部は石材がせりだしてきているが完全である。石室全長は 3.8m、玄室長はともに 2.2m で、幅は奥壁側 1.7m、玄門側 1.8m である。高さは 2.1m ほどである。羨道部は玄門幅 0.8〜0.9m で、長さは 1.6m、高さは 1.1m であった。石室の構築方法は石材を奥壁はたてて、両側壁をドーム状に持ち送り式に積み上げたやり方で三角柱を横にした状態を呈する。現状は両側壁ともせり出しが激しく危険である。石材の状態は、石室内はほぼ 4 段からなり、奥壁は腰石が長さ 1.2m 幅 0.5m で、2 段目の石もほぼ同寸法で、3 段目・4 段目は 0.6×0.3m、0.45×0.45m の四角い石を配していて横積みである。したがって、奥壁は 2 枚の石が主である。3 段目から力石（0.8×0.5m）がみられるが、せり出していて落下の危険性がある。右側壁は腰石 2 個とななめにした石 1 個で、長さ 0.9m ほどの石を使用しており、2 段目からは、石の大きさにも変化があり、積み方が雑である。左側壁も腰石 2 個（長さ 0.9m 程度）の石を配し、やはり、石を斜めに積み、2 段目・3 段目と石材を横に積みあげている。天井石は 1 枚である。間隙には 0.1〜0.2m ほどの石を使用している。羨道部は天井石 2 枚までは確認でき、あとは土砂の中で不明であるが、石材は、右側は袖石（0.8×0.9m）を配し、その上の天井石との間に 0.2m の石を積んでおり、残りの部分には 0.35m・0.4m・0.5m の石を 3 段ほど、ほぼ横積に積んでいる。左側は袖石に 0.95×0.7m の石を配し、残りの部分には長さ 0.35m・0.45m・0.5m の石材を斜めに積み上げている。羨道部の天井石は、2 枚でともに長さが 0.5m であり、厚さが 0.3〜0.4m を測る。しかし、羨道部も石積みはセリ出しがあり、原状をとどめていない。石室床面は 0.2×0.25m、0.25×0.3m ほどの石材が全面にあるが、一様にゴロゴロとしており盗掘時に乱されたものと思われる。なお、閉塞の石は敷石と同程度であり、土と共に閉塞されている。羨道部出口の墳丘に、羨道部の続きとみなされる石が 3 個、一部を露出しているが（0.4×0.4m、0.4×0.2m、0.35×0.2m）、墓道の石にあたるのか否かは不明である。</p>
+<h3 class="tomb">A 支群 12 号墳（旧 F14 号墳）</h3>
+<p>本古墳は 11 号墳の西南西に位置し、墳丘が近接しており、標高 71.5m に立地している。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は陥没穴になっており、石室から羨道にかけて残存石材が露出している。羨道部があったと推定される南西方向に土砂が流出している感がある。南側は盛土が 0.2〜0.3m 見られ、北側は盛土と自然地形がほぼ同じ高さでそのまま斜面に平行に構築されたらしい。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>主軸方向は石材と墳丘の状況より S-36°-W で、ほぼ南西開口である。陥没穴は長さ 1.5m、幅 1.0m で、高さは 1.0m 弱の小古墳である。石材は石室内部の石材とみなされる石が 2 個で、部分寸法が 0.35×0.4×0.25m、0.45×0.45×0.1m、羨道部の石とみなされるのが 1 個で部分寸法が 0.25×0.35×0.3m で以上 3 個が残存している。墳丘径は 6m であった。</p>
+<h3 class="tomb">A 支群 13 号墳（旧 F17 号墳）</h3>
+<p>本古墳は 11 号墳の北側、12m ほどの距離に位置し、墳丘も近接している。割に斜面がゆるやかで標高 72m に築造されている。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は墳頂部に天井石の一部が露出し（1.0×0.3×0.25m）、羨道部も入口があいていて人が 1 人横になって中に入ることができる。あとの部分は原状を保っている。北〜東側が斜面を利用しており盛土高が 1.0m ほどで、南〜西側が 1.5m を測り、全体に盛土が平均してある。墳丘径は 9m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室はせり出しがひどく危険であり、原状をとどめてはいないが、15 号墳に石室規模が良く類似しており、異なる点は石材が一回り小さくなる事と積み方が雑なことである。石室形式は両袖単室横穴式石室で、縦長の長方形プランである。主軸方向は S-76°-W で、ほぼ西向きの斜面にむかって開口している。石室内部は石室全長 3.4m、玄室長は右側壁 1.6m、左側壁 1.8m、玄室幅 1.4m であり、羨道部は玄門幅 0.5m、羨道の長さ 1.8m を測る。石材は全体的に 4 枚ほどで同大の石を多く使用しており、奥壁は腰石が 4 個で、0.6×0.25m が大きいほうであり、2・3・4 段と 0.25×0.5m、0.3×0.6m の石を横に積みあげているが整然とはしておらず、雑である。右側壁は腰石が小さく 3 個で、0.5×0.4m が大きいほうであり、かえって 2 段目に 0.5×0.65m の大きめの石材が使用されている。2・3 段は 1 段目と同寸法の石材を配している。積み方は石を横にしているが、すき間には小さな石材を使用する構築法を用い、やはり雑な積み方である。天井石は 1 枚で、1.8×1.2m を測る。床面は石材が落下しているのであるが土中に埋まって不明である。羨道部も袖石がやはり小さめで、右袖石は 3 個から成り、0.3×0.45m の三角形状の石に小さめの 2 個を組み合わせて袖石の役目を果たし、左袖石は 2 段で 1 段目は 0.45×0.45m の石材を横にしており、それより小さめの石材を上に積んでいる。楣石は 1.1×1.5m で、右袖石側に斜めに配されている。羨道は天井石 2 枚で、両側壁は 2 段で横に積まれ、0.2×0.3m、0.25×0.4m の石が配されているが、これも雑で、すき間があいており、羨道床面は土砂に埋もれており不明である。</p>
+<h3 class="tomb">A 支群 14 号墳（旧 F10 号墳）</h3>
+<p>本古墳は 10 号墳の西北西 50m ほどの距離に位置し、やはり山道と墳丘が接している。標高 70m に立地している。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は天井部があいており、盛り土が流入している。南東側は斜面を利用しており、盛土高が 1.5m あり、北西側が 2m ほどである。墳丘径は 10m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室内部は主軸方向も不明で、石材が 5 個露出しているが、どの部分の石材か不明である。石材の露出部分の大きさは 0.75×0.6m、0.4×0.3m、0.35×0.25m で、この 3 個が並んでおり、陥没穴の中心に 0.3×0.4×0.3m、0.45×0.25m の薄い石が 2 個観察できる。</p>
+<h3 class="tomb">A 支群 15 号墳（旧 F15 号墳）</h3>
+<p>本古墳は 11 号墳の西側 20m ほどの距離に位置しており、丘陵の傾斜の勾配が大きくなる標高 68m の位置に築造されている。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は羨道部入口が露出しているほかは、原状をとどめている。東側は自然地形を利用しているが盛土が 1.5m ほどみられ、西側は 2.0m ほどみられる。墳丘径は 12.6m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室形式は両袖単式横穴式石室で、やや縦長の長方形プランである。石室内は 11 号墳と同様に奥壁をたててあり、両側壁がドーム状になっているため、三角柱を横にした状態を呈する。主軸方向は S-64°-W で、西南西開口である。石室内部は、羨道部入口が、人が一人入れるほどに開いており、そこから内部を観察できる。石室全長 3.7m、玄室長 1.8m で、幅は奥壁側 1.5m、玄門側 1.6m、高さは 1.9m である。羨道部は長さ 1.9m、幅は玄門側が 0.72m、入口側が 0.6m、高さは 1.0m である。石材の状態は、奥壁は盗掘時に床面に盛り上げた土で、下部は明確ではないが、4 段で 1 段目は長さ 1.5m、幅 0.8〜0.9m の 1 枚石を横にして、2 段目・3 段目と長さ 1.2m の巨石をやはり横積みにしている。石材は垂直に積まれている。右側壁は 4 段ほどで腰石が 2 個で 1.1×0.75m、0.75×0.3m であり、右側 2 段・3 段目と 0.6×0.32m、0.75×0.27m の石を横積みにしている。左側壁 4 段ほどで、腰石は 2 枚で 0.55×0.4m を横に、1.0×0.65m をたてて使用しており 2 段・3 段と 0.3×0.6m やそれより小さめの石を配している。天井石は 1 枚である。ここも 11 号墳と同様に上段ほどせり出し、落下の可能性のある危険な石がみられる。石室床面は盗掘時に奥壁側に石材・土砂をかき上げられているため、床には 0.2m ほどの石が散乱している。羨道部は右側の袖石に 2 個石材を使用して、下段の石材はねかして使用しており、0.1×0.4×0.5m であり、上段に小さめの石を配している。左側も袖石を 2 個使用しており、下段が 0.45×0.5m、上段がそれより小さめの石である。あとの部分は双方とも 2 段積みで玄門付近は 0.4m・0.5m くらいの石が使われているが、その先は盗掘時の土砂がかきあげられているため不明である。</p>
+<h3 class="tomb">A 支群 16 号墳（旧 F16 号墳）</h3>
+<p>本古墳は 15 号墳の北西 16m ほどの距離に位置し、標高 66m に築造されている。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は天井部があいており、細長い陥没穴状である。東側から西側に向かって下り斜面となっており、盛土はほとんど見られず、西側に盛土高が 0.5m ほど観察できるが平坦である。墳丘径は 6m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室は露出している石材が少ない上に部分的であり、床面は石材や土砂流入のため不明である。本古墳の現状は 9 号墳の現状によく類似している。陥没穴は長さ 2.9m×幅 1.5m で主軸方向も不明である。石材は 5 個確認できる。そのうちの 1 個は 0.8×0.45m の石で横になっているが、どの部分の石材か不明であり、残り 4 個も部分的な露出のため、全体の大きさは推測しがたい。</p>
+<h3 class="tomb">A 支群 17 号墳（旧 F19 号墳）</h3>
+<p>本古墳は 15 号墳の西南西に 6m ほどの所に位置し、標高 65.5m に築造されている。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は石室上部が落ち込んでいる。西側に盛土の流れたあとがある。東側は斜面を利用しているが、盛土はほとんどなく、北西側に盛土のあとがみられ、0.5m を測る。墳丘径は 4.8m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室は上部の石が部分的に露出しており、5 個ほどしか確認できない。盛土も低く、墳丘径も小さく、小規模な古墳である。陥没穴は 1.5×1.3m を測る。主軸方向は石材残存状況より、N-68°-W であり、西北西に開いている。石材は露出部分しか確認できないが、0.45m ほどの長さで見えているのが主である。</p>
+<h3 class="tomb">A 支群 18 号墳（旧 F18 号墳）</h3>
+<p>本古墳は 16 号墳の南西 12m ほどの距離に位置し、標高 63m に築造されている。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は石材が抜きとられ、石室から羨道にかけて露出している。盛土は南西と北東の方向に流れており、あとの部分は不完全だが残っている。斜面上に立地しているが、ゆるやかで平坦な場所である。盛土は東側が 1m ほど、西側が 2m ほど見られる。墳丘径は 8m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室形式は両袖単室横穴式石室で、プランは明確ではないが、残存石や穴の状況から台形を呈する。主軸方向は S-38°-W でほぼ南西開口である。石室内部は石室内に石材 1 個と羨道部の楣石・袖石の計 4 個が確認でき、あとは抜きとられている。羨道部もほとんどが石抜きされ、不明である。石材残存と穴の状況より、石室全長は 4m、玄室両長は右側 2m、左側 1.7m、玄室幅は奥壁側 1.7m、玄門幅 1.3m 羨道の長さ 2m までを測る。石材は石室内に現存する 1 個は、原場所の石ではなく転石で、高さ 0.95m×幅 1m を測る。奥壁側はなく、右側壁は羨道側に 0.4m 程の石がみえ、左側壁は奥壁側に石が、部分的に露出しており、0.4m ほどであり、羨道側には 0.9m の石が見られる。羨道部の楣石は、長さ 1m×幅 1.6m で、袖石は左袖石で 0.4×0.25m 程度の薄い石材を 2 個使用しており、右袖石は 0.5m ほどの頭がみえる程度であとは不明である。</p>
+<h3 class="tomb">A 支群 19 号墳（旧 F23 号墳）</h3>
+<p>本古墳は 20 号墳の北東側 1.5m ほどの距離にあり、標高 61.5m に立地している。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は石抜き穴になっており、土砂も流出していて、墳丘も破壊している。盛土は東側が山の斜面を利用しており、西方向に盛土がみられ、最も高い所で、2.0m ほどである。墳丘径は 9m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室は原状を推測することもできず、残存石を 3 個確認できるが、どの部分の石材にあたるのかは、不明である。石抜き穴は 1.4×1.4m ほどで、東から南側に土砂が流れ出しているが、開口方向と見ることは難しい。石材寸法は 0.5×1.0m と近世半分に割られている石材の 0.45×0.6m と土中に埋まっている石材、長さ 0.7m の計 3 個である。</p>
+<h3 class="tomb">A 支群 20 号墳（旧 F20 号墳）</h3>
+<p>本古墳は 18 号墳の西側 28m ほどの距離に位置し、標高 57.5m に築造され、23 号墳と共に、霧ヶ滝古墳群 A 支群の中で最も低い位置に築造されている。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は石室があらわになっており、東側が自然地形を利用し、西側は盛土をしているが、盛土高は 0.2m ほどで、土砂が流れており、0.4m ほどしかみられない。墳丘径は 5m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室は袖石が見える高さで残っているため上段の石材は床面に落下して、埋まっているか、あるいは抜き取られているのかもしれない。陥没穴は 1.2×1.4m を測る。石材は 3 個確認でき部分的に露出しており、奥壁側に長さ 0.7m の石材が 1 個、袖石として 0.4×0.4m ほどの石材が 1 個と、左側壁に同程度の石材が 1 個見られる。小規模な古墳である。</p>
+<h3 class="tomb">A 支群 21 号墳（旧 F11 号墳）</h3>
+<p>本古墳は 14 号墳の西北西 23m ほどの距離に位置している。道沿いに並んでいる 10 号墳・14 号墳・21 号墳の計 3 基の中で一番下部に立地し、標高 66m である。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は石抜き穴になっており、南側は自然地形を利用し、北側は 0.5m ほどの盛土高が観察できる。10 号墳に比べて墳丘もほとんどみられず、石室部分も掘り込んだ様子もあまりみられず、小規模な古墳であったと思われる。墳丘径は封土が流れ、平坦になっており、現状では、14m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石抜き穴も現状では、0.85×1.4m の楕円形である。石室内に残存している石材は、長さ 40〜45cm を測ることができるが全体の大きさは不明である。また、どの部分の石材であるのかも明らかでない。山道沿いの前述 3 基は、近世人為的に作られた道に接したため、石を多く抜き取られ、あるいは、破壊され、原状を推し測ることができなくなっている。</p>
+<h3 class="tomb">A 支群 22 号墳（旧 F24 号墳）</h3>
+<p>本古墳は 19 号墳の北側 12.5m の距離に位置しており、標高 63m に築造されている。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は天井部が陥没している。南東側が自然地形を利用しており、盛土高はほとんどなく、北西側が 0.4〜0.5m で、平坦である。墳丘径は 5.4m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室は天井部が陥没しており、上部の石材が露出しているだけで、床面は不明である。陥没穴は、1.5×1.7m で深さ 0.55m である。主軸方向は S-89°-W を測る。石材も部分的な露出で、確認できるのは 7 個で長さ 1.0m や 0.7m などが測れ、あとは、それぞれ小さい。</p>
+<h3 class="tomb">A 支群 23 号墳（旧 F21 号墳）</h3>
+<p>本古墳は 20 号墳の北西 20m ほどの距離にあり、標高 57.5m に築造されている。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は天井部が陥没している。他の部分は原状を保っている。盛土は東側が盛土高 0.5m ほど、西側が 1.7〜2.0m を測る。墳丘径は 10m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室は天井部が陥没しており不明であり、陥没穴ができている。穴は 2.0×3.0m で、深さも 1m ほどである。石材は残存していない。</p>
+<h3 class="tomb">A 支群 24 号墳（旧 F25 号墳）</h3>
+<p>本古墳は 25 号墳の北東側、13m の距離にあり、標高 63m に立地している。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は石抜き穴になっている。南東側が自然地形を利用し、北西側は盛土があったと思われるが、流れており原状をとどめていない。墳丘径は 6.3m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>現状は斜面に窪みができている状態で、穴は 2.1×3.0m、深さも最も深い所で、1.2m 程で石材は残っていない。小規模な古墳である。</p>
+<h3 class="tomb">A 支群 25 号墳（旧 F22 号墳）</h3>
+<p>本古墳は 23 号墳の北東 18m ほどの距離にあり、標高 60m に築造されている。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は天井部が落ち込んでいて、窪んでいるが、あとの部分は現状を保っている。南から東側は地山を掘り込んでいて、盛土高は 1.5m ほどで、北から西側は、盛土を高くあげており、特に北側は 3.0m ほどもある。墳丘径は 15m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室は上部の 2 段ほどが露出している部分があるが、あとは土砂中で不明である。陥没穴は 3.2×2.0m を測る。主軸方向は、陥没部と残存石材の状況から、N-72°-W でほぼ西向き開口である。石材は全部で 5 個確認できるが、両側壁に 2 段ほど部分的に露出しており、全体の大きさは不明であるが、右側壁には長さ 0.65m の石材と頭の部分 0.3m ほどの石材が露出し、左側壁には 0.45×1.0m、0.3×0.7m、0.75×0.4m ほどの石材が露出している。墳丘径や陥没穴が大きいこと、盛土もかなりあることから、大規模な古墳であろうと思われる。</p>
+<h3 class="tomb">A 支群 26 号墳（新規）</h3>
+<p>1978 年の分布調査で新たに確認した古墳で、25 号墳から北西に位置する。墳丘および石室の調査がされてなく、詳細は不明である。</p>
+  </div>
+</section>
+<section id="B" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">04</span>
+    <h2>B 支群</h2>
+  </header>
+  <div class="sec-body">
+<p>当支群は従来、霧ヶ滝古墳群 G グループとされ、20 基の古墳が確認されていた。その後の分布調査で、新たな古墳 5 基を加え、名称も霧ヶ滝古墳群 B 支群と変え、25 基の古墳で構成されている。A 支群に向かって、南東から北西にのびた尾根上の南西側斜面にほぼ一列に築造されている。総体として、中型の古墳が多いが、林道が作られたため、墳丘の裾を削られており、また、採石のため、ほとんどの古墳の石材も抜き取られている。したがって、完全な姿で存在する古墳は 10 号墳の 1 基だけである。林道には須恵器・土師器の散乱が見られるのは、墳丘に遺物を置いたのであろうと思われる。このグループの立地上の特徴は、ほぼ均等な間隔をもって 25 基が並び、墳丘と墳丘の間は 1m もない所も確認される程度の間隔をもっていることが、その特徴とされる。</p>
+<p>なお、石材の積み方の特徴とか羨道部の特徴等は、先に述べたように、石材が存在しないので確認できないが、開口方向は一様に南西方向、すなわち、谷向き開口であり、山寄せの技法を採っていることがわかる。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p17_Bchikei.png" data-cap="霧ヶ滝古墳群 B 支群（旧 G グループ）地形図" aria-label="霧ヶ滝古墳群 B 支群（旧 G グループ）地形図を拡大"><img loading="lazy" src="images/p17_Bchikei.png" alt="霧ヶ滝古墳群 B 支群（旧 G グループ）地形図"></button>
+  <figcaption><span class="cap-mark">図</span>霧ヶ滝古墳群 B 支群（旧 G グループ）地形図<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p class="note">＊1976 年福岡大学歴史研究部刊行「駄ノ原古墳群・霧ヶ滝古墳群分布調査概報」より転用</p>
+<h3 class="tomb">B 支群 1 号墳（旧 G1 号墳）</h3>
+<p>本墳は B 支群の最上位に位置し、南東から北西に伸びる尾根の南西側斜面に築造されている。標高は 124.5〜125.0m である。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘の状態としては、古墳の南西側に一部盛土の流出が認められ、現状では、墳丘径 6.5m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室構造は自然破壊が著しいため、不明確ではあるが、S-79°-W に向かって開口する両袖式横穴式石室であると思われる。現在残存している 7 基の石材は、奥壁および側壁の一部であると思われる。石室プランは縦の長さ 2.5m、横幅は 2m を測り、この状態から横長式の石室プランをもつ小型の古墳であることが推察できる。なお、羨道部・石材の積み方等は不明である。本墳は駄ノ原古墳群 F 支群（1 号墳から 7 号墳まで）に見られる小型の古墳に類似しているとみることができる。すなわち、群集墳築造における末期的形態と考えられるということである。位置関係においても最上位に位置することから考察しても霧ヶ滝 B 支群中、最後につくられたものである。</p>
+<h3 class="tomb">B 支群 2 号墳（旧 G2 号墳）</h3>
+<p>本墳は 1 号墳より北西へ約 4m の位置に存在し、1 号墳と墳丘の裾を接する位置にある。標高 135m の地点に築造されている。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘の状態は立地位置がかなり急斜面のためか盛土が大部分流出している。墳丘径は 6.3m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室形態は不明であるが、規模は奥行き 1.9m 横幅 1.5m を測る。1 段目のみ残存する石材は 0.3×0.4m 程度の大きさである。なお、袖石は 1 個しか残っていない。以上の状態であるので、原状は不明ではあるが、小規模な古墳であり、1 号墳と同様な部類に入ると思われる。開口はほぼ南南西である。</p>
+<h3 class="tomb">B 支群 3 号墳（旧 G3 号墳）</h3>
+<p>本墳は 2 号墳より西方向約 14m の地点、標高 120.5〜121.5m の斜面上の位置に立地する。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>現状は天井石が陥没し、側壁が破壊しているため、石室にそって墳丘が落ち込んでいる。羨道部は斜面のためか、自然破壊によるためか、かなりの斜面を呈している。墳丘径は 7.5m を測り、東方向は 1m 近くの盛り土をもち、西方向は谷にかけての斜面のため、盛土が非常に大きく確認できる。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>主軸方向は S-51°-W にとり、両袖単室の横穴式石室の形態をとる。内部は土砂流入のため、明確ではないが、玄室奥行き 2m、横幅 1.4m を測る。石材は 0.7×0.8m 程度の石材を使用し間には栗石の充填が認められる。奥壁・右側壁・左側壁の腰石は各 2 個の使用が認められ、奥壁のひずみが少なく、これは構築技術と石材の選択によるものであることが考えられる。石室プランは長方形に近い台形プランである。</p>
+<h3 class="tomb">B 支群 4 号墳（旧 G4 号墳）</h3>
+<p>本墳は 3 号墳より北西方向に 10m 下った斜面上に位置し、標高 115.5〜117m の地点に立地する。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>現状は天井石が石室内部に陥没しているが周囲の盛り土は、その姿をよくとどめており墳丘径 10.5m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室形態は両袖式単室横穴式石室であり、主軸方向を S-55°-W にとり、その規模は石室全長 2.15m、玄室奥行きは 1.8m、横幅 1.3m、高さ 1.7m を測る。石材の大きさは 0.4×0.5m 程度で栗石の使用も認められる。羨道部は土砂流入のため不明確ではあるが、横幅 0.7m、長さ 1.35m を測る。また、閉塞石らしきものの姿が認められる。構造について記すと、奥壁は巨石を右側壁がわ下部に 1 枚使用し、左側壁がわ下部には 0.2×0.4m 程度の石材を使用している。力石の使用は奥壁側・玄門側ともに 2 段目から認められる。左側壁最下部の石材は 1.8m 程度の長さの石材を使用している。羨道天井部は 2 枚の石材でこれを築造している。石材は下部より 3 段目からせり出しており、その上部はドーム状に構築したものと思われる。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p18_B4photo.jpeg" data-cap="霧ヶ滝古墳群 B 支群 4 号墳（2017 年 12 月撮影）" aria-label="霧ヶ滝古墳群 B 支群 4 号墳（2017 年 12 月撮影）を拡大"><img loading="lazy" src="images/p18_B4photo.jpeg" alt="霧ヶ滝古墳群 B 支群 4 号墳（2017 年 12 月撮影）"></button>
+  <figcaption><span class="cap-mark">図</span>霧ヶ滝古墳群 B 支群 4 号墳（2017 年 12 月撮影）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">B 支群 5 号墳（旧 G5 号墳）</h3>
+<p>本墳は 4 号墳より北方 5m の地点、標高 114.00〜114.50m の斜面上に立地している。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>現状は天井部が玄室内部に陥没しているため、墳丘上部に穴があいている。墳丘はその姿を認める事ができ、墳丘径 8.5m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室形態は両袖式単室横穴式石室で、主軸方向を S-62°-W に採る。規模は石室全長約 4m、玄室奥行き 1.9m、横幅 1.3m、高さ 1.7m を測る。羨道部は長さ 1.9m 横幅 0.55m 高さ 0.7m を測る。石材は 1 段目が 0.8×0.9m 程度であり、上部になるにしたがって小型の石材を用いている。本古墳の特徴は、羨道部側が短い台形状の石室プランをもつということである。規模の点では、3 号墳・4 号墳とほぼ同等なものであると推察できる。</p>
+<h3 class="tomb">B 支群 6 号墳（旧 G6 号墳）</h3>
+<p>4 号墳の北方向 18m ほどの距離にあり、また、10 号墳と同丘陵上で、標高は 119m である。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘の天井部があいており、中の様子はある程度観察できる。墳丘は北西側は斜面に続く若干の盛土があり、南東〜南西にはかなりの（3m ほど）盛り土がある。墳丘径は 9m を測る。自然破壊と石抜きにより北側墳丘は削られた所がある。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室は玄室長 2.1m、高さは現状で 1.4m を測り、幅は奥壁側で 1.5m である。奥壁の腰石は 1.5m を測る。あと石材の間隙に 0.1〜0.2m ほどのにぎりこぶし大の石材を充填している。側壁の腰石は、2 枚から 3 枚を使用している。石室内部は土砂・石材・枯葉などの流入や落ち込みのため詳細は不明である。さらに奥壁について述べると力石の部分においては 5〜6 個の石材を用いその力の配分を考え構築されている。奥壁は 1 枚である。石積みは横積みとみうけられるが不規則なため石材のせり出しがはげしい。羨道部は袖石上部（左側壁）がせり出していてその先は不明である。ただし、玄門幅は 0.45m で、玄門部に 2 段目くらいの高さに石材がきちんとはまり込んでいるため、閉塞石だと考えられないことはない。石材の大きさは 0.3〜0.4m が多く、袖石・天井石・楣石は巨石で、1.5m を使用している。</p>
+<h3 class="tomb">B 支群 7 号墳（旧 G7 号墳）</h3>
+<p>5 号墳より北西へ 3m、標高 113m に位置している。墳頂部が陥没しており、墳丘径は 7m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室は現状では全長 1.75m 高さ 1.30m、奥壁 1.35m、玄門幅 0.40m で羨道部は長さ 1.20m を測る。石材の大きさは 0.50〜0.60m が主であり、天井部付近はかなりのせり出しを見せているため、積み方は不明である。羨道部は石材が抜き取られているが、S-59°-W を測る。</p>
+<h3 class="tomb">B 支群 8 号墳（旧 G8 号墳）</h3>
+<p>本墳は 7 号墳の北西約 10m の地点、標高 109.5〜111.5m の位置に立地している。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>現状は石室の石材が全て抜きとられ、盛土のみどうにか確認できる状態であり、墳丘径 9m を測る円墳である。盛り土の東方向は自然地形を利用していると考えられるが、西方向は盛り土の状態がよく認められる。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室形態・規模等は一切不明であるが、土壙の状態より石室全長約 4m、その主軸方向を N-86°-W にとると思われる。4 号墳・5 号墳と同等の規模をもつと考えられる。残存する石材は袖石にあたる部分の最下段であると思われる。</p>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p19_B8photo1.jpeg" data-cap="霧ヶ滝古墳群 B 支群 8 号墳（2017 年 12 月撮影）（1）" aria-label="霧ヶ滝古墳群 B 支群 8 号墳（2017 年 12 月撮影）（1）を拡大"><img loading="lazy" src="images/p19_B8photo1.jpeg" alt="霧ヶ滝古墳群 B 支群 8 号墳（2017 年 12 月撮影）（1）"></button>
+  <figcaption><span class="cap-mark">図</span>霧ヶ滝古墳群 B 支群 8 号墳（2017 年 12 月撮影）（1）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p19_B8photo2.jpeg" data-cap="霧ヶ滝古墳群 B 支群 8 号墳（2017 年 12 月撮影）（2）" aria-label="霧ヶ滝古墳群 B 支群 8 号墳（2017 年 12 月撮影）（2）を拡大"><img loading="lazy" src="images/p19_B8photo2.jpeg" alt="霧ヶ滝古墳群 B 支群 8 号墳（2017 年 12 月撮影）（2）"></button>
+  <figcaption><span class="cap-mark">図</span>霧ヶ滝古墳群 B 支群 8 号墳（2017 年 12 月撮影）（2）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">B 支群 9 号墳（旧 G9 号墳）</h3>
+<p>本墳は 8 号墳より北西方向約 15m の地点に位置し、標高 109〜109.5m の地点に立地している。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>現状は天井部陥没の上、石材を 1 個残して、すべて抜きとられている状態である。墳丘は 11 号墳と近接し、墳丘径 8.8m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室形態・石室規模等は不明であるが、土壙の奥行 5m 横幅 3m、奥壁部の高さ推定約 2m で主軸方向を S-66°-W に採る。なお、墓道らしきものが羨道付近から約 4m 延びており、11 号墳の墓道とその入口付近を同じくしているものと考えられる。</p>
+<h3 class="tomb">B 支群 10 号墳（旧 G10 号墳）</h3>
+<p>本墳は 9 号墳より東方 20m、尾根の上部に存在し、南東 25m 地点に同じ尾根上部に立地する 6 号墳が存在している。標高 126m の地点に立地する墳丘径 11m を測る円墳である。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>現状は墳頂部が 0.3m 程陥没し、石室・羨道等が現われていないため、内部施設の状態は一切不明である。同尾根上に存在する 6 号墳と類似しているものと思われる。</p>
+<h3 class="tomb">B 支群 11 号墳（旧 G11 号墳）</h3>
+<p>本墳は 9 号墳の北方約 6m の地点に位置し、標高 106〜109.5m の斜面上に立地する。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘径約 11m を測る円墳であるが、採石により内部のすべての石材および、羨道・羨門付近の盛土がかなり削り取られている。9 号墳と墳丘が接触してはいるものの、どちらかを削った跡は認められず、古墳築造の時に許容地域があったものと思われる。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室形態・規模等は不明であるが、土壙の状態から、石室奥行き 2m 横幅 1.5m、高さ 2m、羨道長さ 2m と推定される。開口は墳丘の状態より南西である。</p>
+<h3 class="tomb">B 支群 12 号墳（旧 G12 号墳）</h3>
+<p>本墳は 11 号墳より北西 5m の地点、標高 103.5〜104.5m に立地している。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>現状は石材が抜きとられており、奥壁最下段が一部残存しているのみで、他の石材および天井部の盛土等は壊れ、また、内部に陥没している。墳丘径は約 6.5m を測る。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室形態は不明であるが、主軸方向を S-47°-W にとり、石室規模は、全長 3m、玄室奥行き 2.3m、横幅 2.3m でほぼ正方形の石室プランを呈する。</p>
+<h3 class="tomb">B 支群 13 号墳（旧 G13 号墳）</h3>
+<p>本墳は 12 号墳から北西方向の斜面上に位置する。</p>
+<h3 class="tomb">B 支群 14 号墳（旧 G14 号墳）</h3>
+<p>本墳は 13 号墳よりも北西 15m の斜面上に位置し、標高 102.5〜104.5m の地点に立地する。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘径約 8.5m を測る。その現状は天井部・天井石が陥没し、左側壁の石材は抜き取られた状態にある。残存する石材は、奥壁最下部・右側壁の石材および左側羨道部の一部は残存している。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室形態は両袖式単室横穴式石室と推定でき、主軸方向を S-52°-W にとる。石室の規模は奥行 2.1m、横幅 1.8m を測り、ほぼ正方形に近い石室プランをもつ。</p>
+<h3 class="tomb">B 支群 15 号墳（旧 G15 号墳）</h3>
+<p>本墳は 14 号墳から北西に 14m の斜面上、標高 101.0〜102.0m に存在する墳丘径 10.5m を測る円墳である。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>現状は天井部が陥没している他は、墳丘の保存状態は良好である。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室形態は不明であるが、主軸方向を S-68°-W にとる。規模は石室全長 3.5m、玄室奥行き 2.0m、横幅 1.5m、高さは現状で 1.7m と推定される。奥壁 3 段目・左側壁 2 段目・右側壁は土砂により不明である。また、力石の使用は現状では認められず、古墳の規模の割には巨石を使用しているのが特徴である。</p>
+<h3 class="tomb">B 支群 16 号墳（旧 G16 号墳）</h3>
+<p>本墳は 15 号墳より北西 16m の地点、標高 97.5〜100.0m の間に立地する。墳丘径 12m である。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>周囲の墳丘は残っており、その土塀から見る限り、奥行き 2m、横幅 1.5m 程度の小規模な B 支群の一般的な古墳であると推定される。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>採石により石材は全く失われているが、主軸方向は S-42°-W を示すものと推定される。</p>
+<h3 class="tomb">B 支群 17 号墳（旧 G17 号墳）</h3>
+<p>本墳は 18 号墳より東方約 10m 上部に位置し、標高 93〜94m の地点に立地する墳丘径 6m を測る。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>現状は天井部の盛り土・天井石が石室内部に陥没しており、羨道部には土砂が流入している。墳丘の羨道の前方部分付近は道路のため削られている。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室形態は両袖単室横穴式石室で主軸方向を S-70°-W にとる。また、玄門側がやや狭い台形のプランをなしている。規模は石室全長 3m、玄室奥行き 1.7m 幅約 1m であり、小型の部類に含まれる。奥壁は 1 枚石を横に 3 段に積み上げ、側壁も重箱積みのようである。力石の使用は奥壁部 2 段目から左右とも使用が認められる。石室プランにおいて特異な点は袖石の存在が左右とも他の古墳程はっきりとせず、石室の横幅が短かくなっているということでかろうじて確認できるということである。</p>
+<h3 class="tomb">B 支群 18 号墳（旧 G18 号墳）</h3>
+<p>本墳は 17 号墳より西約 20m の地点、標高 91〜92m の地点に存在し、山の上部に向って、道の右側に立地している。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘径 12m を測る。現状は墳頂部が陥没している他、周囲の墳丘は良好に残存している。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室形態は両袖式単式で主軸方向を S-59°-W にとる。規模は玄室奥行 1.8m、横幅 1.5m、高さは推定 2.5m 程度のものである。</p>
+<h3 class="tomb">B 支群 19 号墳（旧 G19 号墳）</h3>
+<p>本墳は 18 号墳の北東約 4m の地点、標高 92〜93m の地点に位置する墳丘径 6m を測る。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘は東側は自然地形を利用していて、西側は盛土があったと思われるが流出していて確認できない状態にある。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>現状は採石のため内部には 2 個の石材しか確認できない。土壙の状態より主軸は S-74°-W にとり、奥行き 2m、横幅 1.5m 程度の小型墳であることが推定できる。</p>
+<h3 class="tomb">B 支群 20 号墳（旧 G20 号墳）</h3>
+<p>本墳は 19 号墳より北西約 20m 下った地点に存在し、上部グループの中で下から 2 番目に位置する。標高 91m の地点に立地し墳丘径 8m を測る。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>内部の石材は右側壁・奥壁の部分を 1 箇所残しているのみであり、盛り土は羨道側が道路のため一部削られており、古墳と判断できうる程度に残存している。墳丘状態は上部のグループに比べてやや小規模の感がある。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>現状は内部の石材が抜き取られ、天井部の墳丘は陥没している。石室形態は不明であるが土壙の状態から、主軸 S-60°-W にとり、石室全長 3.8m、玄室奥行き 1.5m、横幅 1.0m の規模のものであると推定される。石室の規模は中型に属する。</p>
+<h3 class="tomb">B 支群 21〜25 号墳（新規）</h3>
+<p>21 号〜25 号墳の 5 基は、新たに確認された古墳で、20 号墳から北西方向に位置する。墳丘および石室の状態は未調査のため、詳細は不明である。</p>
+  </div>
+</section>
+<section id="C" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">05</span>
+    <h2>C 支群</h2>
+  </header>
+  <div class="sec-body">
+<p>当支群は B 支群が存在する斜面の谷を挟んだ向かい側の斜面、北東斜面に 6 基の古墳が立地する。従来の霧ヶ滝古墳群は、F グループ（現 A 支群）と G グループ（現 B 支群）の 2 支群で構成されていたが、新たに 6 基の古墳を確認し、C 支群とした。</p>
+<h3 class="tomb">C 支群 1〜3 号墳（新規）</h3>
+<p>1 号〜3 号墳は墳丘および石室の調査がされておらず、詳細は不明である。</p>
+<h3 class="tomb">C 支群 4 号墳（新規）</h3>
+<p>本墳は南東より北西へ延びる丘陵の標高約 140m の尾根稜線上に立地し、北西に向かって開口する横穴式石室である。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘盛土は石抜きあるいは自然崩壊のため原形をとどめていないが、西側斜面に墳丘と思われる盛り上がりがみられる。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>本墳の埋葬施設は、奥壁・左側壁が表出しているものの、右側壁・前壁においては、土砂に埋没していて詳細は不明である。現状で奥壁幅 196cm、左側壁長 193cm を測り正方形プランを呈する。現床面より奥壁 2 段、左側壁 2 段が確認できる。奥壁は 1 段目に比較的大ぶりの石材が並べてあり、2 段目に小ぶりの石材を積んでいる。また、2 段目に左側壁へ架構する力石の使用がみられる。全体的にみると本墳は、残存状態はあまり良くないが、石積みは比較的丁寧である。</p>
+<h3 class="tomb">C 支群 5 号墳（新規）</h3>
+<p>本墳は標高約 140m の尾根稜線上に立地し、南西の谷に向かって開口する両袖単室の横穴式石室である。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘盛土は石抜きあるいは自然崩壊のためそのほとんどが流出しているものの、西側斜面にわずかに墳丘と思われる盛り上がりが確認できる。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>石室は現状で、奥壁幅 156cm、左側壁長 112cm、右側壁長 105cm、前壁幅 170cm、玄門幅 65cm を測り、不整な横長長方形プランを呈する。現床面より奥壁・左側壁・前壁がそれぞれ 1 段、右側壁が 2 段確認できる。前壁は左右袖石 1 枚ずつしか残存していない。また、羨道部については、土砂により埋没しているため詳細は不明である。全体的に見て本墳は、石室の残存状態が極めて悪く、石積みにおいても雑である。</p>
+<h3 class="tomb">C 支群 6 号墳（新規）</h3>
+<p>本墳は標高 135m の北東急斜面上に立地し、北東の谷に向かって開口する両袖単室の横穴式石室である。</p>
+<p class="part part-mound"><span>墳丘</span></p>
+<p>墳丘盛土は急斜面に立地するため流出が激しく、北側斜面にわずかに確認できる程度である。</p>
+<p class="part part-chamber"><span>石室</span></p>
+<p>現状で、右側壁上部の石材が残存していないため、そこより石室内をうかがうことができる。周壁上部は、いずれもせり出しが著しく、天井付近ではドーム状を呈している。石室は現状で奥壁幅 180cm、右側壁長 190cm、左側壁長 150cm、前壁幅 140cm を測り、前壁側がやや狭い台形状のプランを呈する。土砂流入のため、床面については不明であるが、現床面より奥壁 8 段、右側壁 5 段、左側壁 7 段、前壁 5 段の石積みが確認できる。奥壁は 3 段目まで左半分は 75×15cm 前後の石材を横位に積み、右半分は 50×70cm の大ぶりの石材を 1 枚使用している。4 段目以上は 35×20cm 前後の石材を 5 段積んでおり、せり出しが激しい。右側壁は 50×20cm 前後の横長の石材を 2 枚ずつ 3 段に積み上げ、その上に 80×25cm の大ぶりの石材を 1 枚積み上げている。左側壁は石積みにおいて、かなり雑であり、せり出しが著しいために奥壁・前壁との境目が明確でなく、ドーム状になっている。石積みは 3 段目まで右半分は 20×10cm 程度の石材 2 枚の上に、60×25cm 程度の大ぶりの石材を横位に 2 段積んでいる。左半分は 30×30cm 程度の不整な石材を雑に積んである。4 段目以上は右半分で 25×20cm 程度の小ぶりの石材を使用し、左半分はやや大ぶりの 50×20cm 前後の石材を横位に 3 段積み上げている。前壁は右袖石一段、左袖石二段が確認できる。楣石は 80×30cm の大ぶりの石材を使用し、その上に 60×20cm 前後の石材を 3 段積み上げている。羨道部は玄門幅 50cm、羨道高 30cm を測ることができるが、土砂の流入により、石積みなどの詳細は不明である。</p>
+<p class="note">＊本稿の文章および図面は 1976 年福岡大学歴史研究部刊行「駄ノ原古墳群・霧ヶ滝古墳群分布調査概報」、1979 年福岡大学歴史研究部刊行「七隈 17 号」、1982 年福岡大学歴史研究部刊行「七隈 20 号」より転用し、一部加筆した。</p>
+  </div>
+</section>
+<section id="data" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">06</span>
+    <h2>古墳データ</h2>
+  </header>
+  <div class="sec-body">
+<p>各古墳の墳形、墳丘高・墳丘径、石室形式・開口方向、玄室および羨道の各部寸法を一覧にした基礎データ表である。（横スクロール・拡大表示が可能）</p>
+<figure class="fig fig-table">
+  <div class="table-scroll"><button class="fig-btn" data-src="images/p25_table.png" data-cap="霧ヶ滝古墳群古墳データ" aria-label="霧ヶ滝古墳群古墳データを拡大"><img loading="lazy" src="images/p25_table.png" alt="霧ヶ滝古墳群古墳データ"></button></div>
+  <figcaption><span class="cap-mark">図</span>霧ヶ滝古墳群古墳データ<span class="cap-hint">横スクロール／拡大表示</span></figcaption>
+</figure>
+  </div>
+</section>
+<section id="opening" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">07</span>
+    <h2>石室開口方向</h2>
+  </header>
+  <div class="sec-body">
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p26_opening.png" data-cap="霧ヶ滝古墳群石室開口方向（A・B・C 支群）" aria-label="霧ヶ滝古墳群石室開口方向（A・B・C 支群）を拡大"><img loading="lazy" src="images/p26_opening.png" alt="霧ヶ滝古墳群石室開口方向（A・B・C 支群）"></button>
+  <figcaption><span class="cap-mark">図</span>霧ヶ滝古墳群石室開口方向（A・B・C 支群）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+  </div>
+</section>
+<section id="analysis" class="sec">
+  <header class="sec-head">
+    <span class="sec-no">08</span>
+    <h2>標高からみる墳丘規模と玄室面積</h2>
+  </header>
+  <div class="sec-body">
+<h3 class="tomb">霧ヶ滝古墳群（墳丘径）</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p27_kiri_diameter.png" data-cap="標高からみる墳丘規模（墳丘径）— 霧ヶ滝古墳群" aria-label="標高からみる墳丘規模（墳丘径）— 霧ヶ滝古墳群を拡大"><img loading="lazy" src="images/p27_kiri_diameter.png" alt="標高からみる墳丘規模（墳丘径）— 霧ヶ滝古墳群"></button>
+  <figcaption><span class="cap-mark">図</span>標高からみる墳丘規模（墳丘径）— 霧ヶ滝古墳群<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">霧ヶ滝古墳群（玄室面積）</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p27_kiri_area.png" data-cap="標高からみる玄室面積 — 霧ヶ滝古墳群" aria-label="標高からみる玄室面積 — 霧ヶ滝古墳群を拡大"><img loading="lazy" src="images/p27_kiri_area.png" alt="標高からみる玄室面積 — 霧ヶ滝古墳群"></button>
+  <figcaption><span class="cap-mark">図</span>標高からみる玄室面積 — 霧ヶ滝古墳群<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">油山古墳群全域からみるポジショニング（墳丘径）</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p28_all_diameter.png" data-cap="油山古墳群全域からみるポジショニング（墳丘径）" aria-label="油山古墳群全域からみるポジショニング（墳丘径）を拡大"><img loading="lazy" src="images/p28_all_diameter.png" alt="油山古墳群全域からみるポジショニング（墳丘径）"></button>
+  <figcaption><span class="cap-mark">図</span>油山古墳群全域からみるポジショニング（墳丘径）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<h3 class="tomb">油山古墳群全域からみるポジショニング（玄室面積）</h3>
+<figure class="fig">
+  <button class="fig-btn" data-src="images/p28_all_area.png" data-cap="油山古墳群全域からみるポジショニング（玄室面積）" aria-label="油山古墳群全域からみるポジショニング（玄室面積）を拡大"><img loading="lazy" src="images/p28_all_area.png" alt="油山古墳群全域からみるポジショニング（玄室面積）"></button>
+  <figcaption><span class="cap-mark">図</span>油山古墳群全域からみるポジショニング（玄室面積）<span class="cap-hint">拡大表示</span></figcaption>
+</figure>
+<p class="note">＊油山古墳群全域とは鳥越古墳群・早苗田古墳群・倉瀬戸古墳群・大谷古墳群・駄ヶ原古墳群・霧ヶ滝古墳群・影塚古墳群・西油山古墳群を指す。</p>
+<p class="note">＊座標軸上の赤線は油山古墳群全域の平均値である。</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="ft">
+    <b>霧ヶ滝古墳群 現状調査報告書</b>
+    2023年　油山古墳研究室<br>
+    本文および作図の出典：福岡大学歴史研究部「駄ノ原古墳群・霧ヶ滝古墳群分布調査概報」（1976）／<br>
+    「七隈17号」（1979）・「七隈20号」（1982）より転用・加筆。<br>
+    デジタル版 v1.1.0（原報告書より編集）
+  </div>
+</footer>
+
+<button class="totop" id="toTop" aria-label="ページ上部へ戻る">↑</button>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="目次">
+  <div class="dh"><b>目　次</b><button class="x" id="tocClose" aria-label="閉じる">×</button></div>
+  <nav><ol><li><a href="#env" class="toc-link"><span class="toc-no">01</span><span class="toc-t">立地と分布</span></a></li><li><a href="#reorg" class="toc-link"><span class="toc-no">02</span><span class="toc-t">分布の再編について</span></a></li><li><a href="#A" class="toc-link"><span class="toc-no">03</span><span class="toc-t">A 支群</span></a></li><li><a href="#B" class="toc-link"><span class="toc-no">04</span><span class="toc-t">B 支群</span></a></li><li><a href="#C" class="toc-link"><span class="toc-no">05</span><span class="toc-t">C 支群</span></a></li><li><a href="#data" class="toc-link"><span class="toc-no">06</span><span class="toc-t">古墳データ</span></a></li><li><a href="#opening" class="toc-link"><span class="toc-no">07</span><span class="toc-t">石室開口方向</span></a></li><li><a href="#analysis" class="toc-link"><span class="toc-no">08</span><span class="toc-t">標高からみる墳丘規模と玄室面積</span></a></li></ol></nav>
+</aside>
+
+<div class="lb" id="lb" aria-hidden="true">
+  <div class="lb-top">
+    <div class="lb-cap" id="lbCap"></div>
+    <button id="lbZoom">拡大 +</button>
+    <button id="lbClose">閉じる ×</button>
+  </div>
+  <div class="lb-stage" id="lbStage"><img id="lbImg" alt=""></div>
+  <div class="lb-foot">拡大・縮小して細部まで確認できます</div>
+</div>
+
+<script>
+(function(){
+  var drawer=document.getElementById('drawer'),scrim=document.getElementById('scrim');
+  function openD(){drawer.classList.add('open');scrim.classList.add('open');}
+  function closeD(){drawer.classList.remove('open');scrim.classList.remove('open');}
+  document.getElementById('tocOpen').addEventListener('click',openD);
+  document.getElementById('tocClose').addEventListener('click',closeD);
+  scrim.addEventListener('click',closeD);
+  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeD);});
+
+  // back to top
+  var toTop=document.getElementById('toTop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>600) toTop.classList.add('show'); else toTop.classList.remove('show');
+  },{passive:true});
+  toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+
+  // smooth anchor scroll with header offset
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href').slice(1),el=document.getElementById(id);
+      if(el){e.preventDefault();var y=el.getBoundingClientRect().top+window.scrollY-56;
+        window.scrollTo({top:y,behavior:'smooth'});history.replaceState(null,'','#'+id);}
+    });
+  });
+
+  // Lightbox with zoom & pan
+  var lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),
+      lbCap=document.getElementById('lbCap'),lbStage=document.getElementById('lbStage');
+  var scale=1,tx=0,ty=0,start=null,pinch=null;
+  function apply(){lbImg.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function reset(){scale=1;tx=0;ty=0;apply();document.getElementById('lbZoom').textContent='拡大 +';}
+  function open(src,cap){lbImg.src=src;lbImg.alt=cap;lbCap.textContent=cap;reset();
+    lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+  function close(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';lbImg.src='';}
+  document.querySelectorAll('.fig-btn').forEach(function(b){
+    b.addEventListener('click',function(){open(b.getAttribute('data-src'),b.getAttribute('data-cap'));});
+  });
+  document.getElementById('lbClose').addEventListener('click',close);
+  document.getElementById('lbZoom').addEventListener('click',function(){
+    scale=(scale>1?1:2.4);if(scale===1){tx=0;ty=0;}apply();this.textContent=scale>1?'戻す −':'拡大 +';
+  });
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target===lbStage)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))close();});
+
+  // double tap to zoom
+  var lastTap=0;
+  lbStage.addEventListener('click',function(e){
+    var now=Date.now();
+    if(now-lastTap<300){scale=(scale>1?1:2.4);if(scale===1){tx=0;ty=0;}apply();
+      document.getElementById('lbZoom').textContent=scale>1?'戻す −':'拡大 +';}
+    lastTap=now;
+  });
+  // drag pan (mouse + 1 finger)
+  lbImg.addEventListener('mousedown',function(e){if(scale<=1)return;start={x:e.clientX-tx,y:e.clientY-ty};e.preventDefault();});
+  window.addEventListener('mousemove',function(e){if(start){tx=e.clientX-start.x;ty=e.clientY-start.y;apply();}});
+  window.addEventListener('mouseup',function(){start=null;});
+  lbImg.addEventListener('touchstart',function(e){
+    if(e.touches.length===1&&scale>1){start={x:e.touches[0].clientX-tx,y:e.touches[0].clientY-ty};}
+    else if(e.touches.length===2){var dx=e.touches[0].clientX-e.touches[1].clientX,dy=e.touches[0].clientY-e.touches[1].clientY;
+      pinch={d:Math.hypot(dx,dy),s:scale};}
+  },{passive:true});
+  lbImg.addEventListener('touchmove',function(e){
+    if(pinch&&e.touches.length===2){var dx=e.touches[0].clientX-e.touches[1].clientX,dy=e.touches[0].clientY-e.touches[1].clientY;
+      scale=Math.min(5,Math.max(1,pinch.s*Math.hypot(dx,dy)/pinch.d));if(scale===1){tx=0;ty=0;}apply();e.preventDefault();}
+    else if(start&&e.touches.length===1&&scale>1){tx=e.touches[0].clientX-start.x;ty=e.touches[0].clientY-start.y;apply();e.preventDefault();}
+  },{passive:false});
+  lbImg.addEventListener('touchend',function(e){if(e.touches.length===0){start=null;pinch=null;}});
+})();
+</script>
+</body>
+</html>
